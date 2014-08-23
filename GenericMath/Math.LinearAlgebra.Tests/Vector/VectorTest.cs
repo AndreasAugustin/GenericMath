@@ -24,7 +24,7 @@ namespace Math.LinearAlgebra.Tests
     /// <typeparam name="TStruct>The structure.</typeparam>
     [TestFixture(typeof(Double), typeof(DoubleMonoid))]
     [TestFixture(typeof(Complex), typeof(ComplexMonoid))]
-    public class VectorTestTemplate<T, TStruct> 
+    public class VectorTest<T, TStruct> 
         where T : new() where TStruct : IStructure<T>, new()
     {
         #region fields
