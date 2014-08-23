@@ -11,7 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Analysis.Tests", "Math
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Base.Tests", "Math.Base.Tests\Math.Base.Tests.csproj", "{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.LinearAlgebra.Tests", "Math.LinearAlgebra.Tests\Math.LinearAlgebra.Tests.csproj", "{577920B2-9289-4CC9-8F56-291E9F436495}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Analysis", "Math.Analysis\Math.Analysis.csproj", "{1974448B-2DDF-4F3A-A044-8D27B97ACBEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.LinearAlgebra", "Math.LinearAlgebra\Math.LinearAlgebra.csproj", "{FA62DC06-710E-4615-9E6F-C5E77D5B3202}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +35,10 @@ Global
 		{57422D4B-3791-4023-AA99-F236C9E68476}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57422D4B-3791-4023-AA99-F236C9E68476}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57422D4B-3791-4023-AA99-F236C9E68476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{577920B2-9289-4CC9-8F56-291E9F436495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{577920B2-9289-4CC9-8F56-291E9F436495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{577920B2-9289-4CC9-8F56-291E9F436495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{577920B2-9289-4CC9-8F56-291E9F436495}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,10 +47,15 @@ Global
 		{D39A4902-17A5-4FD6-9BEC-67717CB4C9F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D39A4902-17A5-4FD6-9BEC-67717CB4C9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D39A4902-17A5-4FD6-9BEC-67717CB4C9F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA62DC06-710E-4615-9E6F-C5E77D5B3202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA62DC06-710E-4615-9E6F-C5E77D5B3202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA62DC06-710E-4615-9E6F-C5E77D5B3202}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA62DC06-710E-4615-9E6F-C5E77D5B3202}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{57422D4B-3791-4023-AA99-F236C9E68476} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
 		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
+		{577920B2-9289-4CC9-8F56-291E9F436495} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = GenericMath\GenericMath.csproj
