@@ -33,7 +33,7 @@
     </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files %28x86%29\Xamarin Studio\AddIns\NUnit\nunit.framework.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
