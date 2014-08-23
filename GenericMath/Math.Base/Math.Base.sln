@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath", "GenericMath\GenericMath.csproj", "{D39A4902-17A5-4FD6-9BEC-67717CB4C9F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Base", "Math.Base\Math.Base.csproj", "{32112762-A4EA-4A22-8F40-235A366445A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Base", "Math.Base\Math.Base\Math.Base.csproj", "{32112762-A4EA-4A22-8F40-235A366445A9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{79B764B0-3606-4774-9160-0C8233BF640B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Base.Tests", "Math.Base\Math.Base.Tests\Math.Base.Tests.csproj", "{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Base.Tests", "Math.Base.Tests\Math.Base.Tests.csproj", "{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,15 +21,11 @@ Global
 		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D39A4902-17A5-4FD6-9BEC-67717CB4C9F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D39A4902-17A5-4FD6-9BEC-67717CB4C9F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D39A4902-17A5-4FD6-9BEC-67717CB4C9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D39A4902-17A5-4FD6-9BEC-67717CB4C9F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
+		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3} = {79B764B0-3606-4774-9160-0C8233BF640B}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = GenericMath\GenericMath.csproj
+		StartupItem = Math.Base\Math.Base.csproj
 	EndGlobalSection
 EndGlobal

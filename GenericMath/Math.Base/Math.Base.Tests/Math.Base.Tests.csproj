@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Math.Base.Tests</RootNamespace>
+    <AssemblyName>Math.Base.Tests</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\..\..\..\Program Files %28x86%29\Xamarin Studio\AddIns\NUnit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\Math.LinearAlgebra\packages\NSubstitute.1.7.2.0\lib\NET40\NSubstitute.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Ring\" />
+    <Folder Include="Group\" />
+    <Folder Include="EuclidianRing\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Monoid\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Group\DoubleGroupTest.cs" />
+    <Compile Include="Group\GroupFactoryTest.cs" />
+    <Compile Include="Group\Int32GroupTest.cs" />
+    <Compile Include="Group\ComplexGroupTest.cs" />
+    <Compile Include="Ring\TemplateRingTest.cs" />
+    <Compile Include="Ring\Int32RingTest.cs" />
+    <Compile Include="Ring\DoubleRingTest.cs" />
+    <Compile Include="Ring\ComplexRingTest.cs" />
+    <Compile Include="EuclidianRing\TemplateEuclidianRingTest.cs" />
+    <Compile Include="EuclidianRing\Int32EuclidianRingTest.cs" />
+    <Compile Include="EuclidianRing\DoubleEuclidianRingTest.cs" />
+    <Compile Include="EuclidianRing\ComplexEuclidianRingTest.cs" />
+    <Compile Include="Ring\RingFactoryTest.cs" />
+    <Compile Include="Extensions\RingExtensionsTest.cs" />
+    <Compile Include="Extensions\EuclidianRingExtensionsTest.cs" />
+    <Compile Include="Monoid\UInt32MonoidTest.cs" />
+    <Compile Include="Group\TemplateGroupTest.cs" />
+    <Compile Include="Monoid\TemplateMonoidTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Math.Base\Math.Base.csproj">
+      <Project>{32112762-A4EA-4A22-8F40-235A366445A9}</Project>
+      <Name>Math.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
