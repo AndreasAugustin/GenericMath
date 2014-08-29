@@ -18,7 +18,7 @@ namespace Math.LinearAlgebra
     /// Extensions methods for the <see cref="Polynomial{T, TStruct}"/> class.
     /// TStruct needs to be of type <see cref="IMonoid{T}"/>
     /// </summary>
-    public static class PolynomialFromMonoidExtensions
+    public static class IPolynomialFromMonoidExtensions
     {
         #region methods
 
@@ -30,18 +30,18 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>A new polynomial as a sum of polynomial1 and polynomial2.</returns>
-        public static Polynomial<T, TStruct> Add<T, TStruct>(this Polynomial<T, TStruct> polynomial1, Polynomial<T, TStruct> polynomial2)
+        public static IPolynomial<T, TStruct> Add<T, TStruct>(this IPolynomial<T, TStruct> polynomial1, IPolynomial<T, TStruct> polynomial2)
             where TStruct : IMonoid<T>, new()
         {
             var degree = Math.Max(polynomial1.Degree, polynomial2.Degree);
 
             if (polynomial1.Degree < degree)
             {
-                return new Polynomial<T, TStruct>(polynomial1.Coefficients
+                return polynomial1.ReturnNewInstanceWithOtherCoefficients(polynomial1.Coefficients
                     .Injection(degree - polynomial1.Degree).Add(polynomial2.Coefficients));
             }
 
-            return new Polynomial<T, TStruct>(polynomial2.Coefficients
+            return polynomial1.ReturnNewInstanceWithOtherCoefficients(polynomial2.Coefficients
                 .Injection(degree - polynomial2.Degree).Add(polynomial1.Coefficients));         
         }
 

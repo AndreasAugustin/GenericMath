@@ -29,7 +29,7 @@ namespace Math.LinearAlgebra
         /// <param name ="columnIndex">The column index.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IVector<T, TStruct> GetColumnVector<T, TStruct>(this Matrix<T, TStruct> matrix, UInt32 columnIndex)
+        public static IVector<T, TStruct> GetColumnVector<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 columnIndex)
             where TStruct : IStructure<T>, new()
         {
             return matrix[columnIndex];
@@ -43,9 +43,10 @@ namespace Math.LinearAlgebra
         /// <param name="rowIndex">Column index.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IVector<T, TStruct> GetRowVector<T, TStruct>(this Matrix<T, TStruct> matrix, UInt32 rowIndex)
+        public static IVector<T, TStruct> GetRowVector<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 rowIndex)
             where TStruct : IStructure<T>, new()
         {
+            // HACK Ivector
             var vec = new Vector<T, TStruct>(matrix.RowDimension);
             for (UInt32 i = 0; i < matrix.RowDimension; i++)
             {
@@ -62,9 +63,10 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>The transposed matrix.</returns>
-        public static Matrix<T, TStruct> Transpose<T, TStruct>(this Matrix<T, TStruct> matrix)
+        public static IMatrix<T, TStruct> Transpose<T, TStruct>(this IMatrix<T, TStruct> matrix)
             where TStruct : IStructure<T>, new()
         {
+            // HACK IMatrix
             var result = new Matrix<T, TStruct>(matrix.ColumnDimension, matrix.RowDimension); // n x m Matrix -> m x n - Matrix
             for (UInt32 i = 0; i < matrix.RowDimension; i++)
             {
@@ -84,9 +86,10 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>A copy of the matrix.</returns>
-        public static Matrix<T, TStruct> Copy<T, TStruct>(this Matrix<T, TStruct> matrix)
+        public static IMatrix<T, TStruct> Copy<T, TStruct>(this IMatrix<T, TStruct> matrix)
             where TStruct : IStructure<T>, new()
         {
+            // HACK IMatrix
             var mat = new Matrix<T, TStruct>(matrix.RowDimension, matrix.ColumnDimension);
             for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
             {

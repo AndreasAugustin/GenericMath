@@ -18,7 +18,7 @@ namespace Math.LinearAlgebra
     /// Extensions methods for the <see cref="Vector{T, TStruct}"/> class.
     /// TStruct needs to be of type <see cref="IMonoid{T}"/>
     /// </summary>
-    public static class VectorFromMonoidExtensions
+    public static class IVectorFromMonoidExtensions
     {
         #region methods
 
@@ -60,7 +60,7 @@ namespace Math.LinearAlgebra
             if (vector1.Dimension != vector2.Dimension)
                 throw new IndexOutOfRangeException("The dimension of the two vectors do not agree");
 
-            var result = new Vector<T, TStruct>(vector1.Dimension);
+            var result = vector1.ReturnNewInstanceWithSameDimension();
 
             for (UInt32 i = 0; i < vector1.Dimension; i++)
             {

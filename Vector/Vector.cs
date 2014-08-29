@@ -123,6 +123,19 @@ namespace Math.LinearAlgebra
 
         #endregion
 
+        #region IVECTOR implementaition
+
+        /// <summary>
+        /// Returns the new instance with same dimension.
+        /// </summary>
+        /// <returns>The new instance with same dimension.</returns>
+        public IVector<T, TStruct> ReturnNewInstanceWithSameDimension()
+        {
+            return new Vector<T, TStruct>(this.Dimension);
+        }
+
+        #endregion
+
         #region IEquatable implementation
 
         /// <summary>

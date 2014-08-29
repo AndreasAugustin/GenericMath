@@ -15,7 +15,7 @@ namespace Math.LinearAlgebra
     /// <summary>
     /// Extension methods for the <see cref="Polynomial{T, TStruct}"/> class.
     /// </summary>
-    public static class PolynomialExtensions
+    public static class IPolynomialExtensions
     {
         #region methods
 
@@ -26,10 +26,10 @@ namespace Math.LinearAlgebra
         /// <param name="polynomial">The polynomial.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static Polynomial<T, TStruct> Copy<T, TStruct>(this Polynomial<T, TStruct> polynomial)
+        public static IPolynomial<T, TStruct> Copy<T, TStruct>(this IPolynomial<T, TStruct> polynomial)
             where TStruct : IStructure<T>, new()
         {
-            return new Polynomial<T, TStruct>(polynomial.Coefficients);
+            return polynomial.ReturnNewInstanceWithSameCoefficients();
         }
 
         #endregion

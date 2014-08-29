@@ -30,6 +30,12 @@ namespace Math.LinearAlgebra
         /// <value>The degree.</value>
         UInt32 Degree { get; }
 
+        /// <summary>
+        /// Gets the coefficients.
+        /// </summary>
+        /// <value>The coefficients.</value>
+        IVector<T, TStruct> Coefficients { get; }
+
         #endregion
 
         #region methods
@@ -40,6 +46,25 @@ namespace Math.LinearAlgebra
         /// <param name="index">The index of the coefficient.</param>
         /// <returns>The coefficient at the specified index.</returns>
         T this[UInt32 index] { get; set; }
+
+        /// <summary>
+        /// Returns a new the instance with same degree like the calling instance.
+        /// </summary>
+        /// <returns>The instance with same dimension.</returns>
+        IPolynomial<T, TStruct> ReturnNewInstanceWithSameDegree();
+
+        /// <summary>
+        /// Returns a new the instance with other coefficients like the calling instance.
+        /// </summary>
+        /// <returns>The instance with other coefficients.</returns>
+        /// <param name="coefficients">The other coefficients.</param>
+        IPolynomial<T, TStruct> ReturnNewInstanceWithOtherCoefficients(IVector<T, TStruct> coefficients);
+
+        /// <summary>
+        /// Returns the new instance with same coefficients.
+        /// </summary>
+        /// <returns>The new instance with same coefficients.</returns>
+        IPolynomial<T, TStruct> ReturnNewInstanceWithSameCoefficients();
 
         #endregion
     }

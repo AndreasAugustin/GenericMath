@@ -17,7 +17,7 @@ namespace Math.LinearAlgebra
     /// <summary>
     /// Extension methods for the <see cref="Vector{T, IStructure}"/> class.
     /// </summary>
-    public static class VectorFromRingExtensions
+    public static class IVectorFromRingExtensions
     {
         #region methods
 
@@ -38,7 +38,7 @@ namespace Math.LinearAlgebra
 
             var ring = new TStruct();
 
-            var result = new Vector<T, TStruct>(vector1.Dimension);
+            var result = vector1.ReturnNewInstanceWithSameDimension();
 
             for (UInt32 i = 0; i < vector1.Dimension; i++)
             {
@@ -105,7 +105,7 @@ namespace Math.LinearAlgebra
             where TStruct : IRing<T>, new()
         {
             var ring = new TStruct();
-            var vec = new Vector<T, TStruct>(vector.Dimension);
+            var vec = vector.ReturnNewInstanceWithSameDimension();
 
             for (UInt32 i = 0; i < vector.Dimension; i++)
             {

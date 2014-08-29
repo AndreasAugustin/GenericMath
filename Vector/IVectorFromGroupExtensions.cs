@@ -17,7 +17,7 @@ namespace Math.LinearAlgebra
     /// <summary>
     /// Extension methods for the <see cref="Vector{T, TStruct}"/> class.
     /// </summary>
-    public static class VectorFromGroupExtensions
+    public static class IVectorFromGroupExtensions
     {
         #region methods
 
@@ -31,7 +31,7 @@ namespace Math.LinearAlgebra
         public static IVector<T, TStruct> InverseVector<T, TStruct>(this IVector<T, TStruct> vector)
             where TStruct : IGroup<T>, new()
         {
-            var vec = new Vector<T, TStruct>(vector.Dimension);
+            var vec = vector.ReturnNewInstanceWithSameDimension();
             var baseStruct = new TStruct();
 
             for (UInt32 i = 0; i < vec.Dimension; i++)

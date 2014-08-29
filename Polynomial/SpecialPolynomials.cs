@@ -60,7 +60,9 @@ namespace Math.LinearAlgebra
             where TStruct : IRing<T>, new()
         {
             var result = ZeroPolynomial<T, TStruct>(dimension);
-            result[0] = result.BaseStructure.One;
+            var baseStructure = new TStruct();
+
+            result[0] = baseStructure.One;
 
             return result;
         }

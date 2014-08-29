@@ -17,23 +17,18 @@ namespace Math.LinearAlgebra
     /// <summary>
     /// Extension methods for the <see cref="Vector{T, TStruct}"/> class.
     /// </summary>
-    public static class VectorExtensions
+    public static class IVectorExtensions
     {
         #region methods
 
         /// <summary>
         /// Copy the specified vector.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <typeparam name="T">The type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>A copy of the vector.</returns>
         public static IVector<T, TStruct> Copy<T, TStruct>(this IVector<T, TStruct> vector)
             where TStruct : IStructure<T>, new()
         {
-            // TODO it should be possible to create a copy of the given IVector.
-            // At the moment there is only a copy for the vector structure given in this project.
-            var vec = new Vector<T, TStruct>(vector.Dimension);
+            var vec = vector.ReturnNewInstanceWithSameDimension();
 
             for (UInt32 i = 0; i < vector.Dimension; i++)
             {

@@ -17,7 +17,7 @@ namespace Math.LinearAlgebra
     /// <summary>
     /// Polynomial from ring extensions.
     /// </summary>
-    public static class PolynomialFromRingExtensions
+    public static class IPolynomialFromRingExtensions
     {
         #region methods
 
@@ -29,10 +29,11 @@ namespace Math.LinearAlgebra
         /// <param name="power">The power.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static Polynomial<T, TStruct> Pow<T, TStruct>(this Polynomial<T, TStruct> polynomial, UInt32 power)
+        public static IPolynomial<T, TStruct> Pow<T, TStruct>(this IPolynomial<T, TStruct> polynomial, UInt32 power)
             where TStruct : IRing<T>, new()
         {
             var result = polynomial.Copy();
+            var baseStructure = new TStruct();
 
             for (UInt32 i = 0; i < power - 1; i++)
             {
@@ -50,27 +51,28 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>The product of polynomial1 and polynomial2.</returns>
-        public static Polynomial<T, TStruct> Multiply<T, TStruct>(this Polynomial<T, TStruct> polynomial1, Polynomial<T, TStruct> polynomial2)
+        public static IPolynomial<T, TStruct> Multiply<T, TStruct>(this IPolynomial<T, TStruct> polynomial1, IPolynomial<T, TStruct> polynomial2)
             where TStruct : IRing<T>, new()
         {
             var degree = polynomial1.Degree + polynomial2.Degree;
-            var poly = new Polynomial<T, TStruct>(degree);
+
+            var poly = polynomial1.ReturnNewInstanceWithSameDegree();
             var max = Math.Max(polynomial1.Degree, polynomial2.Degree);
-            var calculator = poly.BaseStructure;
+            var baseStructure = new TStruct();
 
             T x;
             for (UInt32 i = 0; i <= degree; i++)
             {
-                x = calculator.Zero;
+                x = baseStructure.Zero;
                 var start = i <= max ? 0 : i - max;
                 var end = i < max ? Math.Min(i, max) + 1 : Math.Min(i, max);
 
                 for (UInt32 j = start; j < end; j++)
                 {
                     var k = i - j;
-                    var factor1 = polynomial1.Degree >= j ? polynomial1[j] : calculator.One;
-                    var factor2 = polynomial2.Degree >= k ? polynomial2[k] : calculator.One;
-                    x = calculator.Addition(x, calculator.Multiplication(factor1, factor2));
+                    var factor1 = polynomial1.Degree >= j ? polynomial1[j] : baseStructure.One;
+                    var factor2 = polynomial2.Degree >= k ? polynomial2[k] : baseStructure.One;
+                    x = baseStructure.Addition(x, baseStructure.Multiplication(factor1, factor2));
                 }
 
                 poly[i] = x;
@@ -87,11 +89,12 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>The point calculation for the polynomial.</returns>
-        public static T Calculate<T, TStruct>(this Polynomial<T, TStruct> polynomial, T x)
+        public static T Calculate<T, TStruct>(this IPolynomial<T, TStruct> polynomial, T x)
             where TStruct : IRing<T>, new()
         {
             var ring = new TStruct();
             T result = ring.Zero;
+
             for (UInt32 i = 0; i <= polynomial.Degree; i++)
             {
                 var calculatedCoefficient = ring.Multiplication(ring.Pow(x, i), polynomial[i]);
@@ -109,10 +112,10 @@ namespace Math.LinearAlgebra
         /// <param name="scalar">The scalar.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static Polynomial<T, TStruct> ScalarMultiply<T, TStruct>(this Polynomial<T, TStruct> polynomial, T scalar)
+        public static IPolynomial<T, TStruct> ScalarMultiply<T, TStruct>(this IPolynomial<T, TStruct> polynomial, T scalar)
             where TStruct : IRing<T>, new()
         {
-            return new Polynomial<T, TStruct>(polynomial.Coefficients.ScalarMultiply(scalar));
+            return polynomial.ReturnNewInstanceWithOtherCoefficients(polynomial.Coefficients.ScalarMultiply(scalar));
         }
 
         #endregion

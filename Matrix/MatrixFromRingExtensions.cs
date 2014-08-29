@@ -29,7 +29,7 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>The power of the matrix with power.</returns>
-        public static Matrix<T, TStruct> Pow<T, TStruct>(this Matrix<T, TStruct> matrix, UInt32 power)
+        public static IMatrix<T, TStruct> Pow<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 power)
             where TStruct : IRing<T>, new()
         {
             var result = matrix.Copy();
@@ -50,10 +50,10 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>Lambda * A.</returns>
-        public static Matrix<T, TStruct> ScalarMultiply<T, TStruct>(this Matrix<T, TStruct> matrix, T scalar)
+        public static IMatrix<T, TStruct> ScalarMultiply<T, TStruct>(this IMatrix<T, TStruct> matrix, T scalar)
             where TStruct : IRing<T>, new()
         {
-            var calculator = matrix.BaseStructure;
+            // HACK IMatrix
             var result = new Matrix<T, TStruct>(matrix.RowDimension, matrix.ColumnDimension);
 
             for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
@@ -73,14 +73,14 @@ namespace Math.LinearAlgebra
         /// <param name="matrix2">The right Matrix.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static Matrix<T, TStruct> MultiplyMatrix<T, TStruct>(this Matrix<T, TStruct> matrix1, Matrix<T, TStruct> matrix2)
+        public static IMatrix<T, TStruct> MultiplyMatrix<T, TStruct>(this IMatrix<T, TStruct> matrix1, IMatrix<T, TStruct> matrix2)
             where TStruct : IRing<T>, new()
         {
             if (matrix1.ColumnDimension != matrix2.RowDimension)
                 throw new IndexOutOfRangeException("The ColumnDimension of matrix1 needs to be the same like the RowDimension of matrix2");
 
             var result = new Matrix<T, TStruct>(matrix1.RowDimension, matrix2.ColumnDimension);
-            var calculator = matrix1.BaseStructure;
+            var baseStructure = new TStruct();
 
             for (UInt32 i = 0; i < result.RowDimension; i++)
             {
@@ -88,7 +88,7 @@ namespace Math.LinearAlgebra
                 {
                     for (UInt32 k = 0; k < matrix1.ColumnDimension; k++)
                     {
-                        result[i, j] = calculator.Addition(result[i, j], calculator.Multiplication(matrix1[i, k], matrix2[k, j]));
+                        result[i, j] = baseStructure.Addition(result[i, j], baseStructure.Multiplication(matrix1[i, k], matrix2[k, j]));
                     }
                 }
             }
@@ -105,20 +105,20 @@ namespace Math.LinearAlgebra
         /// <param name="vector">The vector.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static Vector<T, TStruct> MultiplyVector<T, TStruct>(this Matrix<T, TStruct> matrix, Vector<T, TStruct> vector)
+        public static IVector<T, TStruct> MultiplyVector<T, TStruct>(this IMatrix<T, TStruct> matrix, IVector<T, TStruct> vector)
             where TStruct : IRing<T>, new()
         {
             if (matrix.ColumnDimension != vector.Dimension)
                 throw new IndexOutOfRangeException("The ColumnDimension of the matrix needs to equal the row dimension of the vector");
 
-            var calculator = matrix.BaseStructure;
+            var baseStructure = new TStruct();
             var vect = new Vector<T, TStruct>(matrix.RowDimension);
 
             for (UInt32 i = 0; i < matrix.RowDimension; i++)
             {
                 for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
                 {
-                    vect[i] = calculator.Addition(vect[i], calculator.Multiplication(matrix[i, j], vector[j]));
+                    vect[i] = baseStructure.Addition(vect[i], baseStructure.Multiplication(matrix[i, j], vector[j]));
                 }
             }
 

@@ -29,17 +29,17 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>The trace of the matrix.</returns>
-        public static T Trace<T, TStruct>(this Matrix<T, TStruct> matrix)
+        public static T Trace<T, TStruct>(this IMatrix<T, TStruct> matrix)
             where TStruct : IMonoid<T>, new()
         {
             CheckSquared(matrix);
 
-            var calculator = matrix.BaseStructure;
-            var result = calculator.Zero;
+            var baseStructure = new TStruct();
+            var result = baseStructure.Zero;
 
             for (UInt32 i = 0; i < matrix.RowDimension; i++)
             {
-                result = calculator.Addition(result, matrix[i, i]);
+                result = baseStructure.Addition(result, matrix[i, i]);
             }
 
             return result;
@@ -50,7 +50,7 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <returns>The jordan algorithm.</returns>
         /// <param name="matrix">The matrix.</param>
-        public static Matrix<Double, DoubleEuclidianRing> GausJordanAlgorithm(this Matrix<Double, DoubleEuclidianRing> matrix)
+        public static IMatrix<Double, DoubleEuclidianRing> GausJordanAlgorithm(this IMatrix<Double, DoubleEuclidianRing> matrix)
         {
             // TODO dieser Algorithmus muss noch abstrahiert werden 
             // (auf ganze Zahlen... dies muss nur an den Stellen passieren, an denen geteilt wird)
@@ -58,7 +58,7 @@ namespace Math.LinearAlgebra
             // where T > struct
             CheckSquared(matrix);
 
-            var list = new List<Matrix<Double, DoubleEuclidianRing>>();
+            var list = new List<IMatrix<Double, DoubleEuclidianRing>>();
             list.Add(matrix.Copy());
 
             // stores informations about the row permutations
@@ -81,7 +81,7 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <returns>The steps for calculating the inverse matrix. (The inverse matrix is the last one in the list)</returns>
         /// <param name="matrix">The matrix.</param>
-        public static List<Matrix<Double, DoubleEuclidianRing>> GaussJordanAlgorithmWithSteps(this Matrix<Double, DoubleEuclidianRing> matrix)
+        public static List<IMatrix<Double, DoubleEuclidianRing>> GaussJordanAlgorithmWithSteps(this IMatrix<Double, DoubleEuclidianRing> matrix)
         {
             // TODO dieser Algorithmus muss noch abstrahiert werden 
             // auf ganze Zahlen... dies muss nur an den Stellen passieren, an denen geteilt wird)
@@ -89,7 +89,7 @@ namespace Math.LinearAlgebra
             // where T > struct
             CheckSquared(matrix);
 
-            var list = new List<Matrix<Double, DoubleEuclidianRing>>();
+            var list = new List<IMatrix<Double, DoubleEuclidianRing>>();
             list.Add(matrix.Copy());
 
             // stores informations about the row permutations
@@ -113,9 +113,9 @@ namespace Math.LinearAlgebra
 
         #region HELPER METHODS
 
-        static void GaussJordanAlgorithmStep(Matrix<Double, DoubleEuclidianRing> matrix, UInt32 column, Vector<UInt32, UInt32Monoid> permutationVector)
+        static void GaussJordanAlgorithmStep(IMatrix<Double, DoubleEuclidianRing> matrix, UInt32 column, IVector<UInt32, UInt32Monoid> permutationVector)
         {
-            var calculator = matrix.BaseStructure;
+            var calculator = new DoubleEuclidianRing();
             var n = matrix.RowDimension;
 
             // search pivot element (row)
@@ -184,7 +184,7 @@ namespace Math.LinearAlgebra
             }
         }
 
-        static void CheckSquared<T, TStruct>(this Matrix<T, TStruct> matrix)
+        static void CheckSquared<T, TStruct>(this IMatrix<T, TStruct> matrix)
             where TStruct : IStructure<T>, new()
         {
             if (matrix.RowDimension != matrix.ColumnDimension)

@@ -30,7 +30,7 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>The addition of left and right matrices.</returns>
-        public static Matrix<T, TStruct> Add<T, TStruct>(this Matrix<T, TStruct> leftMatrix, Matrix<T, TStruct> rightMatrix)
+        public static IMatrix<T, TStruct> Add<T, TStruct>(this IMatrix<T, TStruct> leftMatrix, IMatrix<T, TStruct> rightMatrix)
             where TStruct : IGroup<T>, new()
         {
             if (leftMatrix.ColumnDimension != rightMatrix.ColumnDimension)
@@ -39,6 +39,7 @@ namespace Math.LinearAlgebra
             if (leftMatrix.RowDimension != rightMatrix.RowDimension)
                 throw new NotSupportedException("The row dimension of the matrizes need to agree");
 
+            // HACK IMatrix
             var result = new Matrix<T, TStruct>(leftMatrix.RowDimension, leftMatrix.ColumnDimension);
 
             for (UInt32 j = 0; j < leftMatrix.ColumnDimension; j++)
@@ -56,15 +57,15 @@ namespace Math.LinearAlgebra
         /// <param name="matrix">The matrix.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static T SumElements<T, TStruct>(this Matrix<T, TStruct> matrix)
+        public static T SumElements<T, TStruct>(this IMatrix<T, TStruct> matrix)
             where TStruct : IGroup<T>, new()
         {   
-            var calculator = matrix.BaseStructure;
-            var result = calculator.Zero;
+            var baseStructure = new TStruct();
+            var result = baseStructure.Zero;
 
             for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
             {
-                result = calculator.Addition(result, matrix[j].SumElements());
+                result = baseStructure.Addition(result, matrix[j].SumElements());
             }
 
             return result;

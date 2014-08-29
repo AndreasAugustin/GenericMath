@@ -66,19 +66,9 @@ namespace Math.LinearAlgebra
         /// Gets the coefficients.
         /// </summary>
         /// <value>The coefficients.</value>
-        internal IVector<T, TStruct> Coefficients
+        public IVector<T, TStruct> Coefficients
         {
             get { return _coefficients; }
-        }
-
-        /// <summary>
-        /// Gets the base structure.
-        /// </summary>
-        /// <value>The base structure.</value>
-        internal TStruct BaseStructure
-        {
-            get; 
-            private set;
         }
 
         #endregion
@@ -101,6 +91,38 @@ namespace Math.LinearAlgebra
             {
                 _coefficients[index] = value;
             }
+        }
+
+        #endregion
+
+        #region IPOLYNOMIAL implementation
+
+        /// <summary>
+        /// Returns a new the instance with same degree like the calling instance.
+        /// </summary>
+        /// <returns>The instance with same dimension.</returns>
+        public IPolynomial<T, TStruct> ReturnNewInstanceWithSameDegree()
+        {
+            return new Polynomial<T, TStruct>(this.Degree);
+        }
+
+        /// <summary>
+        /// Returns a new the instance with other coefficients like the calling instance.
+        /// </summary>
+        /// <returns>The instance with other coefficients.</returns>
+        /// <param name="coefficients">The coefficients of the new polynomial</param>
+        public IPolynomial<T, TStruct> ReturnNewInstanceWithOtherCoefficients(IVector<T, TStruct> coefficients)
+        {
+            return new Polynomial<T, TStruct>(coefficients);
+        }
+
+        /// <summary>
+        /// Returns a new the instance with same degree like the calling instance.
+        /// </summary>
+        /// <returns>The instance with same dimension.</returns>
+        public IPolynomial<T, TStruct> ReturnNewInstanceWithSameCoefficients()
+        {
+            return new Polynomial<T, TStruct>(this.Coefficients);
         }
 
         #endregion

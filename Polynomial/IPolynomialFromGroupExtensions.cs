@@ -17,7 +17,7 @@ namespace Math.LinearAlgebra
     /// <summary>
     /// Polynomial from group extensions.
     /// </summary>
-    public static class PolynomialFromGroupExtensions
+    public static class IPolynomialFromGroupExtensions
     {
         #region methods
 
@@ -28,14 +28,15 @@ namespace Math.LinearAlgebra
         /// <param name="polynomial">The given polynomial.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The second type parameter.</typeparam>
-        public static Polynomial<T, TStruct> InversPolynomial<T, TStruct>(this Polynomial<T, TStruct> polynomial)
+        public static IPolynomial<T, TStruct> InversePolynomial<T, TStruct>(this IPolynomial<T, TStruct> polynomial)
             where TStruct : IGroup<T>, new()
         {
-            var poly = new Polynomial<T, TStruct>(polynomial.Degree);
+            var poly = polynomial.ReturnNewInstanceWithSameDegree();
+            var baseStructure = new TStruct();
 
             for (UInt32 i = 0; i <= polynomial.Degree; i++)
             {
-                poly[i] = polynomial.BaseStructure.Inverse(polynomial[i]);
+                poly[i] = baseStructure.Inverse(polynomial[i]);
             }
 
             return poly;

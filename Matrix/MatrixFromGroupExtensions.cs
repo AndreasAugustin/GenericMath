@@ -28,16 +28,17 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The second type parameter.</typeparam>
         /// <returns>The inverse matrix.</returns>
-        public static Matrix<T, TStruct> Inverse<T, TStruct>(this Matrix<T, TStruct> matrix)
+        public static IMatrix<T, TStruct> Inverse<T, TStruct>(this IMatrix<T, TStruct> matrix)
             where TStruct : IGroup<T>, new()
         {
             var mat = new Matrix<T, TStruct>(matrix.RowDimension, matrix.ColumnDimension);
+            var baseStructure = new TStruct();
 
             for (UInt32 i = 0; i < matrix.RowDimension; i++)
             {
                 for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
                 {
-                    mat[i, j] = matrix.BaseStructure.Inverse(matrix[i, j]);
+                    mat[i, j] = baseStructure.Inverse(matrix[i, j]);
                 }
             }
 

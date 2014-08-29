@@ -22,6 +22,8 @@ namespace Math.LinearAlgebra
     public interface IVector<T, TStruct> : IEquatable<IVector<T, TStruct>>
         where TStruct : IStructure<T>, new()
     {
+        #region properties
+
         /// <summary>
         /// Gets the dimension.
         /// </summary>
@@ -34,5 +36,17 @@ namespace Math.LinearAlgebra
         /// <param name="index">The index.</param>
         /// <returns>The value at index.</returns>
         T this[UInt32 index] { get; set; }
+
+        #endregion
+
+        #region methods
+
+        /// <summary>
+        /// Returns a new the instance with same dimension like the calling instance.
+        /// </summary>
+        /// <returns>The instance with same dimension.</returns>
+        IVector<T, TStruct> ReturnNewInstanceWithSameDimension();
+
+        #endregion
     }
 }
