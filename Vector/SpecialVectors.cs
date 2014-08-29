@@ -29,14 +29,15 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>The zerovector with dimension.</returns>
-        public Vector<T, TStruct> ZeroVector<T, TStruct>(UInt32 dimension)
+        public IVector<T, TStruct> ZeroVector<T, TStruct>(UInt32 dimension)
             where TStruct : IMonoid<T>, new()
         {
             var vec = new Vector<T, TStruct>(dimension);
+            var baseStructure = new TStruct();
 
             for (UInt32 i = 0; i < vec.Dimension; i++)
             {
-                vec[i] = vec.BaseStructure.Zero;
+                vec[i] = baseStructure.Zero;
             }
 
             return vec;
@@ -50,14 +51,15 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>The zerovector with dimension.</returns>
-        public Vector<T, TStruct> OneVector<T, TStruct>(UInt32 dimension)
+        public IVector<T, TStruct> OneVector<T, TStruct>(UInt32 dimension)
             where TStruct : IRing<T>, new()
         {
             var vec = new Vector<T, TStruct>(dimension);
+            var baseStructure = new TStruct();
 
             for (UInt32 i = 0; i < vec.Dimension; i++)
             {
-                vec[i] = vec.BaseStructure.One;
+                vec[i] = baseStructure.One;
             }
 
             return vec;

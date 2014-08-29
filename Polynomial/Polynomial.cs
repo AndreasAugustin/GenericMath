@@ -25,7 +25,7 @@ namespace Math.LinearAlgebra
     {
         #region fields
 
-        readonly Vector<T, TStruct> _coefficients;
+        readonly IVector<T, TStruct> _coefficients;
 
         #endregion
 
@@ -44,7 +44,7 @@ namespace Math.LinearAlgebra
         /// Initialises a new instance of the <see cref="Polynomial{T, TStruct}"/> class.
         /// </summary>
         /// <param name="coefficients">The coefficients.</param>
-        public Polynomial(Vector<T, TStruct> coefficients)
+        public Polynomial(IVector<T, TStruct> coefficients)
         {
             _coefficients = coefficients.Copy();
         }
@@ -66,7 +66,7 @@ namespace Math.LinearAlgebra
         /// Gets the coefficients.
         /// </summary>
         /// <value>The coefficients.</value>
-        internal Vector<T, TStruct> Coefficients
+        internal IVector<T, TStruct> Coefficients
         {
             get { return _coefficients; }
         }

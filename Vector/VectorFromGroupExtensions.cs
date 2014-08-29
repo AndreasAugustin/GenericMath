@@ -28,14 +28,15 @@ namespace Math.LinearAlgebra
         /// <param name="vector">The vector.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static Vector<T, TStruct> InverseVector<T, TStruct>(this Vector<T, TStruct> vector)
+        public static IVector<T, TStruct> InverseVector<T, TStruct>(this IVector<T, TStruct> vector)
             where TStruct : IGroup<T>, new()
         {
             var vec = new Vector<T, TStruct>(vector.Dimension);
+            var baseStruct = new TStruct();
 
             for (UInt32 i = 0; i < vec.Dimension; i++)
             {
-                vec[i] = vector.BaseStructure.Inverse(vector[i]);
+                vec[i] = baseStruct.Inverse(vector[i]);
             }
 
             return vec;

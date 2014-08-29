@@ -28,10 +28,13 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>A copy of the vector.</returns>
-        public static Vector<T, TStruct> Copy<T, TStruct>(this Vector<T, TStruct> vector)
+        public static IVector<T, TStruct> Copy<T, TStruct>(this IVector<T, TStruct> vector)
             where TStruct : IStructure<T>, new()
         {
+            // TODO it should be possible to create a copy of the given IVector.
+            // At the moment there is only a copy for the vector structure given in this project.
             var vec = new Vector<T, TStruct>(vector.Dimension);
+
             for (UInt32 i = 0; i < vector.Dimension; i++)
             {
                 vec[i] = vector[i];
@@ -47,8 +50,9 @@ namespace Math.LinearAlgebra
         /// <param name="vector">The sorted vector is a new vector, not a reference to the argument.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static Vector<T, TStruct> InsertionSort<T, TStruct>(this Vector<T, TStruct> vector)
-            where T : IComparable where TStruct : IStructure<T>, new()
+        public static IVector<T, TStruct> InsertionSort<T, TStruct>(this IVector<T, TStruct> vector)
+            where T : IComparable
+            where TStruct : IStructure<T>, new()
         {
             var vec = vector.Copy();
             if (vector.Dimension < 2)
@@ -82,7 +86,7 @@ namespace Math.LinearAlgebra
         /// <param name="vector">The vector.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static Vector<T, TStruct> BubbleSort<T, TStruct>(this Vector<T, TStruct> vector) 
+        public static IVector<T, TStruct> BubbleSort<T, TStruct>(this Vector<T, TStruct> vector) 
             where T : IComparable where TStruct : IStructure<T>, new()
         {
             var vec = vector.Copy();

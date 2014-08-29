@@ -30,13 +30,14 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>The multiplication vector1 * vector2.</returns>
-        public static Vector<T, TStruct> Multiply<T, TStruct>(this Vector<T, TStruct> vector1, Vector<T, TStruct> vector2)
+        public static IVector<T, TStruct> Multiply<T, TStruct>(this IVector<T, TStruct> vector1, IVector<T, TStruct> vector2)
             where TStruct : IRing<T>, new()
         {
             if (vector1.Dimension != vector2.Dimension)
                 throw new IndexOutOfRangeException("The vector dimensions need to agree");
 
-            var ring = vector1.BaseStructure;
+            var ring = new TStruct();
+
             var result = new Vector<T, TStruct>(vector1.Dimension);
 
             for (UInt32 i = 0; i < vector1.Dimension; i++)
@@ -56,7 +57,7 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>The vector^power.</returns>
-        public static Vector<T, TStruct> Pow<T, TStruct>(this Vector<T, TStruct> vector, UInt32 power)
+        public static IVector<T, TStruct> Pow<T, TStruct>(this IVector<T, TStruct> vector, UInt32 power)
             where TStruct : IRing<T>, new()
         {
             var result = new SpecialVectors().OneVector<T, TStruct>(vector.Dimension);
@@ -77,10 +78,11 @@ namespace Math.LinearAlgebra
         /// <param name="vector2">The right vector.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static T ScalarProduct<T, TStruct>(this Vector<T, TStruct> vector1, Vector<T, TStruct> vector2)
+        public static T ScalarProduct<T, TStruct>(this IVector<T, TStruct> vector1, IVector<T, TStruct> vector2)
             where TStruct : IRing<T>, new()
         {
-            var ring = vector1.BaseStructure;
+            var ring = new TStruct();
+
             var result = ring.Zero;
 
             for (UInt32 i = 0; i < vector1.Dimension; i++)
@@ -99,10 +101,10 @@ namespace Math.LinearAlgebra
         /// <param name="scalar">The scalar.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static Vector<T, TStruct> ScalarMultiply<T, TStruct>(this Vector<T, TStruct> vector, T scalar)
+        public static IVector<T, TStruct> ScalarMultiply<T, TStruct>(this IVector<T, TStruct> vector, T scalar)
             where TStruct : IRing<T>, new()
         {
-            var ring = vector.BaseStructure;
+            var ring = new TStruct();
             var vec = new Vector<T, TStruct>(vector.Dimension);
 
             for (UInt32 i = 0; i < vector.Dimension; i++)

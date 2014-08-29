@@ -154,7 +154,7 @@ namespace Math.LinearAlgebra
             // transform
             var inverseDouble = 1 / matrix[column, column];
 
-            // HACK this needs to be abstracted (for float, Int32,...) should be possible with multiplzing with the inverse
+            // HACK this needs to be abstracted (for float, Int32,...) should be possible with multiplying with the inverse
             for (UInt32 i = 0; i < n; i++)
             {
                 matrix[i, column] = calculator.Multiplication(inverseDouble, matrix[i, column]);

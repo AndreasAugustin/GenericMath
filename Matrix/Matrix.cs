@@ -28,7 +28,7 @@ namespace Math.LinearAlgebra
         #region FIELDS
 
         // the vector is a column vector
-        readonly List<Vector<T, TStruct>> _entries;
+        readonly List<IVector<T, TStruct>> _entries;
 
         #endregion
 
@@ -41,7 +41,7 @@ namespace Math.LinearAlgebra
         /// <param name="dimension">The Dimension of the matrix.</param>
         public Matrix(UInt32 dimension)
         {
-            _entries = new List<Vector<T, TStruct>>();
+            _entries = new List<IVector<T, TStruct>>();
             for (var i = 0; i < dimension; i++)
             {
                 _entries.Add(new Vector<T, TStruct>(dimension));
@@ -60,7 +60,7 @@ namespace Math.LinearAlgebra
         /// <param name="columnDimension">Column dimension.</param>
         public Matrix(UInt32 rowDimension, UInt32 columnDimension)
         {
-            _entries = new List<Vector<T, TStruct>>();
+            _entries = new List<IVector<T, TStruct>>();
             for (var i = 0; i < columnDimension; i++)
             {
                 _entries.Add(new Vector<T, TStruct>(rowDimension));
@@ -133,7 +133,7 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <param name="column">The column.</param>
         /// <returns>The vector <see cref="Vector{T, TStruct}"/> at column.</returns>
-        public Vector<T, TStruct> this[UInt32 column]
+        public IVector<T, TStruct> this[UInt32 column]
         {
             get
             { 

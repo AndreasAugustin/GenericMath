@@ -39,13 +39,13 @@ namespace Math.LinearAlgebra
         /// <summary>
         /// Initialises a new instance of the <see cref="Vector{T,TStruct}"/> class.
         /// </summary>
-        /// <param name="dimension">the dimension.</param>
+        /// <param name="dimension">The dimension.</param>
         public Vector(UInt32 dimension)
         {
-            _entries = new List<T>(new T[dimension]);
-            this.Dimension = dimension;
+            CheckState();
 
-            this.BaseStructure = new TStruct();
+            this._entries = new List<T>(new T[dimension]);
+            this.Dimension = dimension;
         }
 
         #endregion
@@ -62,22 +62,12 @@ namespace Math.LinearAlgebra
         /// Gets the entries.
         /// </summary>
         /// <value>The entries.</value>
-        internal List<T> Entries
+        List<T> Entries
         {
             get
-            { 
+            {
                 return _entries;
             }
-        }
-
-        /// <summary>
-        /// Gets the base structure.
-        /// </summary>
-        /// <value>The base structure.</value>
-        internal TStruct BaseStructure
-        {
-            get;
-            private set;
         }
 
         #endregion
@@ -89,10 +79,14 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <param name="index">The index.</param>
         /// <returns>The value at index.</returns>
+        /// <exception cref="VectorException">Thrown when the 
+        /// index is not within the dimension of the vector.</exception>
         public T this[UInt32 index]
         {
             get
             { 
+                CheckState();
+
                 CheckOutOfRange(index);
 
                 return _entries[(Int32)index]; 
@@ -100,6 +94,8 @@ namespace Math.LinearAlgebra
 
             set
             {
+                CheckState();
+
                 CheckOutOfRange(index);
 
                 _entries[(Int32)index] = value; 
@@ -143,9 +139,35 @@ namespace Math.LinearAlgebra
             if (Object.ReferenceEquals(this, other))
                 return true;
 
-            for (var i = 0; i < Entries.Count; i++)
+            for (UInt32 i = 0; i < Entries.Count; i++)
             {
-                if (!Entries[i].Equals(other.Entries[i]))
+                if (!this[i].Equals(other[i]))
+                    return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Determines whether the specified <see cref="Vector{T,TStruct}"/> is equal to the current <see cref="IVector{T,TStruct}"/>.
+        /// </summary>
+        /// <param name="other">The <see cref="Vector{T,TStruct}"/> to compare with the current <see cref="IVector{T,TStruct}"/>.</param>
+        /// <returns><c>true</c> if the specified <see cref="Vector{T,TStruct}"/> is equal to the current
+        /// <see cref="IVector{T,TStruct}"/>otherwise, <c>false</c>.</returns>
+        public Boolean Equals(IVector<T, TStruct> other)
+        {
+            if (other == null)
+                return false;
+
+            if (Object.ReferenceEquals(this, other))
+                return true;
+
+            if (this.GetType() != other.GetType())
+                return false;
+
+            for (UInt32 i = 0; i < Entries.Count; i++)
+            {
+                if (!this[i].Equals(other[i]))
                     return false;
             }
 
@@ -179,7 +201,7 @@ namespace Math.LinearAlgebra
         void CheckState()
         {
             var methodName = new StackTrace().GetFrame(1).GetMethod().Name;
-
+            Trace.Write("Hi");
             Console.WriteLine("--- Entering check state for vector");
             Console.WriteLine(String.Format("The constraint type is {0}", typeof(T)));
             Console.Write("\t called by");

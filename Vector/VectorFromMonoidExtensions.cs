@@ -29,15 +29,16 @@ namespace Math.LinearAlgebra
         /// <param name="vector">The vector.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static T SumElements<T, TStruct>(this Vector<T, TStruct> vector)
+        public static T SumElements<T, TStruct>(this IVector<T, TStruct> vector)
             where TStruct : IMonoid<T>, new()
         {
-            var group = vector.BaseStructure;
+            var group = new TStruct();
 
             var result = group.Zero;
-            foreach (var item in vector.Entries)
+
+            for (UInt32 i = 0; i < vector.Dimension; i++)
             { // sum over all entries
-                result = group.Addition(result, item);
+                result = group.Addition(result, vector[i]);
             }
 
             return result;
@@ -51,10 +52,11 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>vector1 + vector2.</returns>
-        public static Vector<T, TStruct> Add<T, TStruct>(this Vector<T, TStruct> vector1, Vector<T, TStruct> vector2)
+        public static IVector<T, TStruct> Add<T, TStruct>(this IVector<T, TStruct> vector1, IVector<T, TStruct> vector2)
             where TStruct : IMonoid<T>, new()
         {
-            var group = vector1.BaseStructure;
+            var group = new TStruct();
+
             if (vector1.Dimension != vector2.Dimension)
                 throw new IndexOutOfRangeException("The dimension of the two vectors do not agree");
 
@@ -80,11 +82,11 @@ namespace Math.LinearAlgebra
         /// The first values are the values of the original vector. The other values are the zero elements of the group
         /// associated with T.
         /// </returns>
-        public static Vector<T, TStruct> Injection<T, TStruct>(this Vector<T, TStruct> vector, UInt32 additionalDimensions)
+        public static IVector<T, TStruct> Injection<T, TStruct>(this IVector<T, TStruct> vector, UInt32 additionalDimensions)
             where TStruct : IMonoid<T>, new()
         {
             var newDimension = vector.Dimension + additionalDimensions;
-            var group = vector.BaseStructure;
+            var group = new TStruct();
 
             var vec = new SpecialVectors().ZeroVector<T, TStruct>(vector.Dimension + additionalDimensions);
 

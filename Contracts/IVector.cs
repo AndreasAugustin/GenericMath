@@ -19,7 +19,7 @@ namespace Math.LinearAlgebra
     /// </summary>
     /// <typeparam name="T">The underlying set.</typeparam>
     /// <typeparam name="TStruct">The structure.</typeparam>
-    public interface IVector<T, TStruct>
+    public interface IVector<T, TStruct> : IEquatable<IVector<T, TStruct>>
         where TStruct : IStructure<T>, new()
     {
         /// <summary>

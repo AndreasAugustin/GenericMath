@@ -53,7 +53,7 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <param name="column">The column.</param>
         /// <returns>The vector <see cref="IVector{T, TStruct}"/> at column.</returns>
-        Vector<T, TStruct> this[UInt32 column] { get; }
+        IVector<T, TStruct> this[UInt32 column] { get; }
 
         #endregion
     }
