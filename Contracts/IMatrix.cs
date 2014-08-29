@@ -36,10 +36,6 @@ namespace Math.LinearAlgebra
         /// <value>The column dimension.</value>
         UInt32 ColumnDimension { get; }
 
-        #endregion
-
-        #region methods
-
         /// <summary>
         /// Gets or sets the <see cref="IMatrix{T, TStruct}"/> with the specified row column.
         /// </summary>
@@ -53,7 +49,31 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <param name="column">The column.</param>
         /// <returns>The vector <see cref="IVector{T, TStruct}"/> at column.</returns>
-        IVector<T, TStruct> this[UInt32 column] { get; }
+        IVector<T, TStruct> this[UInt32 column] { get; set; }
+
+        #endregion
+
+        #region methods
+
+        /// <summary>
+        /// Returns the new instance with twisted dimensions.
+        /// </summary>
+        /// <returns>The new instance with twisted dimensions.</returns>
+        IMatrix<T, TStruct> ReturnNewInstanceWithTwistedDimensions();
+
+        /// <summary>
+        /// Returns the new instance with same dimensions.
+        /// </summary>
+        /// <returns>The new instance with same dimensions.</returns>
+        IMatrix<T, TStruct> ReturnNewInstanceWithSameDimensions();
+
+        /// <summary>
+        /// Returns the new instance.
+        /// </summary>
+        /// <returns>The new instance.</returns>
+        /// <param name="rowDimension">Row dimension.</param>
+        /// <param name="columnDimension">Column dimension.</param>
+        IMatrix<T, TStruct> ReturnNewInstance(UInt32 rowDimension, UInt32 columnDimension);
 
         #endregion
     }

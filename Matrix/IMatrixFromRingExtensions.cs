@@ -17,7 +17,7 @@ namespace Math.LinearAlgebra
     /// <summary>
     /// Extension methods for the <see cref="Matrix{T, TStruct}"/> class.
     /// </summary>
-    public static class MatrixFromRingExtensions
+    public static class IMatrixFromRingExtensions
     {
         #region methods
 
@@ -53,8 +53,7 @@ namespace Math.LinearAlgebra
         public static IMatrix<T, TStruct> ScalarMultiply<T, TStruct>(this IMatrix<T, TStruct> matrix, T scalar)
             where TStruct : IRing<T>, new()
         {
-            // HACK IMatrix
-            var result = new Matrix<T, TStruct>(matrix.RowDimension, matrix.ColumnDimension);
+            var result = matrix.ReturnNewInstanceWithSameDimensions();
 
             for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
             {
@@ -79,7 +78,8 @@ namespace Math.LinearAlgebra
             if (matrix1.ColumnDimension != matrix2.RowDimension)
                 throw new IndexOutOfRangeException("The ColumnDimension of matrix1 needs to be the same like the RowDimension of matrix2");
 
-            var result = new Matrix<T, TStruct>(matrix1.RowDimension, matrix2.ColumnDimension);
+            var result = matrix1.ReturnNewInstance(matrix1.RowDimension, matrix2.ColumnDimension);
+
             var baseStructure = new TStruct();
 
             for (UInt32 i = 0; i < result.RowDimension; i++)
@@ -112,7 +112,7 @@ namespace Math.LinearAlgebra
                 throw new IndexOutOfRangeException("The ColumnDimension of the matrix needs to equal the row dimension of the vector");
 
             var baseStructure = new TStruct();
-            var vect = new Vector<T, TStruct>(matrix.RowDimension);
+            var vect = vector.ReturnNewInstance(matrix.RowDimension);
 
             for (UInt32 i = 0; i < matrix.RowDimension; i++)
             {

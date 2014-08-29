@@ -18,7 +18,7 @@ namespace Math.LinearAlgebra
     /// Extensions methods for the <see cref="Matrix{T, TStruct}"/> class.
     /// TStruct needs to be of type <see cref="IMonoid{T}"/>
     /// </summary>
-    public static class MatrixFromMonoidExtensions
+    public static class IMatrixFromMonoidExtensions
     {
         #region methods
 
@@ -38,9 +38,8 @@ namespace Math.LinearAlgebra
 
             if (leftMatrix.RowDimension != rightMatrix.RowDimension)
                 throw new NotSupportedException("The row dimension of the matrizes need to agree");
-
-            // HACK IMatrix
-            var result = new Matrix<T, TStruct>(leftMatrix.RowDimension, leftMatrix.ColumnDimension);
+                
+            var result = leftMatrix.ReturnNewInstanceWithSameDimensions();
 
             for (UInt32 j = 0; j < leftMatrix.ColumnDimension; j++)
             {

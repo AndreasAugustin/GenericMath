@@ -17,7 +17,7 @@ namespace Math.LinearAlgebra
     /// <summary>
     /// Extension methods for the matrix class. <see cref="Matrix{T, TStruct}"/> class.
     /// </summary>
-    public static class MatrixExtensions
+    public static class IMatrixExtensions
     {
         #region METHODS
 
@@ -46,8 +46,8 @@ namespace Math.LinearAlgebra
         public static IVector<T, TStruct> GetRowVector<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 rowIndex)
             where TStruct : IStructure<T>, new()
         {
-            // HACK Ivector
-            var vec = new Vector<T, TStruct>(matrix.RowDimension);
+            var vec = matrix[rowIndex].ReturnNewInstanceWithSameDimension();
+
             for (UInt32 i = 0; i < matrix.RowDimension; i++)
             {
                 vec[i] = matrix[i][rowIndex];
@@ -66,8 +66,8 @@ namespace Math.LinearAlgebra
         public static IMatrix<T, TStruct> Transpose<T, TStruct>(this IMatrix<T, TStruct> matrix)
             where TStruct : IStructure<T>, new()
         {
-            // HACK IMatrix
-            var result = new Matrix<T, TStruct>(matrix.ColumnDimension, matrix.RowDimension); // n x m Matrix -> m x n - Matrix
+            var result = matrix.ReturnNewInstanceWithTwistedDimensions(); // n x m Matrix -> m x n - Matrix
+
             for (UInt32 i = 0; i < matrix.RowDimension; i++)
             {
                 for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
@@ -89,8 +89,8 @@ namespace Math.LinearAlgebra
         public static IMatrix<T, TStruct> Copy<T, TStruct>(this IMatrix<T, TStruct> matrix)
             where TStruct : IStructure<T>, new()
         {
-            // HACK IMatrix
-            var mat = new Matrix<T, TStruct>(matrix.RowDimension, matrix.ColumnDimension);
+            var mat = matrix.ReturnNewInstanceWithSameDimensions();
+
             for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
             {
                 mat[j] = matrix[j].Copy();

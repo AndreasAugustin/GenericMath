@@ -154,6 +154,39 @@ namespace Math.LinearAlgebra
 
         #endregion
 
+        #region IMATRIX implementations
+
+        /// <summary>
+        /// Returns the new instance with same dimensions.
+        /// </summary>
+        /// <returns>The new instance with same dimensions.</returns>
+        public IMatrix<T, TStruct> ReturnNewInstanceWithSameDimensions()
+        {
+            return ReturnNewInstance(this.RowDimension, this.ColumnDimension);
+        }
+
+        /// <summary>
+        /// Returns the new instance with twisted dimensions.
+        /// </summary>
+        /// <returns>The new instance with twisted dimensions.</returns>
+        public IMatrix<T, TStruct> ReturnNewInstanceWithTwistedDimensions()
+        {
+            return ReturnNewInstance(this.ColumnDimension, this.RowDimension);
+        }
+
+        /// <summary>
+        /// Returns the new instance.
+        /// </summary>
+        /// <returns>The new instance.</returns>
+        /// <param name="rowDimension">Row dimension.</param>
+        /// <param name="columnDimension">Column dimension.</param>
+        public IMatrix<T, TStruct> ReturnNewInstance(UInt32 rowDimension, UInt32 columnDimension)
+        {
+            return new Matrix<T, TStruct>(rowDimension, columnDimension);
+        }
+
+        #endregion
+
         #region OVERRIDES OF OBJECT
 
         /// <summary>

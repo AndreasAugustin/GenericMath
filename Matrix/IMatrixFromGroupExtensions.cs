@@ -17,7 +17,7 @@ namespace Math.LinearAlgebra
     /// <summary>
     /// Extension methods for the <see cref="Matrix{T, TStruct}"/> class.
     /// </summary>
-    public static class MatrixFromGroupExtensions
+    public static class IMatrixFromGroupExtensions
     {
         #region methods
 
@@ -31,7 +31,8 @@ namespace Math.LinearAlgebra
         public static IMatrix<T, TStruct> Inverse<T, TStruct>(this IMatrix<T, TStruct> matrix)
             where TStruct : IGroup<T>, new()
         {
-            var mat = new Matrix<T, TStruct>(matrix.RowDimension, matrix.ColumnDimension);
+            var mat = matrix.ReturnNewInstanceWithSameDimensions();
+
             var baseStructure = new TStruct();
 
             for (UInt32 i = 0; i < matrix.RowDimension; i++)

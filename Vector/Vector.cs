@@ -131,7 +131,17 @@ namespace Math.LinearAlgebra
         /// <returns>The new instance with same dimension.</returns>
         public IVector<T, TStruct> ReturnNewInstanceWithSameDimension()
         {
-            return new Vector<T, TStruct>(this.Dimension);
+            return ReturnNewInstance(this.Dimension);
+        }
+
+        /// <summary>
+        /// Returns the new instance.
+        /// </summary>
+        /// <returns>The new instance.</returns>
+        /// <param name="rowDimension">Row dimension.</param>
+        public IVector<T, TStruct> ReturnNewInstance(UInt32 rowDimension)
+        {
+            return new Vector<T, TStruct>(rowDimension);
         }
 
         #endregion

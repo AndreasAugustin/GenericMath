@@ -47,6 +47,13 @@ namespace Math.LinearAlgebra
         /// <returns>The instance with same dimension.</returns>
         IVector<T, TStruct> ReturnNewInstanceWithSameDimension();
 
+        /// <summary>
+        /// Returns the new instance.
+        /// </summary>
+        /// <returns>The new instance.</returns>
+        /// <param name="rowDimension">Row dimension.</param>
+        IVector<T, TStruct> ReturnNewInstance(UInt32 rowDimension);
+
         #endregion
     }
 }
