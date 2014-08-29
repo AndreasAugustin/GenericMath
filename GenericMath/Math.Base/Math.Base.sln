@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Base", "Math.Base\Math.Base.csproj", "{32112762-A4EA-4A22-8F40-235A366445A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{79B764B0-3606-4774-9160-0C8233BF640B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Base.Tests", "Math.Base.Tests\Math.Base.Tests.csproj", "{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32112762-A4EA-4A22-8F40-235A366445A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32112762-A4EA-4A22-8F40-235A366445A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32112762-A4EA-4A22-8F40-235A366445A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32112762-A4EA-4A22-8F40-235A366445A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3} = {79B764B0-3606-4774-9160-0C8233BF640B}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Math.Base\Math.Base.csproj
+	EndGlobalSection
+EndGlobal
