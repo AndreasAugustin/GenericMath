@@ -3,17 +3,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D39A4902-17A5-4FD6-9BEC-67717CB4C9F9}</ProjectGuid>
+    <ProjectGuid>{67EEF33C-C903-4BC7-854C-B9058B32FE58}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>GenericMath</RootNamespace>
-    <AssemblyName>GenericMath</AssemblyName>
+    <RootNamespace>GenericMath.Tests</RootNamespace>
+    <AssemblyName>GenericMath.Tests</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
+    <DefineConstants>DEBUG; TRACE;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -29,9 +29,11 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ConsoleLogger.cs" />
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\GenericMath\GenericMath.csproj">
+      <Project>{D39A4902-17A5-4FD6-9BEC-67717CB4C9F9}</Project>
+      <Name>GenericMath</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

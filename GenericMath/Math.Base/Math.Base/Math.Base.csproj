@@ -39,8 +39,6 @@
     <Compile Include="Ring\DoubleRing.cs" />
     <Compile Include="Ring\ComplexRing.cs" />
     <Compile Include="Ring\Int32Ring.cs" />
-    <Compile Include="Group\GroupFactory.cs" />
-    <Compile Include="Ring\RingFactory.cs" />
     <Compile Include="Contracts\IRing.cs" />
     <Compile Include="Contracts\IGroup.cs" />
     <Compile Include="Extensions\RingExtensions.cs" />
@@ -48,7 +46,6 @@
     <Compile Include="EuclidianRing\DoubleEuclidianRing.cs" />
     <Compile Include="EuclidianRing\ComplexEuclidianRing.cs" />
     <Compile Include="EuclidianRing\Int32EuclidianRing.cs" />
-    <Compile Include="EuclidianRing\EuclidianRingFactory.cs" />
     <Compile Include="Contracts\IStructure.cs" />
     <Compile Include="Contracts\IMonoid.cs" />
     <Compile Include="Monoid\UInt32Monoid.cs" />

@@ -55,5 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Vector\VectorTest.cs" />
+    <Compile Include="Vector\VectorExtensionsTest.cs" />
   </ItemGroup>
 </Project>

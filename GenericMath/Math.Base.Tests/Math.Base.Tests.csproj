@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Group\DoubleGroupTest.cs" />
-    <Compile Include="Group\GroupFactoryTest.cs" />
     <Compile Include="Group\Int32GroupTest.cs" />
     <Compile Include="Group\ComplexGroupTest.cs" />
     <Compile Include="Ring\TemplateRingTest.cs" />
@@ -54,7 +53,6 @@
     <Compile Include="EuclidianRing\Int32EuclidianRingTest.cs" />
     <Compile Include="EuclidianRing\DoubleEuclidianRingTest.cs" />
     <Compile Include="EuclidianRing\ComplexEuclidianRingTest.cs" />
-    <Compile Include="Ring\RingFactoryTest.cs" />
     <Compile Include="Extensions\RingExtensionsTest.cs" />
     <Compile Include="Extensions\EuclidianRingExtensionsTest.cs" />
     <Compile Include="Monoid\UInt32MonoidTest.cs" />
