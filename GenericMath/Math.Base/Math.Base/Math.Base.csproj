@@ -52,6 +52,8 @@
     <Compile Include="Monoid\Int32Monoid.cs" />
     <Compile Include="Monoid\DoubleMonoid.cs" />
     <Compile Include="Monoid\ComplexMonoid.cs" />
+    <Compile Include="Contracts\IField.cs" />
+    <Compile Include="Field\DoubleField.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -61,5 +63,6 @@
     <Folder Include="Exceptions\" />
     <Folder Include="Extensions\" />
     <Folder Include="Monoid\" />
+    <Folder Include="Field\" />
   </ItemGroup>
 </Project>
