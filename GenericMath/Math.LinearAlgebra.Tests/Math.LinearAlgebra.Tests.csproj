@@ -54,7 +54,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Vector\VectorTest.cs" />
-    <Compile Include="Vector\VectorExtensionsTest.cs" />
+    <Compile Include="Vector\DirectSumTest.cs" />
+    <Compile Include="Vector\IDirectSumExtensionsTest.cs" />
+    <Compile Include="Vector\IDirectSumFromMonoidExtensions.cs" />
   </ItemGroup>
 </Project>
