@@ -21,15 +21,15 @@ namespace Math.LinearAlgebra
     {
         #region fields
 
-        SpecialVectors _specialVectors;
+        SpecialDirectSums _specialVectors;
 
         #endregion
 
         #region properties
 
-        SpecialVectors SpecialVectors
+        SpecialDirectSums SpecialVectors
         {
-            get { return _specialVectors ?? (_specialVectors = new SpecialVectors()); }
+            get { return _specialVectors ?? (_specialVectors = new SpecialDirectSums()); }
         }
 
         #endregion
