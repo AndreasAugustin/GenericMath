@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="Vector.cs" company="${Company}">
+// <copyright file="DirectSum.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -22,7 +22,7 @@ namespace Math.LinearAlgebra
     /// </summary>
     /// <typeparam name="T">The first type parameter.</typeparam>
     /// <typeparam name="TStruct">The underlying structure.</typeparam>
-    public class Vector<T, TStruct> : IEquatable<Vector<T, TStruct>>, IVector<T, TStruct>
+    public class DirectSum<T, TStruct> : IEquatable<DirectSum<T, TStruct>>, IDirectSum<T, TStruct>
         where TStruct : IStructure<T>, new()
     {
         #region fields
@@ -37,10 +37,10 @@ namespace Math.LinearAlgebra
         #region ctors
 
         /// <summary>
-        /// Initialises a new instance of the <see cref="Vector{T,TStruct}"/> class.
+        /// Initialises a new instance of the <see cref="DirectSum{T,TStruct}"/> class.
         /// </summary>
         /// <param name="dimension">The dimension.</param>
-        public Vector(UInt32 dimension)
+        public DirectSum(UInt32 dimension)
         {
             CheckState();
 
@@ -75,7 +75,7 @@ namespace Math.LinearAlgebra
         #region indexers
 
         /// <summary>
-        /// Gets or sets the <see cref="Vector{T, TStruct}"/> at the specified index.
+        /// Gets or sets the <see cref="DirectSum{T, TStruct}"/> at the specified index.
         /// </summary>
         /// <param name="index">The index.</param>
         /// <returns>The value at index.</returns>
@@ -107,9 +107,9 @@ namespace Math.LinearAlgebra
         #region overrides of object
 
         /// <summary>
-        /// Returns a <see cref="System.String"/> that represents the current <see cref="Vector{T, TStruct}"/>.
+        /// Returns a <see cref="System.String"/> that represents the current <see cref="DirectSum{T, TStruct}"/>.
         /// </summary>
-        /// <returns>A <see cref="System.String"/> that represents the current <see cref="Vector{T, TStruct}"/>.</returns>
+        /// <returns>A <see cref="System.String"/> that represents the current <see cref="DirectSum{T, TStruct}"/>.</returns>
         public override String ToString()
         {
             var str = new StringBuilder("Index and entries: \n");
@@ -129,7 +129,7 @@ namespace Math.LinearAlgebra
         /// Returns the new instance with same dimension.
         /// </summary>
         /// <returns>The new instance with same dimension.</returns>
-        public IVector<T, TStruct> ReturnNewInstanceWithSameDimension()
+        public IDirectSum<T, TStruct> ReturnNewInstanceWithSameDimension()
         {
             return ReturnNewInstance(this.Dimension);
         }
@@ -139,9 +139,9 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <returns>The new instance.</returns>
         /// <param name="rowDimension">Row dimension.</param>
-        public IVector<T, TStruct> ReturnNewInstance(UInt32 rowDimension)
+        public IDirectSum<T, TStruct> ReturnNewInstance(UInt32 rowDimension)
         {
-            return new Vector<T, TStruct>(rowDimension);
+            return new DirectSum<T, TStruct>(rowDimension);
         }
 
         #endregion
@@ -149,12 +149,12 @@ namespace Math.LinearAlgebra
         #region IEquatable implementation
 
         /// <summary>
-        /// Determines whether the specified <see cref="Vector{T,TStruct}"/> is equal to the current <see cref="Vector{T,TStruct}"/>.
+        /// Determines whether the specified <see cref="DirectSum{T,TStruct}"/> is equal to the current <see cref="DirectSum{T,TStruct}"/>.
         /// </summary>
-        /// <param name="other">The <see cref="Vector{T,TStruct}"/> to compare with the current <see cref="Vector{T,TStruct}"/>.</param>
-        /// <returns><c>true</c> if the specified <see cref="Vector{T,TStruct}"/> is equal to the current
-        /// <see cref="Vector{T,TStruct}"/>otherwise, <c>false</c>.</returns>
-        public Boolean Equals(Vector<T, TStruct> other)
+        /// <param name="other">The <see cref="DirectSum{T,TStruct}"/> to compare with the current <see cref="DirectSum{T,TStruct}"/>.</param>
+        /// <returns><c>true</c> if the specified <see cref="DirectSum{T,TStruct}"/> is equal to the current
+        /// <see cref="DirectSum{T,TStruct}"/>otherwise, <c>false</c>.</returns>
+        public Boolean Equals(DirectSum<T, TStruct> other)
         {
             if (other == null)
                 return false;
@@ -172,12 +172,12 @@ namespace Math.LinearAlgebra
         }
 
         /// <summary>
-        /// Determines whether the specified <see cref="Vector{T,TStruct}"/> is equal to the current <see cref="IVector{T,TStruct}"/>.
+        /// Determines whether the specified <see cref="DirectSum{T,TStruct}"/> is equal to the current <see cref="IDirectSum{T,TStruct}"/>.
         /// </summary>
-        /// <param name="other">The <see cref="Vector{T,TStruct}"/> to compare with the current <see cref="IVector{T,TStruct}"/>.</param>
-        /// <returns><c>true</c> if the specified <see cref="Vector{T,TStruct}"/> is equal to the current
-        /// <see cref="IVector{T,TStruct}"/>otherwise, <c>false</c>.</returns>
-        public Boolean Equals(IVector<T, TStruct> other)
+        /// <param name="other">The <see cref="DirectSum{T,TStruct}"/> to compare with the current <see cref="IDirectSum{T,TStruct}"/>.</param>
+        /// <returns><c>true</c> if the specified <see cref="DirectSum{T,TStruct}"/> is equal to the current
+        /// <see cref="IDirectSum{T,TStruct}"/>otherwise, <c>false</c>.</returns>
+        public Boolean Equals(IDirectSum<T, TStruct> other)
         {
             if (other == null)
                 return false;

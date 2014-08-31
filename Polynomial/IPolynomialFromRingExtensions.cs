@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="PolynomialFromRingExtensions.cs" company="${Company}">
+// <copyright file="IPolynomialFromRingExtensions.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>

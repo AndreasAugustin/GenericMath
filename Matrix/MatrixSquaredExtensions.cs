@@ -62,7 +62,7 @@ namespace Math.LinearAlgebra
             list.Add(matrix.Copy());
 
             // stores informations about the row permutations
-            var permutationVector = new Vector<UInt32, UInt32Monoid>(matrix.RowDimension); 
+            var permutationVector = new DirectSum<UInt32, UInt32Monoid>(matrix.RowDimension); 
             for (UInt32 j = 0; j < matrix.RowDimension; j++)
             {
                 permutationVector[j] = j;
@@ -93,7 +93,7 @@ namespace Math.LinearAlgebra
             list.Add(matrix.Copy());
 
             // stores informations about the row permutations
-            var permutationVector = new Vector<UInt32, UInt32Monoid>(matrix.RowDimension); 
+            var permutationVector = new DirectSum<UInt32, UInt32Monoid>(matrix.RowDimension); 
             for (UInt32 j = 0; j < matrix.RowDimension; j++)
             {
                 permutationVector[j] = j;
@@ -113,7 +113,7 @@ namespace Math.LinearAlgebra
 
         #region HELPER METHODS
 
-        static void GaussJordanAlgorithmStep(IMatrix<Double, DoubleEuclidianRing> matrix, UInt32 column, IVector<UInt32, UInt32Monoid> permutationVector)
+        static void GaussJordanAlgorithmStep(IMatrix<Double, DoubleEuclidianRing> matrix, UInt32 column, IDirectSum<UInt32, UInt32Monoid> permutationVector)
         {
             var calculator = new DoubleEuclidianRing();
             var n = matrix.RowDimension;
@@ -171,7 +171,7 @@ namespace Math.LinearAlgebra
             // permute columns
             for (UInt32 i = 0; i < n; i++)
             {
-                var tempVec = new Vector<Double, DoubleGroup>(n);
+                var tempVec = new DirectSum<Double, DoubleGroup>(n);
                 for (UInt32 k = 0; k < n; k++)
                 {
                     tempVec[permutationVector[k]] = matrix[i, k];

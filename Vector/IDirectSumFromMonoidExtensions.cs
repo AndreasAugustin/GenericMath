@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="VectorFromMonoidExtensions.cs" company="${Company}">
+// <copyright file="IDirectSumFromMonoidExtensions.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -15,10 +15,10 @@ namespace Math.LinearAlgebra
     using Math.Base;
 
     /// <summary>
-    /// Extensions methods for the <see cref="Vector{T, TStruct}"/> class.
+    /// Extensions methods for the <see cref="DirectSum{T, TStruct}"/> class.
     /// TStruct needs to be of type <see cref="IMonoid{T}"/>
     /// </summary>
-    public static class IVectorFromMonoidExtensions
+    public static class IDirectSumFromMonoidExtensions
     {
         #region methods
 
@@ -29,7 +29,7 @@ namespace Math.LinearAlgebra
         /// <param name="vector">The vector.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static T SumElements<T, TStruct>(this IVector<T, TStruct> vector)
+        public static T SumElements<T, TStruct>(this IDirectSum<T, TStruct> vector)
             where TStruct : IMonoid<T>, new()
         {
             var group = new TStruct();
@@ -52,7 +52,7 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>vector1 + vector2.</returns>
-        public static IVector<T, TStruct> Add<T, TStruct>(this IVector<T, TStruct> vector1, IVector<T, TStruct> vector2)
+        public static IDirectSum<T, TStruct> Add<T, TStruct>(this IDirectSum<T, TStruct> vector1, IDirectSum<T, TStruct> vector2)
             where TStruct : IMonoid<T>, new()
         {
             var group = new TStruct();
@@ -82,7 +82,7 @@ namespace Math.LinearAlgebra
         /// The first values are the values of the original vector. The other values are the zero elements of the group
         /// associated with T.
         /// </returns>
-        public static IVector<T, TStruct> Injection<T, TStruct>(this IVector<T, TStruct> vector, UInt32 additionalDimensions)
+        public static IDirectSum<T, TStruct> Injection<T, TStruct>(this IDirectSum<T, TStruct> vector, UInt32 additionalDimensions)
             where TStruct : IMonoid<T>, new()
         {
             var newDimension = vector.Dimension + additionalDimensions;

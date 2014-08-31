@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="MatrixFromMonoidExtensions.cs" company="${Company}">
+// <copyright file="IMatrixFromMonoidExtensions.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>

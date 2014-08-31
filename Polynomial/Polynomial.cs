@@ -25,7 +25,7 @@ namespace Math.LinearAlgebra
     {
         #region fields
 
-        readonly IVector<T, TStruct> _coefficients;
+        readonly IDirectSum<T, TStruct> _coefficients;
 
         #endregion
 
@@ -37,14 +37,14 @@ namespace Math.LinearAlgebra
         /// <param name="degree">The degree of the polynomial.</param>
         public Polynomial(UInt32 degree)
         {
-            _coefficients = new Vector<T, TStruct>(degree + 1);
+            _coefficients = new DirectSum<T, TStruct>(degree + 1);
         }
 
         /// <summary>
         /// Initialises a new instance of the <see cref="Polynomial{T, TStruct}"/> class.
         /// </summary>
         /// <param name="coefficients">The coefficients.</param>
-        public Polynomial(IVector<T, TStruct> coefficients)
+        public Polynomial(IDirectSum<T, TStruct> coefficients)
         {
             _coefficients = coefficients.Copy();
         }
@@ -66,7 +66,7 @@ namespace Math.LinearAlgebra
         /// Gets the coefficients.
         /// </summary>
         /// <value>The coefficients.</value>
-        public IVector<T, TStruct> Coefficients
+        public IDirectSum<T, TStruct> Coefficients
         {
             get { return _coefficients; }
         }
@@ -111,7 +111,7 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <returns>The instance with other coefficients.</returns>
         /// <param name="coefficients">The coefficients of the new polynomial</param>
-        public IPolynomial<T, TStruct> ReturnNewInstanceWithOtherCoefficients(IVector<T, TStruct> coefficients)
+        public IPolynomial<T, TStruct> ReturnNewInstanceWithOtherCoefficients(IDirectSum<T, TStruct> coefficients)
         {
             return new Polynomial<T, TStruct>(coefficients);
         }

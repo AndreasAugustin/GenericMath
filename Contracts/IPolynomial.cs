@@ -34,7 +34,7 @@ namespace Math.LinearAlgebra
         /// Gets the coefficients.
         /// </summary>
         /// <value>The coefficients.</value>
-        IVector<T, TStruct> Coefficients { get; }
+        IDirectSum<T, TStruct> Coefficients { get; }
 
         #endregion
 
@@ -58,7 +58,7 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <returns>The instance with other coefficients.</returns>
         /// <param name="coefficients">The other coefficients.</param>
-        IPolynomial<T, TStruct> ReturnNewInstanceWithOtherCoefficients(IVector<T, TStruct> coefficients);
+        IPolynomial<T, TStruct> ReturnNewInstanceWithOtherCoefficients(IDirectSum<T, TStruct> coefficients);
 
         /// <summary>
         /// Returns the new instance with same coefficients.

@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="VectorFromGroupExtensions.cs" company="${Company}">
+// <copyright file="IDirectSumFromGroupExtensions.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -15,9 +15,9 @@ namespace Math.LinearAlgebra
     using Math.Base;
 
     /// <summary>
-    /// Extension methods for the <see cref="Vector{T, TStruct}"/> class.
+    /// Extension methods for the <see cref="DirectSum{T, TStruct}"/> class.
     /// </summary>
-    public static class IVectorFromGroupExtensions
+    public static class IDirectSumFromGroupExtensions
     {
         #region methods
 
@@ -28,7 +28,7 @@ namespace Math.LinearAlgebra
         /// <param name="vector">The vector.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IVector<T, TStruct> InverseVector<T, TStruct>(this IVector<T, TStruct> vector)
+        public static IDirectSum<T, TStruct> InverseVector<T, TStruct>(this IDirectSum<T, TStruct> vector)
             where TStruct : IGroup<T>, new()
         {
             var vec = vector.ReturnNewInstanceWithSameDimension();

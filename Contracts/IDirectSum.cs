@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="IVector.cs" company="${Company}">
+// <copyright file="IDirectSum.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -15,11 +15,11 @@ namespace Math.LinearAlgebra
     using Math.Base;
 
     /// <summary>
-    /// Interface for the vector classes.
+    /// Interface for the direct sum of structures.
     /// </summary>
     /// <typeparam name="T">The underlying set.</typeparam>
     /// <typeparam name="TStruct">The structure.</typeparam>
-    public interface IVector<T, TStruct> : IEquatable<IVector<T, TStruct>>
+    public interface IDirectSum<T, TStruct> : IEquatable<IDirectSum<T, TStruct>>
         where TStruct : IStructure<T>, new()
     {
         #region properties
@@ -31,7 +31,7 @@ namespace Math.LinearAlgebra
         UInt32 Dimension { get; }
 
         /// <summary>
-        /// Gets or sets the <see cref="Vector{T, TStruct}"/> at the specified index.
+        /// Gets or sets the <see cref="IDirectSum{T, TStruct}"/> at the specified index.
         /// </summary>
         /// <param name="index">The index.</param>
         /// <returns>The value at index.</returns>
@@ -45,14 +45,14 @@ namespace Math.LinearAlgebra
         /// Returns a new the instance with same dimension like the calling instance.
         /// </summary>
         /// <returns>The instance with same dimension.</returns>
-        IVector<T, TStruct> ReturnNewInstanceWithSameDimension();
+        IDirectSum<T, TStruct> ReturnNewInstanceWithSameDimension();
 
         /// <summary>
         /// Returns the new instance.
         /// </summary>
         /// <returns>The new instance.</returns>
         /// <param name="rowDimension">Row dimension.</param>
-        IVector<T, TStruct> ReturnNewInstance(UInt32 rowDimension);
+        IDirectSum<T, TStruct> ReturnNewInstance(UInt32 rowDimension);
 
         #endregion
     }

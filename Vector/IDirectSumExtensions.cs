@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="VectorExtensions.cs" company="${Company}">
+// <copyright file="IDirectSumExtensions.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -15,24 +15,27 @@ namespace Math.LinearAlgebra
     using Math.Base;
 
     /// <summary>
-    /// Extension methods for the <see cref="Vector{T, TStruct}"/> class.
+    /// Extension methods for the <see cref="IDirectSum{T, TStruct}"/> class.
     /// </summary>
-    public static class IVectorExtensions
+    public static class IDirectSumExtensions
     {
         #region methods
 
         /// <summary>
-        /// Copy the specified vector.
+        /// Copy the specified tuple.
         /// </summary>
-        /// <returns>A copy of the vector.</returns>
-        public static IVector<T, TStruct> Copy<T, TStruct>(this IVector<T, TStruct> vector)
+        /// <returns>A copy of the tuple.</returns>
+        /// <param name="tuple">The tuple.</param>
+        /// <typeparam name="T">The type parameter.</typeparam>
+        /// <typeparam name="TStruct">The underlying structure.</typeparam>
+        public static IDirectSum<T, TStruct> Copy<T, TStruct>(this IDirectSum<T, TStruct> tuple)
             where TStruct : IStructure<T>, new()
         {
-            var vec = vector.ReturnNewInstanceWithSameDimension();
+            var vec = tuple.ReturnNewInstanceWithSameDimension();
 
-            for (UInt32 i = 0; i < vector.Dimension; i++)
+            for (UInt32 i = 0; i < tuple.Dimension; i++)
             {
-                vec[i] = vector[i];
+                vec[i] = tuple[i];
             }
 
             return vec;
@@ -42,15 +45,15 @@ namespace Math.LinearAlgebra
         /// Sorts the vector with insertion sort method.
         /// </summary>
         /// <returns>The sort.</returns>
-        /// <param name="vector">The sorted vector is a new vector, not a reference to the argument.</param>
+        /// <param name="tuple">The sorted vector is a new vector, not a reference to the argument.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IVector<T, TStruct> InsertionSort<T, TStruct>(this IVector<T, TStruct> vector)
+        public static IDirectSum<T, TStruct> InsertionSort<T, TStruct>(this IDirectSum<T, TStruct> tuple)
             where T : IComparable
             where TStruct : IStructure<T>, new()
         {
-            var vec = vector.Copy();
-            if (vector.Dimension < 2)
+            var vec = tuple.Copy();
+            if (tuple.Dimension < 2)
                 return vec;
 
             for (UInt32 j = 1; j < vec.Dimension; j++)
@@ -64,7 +67,7 @@ namespace Math.LinearAlgebra
                     vec[i + 1] = vec[i];                   
                     vec[i] = key;
 
-                    if (i == 0) // Security because UI
+                    if (i == 0) // Security because UInt32
                         break;
 
                     i--;
@@ -78,13 +81,13 @@ namespace Math.LinearAlgebra
         /// Sorts the vector with bubble sort algorithm.
         /// </summary>
         /// <returns>A copy of the vector (sorted).</returns>
-        /// <param name="vector">The vector.</param>
+        /// <param name="tuple">The tuple.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IVector<T, TStruct> BubbleSort<T, TStruct>(this Vector<T, TStruct> vector) 
+        public static IDirectSum<T, TStruct> BubbleSort<T, TStruct>(this DirectSum<T, TStruct> tuple) 
             where T : IComparable where TStruct : IStructure<T>, new()
         {
-            var vec = vector.Copy();
+            var vec = tuple.Copy();
 
             if (vec.Dimension <= 1)
                 return vec;

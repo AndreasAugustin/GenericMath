@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="VectorFromRingExtensions.cs" company="${Company}">
+// <copyright file="IDirectSumFromRingExtensions.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -15,9 +15,9 @@ namespace Math.LinearAlgebra
     using Math.Base;
 
     /// <summary>
-    /// Extension methods for the <see cref="Vector{T, IStructure}"/> class.
+    /// Extension methods for the <see cref="DirectSum{T, IStructure}"/> class.
     /// </summary>
-    public static class IVectorFromRingExtensions
+    public static class IDirectSumFromRingExtensions
     {
         #region methods
 
@@ -30,7 +30,7 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>The multiplication vector1 * vector2.</returns>
-        public static IVector<T, TStruct> Multiply<T, TStruct>(this IVector<T, TStruct> vector1, IVector<T, TStruct> vector2)
+        public static IDirectSum<T, TStruct> Multiply<T, TStruct>(this IDirectSum<T, TStruct> vector1, IDirectSum<T, TStruct> vector2)
             where TStruct : IRing<T>, new()
         {
             if (vector1.Dimension != vector2.Dimension)
@@ -57,7 +57,7 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>The vector^power.</returns>
-        public static IVector<T, TStruct> Pow<T, TStruct>(this IVector<T, TStruct> vector, UInt32 power)
+        public static IDirectSum<T, TStruct> Pow<T, TStruct>(this IDirectSum<T, TStruct> vector, UInt32 power)
             where TStruct : IRing<T>, new()
         {
             var result = new SpecialVectors().OneVector<T, TStruct>(vector.Dimension);
@@ -78,7 +78,7 @@ namespace Math.LinearAlgebra
         /// <param name="vector2">The right vector.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static T ScalarProduct<T, TStruct>(this IVector<T, TStruct> vector1, IVector<T, TStruct> vector2)
+        public static T ScalarProduct<T, TStruct>(this IDirectSum<T, TStruct> vector1, IDirectSum<T, TStruct> vector2)
             where TStruct : IRing<T>, new()
         {
             var ring = new TStruct();
@@ -101,7 +101,7 @@ namespace Math.LinearAlgebra
         /// <param name="scalar">The scalar.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IVector<T, TStruct> ScalarMultiply<T, TStruct>(this IVector<T, TStruct> vector, T scalar)
+        public static IDirectSum<T, TStruct> ScalarMultiply<T, TStruct>(this IDirectSum<T, TStruct> vector, T scalar)
             where TStruct : IRing<T>, new()
         {
             var ring = new TStruct();

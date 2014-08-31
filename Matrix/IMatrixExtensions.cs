@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="MatrixExtensions.cs" company="${Company}">
+// <copyright file="IMatrixExtensions.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -29,7 +29,7 @@ namespace Math.LinearAlgebra
         /// <param name ="columnIndex">The column index.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IVector<T, TStruct> GetColumnVector<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 columnIndex)
+        public static IDirectSum<T, TStruct> GetColumnVector<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 columnIndex)
             where TStruct : IStructure<T>, new()
         {
             return matrix[columnIndex];
@@ -43,7 +43,7 @@ namespace Math.LinearAlgebra
         /// <param name="rowIndex">Column index.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IVector<T, TStruct> GetRowVector<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 rowIndex)
+        public static IDirectSum<T, TStruct> GetRowVector<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 rowIndex)
             where TStruct : IStructure<T>, new()
         {
             var vec = matrix[rowIndex].ReturnNewInstanceWithSameDimension();

@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="MatrixFromGroupExtensions.cs" company="${Company}">
+// <copyright file="IMatrixFromGroupExtensions.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>

@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="PolynomialFromMonoidExtensions.cs" company="${Company}">
+// <copyright file="IPolynomialFromMonoidExtensions.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>

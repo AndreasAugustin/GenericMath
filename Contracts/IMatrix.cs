@@ -48,8 +48,8 @@ namespace Math.LinearAlgebra
         /// Gets or sets the <see cref="IMatrix{T, TStruct}"/> with the specified column.
         /// </summary>
         /// <param name="column">The column.</param>
-        /// <returns>The vector <see cref="IVector{T, TStruct}"/> at column.</returns>
-        IVector<T, TStruct> this[UInt32 column] { get; set; }
+        /// <returns>The tuple <see cref="IDirectSum{T, TStruct}"/> at column.</returns>
+        IDirectSum<T, TStruct> this[UInt32 column] { get; set; }
 
         #endregion
 

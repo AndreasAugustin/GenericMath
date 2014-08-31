@@ -28,7 +28,7 @@ namespace Math.LinearAlgebra
         #region FIELDS
 
         // the vector is a column vector
-        readonly List<IVector<T, TStruct>> _entries;
+        readonly List<IDirectSum<T, TStruct>> _entries;
 
         #endregion
 
@@ -41,10 +41,10 @@ namespace Math.LinearAlgebra
         /// <param name="dimension">The Dimension of the matrix.</param>
         public Matrix(UInt32 dimension)
         {
-            _entries = new List<IVector<T, TStruct>>();
+            _entries = new List<IDirectSum<T, TStruct>>();
             for (var i = 0; i < dimension; i++)
             {
-                _entries.Add(new Vector<T, TStruct>(dimension));
+                _entries.Add(new DirectSum<T, TStruct>(dimension));
             }
                 
             RowDimension = dimension;
@@ -60,10 +60,10 @@ namespace Math.LinearAlgebra
         /// <param name="columnDimension">Column dimension.</param>
         public Matrix(UInt32 rowDimension, UInt32 columnDimension)
         {
-            _entries = new List<IVector<T, TStruct>>();
+            _entries = new List<IDirectSum<T, TStruct>>();
             for (var i = 0; i < columnDimension; i++)
             {
-                _entries.Add(new Vector<T, TStruct>(rowDimension));
+                _entries.Add(new DirectSum<T, TStruct>(rowDimension));
             }
                 
             RowDimension = rowDimension;
@@ -132,8 +132,8 @@ namespace Math.LinearAlgebra
         /// Gets or sets the <see cref="Matrix{T, TStruct}"/> with the specified column.
         /// </summary>
         /// <param name="column">The column.</param>
-        /// <returns>The vector <see cref="Vector{T, TStruct}"/> at column.</returns>
-        public IVector<T, TStruct> this[UInt32 column]
+        /// <returns>The tuple <see cref="IDirectSum{T, TStruct}"/> at column.</returns>
+        public IDirectSum<T, TStruct> this[UInt32 column]
         {
             get
             { 

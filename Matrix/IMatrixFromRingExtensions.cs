@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="MatrixFromRingExtensions.cs" company="${Company}">
+// <copyright file="IMatrixFromRingExtensions.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -105,7 +105,7 @@ namespace Math.LinearAlgebra
         /// <param name="vector">The vector.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IVector<T, TStruct> MultiplyVector<T, TStruct>(this IMatrix<T, TStruct> matrix, IVector<T, TStruct> vector)
+        public static IDirectSum<T, TStruct> MultiplyVector<T, TStruct>(this IMatrix<T, TStruct> matrix, IDirectSum<T, TStruct> vector)
             where TStruct : IRing<T>, new()
         {
             if (matrix.ColumnDimension != vector.Dimension)

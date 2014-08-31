@@ -29,10 +29,10 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>The zerovector with dimension.</returns>
-        public IVector<T, TStruct> ZeroVector<T, TStruct>(UInt32 dimension)
+        public IDirectSum<T, TStruct> ZeroVector<T, TStruct>(UInt32 dimension)
             where TStruct : IMonoid<T>, new()
         {
-            var vec = new Vector<T, TStruct>(dimension);
+            var vec = new DirectSum<T, TStruct>(dimension);
             var baseStructure = new TStruct();
 
             for (UInt32 i = 0; i < vec.Dimension; i++)
@@ -51,10 +51,10 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>The zerovector with dimension.</returns>
-        public IVector<T, TStruct> OneVector<T, TStruct>(UInt32 dimension)
+        public IDirectSum<T, TStruct> OneVector<T, TStruct>(UInt32 dimension)
             where TStruct : IRing<T>, new()
         {
-            var vec = new Vector<T, TStruct>(dimension);
+            var vec = new DirectSum<T, TStruct>(dimension);
             var baseStructure = new TStruct();
 
             for (UInt32 i = 0; i < vec.Dimension; i++)
