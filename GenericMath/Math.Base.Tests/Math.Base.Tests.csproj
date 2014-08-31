@@ -40,6 +40,7 @@
     <Folder Include="EuclidianRing\" />
     <Folder Include="Extensions\" />
     <Folder Include="Monoid\" />
+    <Folder Include="Field\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Group\DoubleGroupTest.cs" />
@@ -58,6 +59,8 @@
     <Compile Include="Monoid\UInt32MonoidTest.cs" />
     <Compile Include="Group\TemplateGroupTest.cs" />
     <Compile Include="Monoid\TemplateMonoidTest.cs" />
+    <Compile Include="Field\TemplateFieldTest.cs" />
+    <Compile Include="Field\DoubleFieldTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Math.Base\Math.Base\Math.Base.csproj">
