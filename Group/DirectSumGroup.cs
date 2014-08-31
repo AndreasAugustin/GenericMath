@@ -7,32 +7,44 @@
 // *************************************************************
 //   1.0.0  31 / 8 / 2014 Created the Class
 // *************************************************************
-using System;
 
 namespace Math.LinearAlgebra
 {
-    public class DirectSumGroup
+    using System;
+
+    using Math.Base;
+
+    /// <summary>
+    /// Direct sum group.
+    /// </summary>
+    public class DirectSumGroup<T, TGroup> : DirectSumMonoid<T, TGroup>, IGroup<IDirectSum<T, TGroup>>
+        where TGroup : IGroup<T>, new()
     {
-        #region fields
-
-        readonly UInt32 _dimension;
-
-        #endregion
-
         #region ctors
 
         /// <summary>
-        /// Initialises a new instance of the <see cref="Math.LinearAlgebra.DirectSumGroup"/> class.
+        /// Initialises a new instance of the <see cref="DirectSumGroup{T, TStruct}"/> class.
         /// </summary>
         /// <param name="dimension">Dimension.</param>
         public DirectSumGroup(UInt32 dimension)
+            : base(dimension)
         {
-            _dimension = dimension;
+            base.Dimension = dimension;
         }
 
         #endregion
 
-        #region properties
+        #region IGROUP implementation
+
+        /// <summary>
+        /// Returns the inverse of the specified element.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <returns>The inverse of element (-element)</returns>
+        public IDirectSum<T, TGroup> Inverse(IDirectSum<T, TGroup> element)
+        {
+            return element.InverseElement();
+        }
 
         #endregion
     }

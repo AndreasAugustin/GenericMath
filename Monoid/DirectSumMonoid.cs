@@ -18,13 +18,16 @@ namespace Math.LinearAlgebra
     /// Monoid structure for direct sums.
     /// </summary>
     /// <typeparam name="T">The underlying base set.</typeparam>
-    /// <typeparam name="TStruct">The underlying structure for the base set.</typeparam>
-    public class DirectSumMonoid<T, TStruct> : IMonoid<IDirectSum<T, TStruct>>
-        where TStruct : IMonoid<T>
+    /// <typeparam name="TMonoid">The underlying structure for the base set.</typeparam>
+    public class DirectSumMonoid<T, TMonoid> : IMonoid<IDirectSum<T, TMonoid>>
+        where TMonoid : IMonoid<T>, new()
     {
         #region fields
 
-        UInt32 _dimension;
+        /// <summary>
+        /// The dimension.
+        /// </summary>
+        protected UInt32 Dimension;
 
         #endregion
 
@@ -36,7 +39,7 @@ namespace Math.LinearAlgebra
         /// <param name="dimension">Dimension.</param>
         public DirectSumMonoid(UInt32 dimension)
         {
-            _dimension = dimension;
+            Dimension = dimension;
         }
 
         #endregion
@@ -49,7 +52,7 @@ namespace Math.LinearAlgebra
         /// <param name="leftElement">Left element.</param>
         /// <param name="rightElement">Right element.</param>
         /// <returns>The addition of the leftElement and rightElement (leftElement + rightElement)</returns>
-        public IDirectSum<T, TStruct> Addition(IDirectSum<T, TStruct> leftElement, IDirectSum<T, TStruct> rightElement)
+        public IDirectSum<T, TMonoid> Addition(IDirectSum<T, TMonoid> leftElement, IDirectSum<T, TMonoid> rightElement)
         {
             return leftElement.Add(rightElement);
         }
@@ -58,7 +61,7 @@ namespace Math.LinearAlgebra
         /// Gets the zero element of the group.
         /// </summary>
         /// <value>The zero.</value>
-        public IDirectSum<T, TStruct> Zero
+        public IDirectSum<T, TMonoid> Zero
         {
             get
             {
