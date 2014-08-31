@@ -79,7 +79,7 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <param name="index">The index.</param>
         /// <returns>The value at index.</returns>
-        /// <exception cref="VectorException">Thrown when the 
+        /// <exception cref="DirectSumException">Thrown when the 
         /// index is not within the dimension of the vector.</exception>
         public T this[UInt32 index]
         {
@@ -204,15 +204,15 @@ namespace Math.LinearAlgebra
         void CheckOutOfRange(UInt32 index)
         {
             if (Dimension == UInt32.MaxValue)
-                throw new VectorException(String.Format("Vector class: The index is equal to max value"))
+                throw new DirectSumException(String.Format("Vector class: The index is equal to max value"))
                 { 
-                    ExceptionType = VectorExceptionType.IndexEqualsMaxUnsignedInteger 
+                    ExceptionType = DirectSumException.VectorExceptionType.IndexEqualsMaxUnsignedInteger 
                 };
 
             if (Dimension + 1 < index)
-                throw new VectorException(String.Format("Vector class: The index ({0}) is greater or equal then the column dimension ({1})", index, Dimension))
+                throw new DirectSumException(String.Format("Vector class: The index ({0}) is greater or equal then the column dimension ({1})", index, Dimension))
                 { 
-                    ExceptionType = VectorExceptionType.IndexEqualOrGreaterDimension
+                    ExceptionType = DirectSumException.VectorExceptionType.IndexEqualOrGreaterDimension
                 };
         }
 
