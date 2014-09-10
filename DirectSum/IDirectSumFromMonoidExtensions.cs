@@ -26,19 +26,19 @@ namespace Math.LinearAlgebra
         /// Adds all the elements in the vector.
         /// </summary>
         /// <returns>The sum over all elements in the vector.</returns>
-        /// <param name="vector">The vector.</param>
+        /// <param name="tuple">The tuple.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static T SumElements<T, TStruct>(this IDirectSum<T, TStruct> vector)
+        public static T SumElements<T, TStruct>(this IDirectSum<T, TStruct> tuple)
             where TStruct : IMonoid<T>, new()
         {
             var group = new TStruct();
 
             var result = group.Zero;
 
-            for (UInt32 i = 0; i < vector.Dimension; i++)
+            for (UInt32 i = 0; i < tuple.Dimension; i++)
             { // sum over all entries
-                result = group.Addition(result, vector[i]);
+                result = group.Addition(result, tuple[i]);
             }
 
             return result;
@@ -47,24 +47,25 @@ namespace Math.LinearAlgebra
         /// <summary>
         /// Add the specified vector1 and vector2.
         /// </summary>
-        /// <param name="vector1">The left vector.</param>
-        /// <param name="vector2">The right vector.</param>
+        /// <param name="tuple1">The left tuple.</param>
+        /// <param name="tuple2">The right tuple.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>vector1 + vector2.</returns>
-        public static IDirectSum<T, TStruct> Add<T, TStruct>(this IDirectSum<T, TStruct> vector1, IDirectSum<T, TStruct> vector2)
+        /// <exception cref="IndexOutOfRangeException">When the dimensions of tuple1 and tuple2 do not agree.</exception>
+        public static IDirectSum<T, TStruct> Add<T, TStruct>(this IDirectSum<T, TStruct> tuple1, IDirectSum<T, TStruct> tuple2)
             where TStruct : IMonoid<T>, new()
         {
             var group = new TStruct();
 
-            if (vector1.Dimension != vector2.Dimension)
+            if (tuple1.Dimension != tuple2.Dimension)
                 throw new IndexOutOfRangeException("The dimension of the two vectors do not agree");
 
-            var result = vector1.ReturnNewInstanceWithSameDimension();
+            var result = tuple1.ReturnNewInstanceWithSameDimension();
 
-            for (UInt32 i = 0; i < vector1.Dimension; i++)
+            for (UInt32 i = 0; i < tuple1.Dimension; i++)
             {
-                result[i] = group.Addition(vector1[i], vector2[i]); 
+                result[i] = group.Addition(tuple1[i], tuple2[i]); 
             }
 
             return result;

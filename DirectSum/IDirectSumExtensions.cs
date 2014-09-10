@@ -84,8 +84,9 @@ namespace Math.LinearAlgebra
         /// <param name="tuple">The tuple.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IDirectSum<T, TStruct> BubbleSort<T, TStruct>(this DirectSum<T, TStruct> tuple) 
-            where T : IComparable where TStruct : IStructure<T>, new()
+        public static IDirectSum<T, TStruct> BubbleSort<T, TStruct>(this IDirectSum<T, TStruct> tuple) 
+            where T : IComparable 
+            where TStruct : IStructure<T>, new()
         {
             var vec = tuple.Copy();
 

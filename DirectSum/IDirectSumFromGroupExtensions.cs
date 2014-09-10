@@ -25,18 +25,18 @@ namespace Math.LinearAlgebra
         /// Returns a vector with inverse values of the given vector.
         /// </summary>
         /// <returns>The inverse vector.</returns>
-        /// <param name="vector">The vector.</param>
+        /// <param name="tuple">The vector.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IDirectSum<T, TStruct> InverseElement<T, TStruct>(this IDirectSum<T, TStruct> vector)
+        public static IDirectSum<T, TStruct> InverseElement<T, TStruct>(this IDirectSum<T, TStruct> tuple)
             where TStruct : IGroup<T>, new()
         {
-            var vec = vector.ReturnNewInstanceWithSameDimension();
+            var vec = tuple.ReturnNewInstanceWithSameDimension();
             var baseStruct = new TStruct();
 
             for (UInt32 i = 0; i < vec.Dimension; i++)
             {
-                vec[i] = baseStruct.Inverse(vector[i]);
+                vec[i] = baseStruct.Inverse(tuple[i]);
             }
 
             return vec;
