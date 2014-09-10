@@ -23,8 +23,10 @@ namespace Math.LinearAlgebra.Tests
     /// <typeparam name="TStruct">The structure.</typeparam>
     [TestFixture(typeof(Double), typeof(DoubleMonoid))]
     [TestFixture(typeof(Complex), typeof(ComplexGroup))]
+    [TestFixture(typeof(Int32), typeof(Int32Ring))]
     public class DirectSumTest<T, TStruct> 
-        where T : new() where TStruct : IStructure<T>, new()
+        where T : new() 
+        where TStruct : IStructure<T>, new()
     {
         #region fields
 
