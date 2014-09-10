@@ -54,13 +54,14 @@
     <Compile Include="Monoid\ComplexMonoid.cs" />
     <Compile Include="Contracts\IField.cs" />
     <Compile Include="Field\DoubleField.cs" />
+    <Compile Include="Contracts\IModule.cs" />
+    <Compile Include="Contracts\IVectorRoom.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Ring\" />
     <Folder Include="Group\" />
     <Folder Include="Contracts\" />
-    <Folder Include="Exceptions\" />
     <Folder Include="Extensions\" />
     <Folder Include="Monoid\" />
     <Folder Include="Field\" />

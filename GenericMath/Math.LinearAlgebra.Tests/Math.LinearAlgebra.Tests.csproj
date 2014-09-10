@@ -48,14 +48,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Vector\" />
+    <Folder Include="DirectSum\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Vector\DirectSumTest.cs" />
-    <Compile Include="Vector\IDirectSumExtensionsTest.cs" />
-    <Compile Include="Vector\IDirectSumFromMonoidExtensions.cs" />
+    <Compile Include="DirectSum\DirectSumTest.cs" />
+    <Compile Include="DirectSum\IDirectSumExtensionsTest.cs" />
+    <Compile Include="DirectSum\IDirectSumFromMonoidExtensions.cs" />
   </ItemGroup>
 </Project>
