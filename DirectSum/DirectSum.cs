@@ -206,13 +206,13 @@ namespace Math.LinearAlgebra
             if (Dimension == UInt32.MaxValue)
                 throw new DirectSumException(String.Format("Vector class: The index is equal to max value"))
                 { 
-                    ExceptionType = DirectSumException.VectorExceptionType.IndexEqualsMaxUnsignedInteger 
+                    ExceptionType = DirectSumException.DirectSumExceptionType.IndexEqualsMaxUnsignedInteger 
                 };
 
             if (Dimension + 1 < index)
                 throw new DirectSumException(String.Format("Vector class: The index ({0}) is greater or equal then the column dimension ({1})", index, Dimension))
                 { 
-                    ExceptionType = DirectSumException.VectorExceptionType.IndexEqualOrGreaterDimension
+                    ExceptionType = DirectSumException.DirectSumExceptionType.IndexEqualOrGreaterDimension
                 };
         }
 

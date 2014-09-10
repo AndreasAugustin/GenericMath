@@ -23,7 +23,7 @@ namespace Math.LinearAlgebra
         /// <summary>
         /// Vector exception type.
         /// </summary>
-        public enum VectorExceptionType
+        public enum DirectSumExceptionType
         {
             /// <summary>
             /// The default.
@@ -84,7 +84,7 @@ namespace Math.LinearAlgebra
         /// Gets or sets the type of the exception.
         /// </summary>
         /// <value>The type of the exception.</value>
-        public VectorExceptionType ExceptionType
+        public DirectSumExceptionType ExceptionType
         {
             get;
             set;
