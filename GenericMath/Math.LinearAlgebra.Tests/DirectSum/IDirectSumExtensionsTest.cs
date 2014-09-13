@@ -15,7 +15,6 @@ namespace Math.LinearAlgebra.Tests
     using System.Numerics;
 
     using Math.Base;
-    using NSubstitute;
     using NUnit.Framework;
 
     /// <summary>
@@ -26,66 +25,17 @@ namespace Math.LinearAlgebra.Tests
     {
         #region fields
 
-        List<Int32> _int32List;
-        List<Double> _doubleList;
-        List<Complex> _complexList;
+        FakeDirectSumTestDataSource _mockDirectSumTestDataSource;
 
         #endregion
 
         #region properties
 
-        IDirectSum<Int32, Int32Group> Int32IVectorSource
+        FakeDirectSumTestDataSource MockDirectSumTestDataSource
         {
             get
             {
-                _int32List = new List<int>{ 2, -2 };
-
-                var dimension = (UInt32)_int32List.Count;
-                var vector = new DirectSum<Int32, Int32Group>(dimension);
-
-                for (UInt32 i = 0; i < dimension; i++)
-                {
-                    vector[i] = _int32List[(Int32)i];
-                }
-
-                return vector;
-            }
-        }
-
-        IDirectSum<Complex, ComplexRing> ComplexIVectorSource
-        {
-            get
-            {
-                _complexList = new List<Complex>{ new Complex(1, 2), new Complex(4, 56) };
-
-               
-                var dimension = (UInt32)_complexList.Count;
-                var vector = new DirectSum<Complex, ComplexRing>(dimension);
-
-                for (UInt32 i = 0; i < dimension; i++)
-                {
-                    vector[i] = _complexList[(Int32)i];
-                }
-
-                return vector;
-            }
-        }
-
-        IDirectSum<Double, DoubleMonoid> DoubleIVectorSource
-        {
-            get
-            {
-                _doubleList = new List<Double>{ 3.678 };
-
-                var dimension = (UInt32)_doubleList.Count;
-                var vector = new DirectSum<Double, DoubleMonoid>(dimension);
-
-                for (UInt32 i = 0; i < dimension; i++)
-                {
-                    vector[i] = _doubleList[(Int32)i];
-                }
-
-                return vector;
+                return _mockDirectSumTestDataSource ?? (_mockDirectSumTestDataSource = new FakeDirectSumTestDataSource());
             }
         }
 
@@ -93,8 +43,8 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                yield return new TestCaseData(default(Int32), new Int32Group(), Int32IVectorSource, _int32List);
-                yield return new TestCaseData(default(Double), new DoubleMonoid(), DoubleIVectorSource, _doubleList);
+                yield return new TestCaseData(default(Int32), new Int32Group(), MockDirectSumTestDataSource.GroupInt32IDirectSumSource, MockDirectSumTestDataSource.Int32List);
+                yield return new TestCaseData(default(Double), new DoubleField(), MockDirectSumTestDataSource.FieldDoubleIDirectSumSource, MockDirectSumTestDataSource.DoubleList);
             }
         }
 
@@ -102,9 +52,9 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                yield return new TestCaseData(default(Int32), new Int32Group(), Int32IVectorSource);
-                yield return new TestCaseData(default(Double), new DoubleMonoid(), DoubleIVectorSource);
-                yield return new TestCaseData(default(Complex), new ComplexRing(), ComplexIVectorSource);
+                yield return new TestCaseData(default(Int32), new Int32Group(), MockDirectSumTestDataSource.GroupInt32IDirectSumSource);
+                yield return new TestCaseData(default(Double), new DoubleField(), MockDirectSumTestDataSource.FieldDoubleIDirectSumSource);
+                yield return new TestCaseData(default(Complex), new ComplexRing(), MockDirectSumTestDataSource.RingComplexIDirectSumSource);
             }
         }
 

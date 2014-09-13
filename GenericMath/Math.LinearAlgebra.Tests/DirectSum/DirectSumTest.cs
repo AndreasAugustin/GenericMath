@@ -28,14 +28,6 @@ namespace Math.LinearAlgebra.Tests
         where T : new() 
         where TStruct : IStructure<T>, new()
     {
-        #region fields
-
-        #endregion
-
-        #region properties
-
-        #endregion
-
         #region methods
 
         /// <summary>
