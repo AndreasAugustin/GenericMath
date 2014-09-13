@@ -123,7 +123,7 @@ namespace Math.LinearAlgebra
 
         #endregion
 
-        #region IVECTOR implementaition
+        #region IDIRECTSUM implementaition
 
         /// <summary>
         /// Returns the new instance with same dimension.
