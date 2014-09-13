@@ -31,6 +31,10 @@ namespace Math.LinearAlgebra.Tests
 
         #region properties
 
+        /// <summary>
+        /// Gets the double list.
+        /// </summary>
+        /// <value>The double list.</value>
         public List<Double> DoubleList
         {
             get
@@ -39,6 +43,10 @@ namespace Math.LinearAlgebra.Tests
             }
         }
 
+        /// <summary>
+        /// Gets the complex list.
+        /// </summary>
+        /// <value>The complex list.</value>
         public List<Complex> ComplexList
         {
             get
@@ -47,6 +55,10 @@ namespace Math.LinearAlgebra.Tests
             }
         }
 
+        /// <summary>
+        /// Gets the int32 list.
+        /// </summary>
+        /// <value>The int32 list.</value>
         public List<Int32> Int32List
         {
             get
@@ -56,6 +68,10 @@ namespace Math.LinearAlgebra.Tests
 
         }
 
+        /// <summary>
+        /// Gets the group int32 I direct sum source.
+        /// </summary>
+        /// <value>The group int32 I direct sum source.</value>
         public IDirectSum<Int32, Int32Group> GroupInt32IDirectSumSource
         {
             get
@@ -72,6 +88,30 @@ namespace Math.LinearAlgebra.Tests
             }
         }
 
+        /// <summary>
+        /// Gets the ring int32 I direct sum source.
+        /// </summary>
+        /// <value>The ring int32 I direct sum source.</value>
+        public IDirectSum<Int32, Int32Ring> RingInt32IDirectSumSource
+        {
+            get
+            {               
+                var dimension = (UInt32)Int32List.Count;
+                var vector = new DirectSum<Int32, Int32Ring>(dimension);
+
+                for (UInt32 i = 0; i < dimension; i++)
+                {
+                    vector[i] = Int32List[(Int32)i];
+                }
+
+                return vector;
+            }
+        }
+
+        /// <summary>
+        /// Gets the ring complex I direct sum source.
+        /// </summary>
+        /// <value>The ring complex I direct sum source.</value>
         public IDirectSum<Complex, ComplexRing> RingComplexIDirectSumSource
         {
             get
@@ -88,6 +128,10 @@ namespace Math.LinearAlgebra.Tests
             }
         }
 
+        /// <summary>
+        /// Gets the field double I direct sum source.
+        /// </summary>
+        /// <value>The field double I direct sum source.</value>
         public IDirectSum<Double, DoubleField> FieldDoubleIDirectSumSource
         {
             get
