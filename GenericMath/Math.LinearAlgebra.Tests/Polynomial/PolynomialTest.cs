@@ -5,101 +5,64 @@
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
-//   1.0.0  25 / 7 / 2014 Created the Class
+//   1.0.0  13 / 9 / 2014 Created the Class
 // *************************************************************
 
 namespace Math.LinearAlgebra.Tests
 {
     using System;
+    using System.Numerics;
 
+    using Math.Base;
     using NUnit.Framework;
 
     /// <summary>
-    /// Polynomial test.
+    /// Test methods for the <see cref="Polynomial{T, TStruct}"/> class.
     /// </summary>
-    [TestFixture]
-    public class PolynomialTest
+    /// <typeparam name="T">The set,</typeparam>
+    /// <typeparam name="TStruct">The structure.</typeparam>
+    [TestFixture(typeof(Double), typeof(DoubleMonoid))]
+    [TestFixture(typeof(Complex), typeof(ComplexGroup))]
+    [TestFixture(typeof(Int32), typeof(Int32Ring))]
+    public class PolynomialTest<T, TStruct>
+        where TStruct : IStructure<T>, new()
     {
         #region methods
 
         /// <summary>
-        /// Tests the polynomial.
+        /// Initializes a new polynomial with given degree and checks the degree.
         /// </summary>
+        /// <param name="givenDegree">The degree.</param>
         [Test]
-        public void TestPolynomial()
+        [Category("PolynomialTest")]
+        [TestCase((UInt32)2)]
+        [TestCase((UInt32)6)]
+        public void Initialize_CheckDegree_EqualsGivenDegree(UInt32 givenDegree)
         {
-            var poly1 = Degree1Int32Polynom();
-            var poly2 = Degree2Int32Polynom();
+            var poly = new Polynomial<T, TStruct>(givenDegree);
+            Assert.IsNotNull(poly);
 
-            Assert.IsNotNull(poly1);
-            Assert.IsNotNull(poly2);
-
-            Assert.AreEqual(1, poly1.Degree);
-            Assert.AreEqual(2, poly2.Degree);
-
-            Assert.AreEqual(2, poly1[1]);
-            Assert.AreEqual(3, poly2[2]);
-
-            var sum = poly1.Add(poly2);
-
-            Assert.IsNotNull(sum);
-            Assert.AreEqual(2, sum.Degree);
-            Assert.AreEqual(4, sum[1]);
-            Assert.AreEqual(3, sum[2]);
+            Assert.AreEqual(givenDegree, poly.Degree);
         }
 
         /// <summary>
-        /// Tests the calculation.
+        /// Initialises a new instance of the <see cref="Polynomial{T, TStruct}"/> class with given degree.
+        /// Queries the polynomial for index out of range.
+        /// Throws a <see cref="DirectSumException"/>. 
         /// </summary>
+        /// <param name="degree">The dimension.</param>
+        /// <param name="index">The index.</param>
         [Test]
-        public void TestCalculation()
+        [Category("PolynomialTest")]
+        [TestCase((UInt32)2, (UInt32)4)]
+        [TestCase((UInt32)1, (UInt32)4)]
+        public void Indexer_SettingToHighIndex_ThrowsPolynomialException(UInt32 degree, UInt32 index)
         {
-            var poly2 = Degree2Int32Polynom();
-            var result = poly2.Calculate(2);
+            var value = default(T);
+            var vec = new DirectSum<T, TStruct>(degree);
+            Assert.IsNotNull(vec);
 
-            Assert.AreEqual(17, result);
-        }
-
-        /// <summary>
-        /// Tests the multiplication.
-        /// </summary>
-        [Test]
-        public void TestMultiplication()
-        {
-            var poly1 = Degree1Int32Polynom();
-            Assert.AreEqual(2, poly1[1]);
-            var poly2 = Degree2Int32Polynom();
-
-            var mult = poly1.Multiply(poly2);
-            Assert.IsNotNull(mult);
-
-            Assert.AreEqual(6, mult[3]);
-            Assert.AreEqual(7, mult[2]);
-            Assert.AreEqual(4, mult[1]);
-            Assert.AreEqual(1, mult[0]);
-        }
-
-        #endregion
-
-        #region helper methods
-
-        Polynomial<Int32> Degree1Int32Polynom()
-        {
-            var poly1 = new Polynomial<Int32>(1);
-            poly1[0] = 1;
-            poly1[1] = 2;
-
-            return poly1;
-        }
-
-        Polynomial<Int32> Degree2Int32Polynom()
-        {
-            var poly2 = new Polynomial<Int32>(2);
-            poly2[0] = 1;
-            poly2[1] = 2;
-            poly2[2] = 3;
-
-            return poly2;
+            Assert.Throws<DirectSumException>(() => vec[index] = value);
         }
 
         #endregion

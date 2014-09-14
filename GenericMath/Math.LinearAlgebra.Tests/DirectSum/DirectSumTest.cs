@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="VectorTest.cs" company="${Company}">
+// <copyright file="DirectSumTest.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -17,23 +17,17 @@ namespace Math.LinearAlgebra.Tests
     using NUnit.Framework;
 
     /// <summary>
-    /// Test methods for the vector class.
+    /// Test methods for the <see cref="DirectSum{T, TStruct}"/> class.
     /// </summary>
     /// <typeparam name="T">The set,</typeparam>
     /// <typeparam name="TStruct">The structure.</typeparam>
     [TestFixture(typeof(Double), typeof(DoubleMonoid))]
     [TestFixture(typeof(Complex), typeof(ComplexGroup))]
-    public class VectorTest<T, TStruct> 
-        where T : new() where TStruct : IStructure<T>, new()
+    [TestFixture(typeof(Int32), typeof(Int32Ring))]
+    public class DirectSumTest<T, TStruct> 
+        where T : new() 
+        where TStruct : IStructure<T>, new()
     {
-        #region fields
-
-        #endregion
-
-        #region properties
-
-        #endregion
-
         #region methods
 
         /// <summary>
@@ -41,12 +35,12 @@ namespace Math.LinearAlgebra.Tests
         /// </summary>
         /// <param name="givenDimension">The dimension.</param>
         [Test]
-        [Category("VectorTest")]
+        [Category("DirectSumTest")]
         [TestCase((UInt32)2)]
         [TestCase((UInt32)6)]
         public void Initialize_CheckDimension_EqualsGivenDimension(UInt32 givenDimension)
         {
-            var vec = new Vector<T, TStruct>(givenDimension);
+            var vec = new DirectSum<T, TStruct>(givenDimension);
             Assert.IsNotNull(vec);
 
             Assert.AreEqual(givenDimension, vec.Dimension);
@@ -58,16 +52,16 @@ namespace Math.LinearAlgebra.Tests
         /// <param name="dimension">The dimension.</param>
         /// <param name="index">The index.</param>
         [Test]
-        [Category("VectorTest")]
+        [Category("DirectSumTest")]
         [TestCase((UInt32)2, (UInt32)4)]
         [TestCase((UInt32)1, (UInt32)4)]
         public void Indexer_SettingToHighDimension_ThrowsVectorException(UInt32 dimension, UInt32 index)
         {
             var value = default(T);
-            var vec = new Vector<T, TStruct>(dimension);
+            var vec = new DirectSum<T, TStruct>(dimension);
             Assert.IsNotNull(vec);
 
-            Assert.Throws<VectorException>(() => vec[index] = value);
+            Assert.Throws<DirectSumException>(() => vec[index] = value);
         }
 
         #endregion
