@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath", "GenericMath\GenericMath.csproj", "{D39A4902-17A5-4FD6-9BEC-67717CB4C9F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Base", "Math.Base\Math.Base\Math.Base.csproj", "{32112762-A4EA-4A22-8F40-235A366445A9}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Analysis.Tests", "Math.Analysis.Tests\Math.Analysis.Tests.csproj", "{57422D4B-3791-4023-AA99-F236C9E68476}"
@@ -18,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Analysis", "Math.Analysis\Math.Analysis.csproj", "{1974448B-2DDF-4F3A-A044-8D27B97ACBEE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.LinearAlgebra", "Math.LinearAlgebra\Math.LinearAlgebra.csproj", "{FA62DC06-710E-4615-9E6F-C5E77D5B3202}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Base", "Math.Base\Math.Base.csproj", "{32112762-A4EA-4A22-8F40-235A366445A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

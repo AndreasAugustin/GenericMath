@@ -17,7 +17,7 @@ namespace Math.LinearAlgebra.Tests
     using NUnit.Framework;
 
     /// <summary>
-    /// Test methods for the vector class.
+    /// Test methods for the <see cref="DirectSum{T, TStruct}"/> class.
     /// </summary>
     /// <typeparam name="T">The set,</typeparam>
     /// <typeparam name="TStruct">The structure.</typeparam>
