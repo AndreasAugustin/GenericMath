@@ -27,7 +27,7 @@ namespace Math.LinearAlgebra
 
         #region properties
 
-        SpecialDirectSums SpecialVectors
+        SpecialDirectSums SpecialDirectSums
         {
             get { return _specialVectors ?? (_specialVectors = new SpecialDirectSums()); }
         }
@@ -46,7 +46,7 @@ namespace Math.LinearAlgebra
         public Polynomial<T, TStruct> ZeroPolynomial<T, TStruct>(UInt32 dimension)
             where TStruct : IGroup<T>, new()
         {
-            return new Polynomial<T, TStruct>(SpecialVectors.ZeroVector<T, TStruct>(dimension));        
+            return new Polynomial<T, TStruct>(SpecialDirectSums.ZeroVector<T, TStruct>(dimension));        
         }
 
         /// <summary>

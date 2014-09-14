@@ -204,16 +204,14 @@ namespace Math.LinearAlgebra
         void CheckOutOfRange(UInt32 index)
         {
             if (Dimension == UInt32.MaxValue)
-                throw new DirectSumException(String.Format("Vector class: The index is equal to max value"))
-                { 
-                    ExceptionType = DirectSumException.DirectSumExceptionType.IndexEqualsMaxUnsignedInteger 
-                };
+                throw new DirectSumException(DirectSumExceptionType.IndexEqualsMaxUnsignedInteger, 
+                    String.Format("Vector class: The index is equal to max value"));
+
 
             if (Dimension + 1 < index)
-                throw new DirectSumException(String.Format("Vector class: The index ({0}) is greater or equal then the column dimension ({1})", index, Dimension))
-                { 
-                    ExceptionType = DirectSumException.DirectSumExceptionType.IndexEqualOrGreaterDimension
-                };
+                throw new DirectSumException(DirectSumExceptionType.IndexEqualOrGreaterDimension, 
+                    String.Format("Vector class: The index ({0}) is greater or equal then the column dimension ({1})", index, Dimension));
+
         }
 
         #endregion

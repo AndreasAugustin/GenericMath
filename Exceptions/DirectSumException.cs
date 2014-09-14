@@ -11,69 +11,47 @@
 namespace Math.LinearAlgebra
 {
     using System;
-    using System.ComponentModel;
     using System.Runtime.Serialization;
 
     /// <summary>
-    /// Exception class for vectors.
+    /// Exception class for <see cref="DirectSum{T, TStruct}"/> classes.
     /// </summary>
     [Serializable]
     public class DirectSumException : ApplicationException
     {
-        /// <summary>
-        /// Vector exception type.
-        /// </summary>
-        public enum DirectSumExceptionType
-        {
-            /// <summary>
-            /// The default.
-            /// </summary>
-            [Description("There has been an exception")]
-            Default = 0,
-
-            /// <summary>
-            /// The index equal or greater dimension.
-            /// </summary>
-            [Description("The index needs to be less the dimension")]
-            IndexEqualOrGreaterDimension = 1,
-
-            /// <summary>
-            /// The index equals max unsigned integer.
-            /// </summary>
-            [Description("The index is equal to the max unsigned integer value")]
-            IndexEqualsMaxUnsignedInteger = 2,
-        }
-
         #region ctors
 
         /// <summary>
         /// Initialises a new instance of the <see cref="DirectSumException"/> class.
         /// </summary>
-        public DirectSumException()
+        /// <param name = "exceptionType"></param>
+        public DirectSumException(DirectSumExceptionType exceptionType)
             : base()
         {
-            // nothing to do here
+            this.ExceptionType = exceptionType;
         }
 
         /// <summary>
         /// Initialises a new instance of the <see cref="DirectSumException"/> class.
         /// </summary>
+        /// <param name = "exceptionType"></param>
         /// <param name="message">The message.</param>
-        public DirectSumException(String message)
+        public DirectSumException(DirectSumExceptionType exceptionType, String message)
             : base(message)
         {
-            // nothing to do here
+            this.ExceptionType = exceptionType;
         }
 
         /// <summary>
         /// Initialises a new instance of the <see cref="DirectSumException"/> class.
         /// </summary>
+        /// <param name = "exceptionType"></param>
         /// <param name="info">The info.</param>
         /// <param name="context">The context.</param>
-        protected DirectSumException(SerializationInfo info, StreamingContext context)
+        protected DirectSumException(DirectSumExceptionType exceptionType, SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
-            // nothing to do here.
+            this.ExceptionType = exceptionType;
         }
 
         #endregion
@@ -87,7 +65,21 @@ namespace Math.LinearAlgebra
         public DirectSumExceptionType ExceptionType
         {
             get;
-            set;
+            private set;
+        }
+
+        #endregion
+
+        #region overrides of object
+
+        /// <summary>
+        /// Returns a <see cref="System.String"/> that represents the current <see cref="DirectSumException"/>.
+        /// </summary>
+        /// <returns>A <see cref="System.String"/> that represents the current <see cref="DirectSumException"/>.</returns>
+        public override string ToString()
+        {
+            return string.Format("[DirectSumException: ExceptionType={0}] {1} {2}", 
+                this.ExceptionType.ToString(), Environment.NewLine, base.ToString());
         }
 
         #endregion
