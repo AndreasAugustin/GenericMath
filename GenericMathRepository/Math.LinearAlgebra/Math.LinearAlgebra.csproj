@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA62DC06-710E-4615-9E6F-C5E77D5B3202}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Math.LinearAlgebra</RootNamespace>
+    <AssemblyName>Math</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG; TRACE;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DocumentationFile>bin\Debug\Math.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Polynomial\SpecialPolynomials.cs" />
+    <Compile Include="Polynomial\Polynomial.cs" />
+    <Compile Include="Matrix\Matrix.cs" />
+    <Compile Include="Matrix\MatrixSquaredExtensions.cs" />
+    <Compile Include="Matrix\SpecialMatrices.cs" />
+    <Compile Include="Contracts\IPolynomial.cs" />
+    <Compile Include="Contracts\IMatrix.cs" />
+    <Compile Include="Polynomial\IPolynomialFromRingExtensions.cs" />
+    <Compile Include="Polynomial\IPolynomialExtensions.cs" />
+    <Compile Include="Polynomial\IPolynomialFromGroupExtensions.cs" />
+    <Compile Include="Polynomial\IPolynomialFromMonoidExtensions.cs" />
+    <Compile Include="Matrix\IMatrixExtensions.cs" />
+    <Compile Include="Matrix\IMatrixFromGroupExtensions.cs" />
+    <Compile Include="Matrix\IMatrixFromMonoidExtensions.cs" />
+    <Compile Include="Matrix\IMatrixFromRingExtensions.cs" />
+    <Compile Include="Contracts\IDirectSum.cs" />
+    <Compile Include="Exceptions\DirectSumException.cs" />
+    <Compile Include="Monoid\DirectSumMonoid.cs" />
+    <Compile Include="DirectSum\DirectSum.cs" />
+    <Compile Include="DirectSum\IDirectSumExtensions.cs" />
+    <Compile Include="DirectSum\IDirectSumFromGroupExtensions.cs" />
+    <Compile Include="DirectSum\IDirectSumFromMonoidExtensions.cs" />
+    <Compile Include="DirectSum\IDirectSumFromRingExtensions.cs" />
+    <Compile Include="Group\DirectSumGroup.cs" />
+    <Compile Include="DirectSum\SpecialDirectSums.cs" />
+    <Compile Include="Ring\DirectSumRing.cs" />
+    <Compile Include="Exceptions\DirectSumExceptionType.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="..\..\Math.Base\Math.Base\Group\" />
+    <Folder Include="..\..\Math.Base\Math.Base\Ring\" />
+    <Folder Include="Polynomial\" />
+    <Folder Include="Matrix\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Contracts\" />
+    <Folder Include="Monoid\" />
+    <Folder Include="DirectSum\" />
+    <Folder Include="Group\" />
+    <Folder Include="Ring\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Math.Base\Math.Base.csproj">
+      <Project>{32112762-A4EA-4A22-8F40-235A366445A9}</Project>
+      <Name>Math.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
