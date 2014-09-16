@@ -19,8 +19,8 @@ namespace Math.LinearAlgebra.Tests
     /// <summary>
     /// Test methods for the <see cref="Polynomial{T, TStruct}"/> class.
     /// </summary>
-    /// <typeparam name="T">The set,</typeparam>
-    /// <typeparam name="TStruct">The structure.</typeparam>
+    /// <typeparam name="T">The underlying set.</typeparam>
+    /// <typeparam name="TStruct">The underlying structure for T.</typeparam>
     [TestFixture(typeof(Double), typeof(DoubleMonoid))]
     [TestFixture(typeof(Complex), typeof(ComplexGroup))]
     [TestFixture(typeof(Int32), typeof(Int32Ring))]
@@ -59,10 +59,10 @@ namespace Math.LinearAlgebra.Tests
         public void Indexer_SettingToHighIndex_ThrowsPolynomialException(UInt32 degree, UInt32 index)
         {
             var value = default(T);
-            var vec = new DirectSum<T, TStruct>(degree);
-            Assert.IsNotNull(vec);
+            var poly = new Polynomial<T, TStruct>(degree);
+            Assert.IsNotNull(poly);
 
-            Assert.Throws<DirectSumException>(() => vec[index] = value);
+            Assert.Throws<LinearAlgebraException>(() => poly[index] = value);
         }
 
         #endregion
