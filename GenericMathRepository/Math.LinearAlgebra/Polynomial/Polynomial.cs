@@ -39,7 +39,7 @@ namespace Math.LinearAlgebra
         /// <param name="degree">The degree of the polynomial.</param>
         public Polynomial(UInt32 degree)
         {
-            this._coefficients = new List<T>((Int32)(degree + 1));
+            this._coefficients = new List<T>(new T[degree + 1]);
             this.Degree = degree;
         }
 
@@ -49,13 +49,8 @@ namespace Math.LinearAlgebra
         /// <param name="coefficients">The coefficients.</param>
         public Polynomial(List<T> coefficients)
         {
-            this._coefficients = new List<T>(coefficients.Count);
+            this._coefficients = new List<T>(coefficients);
             this.Degree = (UInt32)coefficients.Count;
-
-            for (var i = 0; i < coefficients.Count; i++)
-            {
-                this[(UInt32)i] = coefficients[i];
-            }
         }
 
         #endregion

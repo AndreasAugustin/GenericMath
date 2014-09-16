@@ -33,7 +33,7 @@ namespace Math.LinearAlgebra
         {
             var poly = polynomial.ReturnNewInstanceWithSameDegree();
 
-            for (UInt32 i = 0; i < polynomial.Degree; i++)
+            for (UInt32 i = 0; i < polynomial.Degree + 1; i++)
             {
                 poly[i] = polynomial[i];
             }
