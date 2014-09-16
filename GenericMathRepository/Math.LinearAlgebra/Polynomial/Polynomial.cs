@@ -87,11 +87,17 @@ namespace Math.LinearAlgebra
         {
             get
             {
+                CheckState();
+                CheckOutOfRange(index);
+
                 return _coefficients[(Int32)index];
             }
 
             set
             {
+                CheckState();
+                CheckOutOfRange(index);
+
                 _coefficients[(Int32)index] = value;
             }
         }
