@@ -81,6 +81,8 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <param name="index">The index of the coefficient.</param>
         /// <returns>The coefficient at the specified index.</returns>
+        /// <exception cref="LinearAlgebraException">Thrown when the 
+        /// index is not within the degree of the polynomial.</exception>
         public T this[UInt32 index]
         {
             get
@@ -132,6 +134,13 @@ namespace Math.LinearAlgebra
 
         #region IEquatable implementation
 
+        /// <summary>
+        /// Determines whether the specified <see cref="Polynomial{T, TStruct}"/> is equal to the
+        /// current <see cref="Polynomial{T, TStruct}"/>.
+        /// </summary>
+        /// <param name="other">The <see cref="Polynomial{T, TStruct}"/> to compare with the current <see cref="Polynomial{T, TStruct}"/>.</param>
+        /// <returns><c>true</c> if the specified <see cref="Polynomial{T, TStruct}"/> is equal to the
+        /// current <see cref="Polynomial{T, TStruct}"/>; otherwise, <c>false</c>.</returns>
         public Boolean Equals(Polynomial<T, TStruct> other)
         {
             if (other == null)
@@ -180,16 +189,15 @@ namespace Math.LinearAlgebra
         void CheckOutOfRange(UInt32 index)
         {
             if (this.Degree == UInt32.MaxValue)
-                throw new DirectSumException(String.Format("Vector class: The index is equal to max value"))
-                { 
-                    ExceptionType = DirectSumExceptionType.IndexEqualsMaxUnsignedInteger 
-                };
+                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualsMaxUnsignedInteger,
+                    String.Format("Vector class: The index is equal to max value"));
+
 
             if (this.Degree + 1 < index)
-                throw new DirectSumException(String.Format("Vector class: The index ({0}) is greater or equal then the column dimension ({1})", index, this.Degree))
-                { 
-                    ExceptionType = DirectSumExceptionType.IndexEqualOrGreaterDimension
-                };
+                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, 
+                    String.Format("Vector class: The index ({0}) is greater or equal then the column dimension ({1})", 
+                        index, this.Degree));
+              
         }
 
         #endregion
