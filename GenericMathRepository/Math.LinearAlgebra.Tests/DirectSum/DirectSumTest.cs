@@ -61,7 +61,7 @@ namespace Math.LinearAlgebra.Tests
             var vec = new DirectSum<T, TStruct>(dimension);
             Assert.IsNotNull(vec);
 
-            Assert.Throws<DirectSumException>(() => vec[index] = value);
+            Assert.Throws<LinearAlgebraException>(() => vec[index] = value);
         }
 
         #endregion
