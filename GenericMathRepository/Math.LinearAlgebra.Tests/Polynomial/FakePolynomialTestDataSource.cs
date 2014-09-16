@@ -76,10 +76,10 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {               
-                var degree = (UInt32)Int32List.Count;
-                var poly = new Polynomial<Int32, Int32Group>(degree - 1);
+                var degree = (UInt32)Int32List.Count - 1;
+                var poly = new Polynomial<Int32, Int32Group>(degree);
 
-                for (UInt32 i = 0; i < degree; i++)
+                for (UInt32 i = 0; i < degree + 1; i++)
                 {
                     poly[i] = Int32List[(Int32)i];
                 }
@@ -96,10 +96,10 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {               
-                var degree = (UInt32)Int32List.Count;
-                var poly = new Polynomial<Int32, Int32Ring>(degree - 1);
+                var degree = (UInt32)Int32List.Count - 1;
+                var poly = new Polynomial<Int32, Int32Ring>(degree);
 
-                for (UInt32 i = 0; i < degree; i++)
+                for (UInt32 i = 0; i < degree + 1; i++)
                 {
                     poly[i] = Int32List[(Int32)i];
                 }
@@ -116,10 +116,10 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                var degree = (UInt32)ComplexList.Count;
-                var poly = new Polynomial<Complex, ComplexRing>(degree - 1);
+                var degree = (UInt32)ComplexList.Count - 1;
+                var poly = new Polynomial<Complex, ComplexRing>(degree);
 
-                for (UInt32 i = 0; i < degree; i++)
+                for (UInt32 i = 0; i < degree + 1; i++)
                 {
                     poly[i] = ComplexList[(Int32)i];
                 }
@@ -136,10 +136,10 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                var degree = (UInt32)DoubleList.Count;
-                var poly = new Polynomial<Double, DoubleField>(degree - 1);
+                var degree = (UInt32)DoubleList.Count - 1;
+                var poly = new Polynomial<Double, DoubleField>(degree);
 
-                for (UInt32 i = 0; i < degree; i++)
+                for (UInt32 i = 0; i < degree + 1; i++)
                 {
                     poly[i] = DoubleList[(Int32)i];
                 }
