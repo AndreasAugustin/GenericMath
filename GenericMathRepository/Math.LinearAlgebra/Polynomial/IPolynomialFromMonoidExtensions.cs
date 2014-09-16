@@ -41,7 +41,7 @@ namespace Math.LinearAlgebra
             var poly = polyWithMaxDegree.ReturnNewInstanceWithSameDegree();
             var monoid = new TMonoid();
 
-            for (UInt32 i = 0; i < polyWithMaxDegree.Degree; i++)
+            for (UInt32 i = 0; i < polyWithMaxDegree.Degree + 1; i++)
             {
                 // TODO implement left and right elements (do not necessary need to be commutative)
                 var otherDegreeValid = polyWithLowerOrEqualMaxDegree.Degree >= polyWithMaxDegree.Degree;
