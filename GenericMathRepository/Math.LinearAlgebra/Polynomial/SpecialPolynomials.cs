@@ -19,50 +19,43 @@ namespace Math.LinearAlgebra
     /// </summary>
     public class SpecialPolynomials
     {
-        #region fields
-
-        SpecialDirectSums _specialVectors;
-
-        #endregion
-
-        #region properties
-
-        SpecialDirectSums SpecialVectors
-        {
-            get { return _specialVectors ?? (_specialVectors = new SpecialDirectSums()); }
-        }
-
-        #endregion
-
         #region methods
 
         /// <summary>
         /// Creates the zeros polynomial for dimension.
         /// </summary>
         /// <returns>The polynomial.</returns>
-        /// <param name="dimension">The dimension.</param>
+        /// <param name="degree">The dimension.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public Polynomial<T, TStruct> ZeroPolynomial<T, TStruct>(UInt32 dimension)
-            where TStruct : IGroup<T>, new()
+        /// <typeparam name="TGroup">The underlying structure.</typeparam>
+        public Polynomial<T, TGroup> ZeroPolynomial<T, TGroup>(UInt32 degree)
+            where TGroup : IGroup<T>, new()
         {
-            return new Polynomial<T, TStruct>(SpecialVectors.ZeroVector<T, TStruct>(dimension));        
+            var poly = new Polynomial<T, TGroup>(degree);
+            var group = new TGroup();
+
+            for (UInt32 i = 0; i < degree; i++)
+            {
+                poly[i] = group.Zero;
+            }
+
+            return poly;
         }
 
         /// <summary>
         /// Creates the one polynomial for dimension.
         /// </summary>
         /// <returns>The polynomial.</returns>
-        /// <param name="dimension">The dimension.</param>
+        /// <param name="degree">The dimension.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public Polynomial<T, TStruct> OnePolynomial<T, TStruct>(UInt32 dimension)
-            where TStruct : IRing<T>, new()
+        /// <typeparam name="TRing">The underlying structure.</typeparam>
+        public Polynomial<T, TRing> OnePolynomial<T, TRing>(UInt32 degree)
+            where TRing : IRing<T>, new()
         {
-            var result = ZeroPolynomial<T, TStruct>(dimension);
-            var baseStructure = new TStruct();
+            var result = ZeroPolynomial<T, TRing>(degree);
+            var ring = new TRing();
 
-            result[0] = baseStructure.One;
+            result[0] = ring.One;
 
             return result;
         }

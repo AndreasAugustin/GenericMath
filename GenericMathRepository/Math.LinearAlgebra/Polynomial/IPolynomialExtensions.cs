@@ -10,6 +10,8 @@
 
 namespace Math.LinearAlgebra
 {
+    using System;
+
     using Math.Base;
 
     /// <summary>
@@ -29,7 +31,14 @@ namespace Math.LinearAlgebra
         public static IPolynomial<T, TStruct> Copy<T, TStruct>(this IPolynomial<T, TStruct> polynomial)
             where TStruct : IStructure<T>, new()
         {
-            return polynomial.ReturnNewInstanceWithSameCoefficients();
+            var poly = polynomial.ReturnNewInstanceWithSameDegree();
+
+            for (UInt32 i = 0; i < polynomial.Degree; i++)
+            {
+                poly[i] = polynomial[i];
+            }
+
+            return poly;
         }
 
         #endregion

@@ -11,6 +11,8 @@
 namespace Math.LinearAlgebra
 {
     using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Text;
 
     using Math.Base;
@@ -25,7 +27,7 @@ namespace Math.LinearAlgebra
     {
         #region fields
 
-        readonly IDirectSum<T, TStruct> _coefficients;
+        readonly List<T> _coefficients;
 
         #endregion
 
@@ -37,16 +39,23 @@ namespace Math.LinearAlgebra
         /// <param name="degree">The degree of the polynomial.</param>
         public Polynomial(UInt32 degree)
         {
-            _coefficients = new DirectSum<T, TStruct>(degree + 1);
+            this._coefficients = new List<T>((Int32)(degree + 1));
+            this.Degree = degree;
         }
 
         /// <summary>
         /// Initialises a new instance of the <see cref="Polynomial{T, TStruct}"/> class.
         /// </summary>
         /// <param name="coefficients">The coefficients.</param>
-        public Polynomial(IDirectSum<T, TStruct> coefficients)
+        public Polynomial(List<T> coefficients)
         {
-            _coefficients = coefficients.Copy();
+            this._coefficients = new List<T>(coefficients.Count);
+            this.Degree = (UInt32)coefficients.Count;
+
+            for (var i = 0; i < coefficients.Count; i++)
+            {
+                this[(UInt32)i] = coefficients[i];
+            }
         }
 
         #endregion
@@ -59,16 +68,8 @@ namespace Math.LinearAlgebra
         /// <value>The degree.</value>
         public UInt32 Degree
         {
-            get { return _coefficients.Dimension - 1; }
-        }
-
-        /// <summary>
-        /// Gets the coefficients.
-        /// </summary>
-        /// <value>The coefficients.</value>
-        public IDirectSum<T, TStruct> Coefficients
-        {
-            get { return _coefficients; }
+            get;
+            private set;
         }
 
         #endregion
@@ -84,12 +85,12 @@ namespace Math.LinearAlgebra
         {
             get
             {
-                return _coefficients[index];
+                return _coefficients[(Int32)index];
             }
 
             set
             {
-                _coefficients[index] = value;
+                _coefficients[(Int32)index] = value;
             }
         }
 
@@ -106,39 +107,46 @@ namespace Math.LinearAlgebra
             return new Polynomial<T, TStruct>(this.Degree);
         }
 
-        /// <summary>
-        /// Returns a new the instance with other coefficients like the calling instance.
-        /// </summary>
-        /// <returns>The instance with other coefficients.</returns>
-        /// <param name="coefficients">The coefficients of the new polynomial</param>
-        public IPolynomial<T, TStruct> ReturnNewInstanceWithOtherCoefficients(IDirectSum<T, TStruct> coefficients)
-        {
-            return new Polynomial<T, TStruct>(coefficients);
-        }
-
-        /// <summary>
-        /// Returns a new the instance with same degree like the calling instance.
-        /// </summary>
-        /// <returns>The instance with same dimension.</returns>
-        public IPolynomial<T, TStruct> ReturnNewInstanceWithSameCoefficients()
-        {
-            return new Polynomial<T, TStruct>(this.Coefficients);
-        }
+        //        /// <summary>
+        //        /// Returns a new the instance with other coefficients like the calling instance.
+        //        /// </summary>
+        //        /// <returns>The instance with other coefficients.</returns>
+        //        /// <param name="coefficients">The coefficients of the new polynomial</param>
+        //        public IPolynomial<T, TStruct> ReturnNewInstanceWithOtherCoefficients(List<T> coefficients)
+        //        {
+        //            return new Polynomial<T, TStruct>(coefficients);
+        //        }
+        //
+        //        /// <summary>
+        //        /// Returns a new the instance with same degree like the calling instance.
+        //        /// </summary>
+        //        /// <returns>The instance with same dimension.</returns>
+        //        public IPolynomial<T, TStruct> ReturnNewInstanceWithSameCoefficients()
+        //        {
+        //            var poly = new Polynomial<T, TStruct>(Degree);
+        //
+        //            for(UInt32 i = 0; i < )
+        //        }
 
         #endregion
 
         #region IEquatable implementation
 
-        /// <summary>
-        /// Determines whether the specified <see cref="Polynomial{T, TStruct}"/> is equal to the
-        /// current <see cref="Polynomial{T, TStruct}"/>.
-        /// </summary>
-        /// <param name="other">The <see cref="Polynomial{T, TStruct}"/> to compare with the current <see cref="Polynomial{T, TStruct}"/>.</param>
-        /// <returns><c>true</c> if the specified <see cref="Polynomial{T, TStruct}"/> is equal to the
-        /// current <see cref="Polynomial{T, TStruct}"/>; otherwise, <c>false</c>.</returns>
         public Boolean Equals(Polynomial<T, TStruct> other)
         {
-            return other != null && this.Coefficients.Equals(other.Coefficients);
+            if (other == null)
+                return false;
+
+            if (Object.ReferenceEquals(this, other))
+                return true;
+
+            for (UInt32 i = 0; i < _coefficients.Count; i++)
+            {
+                if (!this[i].Equals(other[i]))
+                    return false;
+            }
+
+            return true;
         }
 
         #endregion
@@ -161,6 +169,44 @@ namespace Math.LinearAlgebra
             str.Append(this[0]);
 
             return str.ToString();
+        }
+
+        #endregion
+
+        #region helper methods
+
+        #region helper methods
+
+        void CheckOutOfRange(UInt32 index)
+        {
+            if (this.Degree == UInt32.MaxValue)
+                throw new DirectSumException(String.Format("Vector class: The index is equal to max value"))
+                { 
+                    ExceptionType = DirectSumExceptionType.IndexEqualsMaxUnsignedInteger 
+                };
+
+            if (this.Degree + 1 < index)
+                throw new DirectSumException(String.Format("Vector class: The index ({0}) is greater or equal then the column dimension ({1})", index, this.Degree))
+                { 
+                    ExceptionType = DirectSumExceptionType.IndexEqualOrGreaterDimension
+                };
+        }
+
+        #endregion
+
+        #endregion
+
+        #region debug methods
+
+        [Conditional("DEBUG")]
+        void CheckState()
+        {
+            var methodName = new StackTrace().GetFrame(1).GetMethod().Name;
+            Trace.Write("Hi");
+            Console.WriteLine("--- Entering check state for vector");
+            Console.WriteLine(String.Format("The constraint type is {0}", typeof(T)));
+            Console.Write("\t called by");
+            Console.WriteLine(methodName);
         }
 
         #endregion

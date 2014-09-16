@@ -28,21 +28,27 @@ namespace Math.LinearAlgebra
         /// <param name="polynomial1">The left polynomial.</param>
         /// <param name="polynomial2">The right polynomial.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
+        /// <typeparam name="TMonoid">The underlying structure.</typeparam>
         /// <returns>A new polynomial as a sum of polynomial1 and polynomial2.</returns>
-        public static IPolynomial<T, TStruct> Add<T, TStruct>(this IPolynomial<T, TStruct> polynomial1, IPolynomial<T, TStruct> polynomial2)
-            where TStruct : IMonoid<T>, new()
+        public static IPolynomial<T, TMonoid> Add<T, TMonoid>(this IPolynomial<T, TMonoid> polynomial1, IPolynomial<T, TMonoid> polynomial2)
+            where TMonoid : IMonoid<T>, new()
         {
-            var degree = Math.Max(polynomial1.Degree, polynomial2.Degree);
+            var poly1HasMaxDegree = polynomial1.Degree >= polynomial2.Degree;
 
-            if (polynomial1.Degree < degree)
+            var polyWithMaxDegree = poly1HasMaxDegree ? polynomial1 : polynomial2;
+            var polyWithLowerOrEqualMaxDegree = poly1HasMaxDegree ? polynomial2 : polynomial1;
+
+            var poly = polyWithMaxDegree.ReturnNewInstanceWithSameDegree();
+            var monoid = new TMonoid();
+
+            for (UInt32 i = 0; i < polyWithMaxDegree.Degree; i++)
             {
-                return polynomial1.ReturnNewInstanceWithOtherCoefficients(polynomial1.Coefficients
-                    .Injection(degree - polynomial1.Degree).Add(polynomial2.Coefficients));
+                // TODO implement left and right elements (do not necessary need to be commutative)
+                var otherDegreeValid = polyWithLowerOrEqualMaxDegree.Degree >= polyWithMaxDegree.Degree;
+                poly[i] = monoid.Addition(polyWithMaxDegree[i], otherDegreeValid ? polyWithLowerOrEqualMaxDegree[i] : monoid.Zero);
             }
 
-            return polynomial1.ReturnNewInstanceWithOtherCoefficients(polynomial2.Coefficients
-                .Injection(degree - polynomial2.Degree).Add(polynomial1.Coefficients));         
+            return poly;
         }
 
         #endregion

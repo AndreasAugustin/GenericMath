@@ -111,11 +111,20 @@ namespace Math.LinearAlgebra
         /// <param name="polynomial">The polynomial.</param>
         /// <param name="scalar">The scalar.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IPolynomial<T, TStruct> ScalarMultiply<T, TStruct>(this IPolynomial<T, TStruct> polynomial, T scalar)
-            where TStruct : IRing<T>, new()
+        /// <typeparam name="TRing">The underlying structure.</typeparam>
+        public static IPolynomial<T, TRing> ScalarMultiply<T, TRing>(this IPolynomial<T, TRing> polynomial, T scalar)
+            where TRing : IRing<T>, new()
         {
-            return polynomial.ReturnNewInstanceWithOtherCoefficients(polynomial.Coefficients.ScalarMultiply(scalar));
+            var poly = polynomial.ReturnNewInstanceWithSameDegree();
+            var degree = polynomial.Degree;
+            var structure = new TRing();
+
+            for (UInt32 i = 0; i < degree; i++)
+            {
+                poly[i] = structure.Multiplication(scalar, polynomial[i]);
+            }
+
+            return poly;
         }
 
         #endregion
