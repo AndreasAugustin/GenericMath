@@ -75,15 +75,15 @@ namespace Math.LinearAlgebra.Tests
         public void Copy_IsNewInstance_VectorsAreEqual<T, TStruct>(T hackForGenericParameter1, TStruct hackForGenericParameter2, IDirectSum<T, TStruct> tuple)
             where TStruct : IStructure<T>, new()
         {
-            var vectorCopy = tuple.Copy();
+            var tupleCopy = tuple.Copy();
 
             // the references and the type should not be the same.
-            Assert.IsFalse(Object.ReferenceEquals(tuple, vectorCopy));
+            Assert.IsFalse(Object.ReferenceEquals(tuple, tupleCopy));
 
             // The values should be the same.
-            Assert.AreEqual(tuple.Dimension, vectorCopy.Dimension);         
+            Assert.AreEqual(tuple.Dimension, tupleCopy.Dimension);         
 
-            Assert.AreEqual(tuple, vectorCopy);
+            Assert.AreEqual(tuple, tupleCopy);
         }
 
         /// <summary>
