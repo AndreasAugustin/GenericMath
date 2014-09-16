@@ -58,18 +58,6 @@ namespace Math.LinearAlgebra
         /// <value>The dimension.</value>
         public UInt32 Dimension { get; private set; }
 
-        /// <summary>
-        /// Gets the entries.
-        /// </summary>
-        /// <value>The entries.</value>
-        List<T> Entries
-        {
-            get
-            {
-                return _entries;
-            }
-        }
-
         #endregion
 
         #region indexers
@@ -79,8 +67,8 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <param name="index">The index.</param>
         /// <returns>The value at index.</returns>
-        /// <exception cref="DirectSumException">Thrown when the 
-        /// index is not within the dimension of the vector.</exception>
+        /// <exception cref="LinearAlgebraException">Thrown when the 
+        /// index is not within the dimension of the direct sum.</exception>
         public T this[UInt32 index]
         {
             get
@@ -162,33 +150,7 @@ namespace Math.LinearAlgebra
             if (Object.ReferenceEquals(this, other))
                 return true;
 
-            for (UInt32 i = 0; i < Entries.Count; i++)
-            {
-                if (!this[i].Equals(other[i]))
-                    return false;
-            }
-
-            return true;
-        }
-
-        /// <summary>
-        /// Determines whether the specified <see cref="DirectSum{T,TStruct}"/> is equal to the current <see cref="IDirectSum{T,TStruct}"/>.
-        /// </summary>
-        /// <param name="other">The <see cref="DirectSum{T,TStruct}"/> to compare with the current <see cref="IDirectSum{T,TStruct}"/>.</param>
-        /// <returns><c>true</c> if the specified <see cref="DirectSum{T,TStruct}"/> is equal to the current
-        /// <see cref="IDirectSum{T,TStruct}"/>otherwise, <c>false</c>.</returns>
-        public Boolean Equals(IDirectSum<T, TStruct> other)
-        {
-            if (other == null)
-                return false;
-
-            if (Object.ReferenceEquals(this, other))
-                return true;
-
-            if (this.GetType() != other.GetType())
-                return false;
-
-            for (UInt32 i = 0; i < Entries.Count; i++)
+            for (UInt32 i = 0; i < _entries.Count; i++)
             {
                 if (!this[i].Equals(other[i]))
                     return false;
@@ -203,17 +165,14 @@ namespace Math.LinearAlgebra
 
         void CheckOutOfRange(UInt32 index)
         {
-            if (Dimension == UInt32.MaxValue)
-                throw new DirectSumException(String.Format("Vector class: The index is equal to max value"))
-                { 
-                    ExceptionType = DirectSumException.VectorExceptionType.IndexEqualsMaxUnsignedInteger 
-                };
-
-            if (Dimension + 1 < index)
-                throw new DirectSumException(String.Format("Vector class: The index ({0}) is greater or equal then the column dimension ({1})", index, Dimension))
-                { 
-                    ExceptionType = DirectSumException.VectorExceptionType.IndexEqualOrGreaterDimension
-                };
+            if (this.Dimension == UInt32.MaxValue)
+                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualsMaxUnsignedInteger,
+                    String.Format("Vector class: The index is equal to max value"));
+               
+            if (this.Dimension + 1 < index)
+                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension,
+                    String.Format("Vector class: The index ({0}) is greater or equal then the column dimension ({1})", 
+                        index, this.Dimension));
         }
 
         #endregion
