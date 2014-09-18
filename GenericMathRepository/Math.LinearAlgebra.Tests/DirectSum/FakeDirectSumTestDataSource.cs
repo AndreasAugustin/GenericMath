@@ -76,15 +76,7 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {               
-                var dimension = (UInt32)Int32List.Count;
-                var vector = new DirectSum<Int32, Int32Group>(dimension);
-
-                for (UInt32 i = 0; i < dimension; i++)
-                {
-                    vector[i] = Int32List[(Int32)i];
-                }
-
-                return vector;
+                return new DirectSum<Int32, Int32Group>(Int32List);
             }
         }
 
@@ -96,15 +88,7 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {               
-                var dimension = (UInt32)Int32List.Count;
-                var vector = new DirectSum<Int32, Int32Ring>(dimension);
-
-                for (UInt32 i = 0; i < dimension; i++)
-                {
-                    vector[i] = Int32List[(Int32)i];
-                }
-
-                return vector;
+                return new DirectSum<Int32, Int32Ring>(Int32List);
             }
         }
 
@@ -116,15 +100,7 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                var dimension = (UInt32)ComplexList.Count;
-                var vector = new DirectSum<Complex, ComplexRing>(dimension);
-
-                for (UInt32 i = 0; i < dimension; i++)
-                {
-                    vector[i] = ComplexList[(Int32)i];
-                }
-
-                return vector;
+                return new DirectSum<Complex, ComplexRing>(ComplexList);
             }
         }
 
@@ -136,15 +112,7 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                var dimension = (UInt32)DoubleList.Count;
-                var vector = new DirectSum<Double, DoubleField>(dimension);
-
-                for (UInt32 i = 0; i < dimension; i++)
-                {
-                    vector[i] = DoubleList[(Int32)i];
-                }
-
-                return vector;
+                return new DirectSum<Double, DoubleField>(DoubleList);
             }
         }
 

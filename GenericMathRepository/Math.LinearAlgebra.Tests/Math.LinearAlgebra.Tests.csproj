@@ -63,5 +63,12 @@
     <Compile Include="DirectSum\IDirectSumFromRingExtensionsTest.cs" />
     <Compile Include="DirectSum\FakeDirectSumTestDataSource.cs" />
     <Compile Include="Polynomial\PolynomialTest.cs" />
+    <Compile Include="Matrix\MatrixTest.cs" />
+    <Compile Include="Polynomial\FakePolynomialTestDataSource.cs" />
+    <Compile Include="Polynomial\IPolynomialExtensionsTest.cs" />
+    <Compile Include="Polynomial\IPolynomialFromMonoidExtensionsTest.cs" />
+    <Compile Include="Polynomial\IPolynomialFromGroupExtensionsTest.cs" />
+    <Compile Include="Polynomial\IPolynomialFromRingExtensionsTest.cs" />
+    <Compile Include="Matrix\FakeMatrixTestDataSource.cs" />
   </ItemGroup>
 </Project>
