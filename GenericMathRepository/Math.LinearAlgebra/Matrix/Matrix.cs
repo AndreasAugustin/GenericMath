@@ -28,7 +28,6 @@ namespace Math.LinearAlgebra
     {
         #region FIELDS
 
-        // the vector is a column vector
         readonly List<List<T>> _entries;
 
         #endregion
@@ -50,8 +49,6 @@ namespace Math.LinearAlgebra
                 
             RowDimension = dimension;
             ColumnDimension = dimension;
-
-            BaseStructure = new TStruct();
         }
 
         /// <summary>
@@ -69,8 +66,18 @@ namespace Math.LinearAlgebra
                 
             RowDimension = rowDimension;
             ColumnDimension = columnDimension;
+        }
 
-            BaseStructure = new TStruct();
+        /// <summary>
+        /// Initialises a new instance of the <see cref="Matrix{T, TStruct}"/> class.
+        /// </summary>
+        /// <param name="entries">Entreis.</param>
+        public Matrix(IEnumerable<List<T>> entries)
+        {
+            this._entries = entries.ToList();
+
+            this.ColumnDimension = (UInt32)_entries.Count;
+            this.RowDimension = (UInt32)_entries[0].Count;
         }
 
         #endregion
@@ -93,16 +100,6 @@ namespace Math.LinearAlgebra
             private set;
         }
 
-        /// <summary>
-        /// Gets the underlying structure.
-        /// </summary>
-        /// <value>The underlying structure.</value>
-        internal TStruct BaseStructure
-        {
-            get;
-            private set;
-        }
-
         #endregion
 
         #region INDEXERS
@@ -116,15 +113,16 @@ namespace Math.LinearAlgebra
         public T this[UInt32 row, UInt32 column]
         {
             get
-            {	// row is checked by vector class
+            {	
                 CheckColumnOutOfRange(column);
 
                 return _entries[(Int32)column][(Int32)row]; 
             }
 
             set
-            {      // row is checked by vector class
+            {      
                 CheckColumnOutOfRange(column);
+
                 _entries[(Int32)column][(Int32)row] = value;
             }
         }

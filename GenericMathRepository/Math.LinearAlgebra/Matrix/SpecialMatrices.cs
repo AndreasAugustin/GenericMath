@@ -27,11 +27,11 @@ namespace Math.LinearAlgebra
         /// <returns>The matrix.</returns>
         /// <param name="dimension">The dimension.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public Matrix<T, TStruct> ZeroMatrix<T, TStruct>(UInt32 dimension)
-            where TStruct : IGroup<T>, new()
+        /// <typeparam name="TGroup">The underlying structure.</typeparam>
+        public Matrix<T, TGroup> ZeroMatrix<T, TGroup>(UInt32 dimension)
+            where TGroup : IGroup<T>, new()
         {
-            return ZeroMatrix<T, TStruct>(dimension, dimension);
+            return ZeroMatrix<T, TGroup>(dimension, dimension);
         }
 
         /// <summary>
@@ -41,17 +41,18 @@ namespace Math.LinearAlgebra
         /// <param name="rowDimension">Row dimension.</param>
         /// <param name="columnDimension">Column dimension.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public Matrix<T, TStruct> ZeroMatrix<T, TStruct>(UInt32 rowDimension, UInt32 columnDimension)
-            where TStruct : IGroup<T>, new()
+        /// <typeparam name="TGroup">The underlying structure.</typeparam>
+        public Matrix<T, TGroup> ZeroMatrix<T, TGroup>(UInt32 rowDimension, UInt32 columnDimension)
+            where TGroup : IGroup<T>, new()
         {
-            var matrix = new Matrix<T, TStruct>(rowDimension, columnDimension);
+            var matrix = new Matrix<T, TGroup>(rowDimension, columnDimension);
+            var group = new TGroup();
 
             for (UInt32 i = 0; i < rowDimension; i++)
             {
                 for (UInt32 j = 0; j < columnDimension; j++)
                 {
-                    matrix[i, j] = matrix.BaseStructure.Zero;
+                    matrix[i, j] = group.Zero;
                 }
             }
 
@@ -63,14 +64,14 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <param name="dimension">The dimension.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
+        /// <typeparam name="TRing">The underlying structure.</typeparam>
         /// <returns>The one matrix with dimension n.</returns>
-        public Matrix<T, TStruct> OneMatrix<T, TStruct>(UInt32 dimension)
-            where TStruct : IRing<T>, new()
+        public Matrix<T, TRing> OneMatrix<T, TRing>(UInt32 dimension)
+            where TRing : IRing<T>, new()
         {
-            var mat = new Matrix<T, TStruct>(dimension);
+            var mat = new Matrix<T, TRing>(dimension);
 
-            var ring = mat.BaseStructure;
+            var ring = new TRing();
 
             for (UInt32 i = 0; i < mat.RowDimension; i++)
             {
