@@ -12,3 +12,7 @@ C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\GenericMath\Math.Base\bin\Deb
 C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\GenericMath\Math.Base\obj\Debug\Math.Base.csprojResolveAssemblyReference.cache
 C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\GenericMath\Math.Base\obj\Debug\Math.Base.dll
 C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\GenericMath\Math.Base\obj\Debug\Math.Base.pdb
+C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\GenericMathRepository\Math.Base\bin\Debug\Math.Base.dll
+C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\GenericMathRepository\Math.Base\bin\Debug\Math.Base.pdb
+C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\GenericMathRepository\Math.Base\obj\Debug\Math.Base.dll
+C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\GenericMathRepository\Math.Base\obj\Debug\Math.Base.pdb

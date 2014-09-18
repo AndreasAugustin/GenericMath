@@ -2,3 +2,7 @@ C:\Users\andy\Documents\SuperDevelop\Math.Base\Math.Base\bin\Release\Math.Base.d
 C:\Users\andy\Documents\SuperDevelop\Math.Base\Math.Base\bin\Release\Math.Base.pdb
 C:\Users\andy\Documents\SuperDevelop\Math.Base\Math.Base\obj\Release\Math.Base.dll
 C:\Users\andy\Documents\SuperDevelop\Math.Base\Math.Base\obj\Release\Math.Base.pdb
+C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\GenericMathRepository\Math.Base\bin\Release\Math.Base.dll
+C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\GenericMathRepository\Math.Base\bin\Release\Math.Base.pdb
+C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\GenericMathRepository\Math.Base\obj\Release\Math.Base.dll
+C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\GenericMathRepository\Math.Base\obj\Release\Math.Base.pdb
