@@ -25,24 +25,24 @@ namespace Math.LinearAlgebra
         /// Point multiplication of vector1 and vector2.
         /// The dimensions must agree.
         /// </summary>
-        /// <param name="vector1">The left vector.</param>
-        /// <param name="vector2">The right.</param>
+        /// <param name="tuple1">The left vector.</param>
+        /// <param name="tuple2">The right.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
+        /// <typeparam name="TRing">The underlying structure.</typeparam>
         /// <returns>The multiplication vector1 * vector2.</returns>
-        public static IDirectSum<T, TStruct> Multiply<T, TStruct>(this IDirectSum<T, TStruct> vector1, IDirectSum<T, TStruct> vector2)
-            where TStruct : IRing<T>, new()
-        {
-            if (vector1.Dimension != vector2.Dimension)
+        public static IDirectSum<T, TRing> Multiply<T, TRing>(this IDirectSum<T, TRing> tuple1, IDirectSum<T, TRing> tuple2)
+            where TRing : IRing<T>, new()
+        {// TODO throw right exception
+            if (tuple1.Dimension != tuple2.Dimension)
                 throw new IndexOutOfRangeException("The vector dimensions need to agree");
 
-            var ring = new TStruct();
+            var ring = new TRing();
 
-            var result = vector1.ReturnNewInstanceWithSameDimension();
+            var result = tuple1.ReturnNewInstance(tuple1.Dimension);
 
-            for (UInt32 i = 0; i < vector1.Dimension; i++)
+            for (UInt32 i = 0; i < tuple1.Dimension; i++)
             {
-                result[i] = ring.Multiplication(vector1[i], vector2[i]);
+                result[i] = ring.Multiplication(tuple1[i], tuple2[i]);
             }
 
             return result;
@@ -97,19 +97,19 @@ namespace Math.LinearAlgebra
         /// Multiplies a scalar lambda with a vector v.
         /// </summary>
         /// <returns>lambda * v.</returns>
-        /// <param name="vector">The vector.</param>
+        /// <param name="tuple">The vector.</param>
         /// <param name="scalar">The scalar.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IDirectSum<T, TStruct> ScalarMultiply<T, TStruct>(this IDirectSum<T, TStruct> vector, T scalar)
-            where TStruct : IRing<T>, new()
+        /// <typeparam name="TRing">The underlying structure.</typeparam>
+        public static IDirectSum<T, TRing> ScalarMultiply<T, TRing>(this IDirectSum<T, TRing> tuple, T scalar)
+            where TRing : IRing<T>, new()
         {
-            var ring = new TStruct();
-            var vec = vector.ReturnNewInstanceWithSameDimension();
+            var ring = new TRing();
+            var vec = tuple.ReturnNewInstance(tuple.Dimension);
 
-            for (UInt32 i = 0; i < vector.Dimension; i++)
+            for (UInt32 i = 0; i < tuple.Dimension; i++)
             {
-                vec[i] = ring.Multiplication(scalar, vector[i]);
+                vec[i] = ring.Multiplication(scalar, tuple[i]);
             }
 
             return vec;

@@ -31,7 +31,7 @@ namespace Math.LinearAlgebra
         public static IDirectSum<T, TStruct> Copy<T, TStruct>(this IDirectSum<T, TStruct> tuple)
             where TStruct : IStructure<T>, new()
         {
-            var vec = tuple.ReturnNewInstanceWithSameDimension();
+            var vec = tuple.ReturnNewInstance(tuple.Dimension);
 
             for (UInt32 i = 0; i < tuple.Dimension; i++)
             {

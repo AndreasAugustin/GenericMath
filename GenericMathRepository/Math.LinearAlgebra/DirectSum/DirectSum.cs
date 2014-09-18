@@ -111,16 +111,7 @@ namespace Math.LinearAlgebra
 
         #endregion
 
-        #region IVECTOR implementaition
-
-        /// <summary>
-        /// Returns the new instance with same dimension.
-        /// </summary>
-        /// <returns>The new instance with same dimension.</returns>
-        public IDirectSum<T, TStruct> ReturnNewInstanceWithSameDimension()
-        {
-            return ReturnNewInstance(this.Dimension);
-        }
+        #region IDIRECTSUM implementaition
 
         /// <summary>
         /// Returns the new instance.

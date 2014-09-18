@@ -47,24 +47,24 @@ namespace Math.LinearAlgebra
         /// <summary>
         /// Add the specified vector1 and vector2.
         /// </summary>
-        /// <param name="vector1">The left vector.</param>
-        /// <param name="vector2">The right vector.</param>
+        /// <param name="tuple1">The left vector.</param>
+        /// <param name="tuple2">The right vector.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
+        /// <typeparam name="TMonoid">The underlying structure.</typeparam>
         /// <returns>vector1 + vector2.</returns>
-        public static IDirectSum<T, TStruct> Add<T, TStruct>(this IDirectSum<T, TStruct> vector1, IDirectSum<T, TStruct> vector2)
-            where TStruct : IMonoid<T>, new()
+        public static IDirectSum<T, TMonoid> Add<T, TMonoid>(this IDirectSum<T, TMonoid> tuple1, IDirectSum<T, TMonoid> tuple2)
+            where TMonoid : IMonoid<T>, new()
         {
-            var group = new TStruct();
-
-            if (vector1.Dimension != vector2.Dimension)
+            var group = new TMonoid();
+            // Todo trhow right exception
+            if (tuple1.Dimension != tuple2.Dimension)
                 throw new IndexOutOfRangeException("The dimension of the two vectors do not agree");
 
-            var result = vector1.ReturnNewInstanceWithSameDimension();
+            var result = tuple1.ReturnNewInstance(tuple1.Dimension);
 
-            for (UInt32 i = 0; i < vector1.Dimension; i++)
+            for (UInt32 i = 0; i < tuple1.Dimension; i++)
             {
-                result[i] = group.Addition(vector1[i], vector2[i]); 
+                result[i] = group.Addition(tuple1[i], tuple2[i]); 
             }
 
             return result;
