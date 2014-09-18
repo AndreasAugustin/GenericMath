@@ -22,27 +22,6 @@ namespace Math.LinearAlgebra
         #region methods
 
         /// <summary>
-        /// Multiply the matrix power times.
-        /// </summary>
-        /// <param name="matrix">The matrix.</param>
-        /// <param name="power">The power.</param>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        /// <returns>The power of the matrix with power.</returns>
-        public static IMatrix<T, TStruct> Pow<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 power)
-            where TStruct : IRing<T>, new()
-        {
-            var result = matrix.Copy();
-
-            for (UInt32 i = 0; i < power - 1; i++)
-            {
-                result = result.MultiplyMatrix(matrix);
-            }
-
-            return result;
-        }
-
-        /// <summary>
         /// Multiply a scalar lambda with the matrix A.
         /// </summary>
         /// <param name="matrix">The matrix.</param>
@@ -75,16 +54,16 @@ namespace Math.LinearAlgebra
         /// <param name="matrix1">The left Matrix.</param>
         /// <param name="matrix2">The right Matrix.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IMatrix<T, TStruct> MultiplyMatrix<T, TStruct>(this IMatrix<T, TStruct> matrix1, IMatrix<T, TStruct> matrix2)
-            where TStruct : IRing<T>, new()
+        /// <typeparam name="TRing">The underlying structure.</typeparam>
+        public static IMatrix<T, TRing> MultiplyMatrix<T, TRing>(this IMatrix<T, TRing> matrix1, IMatrix<T, TRing> matrix2)
+            where TRing : IRing<T>, new()
         {
             if (matrix1.ColumnDimension != matrix2.RowDimension)
                 throw new IndexOutOfRangeException("The ColumnDimension of matrix1 needs to be the same like the RowDimension of matrix2");
 
             var result = matrix1.ReturnNewInstance(matrix1.RowDimension, matrix2.ColumnDimension);
 
-            var baseStructure = new TStruct();
+            var baseStructure = new TRing();
 
             for (UInt32 i = 0; i < result.RowDimension; i++)
             {
@@ -101,6 +80,27 @@ namespace Math.LinearAlgebra
         }
 
         /// <summary>
+        /// Multiply the matrix power times.
+        /// </summary>
+        /// <param name="matrix">The matrix.</param>
+        /// <param name="power">The power.</param>
+        /// <typeparam name="T">The 1st type parameter.</typeparam>
+        /// <typeparam name="TRing">The underlying structure.</typeparam>
+        /// <returns>The power of the matrix with power.</returns>
+        public static IMatrix<T, TRing> Pow<T, TRing>(this IMatrix<T, TRing> matrix, UInt32 power)
+            where TRing : IRing<T>, new()
+        {
+            var result = matrix.Copy();
+
+            for (UInt32 i = 0; i < power - 1; i++)
+            {
+                result = result.MultiplyMatrix(matrix);
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Multiplies the Matrix A with a vector v.
         /// A * v.
         /// </summary>
@@ -108,14 +108,14 @@ namespace Math.LinearAlgebra
         /// <param name="matrix">The matrix.</param>
         /// <param name="vector">The vector.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IDirectSum<T, TStruct> MultiplyVector<T, TStruct>(this IMatrix<T, TStruct> matrix, IDirectSum<T, TStruct> vector)
-            where TStruct : IRing<T>, new()
+        /// <typeparam name="TRing">The underlying structure.</typeparam>
+        public static IDirectSum<T, TRing> MultiplyVector<T, TRing>(this IMatrix<T, TRing> matrix, IDirectSum<T, TRing> vector)
+            where TRing : IRing<T>, new()
         {
             if (matrix.ColumnDimension != vector.Dimension)
                 throw new IndexOutOfRangeException("The ColumnDimension of the matrix needs to equal the row dimension of the vector");
 
-            var baseStructure = new TStruct();
+            var baseStructure = new TRing();
             var vect = vector.ReturnNewInstance(matrix.RowDimension);
 
             for (UInt32 i = 0; i < matrix.RowDimension; i++)
