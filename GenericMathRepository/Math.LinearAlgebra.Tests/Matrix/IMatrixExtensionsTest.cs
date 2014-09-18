@@ -73,7 +73,12 @@ namespace Math.LinearAlgebra.Tests
                 where TStruct : IStructure<T>, new()
         {
             var result = matrix.GetColumnVector(columnIndex);
-            var expected = underlyingList[(Int32)columnIndex];
+            var expected = new List<T>();
+
+            foreach (var item in underlyingList)
+            {
+                expected.Add(item[(Int32)columnIndex]);
+            }
 
             Assert.IsNotNull(result);
 

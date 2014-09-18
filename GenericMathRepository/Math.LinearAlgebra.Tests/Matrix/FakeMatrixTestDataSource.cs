@@ -39,7 +39,8 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                return _doubleList ?? (_doubleList = new List<List<Double>>{ new List<Double>{ 3.678 } });
+                return _doubleList ?? (
+                    _doubleList = new List<List<Double>>{ new List<Double>{ 3.678, 4.78 }, new List<Double>{ 2.3, 2.6 } });
             }
         }
 
@@ -52,7 +53,11 @@ namespace Math.LinearAlgebra.Tests
             get
             {
                 return _complexList ?? (_complexList = 
-                    new List<List<Complex>>{ new List<Complex>{ new Complex(1, 2), new Complex(4, 56) } });
+                    new List<List<Complex>>
+                { new List<Complex>{ new Complex(1, 2), new Complex(4, 56) },
+                    new List<Complex>{ new Complex(3, -5), new Complex(-3, -1) },
+                    new List<Complex>{ new Complex(-3, -5), new Complex(3, 1) }
+                });
             }
         }
 
@@ -64,7 +69,11 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                return _int32List ?? (_int32List = new List<List<Int32>>{ new List<Int32>{ 2, -2 } });
+                return _int32List ?? (
+                    _int32List = new List<List<Int32>>
+                { 
+                    new List<Int32>{ 2, -2, 5 }, new List<Int32>{ -2, 2, 15 }, new List<Int32>{ 2, 20, 5 }
+                });
             }
 
         }
