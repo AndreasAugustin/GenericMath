@@ -49,18 +49,6 @@ namespace Math.LinearAlgebra
             this.Dimension = dimension;
         }
 
-        /// <summary>
-        /// Initialises a new instance of the <see cref="DirectSum{T, TStruct}"/> class.
-        /// </summary>
-        /// <param name="entries">The entries of the tuple.</param>
-        public DirectSum(IEnumerable<T> entries)
-        {
-            CheckState();
-
-            this._entries = entries.ToList();
-            this.Dimension = (UInt32)this._entries.Count;
-        }
-
         #endregion
 
         #region properties
