@@ -39,15 +39,9 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <param name="dimension">The Dimension of the matrix.</param>
         public Matrix(UInt32 dimension)
+            : this(dimension, dimension)
         {
-            _entries = new List<List<T>>();
-            for (var i = 0; i < dimension; i++)
-            {
-                _entries.Add(new List<T>(new T[dimension]));
-            }
-                
-            RowDimension = dimension;
-            ColumnDimension = dimension;
+
         }
 
         /// <summary>
