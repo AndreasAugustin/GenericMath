@@ -11,7 +11,6 @@
 namespace Math.LinearAlgebra
 {
     using System;
-    using System.Linq;
 
     using Math.Base;
 
