@@ -48,7 +48,6 @@
     <Compile Include="Matrix\IMatrixFromMonoidExtensions.cs" />
     <Compile Include="Matrix\IMatrixFromRingExtensions.cs" />
     <Compile Include="Contracts\IDirectSum.cs" />
-    <Compile Include="Exceptions\DirectSumException.cs" />
     <Compile Include="Monoid\DirectSumMonoid.cs" />
     <Compile Include="DirectSum\DirectSum.cs" />
     <Compile Include="DirectSum\IDirectSumExtensions.cs" />
@@ -58,7 +57,8 @@
     <Compile Include="Group\DirectSumGroup.cs" />
     <Compile Include="DirectSum\SpecialDirectSums.cs" />
     <Compile Include="Ring\DirectSumRing.cs" />
-    <Compile Include="Exceptions\DirectSumExceptionType.cs" />
+    <Compile Include="Exceptions\LinearAlgebraException.cs" />
+    <Compile Include="Exceptions\LinearAlgebraExceptionType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
