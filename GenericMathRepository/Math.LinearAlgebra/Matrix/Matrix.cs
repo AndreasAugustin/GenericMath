@@ -74,6 +74,7 @@ namespace Math.LinearAlgebra
         /// <param name="entries">Entreis.</param>
         public Matrix(IEnumerable<IEnumerable<T>> entries)
         {
+            this._entries = new List<List<T>>();
             foreach (var entry in entries)
             {
                 var list = new List<T>();
