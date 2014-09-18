@@ -31,7 +31,7 @@ namespace Math.LinearAlgebra
         public static IMatrix<T, TStruct> Inverse<T, TStruct>(this IMatrix<T, TStruct> matrix)
             where TStruct : IGroup<T>, new()
         {
-            var mat = matrix.ReturnNewInstanceWithSameDimensions();
+            var mat = matrix.ReturnNewInstance(matrix.RowDimension, matrix.ColumnDimension);
 
             var baseStructure = new TStruct();
 

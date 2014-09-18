@@ -12,6 +12,7 @@ namespace Math.LinearAlgebra
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
 
     using Math.Base;
@@ -28,7 +29,7 @@ namespace Math.LinearAlgebra
         #region FIELDS
 
         // the vector is a column vector
-        readonly List<IDirectSum<T, TStruct>> _entries;
+        readonly List<List<T>> _entries;
 
         #endregion
 
@@ -41,10 +42,10 @@ namespace Math.LinearAlgebra
         /// <param name="dimension">The Dimension of the matrix.</param>
         public Matrix(UInt32 dimension)
         {
-            _entries = new List<IDirectSum<T, TStruct>>();
+            _entries = new List<List<T>>();
             for (var i = 0; i < dimension; i++)
             {
-                _entries.Add(new DirectSum<T, TStruct>(dimension));
+                _entries.Add(new List<T>(new T[dimension]));
             }
                 
             RowDimension = dimension;
@@ -60,10 +61,10 @@ namespace Math.LinearAlgebra
         /// <param name="columnDimension">Column dimension.</param>
         public Matrix(UInt32 rowDimension, UInt32 columnDimension)
         {
-            _entries = new List<IDirectSum<T, TStruct>>();
+            _entries = new List<List<T>>();
             for (var i = 0; i < columnDimension; i++)
             {
-                _entries.Add(new DirectSum<T, TStruct>(rowDimension));
+                _entries.Add(new List<T>(new T[rowDimension]));
             }
                 
             RowDimension = rowDimension;
@@ -118,13 +119,13 @@ namespace Math.LinearAlgebra
             {	// row is checked by vector class
                 CheckColumnOutOfRange(column);
 
-                return _entries[(Int32)column][row]; 
+                return _entries[(Int32)column][(Int32)row]; 
             }
 
             set
             {      // row is checked by vector class
                 CheckColumnOutOfRange(column);
-                _entries[(Int32)column][row] = value;
+                _entries[(Int32)column][(Int32)row] = value;
             }
         }
 
@@ -139,40 +140,14 @@ namespace Math.LinearAlgebra
             { 
                 CheckColumnOutOfRange(column);
 
-                var test = _entries[(Int32)column]; 
+                return  new DirectSum<T, TStruct>(_entries[(Int32)column]);
 
-                return test;
-            }
-
-            set
-            {
-                CheckColumnOutOfRange(column);
-
-                _entries[(Int32)column] = value;
             }
         }
 
         #endregion
 
         #region IMATRIX implementations
-
-        /// <summary>
-        /// Returns the new instance with same dimensions.
-        /// </summary>
-        /// <returns>The new instance with same dimensions.</returns>
-        public IMatrix<T, TStruct> ReturnNewInstanceWithSameDimensions()
-        {
-            return ReturnNewInstance(this.RowDimension, this.ColumnDimension);
-        }
-
-        /// <summary>
-        /// Returns the new instance with twisted dimensions.
-        /// </summary>
-        /// <returns>The new instance with twisted dimensions.</returns>
-        public IMatrix<T, TStruct> ReturnNewInstanceWithTwistedDimensions()
-        {
-            return ReturnNewInstance(this.ColumnDimension, this.RowDimension);
-        }
 
         /// <summary>
         /// Returns the new instance.

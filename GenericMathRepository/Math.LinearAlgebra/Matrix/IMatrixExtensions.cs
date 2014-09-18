@@ -11,6 +11,7 @@
 namespace Math.LinearAlgebra
 {
     using System;
+    using System.Linq;
 
     using Math.Base;
 
@@ -67,7 +68,7 @@ namespace Math.LinearAlgebra
         public static IMatrix<T, TStruct> Transpose<T, TStruct>(this IMatrix<T, TStruct> matrix)
             where TStruct : IStructure<T>, new()
         {
-            var result = matrix.ReturnNewInstanceWithTwistedDimensions(); // n x m Matrix -> m x n - Matrix
+            var result = matrix.ReturnNewInstance(matrix.ColumnDimension, matrix.RowDimension); // n x m Matrix -> m x n - Matrix
 
             for (UInt32 i = 0; i < matrix.RowDimension; i++)
             {
@@ -90,11 +91,14 @@ namespace Math.LinearAlgebra
         public static IMatrix<T, TStruct> Copy<T, TStruct>(this IMatrix<T, TStruct> matrix)
             where TStruct : IStructure<T>, new()
         {
-            var mat = matrix.ReturnNewInstanceWithSameDimensions();
+            var mat = matrix.ReturnNewInstance(matrix.RowDimension, matrix.ColumnDimension);
 
             for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
             {
-                mat[j] = matrix[j].Copy();
+                for (UInt32 i = 0; i < matrix.RowDimension; i++)
+                {
+                    mat[i, j] = matrix[i, j];
+                }
             }
 
             return mat;

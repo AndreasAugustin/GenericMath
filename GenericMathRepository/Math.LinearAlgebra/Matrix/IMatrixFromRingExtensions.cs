@@ -53,11 +53,16 @@ namespace Math.LinearAlgebra
         public static IMatrix<T, TStruct> ScalarMultiply<T, TStruct>(this IMatrix<T, TStruct> matrix, T scalar)
             where TStruct : IRing<T>, new()
         {
-            var result = matrix.ReturnNewInstanceWithSameDimensions();
+            var result = matrix.ReturnNewInstance(matrix.RowDimension, matrix.ColumnDimension);
 
             for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
             {
-                result[j] = matrix[j].ScalarMultiply(scalar);
+                var tuple = matrix[j].ScalarMultiply(scalar);
+
+                for (UInt32 i = 0; i < tuple.Dimension; i++)
+                {
+                    result[i, j] = tuple[i];
+                }
             }
 
             return result;

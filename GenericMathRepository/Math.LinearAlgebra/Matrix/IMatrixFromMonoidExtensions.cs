@@ -39,11 +39,15 @@ namespace Math.LinearAlgebra
             if (leftMatrix.RowDimension != rightMatrix.RowDimension)
                 throw new NotSupportedException("The row dimension of the matrizes need to agree");
                 
-            var result = leftMatrix.ReturnNewInstanceWithSameDimensions();
+            var result = leftMatrix.ReturnNewInstance(leftMatrix.RowDimension, leftMatrix.ColumnDimension);
 
             for (UInt32 j = 0; j < leftMatrix.ColumnDimension; j++)
             {
-                result[j] = leftMatrix[j].Add(rightMatrix[j]);
+                var tuple = leftMatrix[j].Add(rightMatrix[j]);
+                for (UInt32 i = 0; i < tuple.Dimension; i++)
+                {
+                    result[i, j] = tuple[i];
+                }
             }
 
             return result;
