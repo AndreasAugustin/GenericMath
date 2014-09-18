@@ -36,13 +36,13 @@ namespace Math.LinearAlgebra.Tests
             }
         }
 
-        IEnumerable<TestCaseData> AddDataSource
+        IEnumerable<TestCaseData> InverseDataSource
         {
             get
             {
-                yield return new TestCaseData(default(Int32), new Int32Group(), MockDataSource.GroupInt32Source, MockDataSource.Int32List);
-                yield return new TestCaseData(default(Double), new DoubleField(), MockDataSource.FieldDoubleSource, MockDataSource.DoubleList);
-                yield return new TestCaseData(default(Complex), new ComplexRing(), MockDataSource.RingComplexSource, MockDataSource.ComplexList);
+                yield return new TestCaseData(default(Int32), new Int32Group(), MockDataSource.GroupInt32Source);
+                yield return new TestCaseData(default(Double), new DoubleField(), MockDataSource.FieldDoubleSource);
+                yield return new TestCaseData(default(Complex), new ComplexRing(), MockDataSource.RingComplexSource);
             }
         }
 
@@ -50,15 +50,14 @@ namespace Math.LinearAlgebra.Tests
 
         #region methods
 
-        [Category("MatrixExtensionTest")]
+        [Category("MatrixFromGroupExtensionTest")]
         [Test]
-        [TestCaseSource("AddDataSource")]
-        public void GetColumnVector_CheckResultWithExpected_EqualsExpected<T, TGroup>(T hack1, TGroup hack2, 
-                                                                                      IMatrix<T, TGroup> matrix, 
-                                                                                      List<List<T>> underlyingList)
+        [TestCaseSource("InverseDataSource")]
+        public void Inverse_CheckResultWithExpected_EqualsElementalInverse<T, TGroup>(T hack1, TGroup hack2, 
+                                                                                      IMatrix<T, TGroup> matrix)
             where TGroup : IGroup<T>, new()
         {
-            var result = matrix.Add(matrix);
+            var result = matrix.Inverse();
 
             Assert.IsNotNull(result);
             Assert.IsFalse(Object.ReferenceEquals(matrix, result));
@@ -68,12 +67,12 @@ namespace Math.LinearAlgebra.Tests
 
             var group = new TGroup();
 
-            for (Int32 i = 0; i < matrix.RowDimension; i++)
+            for (UInt32 i = 0; i < matrix.RowDimension; i++)
             {
-                for (Int32 j = 0; j < matrix.ColumnDimension; j++)
+                for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
                 {
-                    var expected = group.Addition((underlyingList[i])[j], (underlyingList[i])[j]);
-                    Assert.AreEqual(expected, result[(UInt32)i, (UInt32)j]);
+                    var expected = group.Inverse(matrix[i, j]);
+                    Assert.AreEqual(expected, result[i, j]);
                 }
             }
         }
