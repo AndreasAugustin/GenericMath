@@ -11,6 +11,7 @@
 namespace Math.LinearAlgebra
 {
     using System;
+    using System.Collections.Generic;
 
     using Math.Base;
 
@@ -45,27 +46,15 @@ namespace Math.LinearAlgebra
         T this[UInt32 row, UInt32 column] { get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="IMatrix{T, TStruct}"/> with the specified column.
+        /// Gets the <see cref="IMatrix{T, TStruct}"/> with the specified column.
         /// </summary>
         /// <param name="column">The column.</param>
         /// <returns>The tuple <see cref="IDirectSum{T, TStruct}"/> at column.</returns>
-        IDirectSum<T, TStruct> this[UInt32 column] { get; set; }
+        IDirectSum<T, TStruct> this[UInt32 column] { get; }
 
         #endregion
 
         #region methods
-
-        /// <summary>
-        /// Returns the new instance with twisted dimensions.
-        /// </summary>
-        /// <returns>The new instance with twisted dimensions.</returns>
-        IMatrix<T, TStruct> ReturnNewInstanceWithTwistedDimensions();
-
-        /// <summary>
-        /// Returns the new instance with same dimensions.
-        /// </summary>
-        /// <returns>The new instance with same dimensions.</returns>
-        IMatrix<T, TStruct> ReturnNewInstanceWithSameDimensions();
 
         /// <summary>
         /// Returns the new instance.
