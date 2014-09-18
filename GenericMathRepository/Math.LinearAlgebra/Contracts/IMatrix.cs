@@ -45,13 +45,6 @@ namespace Math.LinearAlgebra
         /// <returns>The value at row and column.</returns>
         T this[UInt32 row, UInt32 column] { get; set; }
 
-        /// <summary>
-        /// Gets the <see cref="IMatrix{T, TStruct}"/> with the specified column.
-        /// </summary>
-        /// <param name="column">The column.</param>
-        /// <returns>The tuple <see cref="IDirectSum{T, TStruct}"/> at column.</returns>
-        IDirectSum<T, TStruct> this[UInt32 column] { get; }
-
         #endregion
 
         #region methods

@@ -72,10 +72,18 @@ namespace Math.LinearAlgebra
         /// Initialises a new instance of the <see cref="Matrix{T, TStruct}"/> class.
         /// </summary>
         /// <param name="entries">Entreis.</param>
-        public Matrix(IEnumerable<List<T>> entries)
+        public Matrix(IEnumerable<IEnumerable<T>> entries)
         {
-            this._entries = entries.ToList();
-
+            foreach (var entry in entries)
+            {
+                var list = new List<T>();
+                foreach (var e in entry)
+                {
+                    list.Add(e);
+                }
+                this._entries.Add(list);
+            }
+                
             this.ColumnDimension = (UInt32)_entries.Count;
             this.RowDimension = (UInt32)_entries[0].Count;
         }
