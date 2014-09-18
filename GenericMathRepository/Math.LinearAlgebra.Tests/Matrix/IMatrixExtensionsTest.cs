@@ -39,13 +39,23 @@ namespace Math.LinearAlgebra.Tests
             }
         }
 
-        IEnumerable<TestCaseData> DataSource
+        IEnumerable<TestCaseData> GetVectorDataSource
         {
             get
             {
                 yield return new TestCaseData(default(Int32), new Int32Group(), (UInt32)0, MockTestDataSource.GroupInt32Source, MockTestDataSource.Int32List);
                 yield return new TestCaseData(default(Double), new DoubleField(), (UInt32)0, MockTestDataSource.FieldDoubleSource, MockTestDataSource.DoubleList);
                 yield return new TestCaseData(default(Complex), new ComplexRing(), (UInt32)0, MockTestDataSource.RingComplexSource, MockTestDataSource.ComplexList);
+            }
+        }
+
+        IEnumerable<TestCaseData> TransposeDataSource
+        {
+            get
+            {
+                yield return new TestCaseData(default(Int32), new Int32Group(), MockTestDataSource.GroupInt32Source);
+                yield return new TestCaseData(default(Double), new DoubleField(), MockTestDataSource.FieldDoubleSource);
+                yield return new TestCaseData(default(Complex), new ComplexRing(), MockTestDataSource.RingComplexSource);
             }
         }
 
@@ -65,7 +75,7 @@ namespace Math.LinearAlgebra.Tests
         /// <param name = "underlyingList"></param>
         [Category("MatrixExtensionTest")]
         [Test]
-        [TestCaseSource("DataSource")]
+        [TestCaseSource("GetVectorDataSource")]
         public void GetColumnVector_CheckResultWithExpected_EqualsExpected<T, TStruct>(T hack1, TStruct hack2, 
                                                                                        UInt32 columnIndex,
                                                                                        IMatrix<T, TStruct> matrix, 
@@ -115,6 +125,69 @@ namespace Math.LinearAlgebra.Tests
             for (UInt32 i = 0; i < matrix.ColumnDimension; i++)
             {
                 Assert.AreEqual(expected[(Int32)i], result[i]);
+            }
+        }
+
+        /// <summary>
+        /// Tests the matrix transpose extension method.
+        /// </summary>
+        /// <param name="hack1">Hack1.</param>
+        /// <param name="hack2">Hack2.</param>
+        /// <param name="matrix">Matrix.</param>
+        /// <typeparam name="T">The 1st type parameter.</typeparam>
+        /// <typeparam name="TStruct">The 2nd type parameter.</typeparam>
+        [Category("MatrixExtensionTest")]
+        [Test]
+        [TestCaseSource("TransposeDataSource")]
+        public void Transpose_CheckResultWithGivenParameter_EqualsExpected<T, TStruct>(T hack1, TStruct hack2, 
+                                                                                       IMatrix<T, TStruct> matrix)
+            where TStruct : IStructure<T>, new()
+        {
+            var result = matrix.Transpose();
+
+            Assert.IsNotNull(result);
+
+            Assert.AreEqual(matrix.RowDimension, result.ColumnDimension);
+            Assert.AreEqual(matrix.ColumnDimension, result.RowDimension);
+
+            for (UInt32 i = 0; i < matrix.RowDimension; i++)
+            {
+                for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
+                {
+                    Assert.AreEqual(matrix[i, j], result[j, i]);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Tests the matrix copy extension method.
+        /// </summary>
+        /// <param name="hack1">Hack1.</param>
+        /// <param name="hack2">Hack2.</param>
+        /// <param name="matrix">Matrix.</param>
+        /// <typeparam name="T">The 1st type parameter.</typeparam>
+        /// <typeparam name="TStruct">The 2nd type parameter.</typeparam>
+        [Category("MatrixExtensionTest")]
+        [Test]
+        [TestCaseSource("TransposeDataSource")]
+        public void Copy_CheckResultWithGivenParameter_EqualsExpected<T, TStruct>(T hack1, TStruct hack2, 
+                                                                                  IMatrix<T, TStruct> matrix)
+            where TStruct : IStructure<T>, new()
+        {
+            var result = matrix.Copy();
+
+            Assert.IsNotNull(result);
+            Assert.IsFalse(Object.ReferenceEquals(matrix, result));
+
+            Assert.AreEqual(matrix.RowDimension, result.RowDimension);
+            Assert.AreEqual(matrix.ColumnDimension, result.ColumnDimension);
+
+            for (UInt32 i = 0; i < matrix.RowDimension; i++)
+            {
+                for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
+                {
+                    Assert.AreEqual(matrix[i, j], result[i, j]);
+                }
             }
         }
 
