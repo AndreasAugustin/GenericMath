@@ -127,22 +127,6 @@ namespace Math.LinearAlgebra
             }
         }
 
-        /// <summary>
-        /// Gets or sets the <see cref="Matrix{T, TStruct}"/> with the specified column.
-        /// </summary>
-        /// <param name="column">The column.</param>
-        /// <returns>The tuple <see cref="IDirectSum{T, TStruct}"/> at column.</returns>
-        public IDirectSum<T, TStruct> this[UInt32 column]
-        {
-            get
-            { 
-                CheckColumnOutOfRange(column);
-
-                return  new DirectSum<T, TStruct>(_entries[(Int32)column]);
-
-            }
-        }
-
         #endregion
 
         #region IMATRIX implementations
@@ -190,10 +174,13 @@ namespace Math.LinearAlgebra
         /// <see cref="Matrix{T, TStruct}"/>; otherwise, <c>false</c>.</returns>
         public Boolean Equals(Matrix<T, TStruct> other)
         {
-            for (UInt32 j = 0; j < ColumnDimension; j++)
+            for (UInt32 j = 0; j < this.ColumnDimension; j++)
             {
-                if (!other[j].Equals(this[j]))
-                    return false;
+                for (UInt32 i = 0; i < this.RowDimension; i++)
+                {
+                    if (!other[i, j].Equals(this[i, j]))
+                        return false;
+                }
             }
 
             return true;

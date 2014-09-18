@@ -28,10 +28,10 @@ namespace Math.LinearAlgebra
         /// <param name="leftMatrix">The left matrix.</param>
         /// <param name="rightMatrix">The right matrix.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
+        /// <typeparam name="TGroup">The underlying structure.</typeparam>
         /// <returns>The addition of left and right matrices.</returns>
-        public static IMatrix<T, TStruct> Add<T, TStruct>(this IMatrix<T, TStruct> leftMatrix, IMatrix<T, TStruct> rightMatrix)
-            where TStruct : IGroup<T>, new()
+        public static IMatrix<T, TGroup> Add<T, TGroup>(this IMatrix<T, TGroup> leftMatrix, IMatrix<T, TGroup> rightMatrix)
+            where TGroup : IGroup<T>, new()
         {
             if (leftMatrix.ColumnDimension != rightMatrix.ColumnDimension)
                 throw new NotSupportedException("The column dimension of the matrizes need to agree");
@@ -40,13 +40,13 @@ namespace Math.LinearAlgebra
                 throw new NotSupportedException("The row dimension of the matrizes need to agree");
                 
             var result = leftMatrix.ReturnNewInstance(leftMatrix.RowDimension, leftMatrix.ColumnDimension);
+            var group = new TGroup();
 
             for (UInt32 j = 0; j < leftMatrix.ColumnDimension; j++)
             {
-                var tuple = leftMatrix[j].Add(rightMatrix[j]);
-                for (UInt32 i = 0; i < tuple.Dimension; i++)
+                for (UInt32 i = 0; i < leftMatrix.RowDimension; i++)
                 {
-                    result[i, j] = tuple[i];
+                    result[i, j] = group.Addition(leftMatrix[i, j], rightMatrix[i, j]);
                 }
             }
 
@@ -59,16 +59,19 @@ namespace Math.LinearAlgebra
         /// <returns>The sum over all elements in the matrix.</returns>
         /// <param name="matrix">The matrix.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static T SumElements<T, TStruct>(this IMatrix<T, TStruct> matrix)
-            where TStruct : IGroup<T>, new()
+        /// <typeparam name="TGroup">The underlying structure.</typeparam>
+        public static T SumElements<T, TGroup>(this IMatrix<T, TGroup> matrix)
+            where TGroup : IGroup<T>, new()
         {   
-            var baseStructure = new TStruct();
-            var result = baseStructure.Zero;
+            var group = new TGroup();
+            var result = group.Zero;
 
             for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
             {
-                result = baseStructure.Addition(result, matrix[j].SumElements());
+                for (UInt32 i = 0; i < matrix.RowDimension; i++)
+                {
+                    result = group.Addition(result, matrix[i, j]);
+                }
             }
 
             return result;

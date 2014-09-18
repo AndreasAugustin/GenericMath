@@ -48,20 +48,19 @@ namespace Math.LinearAlgebra
         /// <param name="matrix">The matrix.</param>
         /// <param name="scalar">The scalar.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
+        /// <typeparam name="TRing">The underlying structure.</typeparam>
         /// <returns>Lambda * A.</returns>
-        public static IMatrix<T, TStruct> ScalarMultiply<T, TStruct>(this IMatrix<T, TStruct> matrix, T scalar)
-            where TStruct : IRing<T>, new()
+        public static IMatrix<T, TRing> ScalarMultiply<T, TRing>(this IMatrix<T, TRing> matrix, T scalar)
+            where TRing : IRing<T>, new()
         {
             var result = matrix.ReturnNewInstance(matrix.RowDimension, matrix.ColumnDimension);
+            var ring = new TRing();
 
             for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
             {
-                var tuple = matrix[j].ScalarMultiply(scalar);
-
-                for (UInt32 i = 0; i < tuple.Dimension; i++)
+                for (UInt32 i = 0; i < matrix.RowDimension; i++)
                 {
-                    result[i, j] = tuple[i];
+                    result[i, j] = ring.Multiplication(scalar, matrix[i, j]);
                 }
             }
 

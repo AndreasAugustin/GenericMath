@@ -30,10 +30,18 @@ namespace Math.LinearAlgebra
         /// <param name ="columnIndex">The column index.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IDirectSum<T, TStruct> GetColumnVector<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 columnIndex)
+        public static DirectSum<T, TStruct> GetColumnVector<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 columnIndex)
             where TStruct : IStructure<T>, new()
         {
-            return matrix[columnIndex];
+            var rowDimension = matrix.RowDimension;
+            var tuple = new DirectSum<T, TStruct>(rowDimension);
+
+            for (UInt32 i = 0; i < rowDimension; i++)
+            { 
+                tuple[i] = matrix[i, columnIndex];
+            }
+
+            return tuple;
         }
 
         /// <summary>
@@ -44,18 +52,18 @@ namespace Math.LinearAlgebra
         /// <param name="rowIndex">Column index.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IDirectSum<T, TStruct> GetRowVector<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 rowIndex)
+        public static DirectSum<T, TStruct> GetRowVector<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 rowIndex)
             where TStruct : IStructure<T>, new()
         {
-            var underlyingVector = matrix[rowIndex];
-            var vec = underlyingVector.ReturnNewInstance(underlyingVector.Dimension);
+            var columnDimension = matrix.ColumnDimension;
+            var tuple = new DirectSum<T, TStruct>(columnDimension);
 
-            for (UInt32 i = 0; i < matrix.RowDimension; i++)
-            {
-                vec[i] = matrix[i][rowIndex];
+            for (UInt32 j = 0; j < columnDimension; j++)
+            { 
+                tuple[j] = matrix[rowIndex, j];
             }
 
-            return vec;
+            return tuple;
         }
 
         /// <summary>
