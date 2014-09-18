@@ -85,6 +85,34 @@ namespace Math.LinearAlgebra.Tests
             }
         }
 
+        [Category("MatrixExtensionTest")]
+        [Test]
+        [TestCaseSource("DataSource")]
+        public void GetRowVector_CheckResultWithExpected_EqualsExpected<T, TStruct>(T hack1, TStruct hack2, 
+                                                                                    UInt32 rowIndex,
+                                                                                    IMatrix<T, TStruct> matrix, 
+                                                                                    List<List<T>> underlyingList)
+            where TStruct : IStructure<T>, new()
+        {
+            var result = matrix.GetRowVector(rowIndex);
+
+            var expected = new List<T>();
+
+            foreach (var item in underlyingList[(Int32)rowIndex])
+            {
+                expected.Add(item);
+            }
+
+            Assert.IsNotNull(result);
+
+            Assert.AreEqual(matrix.ColumnDimension, result.Dimension);
+
+            for (UInt32 i = 0; i < matrix.ColumnDimension; i++)
+            {
+                Assert.AreEqual(expected[(Int32)i], result[i]);
+            }
+        }
+
         #endregion
     }
 }
