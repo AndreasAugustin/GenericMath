@@ -75,8 +75,16 @@ namespace Math.LinearAlgebra.Tests
         public IDirectSum<Int32, Int32Group> GroupInt32IDirectSumSource
         {
             get
-            {               
-                return new DirectSum<Int32, Int32Group>(Int32List);
+            {     
+                var dimension = (UInt32)this.Int32List.Count;
+                var tuple = new DirectSum<Int32, Int32Group>(dimension);
+
+                for (UInt32 i = 0; i < dimension; i++)
+                {
+                    tuple[i] = this.Int32List[(Int32)i];
+                }
+
+                return tuple;
             }
         }
 
@@ -88,7 +96,15 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {               
-                return new DirectSum<Int32, Int32Ring>(Int32List);
+                var dimension = (UInt32)Int32List.Count;
+                var tuple = new DirectSum<Int32, Int32Ring>(dimension);
+
+                for (UInt32 i = 0; i < dimension; i++)
+                {
+                    tuple[i] = Int32List[(Int32)i];
+                }
+
+                return tuple;
             }
         }
 
@@ -100,7 +116,15 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                return new DirectSum<Complex, ComplexRing>(ComplexList);
+                var dimension = (UInt32)this.ComplexList.Count;
+                var tuple = new DirectSum<Complex, ComplexRing>(dimension);
+
+                for (UInt32 i = 0; i < dimension; i++)
+                {
+                    tuple[i] = this.ComplexList[(Int32)i];
+                }
+
+                return tuple;
             }
         }
 
@@ -112,7 +136,15 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                return new DirectSum<Double, DoubleField>(DoubleList);
+                var dimension = (UInt32)this.DoubleList.Count;
+                var tuple = new DirectSum<Double, DoubleField>(dimension);
+
+                for (UInt32 i = 0; i < dimension; i++)
+                {
+                    tuple[i] = this.DoubleList[(Int32)i];
+                }
+
+                return tuple;
             }
         }
 

@@ -70,5 +70,6 @@
     <Compile Include="Polynomial\IPolynomialFromGroupExtensionsTest.cs" />
     <Compile Include="Polynomial\IPolynomialFromRingExtensionsTest.cs" />
     <Compile Include="Matrix\FakeMatrixTestDataSource.cs" />
+    <Compile Include="Matrix\IMatrixExtensionsTest.cs" />
   </ItemGroup>
 </Project>

@@ -76,8 +76,21 @@ namespace Math.LinearAlgebra.Tests
         public IMatrix<Int32, Int32Group> GroupInt32Source
         {
             get
-            {               
-                return new Matrix<Int32, Int32Group>(Int32List);
+            {
+                var rowDimension = (UInt32)this.Int32List.Count; 
+                var columnDimension = (UInt32)this.Int32List[0].Count;
+
+                var matrix = new Matrix<Int32, Int32Group>(rowDimension, columnDimension);
+
+                for (UInt32 i = 0; i < rowDimension; i++)
+                {
+                    for (UInt32 j = 0; j < columnDimension; j++)
+                    {
+                        matrix[i, j] = (this.Int32List[(Int32)i])[(Int32)j];
+                    }
+                }
+
+                return matrix;
             }
         }
 
@@ -89,7 +102,20 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {               
-                return new Matrix<Int32, Int32Ring>(Int32List);
+                var rowDimension = (UInt32)this.Int32List.Count; 
+                var columnDimension = (UInt32)this.Int32List[0].Count;
+
+                var matrix = new Matrix<Int32, Int32Ring>(rowDimension, columnDimension);
+
+                for (UInt32 i = 0; i < rowDimension; i++)
+                {
+                    for (UInt32 j = 0; j < columnDimension; j++)
+                    {
+                        matrix[i, j] = (this.Int32List[(Int32)i])[(Int32)j];
+                    }
+                }
+
+                return matrix;
             }
         }
 
@@ -101,7 +127,20 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                return new Matrix<Complex, ComplexRing>(ComplexList);
+                var rowDimension = (UInt32)this.ComplexList.Count; 
+                var columnDimension = (UInt32)this.ComplexList[0].Count;
+
+                var matrix = new Matrix<Complex, ComplexRing>(rowDimension, columnDimension);
+
+                for (UInt32 i = 0; i < rowDimension; i++)
+                {
+                    for (UInt32 j = 0; j < columnDimension; j++)
+                    {
+                        matrix[i, j] = (this.ComplexList[(Int32)i])[(Int32)j];
+                    }
+                }
+
+                return matrix;
             }
         }
 
@@ -113,7 +152,20 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                return new Matrix<Double, DoubleField>(DoubleList);
+                var rowDimension = (UInt32)this.DoubleList.Count; 
+                var columnDimension = (UInt32)this.DoubleList[0].Count;
+
+                var matrix = new Matrix<Double, DoubleField>(rowDimension, columnDimension);
+
+                for (UInt32 i = 0; i < rowDimension; i++)
+                {
+                    for (UInt32 j = 0; j < columnDimension; j++)
+                    {
+                        matrix[i, j] = (this.DoubleList[(Int32)i])[(Int32)j];
+                    }
+                }
+
+                return matrix;
             }
         }
 
