@@ -46,7 +46,8 @@ namespace Math.LinearAlgebra
         public static IDirectSum<T, TStruct> GetRowVector<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 rowIndex)
             where TStruct : IStructure<T>, new()
         {
-            var vec = matrix[rowIndex].ReturnNewInstanceWithSameDimension();
+            var underlyingVector = matrix[rowIndex];
+            var vec = underlyingVector.ReturnNewInstance(underlyingVector.Dimension);
 
             for (UInt32 i = 0; i < matrix.RowDimension; i++)
             {
