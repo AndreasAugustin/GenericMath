@@ -43,16 +43,6 @@ namespace Math.LinearAlgebra
             this.Degree = degree;
         }
 
-        /// <summary>
-        /// Initialises a new instance of the <see cref="Polynomial{T, TStruct}"/> class.
-        /// </summary>
-        /// <param name="coefficients">The coefficients.</param>
-        public Polynomial(List<T> coefficients)
-        {
-            this._coefficients = new List<T>(coefficients);
-            this.Degree = (UInt32)coefficients.Count;
-        }
-
         #endregion
 
         #region properties
