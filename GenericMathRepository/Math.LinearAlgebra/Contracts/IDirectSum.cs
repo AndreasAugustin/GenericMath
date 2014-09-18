@@ -19,7 +19,7 @@ namespace Math.LinearAlgebra
     /// </summary>
     /// <typeparam name="T">The underlying set.</typeparam>
     /// <typeparam name="TStruct">The structure.</typeparam>
-    public interface IDirectSum<T, TStruct> : IEquatable<IDirectSum<T, TStruct>>
+    public interface IDirectSum<T, TStruct> 
         where TStruct : IStructure<T>, new()
     {
         #region properties
@@ -40,12 +40,6 @@ namespace Math.LinearAlgebra
         #endregion
 
         #region methods
-
-        /// <summary>
-        /// Returns a new the instance with same dimension like the calling instance.
-        /// </summary>
-        /// <returns>The instance with same dimension.</returns>
-        IDirectSum<T, TStruct> ReturnNewInstanceWithSameDimension();
 
         /// <summary>
         /// Returns the new instance.
