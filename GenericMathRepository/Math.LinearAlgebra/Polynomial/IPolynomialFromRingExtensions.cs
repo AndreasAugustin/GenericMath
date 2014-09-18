@@ -61,13 +61,13 @@ namespace Math.LinearAlgebra
             var baseStructure = new TRing();
 
             T x;
-            for (UInt32 i = 0; i <= degree; i++)
+            for (UInt32 i = 0; i < degree + 1; i++)
             {
                 x = baseStructure.Zero;
                 var start = i <= max ? 0 : i - max;
                 var end = i < max ? Math.Min(i, max) + 1 : Math.Min(i, max);
 
-                for (UInt32 j = start; j < end; j++)
+                for (UInt32 j = start; j < end + 1; j++)
                 {
                     var k = i - j;
                     var factor1 = polynomial1.Degree >= j ? polynomial1[j] : baseStructure.One;
