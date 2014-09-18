@@ -19,7 +19,7 @@ namespace Math.LinearAlgebra
     /// </summary>
     /// <typeparam name="T">The underlying set.</typeparam>
     /// <typeparam name="TStruct">The underlying structure.</typeparam>
-    public interface IPolynomial<T, TStruct>
+    public interface IPolynomial<T, TStruct> 
         where TStruct : IStructure<T>, new()
     {
         #region properties
@@ -29,12 +29,6 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <value>The degree.</value>
         UInt32 Degree { get; }
-
-        /// <summary>
-        /// Gets the coefficients.
-        /// </summary>
-        /// <value>The coefficients.</value>
-        IDirectSum<T, TStruct> Coefficients { get; }
 
         #endregion
 
@@ -48,23 +42,11 @@ namespace Math.LinearAlgebra
         T this[UInt32 index] { get; set; }
 
         /// <summary>
-        /// Returns a new the instance with same degree like the calling instance.
+        /// Returns a new the instance with degree set as parameter.
         /// </summary>
         /// <returns>The instance with same dimension.</returns>
-        IPolynomial<T, TStruct> ReturnNewInstanceWithSameDegree();
-
-        /// <summary>
-        /// Returns a new the instance with other coefficients like the calling instance.
-        /// </summary>
-        /// <returns>The instance with other coefficients.</returns>
-        /// <param name="coefficients">The other coefficients.</param>
-        IPolynomial<T, TStruct> ReturnNewInstanceWithOtherCoefficients(IDirectSum<T, TStruct> coefficients);
-
-        /// <summary>
-        /// Returns the new instance with same coefficients.
-        /// </summary>
-        /// <returns>The new instance with same coefficients.</returns>
-        IPolynomial<T, TStruct> ReturnNewInstanceWithSameCoefficients();
+        /// <param name="degree">The degree of the new instance.</param>
+        IPolynomial<T, TStruct> ReturnNewInstance(UInt32 degree);
 
         #endregion
     }
