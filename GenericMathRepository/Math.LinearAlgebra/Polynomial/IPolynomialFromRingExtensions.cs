@@ -28,12 +28,12 @@ namespace Math.LinearAlgebra
         /// <param name="polynomial">The polynomial.</param>
         /// <param name="power">The power.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static IPolynomial<T, TStruct> Pow<T, TStruct>(this IPolynomial<T, TStruct> polynomial, UInt32 power)
-            where TStruct : IRing<T>, new()
+        /// <typeparam name="TRing">The underlying structure.</typeparam>
+        public static IPolynomial<T, TRing> Pow<T, TRing>(this IPolynomial<T, TRing> polynomial, UInt32 power)
+            where TRing : IRing<T>, new()
         {
             var result = polynomial.Copy();
-            var baseStructure = new TStruct();
+            var baseStructure = new TRing();
 
             for (UInt32 i = 0; i < power - 1; i++)
             {
@@ -49,16 +49,16 @@ namespace Math.LinearAlgebra
         /// <param name="polynomial1">The left polynomial.</param>
         /// <param name="polynomial2">The right polynomial.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
+        /// <typeparam name="TRing">The underlying structure.</typeparam>
         /// <returns>The product of polynomial1 and polynomial2.</returns>
-        public static IPolynomial<T, TStruct> Multiply<T, TStruct>(this IPolynomial<T, TStruct> polynomial1, IPolynomial<T, TStruct> polynomial2)
-            where TStruct : IRing<T>, new()
+        public static IPolynomial<T, TRing> Multiply<T, TRing>(this IPolynomial<T, TRing> polynomial1, IPolynomial<T, TRing> polynomial2)
+            where TRing : IRing<T>, new()
         {
             var degree = polynomial1.Degree + polynomial2.Degree;
 
-            var poly = polynomial1.ReturnNewInstanceWithSameDegree();
+            var poly = polynomial1.ReturnNewInstance(degree);
             var max = Math.Max(polynomial1.Degree, polynomial2.Degree);
-            var baseStructure = new TStruct();
+            var baseStructure = new TRing();
 
             T x;
             for (UInt32 i = 0; i <= degree; i++)
@@ -87,12 +87,12 @@ namespace Math.LinearAlgebra
         /// <param name="polynomial">The polynomial.</param>
         /// <param name="x">The x coordinate.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
+        /// <typeparam name="TRing">The underlying structure.</typeparam>
         /// <returns>The point calculation for the polynomial.</returns>
-        public static T Calculate<T, TStruct>(this IPolynomial<T, TStruct> polynomial, T x)
-            where TStruct : IRing<T>, new()
+        public static T Calculate<T, TRing>(this IPolynomial<T, TRing> polynomial, T x)
+            where TRing : IRing<T>, new()
         {
-            var ring = new TStruct();
+            var ring = new TRing();
             T result = ring.Zero;
 
             for (UInt32 i = 0; i <= polynomial.Degree; i++)
@@ -115,7 +115,7 @@ namespace Math.LinearAlgebra
         public static IPolynomial<T, TRing> ScalarMultiply<T, TRing>(this IPolynomial<T, TRing> polynomial, T scalar)
             where TRing : IRing<T>, new()
         {
-            var poly = polynomial.ReturnNewInstanceWithSameDegree();
+            var poly = polynomial.ReturnNewInstance(polynomial.Degree);
             var degree = polynomial.Degree;
             var structure = new TRing();
 

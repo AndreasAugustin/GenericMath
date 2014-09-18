@@ -31,7 +31,7 @@ namespace Math.LinearAlgebra
         public static IPolynomial<T, TStruct> Copy<T, TStruct>(this IPolynomial<T, TStruct> polynomial)
             where TStruct : IStructure<T>, new()
         {
-            var poly = polynomial.ReturnNewInstanceWithSameDegree();
+            var poly = polynomial.ReturnNewInstance(polynomial.Degree);
 
             for (UInt32 i = 0; i < polynomial.Degree + 1; i++)
             {

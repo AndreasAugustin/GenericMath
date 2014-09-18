@@ -38,7 +38,7 @@ namespace Math.LinearAlgebra
             var polyWithMaxDegree = poly1HasMaxDegree ? polynomial1 : polynomial2;
             var polyWithLowerOrEqualMaxDegree = poly1HasMaxDegree ? polynomial2 : polynomial1;
 
-            var poly = polyWithMaxDegree.ReturnNewInstanceWithSameDegree();
+            var poly = polyWithMaxDegree.ReturnNewInstance(polyWithMaxDegree.Degree);
             var monoid = new TMonoid();
 
             for (UInt32 i = 0; i < polyWithMaxDegree.Degree + 1; i++)

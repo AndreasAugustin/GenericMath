@@ -31,7 +31,7 @@ namespace Math.LinearAlgebra
         public static IPolynomial<T, TStruct> InversePolynomial<T, TStruct>(this IPolynomial<T, TStruct> polynomial)
             where TStruct : IGroup<T>, new()
         {
-            var poly = polynomial.ReturnNewInstanceWithSameDegree();
+            var poly = polynomial.ReturnNewInstance(polynomial.Degree);
             var baseStructure = new TStruct();
 
             for (UInt32 i = 0; i <= polynomial.Degree; i++)

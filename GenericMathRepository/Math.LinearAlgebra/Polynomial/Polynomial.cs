@@ -105,31 +105,10 @@ namespace Math.LinearAlgebra
         /// Returns a new the instance with same degree like the calling instance.
         /// </summary>
         /// <returns>The instance with same dimension.</returns>
-        public IPolynomial<T, TStruct> ReturnNewInstanceWithSameDegree()
+        public IPolynomial<T, TStruct> ReturnNewInstance(UInt32 degree)
         {
-            return new Polynomial<T, TStruct>(this.Degree);
+            return new Polynomial<T, TStruct>(degree);
         }
-
-        //        /// <summary>
-        //        /// Returns a new the instance with other coefficients like the calling instance.
-        //        /// </summary>
-        //        /// <returns>The instance with other coefficients.</returns>
-        //        /// <param name="coefficients">The coefficients of the new polynomial</param>
-        //        public IPolynomial<T, TStruct> ReturnNewInstanceWithOtherCoefficients(List<T> coefficients)
-        //        {
-        //            return new Polynomial<T, TStruct>(coefficients);
-        //        }
-        //
-        //        /// <summary>
-        //        /// Returns a new the instance with same degree like the calling instance.
-        //        /// </summary>
-        //        /// <returns>The instance with same dimension.</returns>
-        //        public IPolynomial<T, TStruct> ReturnNewInstanceWithSameCoefficients()
-        //        {
-        //            var poly = new Polynomial<T, TStruct>(Degree);
-        //
-        //            for(UInt32 i = 0; i < )
-        //        }
 
         #endregion
 
