@@ -102,7 +102,7 @@ namespace Math.LinearAlgebra.Tests
 
         [Category("MatrixExtensionTest")]
         [Test]
-        [TestCaseSource("DataSource")]
+        [TestCaseSource("GetVectorDataSource")]
         public void GetRowVector_CheckResultWithExpected_EqualsExpected<T, TStruct>(T hack1, TStruct hack2, 
                                                                                     UInt32 rowIndex,
                                                                                     IMatrix<T, TStruct> matrix, 
