@@ -33,6 +33,9 @@ namespace Math.LinearAlgebra
         public static DirectSum<T, TStruct> GetColumnVector<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 columnIndex)
             where TStruct : IStructure<T>, new()
         {
+            if (columnIndex >= matrix.ColumnDimension)
+                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, "The indx is not right");
+
             var rowDimension = matrix.RowDimension;
             var tuple = new DirectSum<T, TStruct>(rowDimension);
 
@@ -55,6 +58,9 @@ namespace Math.LinearAlgebra
         public static DirectSum<T, TStruct> GetRowVector<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 rowIndex)
             where TStruct : IStructure<T>, new()
         {
+            if (rowIndex >= matrix.RowDimension)
+                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, "The indx is not right");
+
             var columnDimension = matrix.ColumnDimension;
             var tuple = new DirectSum<T, TStruct>(columnDimension);
 
