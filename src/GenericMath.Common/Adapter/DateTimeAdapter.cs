@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="IDateTime.cs" company="${Company}">
+// <copyright file="DateTimeAdapter.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -12,18 +12,21 @@ namespace GenericMath.Common
 {
     using System;
 
-    /// <summary>
-    /// Interface for date time.
-    /// </summary>
-    public interface IDateTime
+    public class DateTimeAdapter : IDateTime
     {
-        #region properties
+        #region IDateTime implementation
 
         /// <summary>
         /// Gets the current united time.
         /// </summary>
         /// <value>The current united time.</value>
-        DateTime UtcNow { get; }
+        public DateTime UtcNow
+        {
+            get
+            {
+                return DateTime.UtcNow;
+            }
+        }
 
         #endregion
     }
