@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.LinearAlgebra", "Math.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Base", "Math.Base\Math.Base.csproj", "{32112762-A4EA-4A22-8F40-235A366445A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Common", "GenericMath.Common\GenericMath.Common.csproj", "{F2E41FA4-63F9-4533-A346-51A0C82D2798}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{D39A4902-17A5-4FD6-9BEC-67717CB4C9F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D39A4902-17A5-4FD6-9BEC-67717CB4C9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D39A4902-17A5-4FD6-9BEC-67717CB4C9F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2E41FA4-63F9-4533-A346-51A0C82D2798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2E41FA4-63F9-4533-A346-51A0C82D2798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2E41FA4-63F9-4533-A346-51A0C82D2798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2E41FA4-63F9-4533-A346-51A0C82D2798}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA62DC06-710E-4615-9E6F-C5E77D5B3202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA62DC06-710E-4615-9E6F-C5E77D5B3202}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA62DC06-710E-4615-9E6F-C5E77D5B3202}.Release|Any CPU.ActiveCfg = Release|Any CPU

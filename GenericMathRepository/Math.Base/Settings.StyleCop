@@ -1,8 +1,0 @@
-<StyleCopSettings Version="105">
-  <GlobalSettings>
-    <CollectionProperty Name="RecognizedWords">
-      <Value>gcd</Value>
-      <Value>Monoid</Value>
-    </CollectionProperty>
-  </GlobalSettings>
-</StyleCopSettings>

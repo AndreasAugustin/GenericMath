@@ -73,5 +73,6 @@
     <Compile Include="Matrix\IMatrixExtensionsTest.cs" />
     <Compile Include="Matrix\IMatrixFromRingExtensionsTest.cs" />
     <Compile Include="Matrix\IMatrixFromGroupExtensionsTest.cs" />
+    <Compile Include="Matrix\IMatrixFromMonoidExtensionsTest.cs" />
   </ItemGroup>
 </Project>
