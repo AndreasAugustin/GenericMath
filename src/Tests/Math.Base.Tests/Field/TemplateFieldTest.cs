@@ -50,7 +50,8 @@ namespace Math.Base.Tests
         /// <param name="expected">The expected value.</param>
         protected void TemplateTestMultiplicationInverse(T input, T expected)
         {
-            Assert.AreEqual(expected, Field.MultiplicationInverse(input));
+            var result = Field.MultiplicationInverse(input);
+            Assert.AreEqual(expected, result);
         }
 
         #endregion
