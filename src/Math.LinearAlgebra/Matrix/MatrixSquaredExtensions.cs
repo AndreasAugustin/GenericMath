@@ -68,14 +68,7 @@ namespace Math.LinearAlgebra
             where T : IComparable
             where TField : IField<T>, new()
         {
-            // TODO dieser Algorithmus muss noch abstrahiert werden 
-            // auf ganze Zahlen... dies muss nur an den Stellen passieren, an denen geteilt wird)
-            // public static Matrix<T> GaussJordanAlgorithm<T>(this Matrix<T> matrix)
-            // where T > struct
             CheckSquared(matrix);
-
-            var list = new List<IMatrix<T, TField>>();
-            list.Add(matrix.Copy());
 
             // stores informations about the row permutations
             var permutationVector = new List<UInt32>(new UInt32[matrix.RowDimension]); 
@@ -83,12 +76,17 @@ namespace Math.LinearAlgebra
             {
                 permutationVector[(Int32)j] = j;
             }
+                
+            var list = new List<IMatrix<T, TField>>();
+            list.Add(matrix);
 
-            for (UInt32 j = 0; j < matrix.RowDimension; j++)
+            // We like to work with a copy of the matrix, not with the original one to keep the original information.
+            var matrixCopy = matrix.Copy();
+            for (UInt32 j = 0; j < matrixCopy.RowDimension; j++)
             {
-                GaussJordanAlgorithmStep(matrix, j, permutationVector);
-									
-                list.Add(matrix.Copy());
+                var mat = GaussJordanAlgorithmStep(matrixCopy, j, permutationVector);
+                matrixCopy = mat;					
+                list.Add(mat);
             }
 
             return list;
@@ -98,23 +96,25 @@ namespace Math.LinearAlgebra
 
         #region HELPER METHODS
 
-        static void GaussJordanAlgorithmStep<T, TField>(IMatrix<T, TField> matrix, UInt32 column, 
-                                                        List<UInt32> permutationVector)
+        static IMatrix<T, TField> GaussJordanAlgorithmStep<T, TField>(IMatrix<T, TField> matrix, UInt32 column, 
+                                                                      IList<UInt32> permutationVector)
             where T : IComparable
             where TField : IField<T>, new()
         {
+            var matrixCopy = matrix.Copy();
             var field = new TField();
-            var n = matrix.RowDimension;
+            var n = matrixCopy.RowDimension;
 
             // search pivot element (row)
-            var max = matrix[column, column];
+            var max = matrixCopy[column, column];
             var r = column;
+
             for (UInt32 i = column + 1; i < n; i++)
             {
-                if (matrix[i, column].CompareTo(max) > 0)
+                if (matrixCopy[i, column].CompareTo(max) > 0)
                 {
                     r = i;
-                    max = matrix[i, column];
+                    max = matrixCopy[i, column];
                 }
             }
 
@@ -129,9 +129,9 @@ namespace Math.LinearAlgebra
             {
                 for (UInt32 k = 0; k < n; k++)
                 {
-                    var temp = matrix[column, k];
-                    matrix[column, k] = matrix[r, k];
-                    matrix[r, k] = temp;
+                    var temp = matrixCopy[column, k];
+                    matrixCopy[column, k] = matrixCopy[r, k];
+                    matrixCopy[r, k] = temp;
                 }
 
                 var permTemp = permutationVector[(Int32)column];
@@ -139,20 +139,20 @@ namespace Math.LinearAlgebra
                 permutationVector[(Int32)r] = permTemp;
             }
                 
-            var inverseDouble = field.MultiplicationInverse(matrix[column, column]);
+            var inverseDouble = field.MultiplicationInverse(matrixCopy[column, column]);
 
             for (UInt32 i = 0; i < n; i++)
             {
-                matrix[i, column] = field.Multiplication(inverseDouble, matrix[i, column]);
-                matrix[column, column] = inverseDouble;
+                matrixCopy[i, column] = field.Multiplication(inverseDouble, matrixCopy[i, column]);
+                matrixCopy[column, column] = inverseDouble;
                 for (UInt32 k = 0; k < n; k++)
                 {
                     if (k == column)
                         continue;
 
-                    var temp = field.Inverse(field.Multiplication(matrix[i, column], matrix[column, k]));
-                    matrix[i, k] = field.Addition(matrix[i, k], temp);
-                    matrix[column, k] = field.Multiplication(field.Inverse(inverseDouble), matrix[column, k]);
+                    var temp = field.Inverse(field.Multiplication(matrixCopy[i, column], matrixCopy[column, k]));
+                    matrixCopy[i, k] = field.Addition(matrixCopy[i, k], temp);
+                    matrixCopy[column, k] = field.Multiplication(field.Inverse(inverseDouble), matrixCopy[column, k]);
                 }
             }
 
@@ -162,14 +162,16 @@ namespace Math.LinearAlgebra
                 var tempVec = new List<T>(new T[n]);
                 for (UInt32 k = 0; k < n; k++)
                 {
-                    tempVec[(Int32)permutationVector[(Int32)k]] = matrix[i, k];
+                    tempVec[(Int32)permutationVector[(Int32)k]] = matrixCopy[i, k];
                 }
 
                 for (UInt32 k = 0; k < n; k++)
                 {
-                    matrix[i, k] = tempVec[(Int32)k];
+                    matrixCopy[i, k] = tempVec[(Int32)k];
                 }
             }
+
+            return matrixCopy;
         }
 
         static void CheckSquared<T, TStruct>(this IMatrix<T, TStruct> matrix)
