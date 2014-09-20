@@ -25,17 +25,17 @@ namespace Math.LinearAlgebra.Tests
     {
         #region fields
 
-        FakeMatrixTestDataSource _mockDataSource;
+        FakeMatrixSquaredTestDataSource _mockDataSource;
 
         #endregion
 
         #region properties
 
-        FakeMatrixTestDataSource MockDataSource
+        FakeMatrixSquaredTestDataSource MockDataSource
         {
             get
             {
-                return _mockDataSource ?? (_mockDataSource = new FakeMatrixTestDataSource());
+                return _mockDataSource ?? (_mockDataSource = new FakeMatrixSquaredTestDataSource());
             }
         }
 
@@ -43,6 +43,7 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
+                yield return new TestCaseData(new Double(), new DoubleField(), MockDataSource.FieldDoubleSource2);
                 yield return new TestCaseData(new Double(), new DoubleField(), MockDataSource.FieldDoubleSource);
             }
         }
@@ -91,19 +92,15 @@ namespace Math.LinearAlgebra.Tests
         [Test]
         [Category("MatrixSquaredExtensionTest")]
         [TestCaseSource("GaussJordanSource")]
-        [Ignore]
         public void GausJordanAlgorithm_Run_IsNotNull<T, TField>(T hack1, TField hack2, IMatrix<T, TField> matrix)
             where T : IComparable
             where TField : IField<T>, new()
         {
-            var result = matrix.GaussJordanAlgorithm();
+            var resultList = matrix.GaussJordanAlgorithmWithSteps();
 
-            Assert.IsNotNull(result);
-            throw new ArithmeticException("Calculation not right");
-            var one = result[0, 0];
-            var two = result[0, 1];
-            var three = result[1, 1];
-            var four = result[1, 0];
+            Assert.IsNotNull(resultList);
+
+            throw new ArithmeticException("The calculation is not correct yet");
             // Check if the under triangle has zero values
         }
 
