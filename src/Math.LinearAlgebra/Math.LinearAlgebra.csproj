@@ -35,7 +35,6 @@
     <Compile Include="Polynomial\SpecialPolynomials.cs" />
     <Compile Include="Polynomial\Polynomial.cs" />
     <Compile Include="Matrix\Matrix.cs" />
-    <Compile Include="Matrix\MatrixSquaredExtensions.cs" />
     <Compile Include="Matrix\SpecialMatrices.cs" />
     <Compile Include="Contracts\IPolynomial.cs" />
     <Compile Include="Contracts\IMatrix.cs" />
@@ -59,6 +58,7 @@
     <Compile Include="Ring\DirectSumRing.cs" />
     <Compile Include="Exceptions\LinearAlgebraException.cs" />
     <Compile Include="Exceptions\LinearAlgebraExceptionType.cs" />
+    <Compile Include="Matrix\IMatrixSquaredExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

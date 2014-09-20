@@ -64,6 +64,7 @@
     <Compile Include="Monoid\TemplateMonoidTest.cs" />
     <Compile Include="Field\TemplateFieldTest.cs" />
     <Compile Include="Field\DoubleFieldTest.cs" />
+    <Compile Include="Field\ComplexFieldTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Math.Base\Math.Base.csproj">
