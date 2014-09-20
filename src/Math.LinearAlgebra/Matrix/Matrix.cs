@@ -134,10 +134,18 @@ namespace Math.LinearAlgebra
         /// <filterpriority>2</filterpriority>
         public override string ToString()
         {
-            var str = new StringBuilder("Columns and entries: \n");
-            for (var j = 0; j < ColumnDimension; j++)
+            var str = new StringBuilder(String.Format("Rows: {0}, Columns: {1} {2}", this.RowDimension, this.ColumnDimension, Environment.NewLine));
+
+            for (UInt32 i = 0; i < this.RowDimension; i++)
             {
-                str.AppendFormat("Column:{0}; Vector: {1}; ", j, _entries[j]);
+                str.AppendFormat("Row: {0} \t", i);
+
+                for (UInt32 j = 0; j < this.ColumnDimension; j++)
+                {
+                    str.AppendFormat("{0} \t", this[i, j]);
+                }
+
+                str.Append(Environment.NewLine);
             }
 
             return str.ToString();

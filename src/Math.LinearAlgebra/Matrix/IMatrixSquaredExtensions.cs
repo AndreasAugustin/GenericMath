@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="MatrixSquaredExtensions.cs" company="${Company}">
+// <copyright file="IMatrixSquaredExtensions.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -18,7 +18,7 @@ namespace Math.LinearAlgebra
     /// <summary>
     /// Matrix squared extensions.
     /// </summary>
-    public static class MatrixSquaredExtensions
+    public static class IMatrixSquaredExtensions
     {
         #region METHODS
 
@@ -50,7 +50,7 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <returns>The jordan algorithm.</returns>
         /// <param name="matrix">The matrix.</param>
-        public static IMatrix<T, TField> GausJordanAlgorithm<T, TField>(this IMatrix<T, TField> matrix)
+        public static IMatrix<T, TField> GaussJordanAlgorithm<T, TField>(this IMatrix<T, TField> matrix)
             where T : IComparable
             where TField : IField<T>, new()
         {
@@ -100,7 +100,9 @@ namespace Math.LinearAlgebra
                                                                       IList<UInt32> permutationVector)
             where T : IComparable
             where TField : IField<T>, new()
-        {
+        { // TODO !!the Gaus jordan algorithm is not correct yet!!!
+            throw new ArithmeticException("GaussJordanAlgorithm");
+
             var matrixCopy = matrix.Copy();
             var field = new TField();
             var n = matrixCopy.RowDimension;
