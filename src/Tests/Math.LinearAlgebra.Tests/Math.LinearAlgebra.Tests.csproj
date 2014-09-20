@@ -38,11 +38,11 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Math.LinearAlgebra\Math.LinearAlgebra.csproj">
+    <ProjectReference Include="..\..\Math.LinearAlgebra\Math.LinearAlgebra.csproj">
       <Project>{FA62DC06-710E-4615-9E6F-C5E77D5B3202}</Project>
       <Name>Math.LinearAlgebra</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Math.Base\Math.Base.csproj">
+    <ProjectReference Include="..\..\Math.Base\Math.Base.csproj">
       <Project>{32112762-A4EA-4A22-8F40-235A366445A9}</Project>
       <Name>Math.Base</Name>
     </ProjectReference>

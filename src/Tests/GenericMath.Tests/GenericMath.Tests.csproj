@@ -31,7 +31,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\GenericMath\GenericMath.csproj">
+    <ProjectReference Include="..\..\GenericMath\GenericMath.csproj">
       <Project>{D39A4902-17A5-4FD6-9BEC-67717CB4C9F9}</Project>
       <Name>GenericMath</Name>
     </ProjectReference>
