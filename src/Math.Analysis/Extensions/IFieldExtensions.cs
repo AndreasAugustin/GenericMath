@@ -49,7 +49,7 @@ namespace Math.Analysis
         {
             return (x) =>
             {
-                if (x.Equals(field.Zero))
+                if (func(x).Equals(field.Zero))
                     throw new DivideByZeroException();
 
                 return field.MultiplicationInverse(func(x));
