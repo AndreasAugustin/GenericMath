@@ -40,6 +40,7 @@
   <ItemGroup>
     <Folder Include="Extensions\" />
     <Folder Include="Contracts\" />
+    <Folder Include="..\Math.Base\Interval\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Math.Base\Math.Base.csproj">
