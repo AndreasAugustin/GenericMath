@@ -5,7 +5,7 @@
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
-//   1.0.0  11 / 8 / 2014 Created the Class
+//   1.0.0  22 / 9 / 2014 Created the Class
 // *************************************************************
 
 namespace Math.Analysis
@@ -15,48 +15,11 @@ namespace Math.Analysis
     using Math.Base;
 
     /// <summary>
-    /// Extension methods for IGroup.
+    /// Extension methods for <see cref="IGroup{T}"/> classes.
     /// </summary>
     public static class IGroupExtensions
     {
-        /// <summary>
-        /// Addition of leftFunction and rightFunction.
-        /// The component addition is defined in calculator on T.
-        /// </summary>
-        /// <param name="group">The calculator.</param>
-        /// <param name="leftFunction">Left function.</param>
-        /// <param name="rightFunction">Right function.</param>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        /// <returns>The Addition of the left function with the right function.</returns>
-        public static Func<T, T, T> Addition<T>(this IGroup<T> group, Func<T, T, T> leftFunction, Func<T, T, T> rightFunction)
-        {
-            return (left, right) => group.Addition(leftFunction(left, right), rightFunction(left, right));
-        }
-
-        /// <summary>
-        /// Addition of leftFunction and rightFunction.
-        /// The component addition is defined in calculator on T.
-        /// </summary>
-        /// <param name="group">The calculator.</param>
-        /// <param name="leftFunction">Left function.</param>
-        /// <param name="rightFunction">Right function.</param>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        /// <returns>The Addition of the left function with the right function.</returns>
-        public static Func<T, T> Addition<T>(this IGroup<T> group, Func<T, T> leftFunction, Func<T, T> rightFunction)
-        {
-            return (x) => group.Addition(leftFunction(x), rightFunction(x));
-        }
-
-        /// <summary>
-        /// Zero function with values in T.
-        /// </summary>
-        /// <returns>The zero function.</returns>
-        /// <param name="group">The group.</param>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        public static Func<T, T> ZeroFunction<T>(this IGroup<T> group)
-        {
-            return (x) => group.Zero;
-        }
+        #region methods
 
         /// <summary>
         /// Inverse function with values in T.
@@ -69,5 +32,7 @@ namespace Math.Analysis
         {
             return (x) => group.Inverse(function(x));
         }
+
+        #endregion
     }
 }
