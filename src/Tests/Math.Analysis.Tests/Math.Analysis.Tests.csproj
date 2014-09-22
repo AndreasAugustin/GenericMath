@@ -49,7 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\IRingExtensionsTest.cs" />
+    <Compile Include="Extensions\IMonoidExtensionsTest.cs" />
     <Compile Include="Extensions\IGroupExtensionsTest.cs" />
+    <Compile Include="Extensions\IFieldExtensionsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
