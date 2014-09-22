@@ -40,7 +40,6 @@
     <Compile Include="Ring\Int32Ring.cs" />
     <Compile Include="Contracts\IRing.cs" />
     <Compile Include="Contracts\IGroup.cs" />
-    <Compile Include="Extensions\RingExtensions.cs" />
     <Compile Include="Contracts\IEuclidianRing.cs" />
     <Compile Include="EuclidianRing\DoubleEuclidianRing.cs" />
     <Compile Include="EuclidianRing\ComplexEuclidianRing.cs" />
@@ -57,6 +56,9 @@
     <Compile Include="Contracts\IVectorRoom.cs" />
     <Compile Include="Extensions\IntegerExtension.cs" />
     <Compile Include="Field\ComplexField.cs" />
+    <Compile Include="Extensions\IRingExtensions.cs" />
+    <Compile Include="Contracts\IInterval.cs" />
+    <Compile Include="Interval\Interval.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -66,5 +68,6 @@
     <Folder Include="Extensions\" />
     <Folder Include="Monoid\" />
     <Folder Include="Field\" />
+    <Folder Include="Interval\" />
   </ItemGroup>
 </Project>
