@@ -44,6 +44,7 @@
     <Folder Include="Extensions\" />
     <Folder Include="Monoid\" />
     <Folder Include="Field\" />
+    <Folder Include="Interval\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Group\DoubleGroupTest.cs" />
@@ -65,6 +66,8 @@
     <Compile Include="Field\TemplateFieldTest.cs" />
     <Compile Include="Field\DoubleFieldTest.cs" />
     <Compile Include="Field\ComplexFieldTest.cs" />
+    <Compile Include="Interval\IntervalTest.cs" />
+    <Compile Include="Interval\DoubleIntervalTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Math.Base\Math.Base.csproj">
