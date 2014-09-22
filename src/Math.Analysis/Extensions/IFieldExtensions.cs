@@ -27,7 +27,7 @@ namespace Math.Analysis
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <exception cref="DivideByZeroException">Thrown when the argument for calculating 
         /// the function is the zero element of the field.</exception>
-        public static Func<T,T> MultiplicationInverseFunction<T>(IField<T> field)
+        public static Func<T,T> MultiplicationInverseFunction<T>(this IField<T> field)
         {
             return (x) =>
             {
