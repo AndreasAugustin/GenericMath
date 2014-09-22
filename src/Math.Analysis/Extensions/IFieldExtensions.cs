@@ -37,5 +37,23 @@ namespace Math.Analysis
                 return field.MultiplicationInverse(x);
             };
         }
+
+        /// <summary>
+        /// Multiplications the inverse function.
+        /// </summary>
+        /// <returns>The inverse function.</returns>
+        /// <param name="field">Field.</param>
+        /// <param name="func">Func.</param>
+        /// <typeparam name="T">The 1st type parameter.</typeparam>
+        public static Func<T,T> MultiplicationInverseFunction<T>(this IField<T> field, Func<T,T> func)
+        {
+            return (x) =>
+            {
+                if (x.Equals(field.Zero))
+                    throw new DivideByZeroException();
+
+                return field.MultiplicationInverse(func(x));
+            };
+        }
     }
 }
