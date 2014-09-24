@@ -35,6 +35,7 @@
     <Compile Include="LinearAlgebra\DirectSumParser.cs" />
     <Compile Include="Contracts\ITypeParser.cs" />
     <Compile Include="TypeParser\Int32Parser.cs" />
+    <Compile Include="Base\IntervalParser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -56,5 +57,6 @@
     <Folder Include="Exceptions\" />
     <Folder Include="Contracts\" />
     <Folder Include="TypeParser\" />
+    <Folder Include="Base\" />
   </ItemGroup>
 </Project>
