@@ -18,7 +18,7 @@ namespace GenricMath.Parser
     /// <summary>
     /// Interval parser.
     /// </summary>
-    public class IntervalParser<T, TStruct, TTypeParser>
+    public class IntervalParser<T, TStruct, TTypeParser> : IParser<Interval<T, TStruct>>
         where T : IComparable
         where TStruct : IStructure<T>, new()
         where TTypeParser : ITypeParser<T>, new()

@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="ITypeParser.cs" company="${Company}">
+// <copyright file="IParser.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -12,15 +12,16 @@ namespace GenricMath.Parser
 {
     using System;
 
-    /// <summary>
-    /// Parser for types.
-    /// </summary>
-    public interface ITypeParser<T> : IParser<T>
+    public interface IParser<T>
     {
+        #region methods
+
         /// <summary>
         /// Parse the specified inputString.
         /// </summary>
         /// <param name="inputString">Input string.</param>
         T Parse(String inputString);
+
+        #endregion
     }
 }

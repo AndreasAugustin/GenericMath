@@ -22,7 +22,7 @@ namespace GenricMath.Parser
     /// </summary>
     /// <typeparam name="T">The underlying set.</typeparam>
     /// <typeparam name="TStruct">The underlying structure.</typeparam>
-    public class DirectSumParser<T, TStruct, TTypeParser>
+    public class DirectSumParser<T, TStruct, TTypeParser> : IParser<DirectSum<T, TStruct>>
         where TStruct : IStructure<T>, new()
         where TTypeParser : ITypeParser<T>, new()
     {
@@ -38,10 +38,10 @@ namespace GenricMath.Parser
         /// <summary>
         /// Parse the specified stringInput.
         /// </summary>
-        /// <param name="stringInput">String input.</param>
-        public DirectSum<T, TStruct> Parse(string stringInput)
+        /// <param name="inputString">String input.</param>
+        public DirectSum<T, TStruct> Parse(string inputString)
         {
-            var matchArray = Regex.Split(stringInput, ",");
+            var matchArray = Regex.Split(inputString, ",");
 
             if (matchArray.Length <= 0)
                 throw new NotSupportedException("No match");
