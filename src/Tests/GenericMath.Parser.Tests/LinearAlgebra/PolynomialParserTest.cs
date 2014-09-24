@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="MathParserTest.cs" company="${Company}">
+// <copyright file="PolynomialParserTest.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -17,32 +17,35 @@ namespace GenericMath.Parser.Tests
     using GenricMath.Parser;
     using NUnit.Framework;
 
+    /// <summary>
+    /// Polynomial parser test.
+    /// </summary>
     [TestFixture]
-    public class MatrixParserTest
+    public class PolynomialParserTest
     {
         // TODO abstract test
 
         #region fields
 
-        MatrixParser<Int32, Int32Group, Int32Parser> _parser;
+        PolynomialParser<Int32, Int32Monoid, Int32Parser> _parser;
 
         #endregion
 
         #region properties
 
-        MatrixParser<Int32, Int32Group, Int32Parser> Parser
+        public PolynomialParser<Int32, Int32Monoid, Int32Parser> Parser
         {
             get
             {
-                return _parser ?? (_parser = new MatrixParser<int, Int32Group, Int32Parser>());
+                return _parser ?? (_parser = new PolynomialParser<int, Int32Monoid, Int32Parser>());
             }
         }
 
-        IEnumerable<ITestCaseData> TestCaseSource
+        IEnumerable<TestCaseData> TestCaseSource
         {
             get
             {
-                yield return new TestCaseData("1, 2, 4; 4, 5, 2", 4);
+                yield return new TestCaseData("x^2 - 4*x^4", 1);
             }
         }
 
@@ -50,21 +53,17 @@ namespace GenericMath.Parser.Tests
 
         #region methods
 
-        /// <summary>
-        /// Parses the valid parse element equals expected.
-        /// </summary>
-        /// <param name="inputString">Input string.</param>
-        /// <param name="expected">Expected.</param>
         [Test]
-        [Category("MatrixParser")]
+        [Category("PolynomialParser")]
         [TestCaseSource("TestCaseSource")]
+        [Ignore]
         public void Parse_ValidParse_ElementEqualsExpected(String inputString, Int32 expected)
         {
             var result = Parser.Parse(inputString);
 
             Assert.IsNotNull(result);
 
-            Assert.AreEqual(expected, result[0, 2]);
+            Assert.AreEqual(expected, result[2]);
         }
 
         #endregion
