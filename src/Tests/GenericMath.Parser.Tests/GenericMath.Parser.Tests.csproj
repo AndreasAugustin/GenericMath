@@ -54,11 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LinearAlgebra\" />
+    <Folder Include="Base\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LinearAlgebra\DirectSumParserTest.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <Compile Include="Base\IntervalParserTest.cs" />
   </ItemGroup>
 </Project>

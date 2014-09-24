@@ -24,6 +24,8 @@ namespace GenericMath.Parser.Tests
     [TestFixture]
     public class DirectSumParserTest
     {
+        // TODO abstract direct sum parser test
+
         #region fields
 
         DirectSumParser<Int32, Int32Monoid, Int32Parser> _parser;
