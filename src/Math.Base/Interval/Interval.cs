@@ -24,11 +24,11 @@ namespace Math.Base
         #region ctors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Interval{T, TStruct}"/> class.
+        /// Initialises a new instance of the <see cref="Interval{T, TStruct}"/> class.
         /// </summary>
         /// <param name="minElement">Minimum element.</param>
         /// <param name="maxElement">Max element.</param>
-        /// <exception cref="AccessViolationException">Thrown when the minElement is reater or equal maxElement</exception>
+        /// <exception cref="AccessViolationException">Thrown when the minElement is greater or equal maxElement</exception>
         public Interval(T minElement, T maxElement)
         {
             if (minElement.CompareTo(maxElement) >= 0)
@@ -65,8 +65,7 @@ namespace Math.Base
         /// <summary>
         /// Determines whether this element is within interval.
         /// </summary>
-        /// <returns>true</returns>
-        /// <c>false</c>
+        /// <returns><c>true</c> if the element is in the Interval else <c>false</c></returns>
         /// <param name="elementToCheck">Element to check.</param>
         public Boolean IsinInterval(T elementToCheck)
         {

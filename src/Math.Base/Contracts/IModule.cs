@@ -13,16 +13,19 @@ namespace Math.Base
     /// <summary>
     /// Interface for the module structure.
     /// </summary>
-    /// <typeparam></typeparam>
+    /// <typeparam name="TR">the set of the underlying ring.</typeparam>
+    /// <typeparam name="TRing">The ring structure.</typeparam>
+    /// <typeparam name="TG">The set of the underlying group.</typeparam>
+    /// <typeparam name="TGroup">The group structure</typeparam>
     public interface IModule<TR, TRing, TG, TGroup> 
         where TRing : IRing<TR>
         where TGroup : IGroup<TG>
     {
         /// <summary>
-        /// Scalarmultiplication of the group element with the scalar from the ring.
+        /// Scalar multiplication of the group element with the scalar from the ring.
         /// </summary>
         /// <returns>The multiply.</returns>
-        /// <param name="scalar">Scalar.</param>
+        /// <param name="scalar">The scalar.</param>
         /// <param name="groupElement">Group element.</param>
         TG ScalarMultiply(TRing scalar, TGroup groupElement);
     }

@@ -18,9 +18,10 @@ namespace Math.Base
     /// Interface for defining intervals for a set T.
     /// </summary>
     /// <typeparam name="T">The underlying set.</typeparam>
-    public interface IInterval<T, TStructure>
+    /// <typeparam name="TStruct">The underlying structure for the elements.</typeparam>
+    public interface IInterval<T, TStruct>
         where T : IComparable
-        where TStructure : IStructure<T>, new()
+        where TStruct : IStructure<T>, new()
     {
         /// <summary>
         /// Gets the max element.

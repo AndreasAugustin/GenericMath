@@ -22,7 +22,7 @@ namespace Math.Base
         /// Gets the inverse for the ring multiplication.
         /// </summary>
         /// <returns>The inverse.</returns>
-        /// <param name="element">Element.</param>
+        /// <param name="element">The element.</param>
         /// <exception cref="DivideByZeroException">Thrown when the element is the zero element of the underlying group.</exception>
         public Complex MultiplicationInverse(Complex element)
         {
