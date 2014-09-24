@@ -45,8 +45,8 @@ namespace Math.LinearAlgebra
         /// Returns the new instance.
         /// </summary>
         /// <returns>The new instance.</returns>
-        /// <param name="rowDimension">Row dimension.</param>
-        IDirectSum<T, TStruct> ReturnNewInstance(UInt32 rowDimension);
+        /// <param name="dimension">Row dimension.</param>
+        IDirectSum<T, TStruct> ReturnNewInstance(UInt32 dimension);
 
         #endregion
     }
