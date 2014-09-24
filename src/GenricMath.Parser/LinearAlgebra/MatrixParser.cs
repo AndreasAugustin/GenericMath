@@ -26,7 +26,7 @@ namespace GenricMath.Parser
     {
         #region fields
 
-        TTypeParser _parser = new TTypeParser();
+        readonly TTypeParser _parser = new TTypeParser();
 
         #endregion
 

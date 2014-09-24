@@ -38,6 +38,7 @@
     <Compile Include="Base\IntervalParser.cs" />
     <Compile Include="Contracts\IParser.cs" />
     <Compile Include="LinearAlgebra\MatrixParser.cs" />
+    <Compile Include="LinearAlgebra\PolynomialParser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
