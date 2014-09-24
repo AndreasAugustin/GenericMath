@@ -29,6 +29,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files %28x86%29\Xamarin Studio\AddIns\NUnit\nunit.framework.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -48,5 +51,14 @@
       <Project>{B9684EF5-50EB-471D-B899-9F0A231EB9A2}</Project>
       <Name>GenricMath.Parser</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="LinearAlgebra\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LinearAlgebra\DirectSumParserTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
