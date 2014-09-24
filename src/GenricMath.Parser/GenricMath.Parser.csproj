@@ -37,6 +37,7 @@
     <Compile Include="TypeParser\Int32Parser.cs" />
     <Compile Include="Base\IntervalParser.cs" />
     <Compile Include="Contracts\IParser.cs" />
+    <Compile Include="LinearAlgebra\MatrixParser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

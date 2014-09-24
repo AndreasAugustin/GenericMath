@@ -22,6 +22,7 @@ namespace GenricMath.Parser
     /// </summary>
     /// <typeparam name="T">The underlying set.</typeparam>
     /// <typeparam name="TStruct">The underlying structure.</typeparam>
+    /// <typeparam name="TTypeParser">The parser for the type.</typeparam>
     public class DirectSumParser<T, TStruct, TTypeParser> : IParser<DirectSum<T, TStruct>>
         where TStruct : IStructure<T>, new()
         where TTypeParser : ITypeParser<T>, new()
