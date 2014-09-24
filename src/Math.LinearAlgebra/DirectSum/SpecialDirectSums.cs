@@ -29,18 +29,18 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>The zerovector with dimension.</returns>
-        public IDirectSum<T, TStruct> ZeroVector<T, TStruct>(UInt32 dimension)
+        public DirectSum<T, TStruct> ZeroTuple<T, TStruct>(UInt32 dimension)
             where TStruct : IMonoid<T>, new()
         {
-            var vec = new DirectSum<T, TStruct>(dimension);
+            var tuple = new DirectSum<T, TStruct>(dimension);
             var baseStructure = new TStruct();
 
-            for (UInt32 i = 0; i < vec.Dimension; i++)
+            for (UInt32 i = 0; i < tuple.Dimension; i++)
             {
-                vec[i] = baseStructure.Zero;
+                tuple[i] = baseStructure.Zero;
             }
 
-            return vec;
+            return tuple;
         }
 
         /// <summary>
@@ -51,18 +51,18 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>The zerovector with dimension.</returns>
-        public IDirectSum<T, TStruct> OneVector<T, TStruct>(UInt32 dimension)
+        public DirectSum<T, TStruct> OneTuple<T, TStruct>(UInt32 dimension)
             where TStruct : IRing<T>, new()
         {
-            var vec = new DirectSum<T, TStruct>(dimension);
+            var tuple = new DirectSum<T, TStruct>(dimension);
             var baseStructure = new TStruct();
 
-            for (UInt32 i = 0; i < vec.Dimension; i++)
+            for (UInt32 i = 0; i < tuple.Dimension; i++)
             {
-                vec[i] = baseStructure.One;
+                tuple[i] = baseStructure.One;
             }
 
-            return vec;
+            return tuple;
         }
 
         #endregion

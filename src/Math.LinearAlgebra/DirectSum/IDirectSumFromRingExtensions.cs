@@ -52,19 +52,25 @@ namespace Math.LinearAlgebra
         /// Multiplies the vector power times.
         /// Multiplies the vector with itself power times.
         /// </summary>
-        /// <param name="vector">The vector.</param>
+        /// <param name="tuple">The vector.</param>
         /// <param name="power">The power.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
+        /// <typeparam name="TRing">The underlying structure.</typeparam>
         /// <returns>The vector^power.</returns>
-        public static IDirectSum<T, TStruct> Pow<T, TStruct>(this IDirectSum<T, TStruct> vector, UInt32 power)
-            where TStruct : IRing<T>, new()
+        public static IDirectSum<T, TRing> Pow<T, TRing>(this IDirectSum<T, TRing> tuple, UInt32 power)
+            where TRing : IRing<T>, new()
         {
-            var result = new SpecialDirectSums().OneVector<T, TStruct>(vector.Dimension);
+            var result = tuple.ReturnNewInstance(tuple.Dimension);
+            var ring = new TRing();
+
+            for (UInt32 i = 0; i < result.Dimension; i++)
+            {
+                result[i] = ring.One;
+            }
 
             for (UInt32 i = 0; i < power; i++)
             {
-                result = vector.Multiply(result);
+                result = tuple.Multiply(result);
             }
 
             return result;

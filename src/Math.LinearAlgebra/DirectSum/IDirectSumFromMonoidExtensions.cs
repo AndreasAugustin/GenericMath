@@ -28,11 +28,11 @@ namespace Math.LinearAlgebra
         /// <returns>The sum over all elements in the vector.</returns>
         /// <param name="vector">The vector.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static T SumElements<T, TStruct>(this IDirectSum<T, TStruct> vector)
-            where TStruct : IMonoid<T>, new()
+        /// <typeparam name="TMonoid">The underlying structure.</typeparam>
+        public static T SumElements<T, TMonoid>(this IDirectSum<T, TMonoid> vector)
+            where TMonoid : IMonoid<T>, new()
         {
-            var group = new TStruct();
+            var group = new TMonoid();
 
             var result = group.Zero;
 
@@ -56,7 +56,7 @@ namespace Math.LinearAlgebra
             where TMonoid : IMonoid<T>, new()
         {
             var group = new TMonoid();
-            // Todo trhow right exception
+            // Todo throw right exception
             if (tuple1.Dimension != tuple2.Dimension)
                 throw new IndexOutOfRangeException("The dimension of the two vectors do not agree");
 
@@ -74,27 +74,27 @@ namespace Math.LinearAlgebra
         /// Increases the vector Dimension by additionalDimensions.
         /// The values of the parameters are default(T).
         /// </summary>
-        /// <param name="vector">The Vector.</param>
+        /// <param name="tuple">The tuple.</param>
         /// <param name="additionalDimensions">Additional dimensions.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
-        /// <typeparam name="TStruct">The underlying structure.</typeparam>
+        /// <typeparam name="TMonoid">The underlying structure.</typeparam>
         /// <returns>A new vector with dimension dimension(original vector) + additionalDimension.
         /// The first values are the values of the original vector. The other values are the zero elements of the group
         /// associated with T.
         /// </returns>
-        public static IDirectSum<T, TStruct> Injection<T, TStruct>(this IDirectSum<T, TStruct> vector, UInt32 additionalDimensions)
-            where TStruct : IMonoid<T>, new()
+        public static IDirectSum<T, TMonoid> Injection<T, TMonoid>(this IDirectSum<T, TMonoid> tuple, UInt32 additionalDimensions)
+            where TMonoid : IMonoid<T>, new()
         {
-            var newDimension = vector.Dimension + additionalDimensions;
-            var group = new TStruct();
+            var newDimension = tuple.Dimension + additionalDimensions;
+            var group = new TMonoid();
 
-            var vec = new SpecialDirectSums().ZeroVector<T, TStruct>(vector.Dimension + additionalDimensions);
+            var vec = tuple.ReturnNewInstance(tuple.Dimension + additionalDimensions);
 
             for (UInt32 i = 0; i < newDimension; i++)
             {
-                if (i < vector.Dimension)
+                if (i < tuple.Dimension)
                 {
-                    vec[i] = vector[i];
+                    vec[i] = tuple[i];
                     continue;
                 }
 
