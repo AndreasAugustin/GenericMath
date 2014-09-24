@@ -59,5 +59,6 @@
   <ItemGroup>
     <Compile Include="LinearAlgebra\DirectSumParserTest.cs" />
     <Compile Include="Base\IntervalParserTest.cs" />
+    <Compile Include="LinearAlgebra\MatrixParserTest.cs" />
   </ItemGroup>
 </Project>
