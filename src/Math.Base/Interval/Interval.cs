@@ -17,7 +17,7 @@ namespace Math.Base
     /// </summary>
     /// <typeparam name="T">The underlying set.</typeparam>
     /// <typeparam name="TStruct">The underlying structure.</typeparam>
-    public class Interval<T, TStruct> : IInterval<T, TStruct>
+    public class Interval<T, TStruct> : IInterval<T, TStruct>,  IEquatable<Interval<T, TStruct>>
         where T : IComparable
         where TStruct : IStructure<T>, new()
     {
@@ -70,6 +70,32 @@ namespace Math.Base
         public Boolean IsinInterval(T elementToCheck)
         {
             return elementToCheck.CompareTo(MinElement) >= 0 && elementToCheck.CompareTo(MaxElement) <= 0;
+        }
+
+        /// <summary>
+        /// Determines whether the specified <see cref="Interval{T, TStruct}"/> is equal to the current 
+        /// <see cref="Interval{T, TStruct}"/>.
+        /// </summary>
+        /// <param name="other">The <see cref="Interval{T, TStruct}"/> to compare with the current 
+        /// <see cref="Interval{T, TStruct}"/>.</param>
+        /// <returns><c>true</c> if the specified <see cref="Interval{T, TStruct}"/> is equal to the current
+        /// <see cref="Interval{T, TStruct}"/>; otherwise, <c>false</c>.</returns>
+        public Boolean Equals(Interval<T, TStruct> other)
+        {
+            return this.MaxElement.Equals(other.MaxElement) && this.MinElement.Equals(other.MinElement);
+        }
+
+        #endregion
+
+        #region overrides of OBJECT
+
+        /// <summary>
+        /// Returns a <see cref="System.String"/> that represents the current <see cref="Interval{T, TStruct}"/>.
+        /// </summary>
+        /// <returns>A <see cref="System.String"/> that represents the current <see cref="Interval{T, TStruct}"/>.</returns>
+        public override String ToString()
+        {
+            return String.Format("[Interval: MaxElement={0}, MinElement={1}]", MaxElement, MinElement);
         }
 
         #endregion
