@@ -52,12 +52,17 @@ namespace Math.LinearAlgebra
         public Polynomial<T, TRing> OnePolynomial<T, TRing>(UInt32 degree)
             where TRing : IRing<T>, new()
         {
-            var result = ZeroPolynomial<T, TRing>(degree);
+            var poly = new Polynomial<T, TRing>(degree);
             var ring = new TRing();
 
-            result[0] = ring.One;
+            for (UInt32 i = 1; i < degree; i++)
+            {
+                poly[i] = ring.Zero;
+            }
 
-            return result;
+            poly[0] = ring.One;
+
+            return poly;
         }
 
         #endregion
