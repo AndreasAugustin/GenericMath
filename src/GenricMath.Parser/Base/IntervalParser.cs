@@ -23,6 +23,12 @@ namespace GenricMath.Parser
         where TStruct : IStructure<T>, new()
         where TTypeParser : ITypeParser<T>, new()
     {
+        #region fields
+
+        readonly TTypeParser parser = new TTypeParser();
+
+        #endregion
+
         #region methods
 
         /// <summary>
@@ -36,7 +42,10 @@ namespace GenricMath.Parser
             if (match.Length != 2)
                 throw new NotSupportedException();
 
-            return null;
+            var minElement = parser.Parse(match[0]);
+            var maxElement = parser.Parse(match[1]);
+
+            return new Interval<T, TStruct>(minElement, maxElement);
         }
 
         #endregion
