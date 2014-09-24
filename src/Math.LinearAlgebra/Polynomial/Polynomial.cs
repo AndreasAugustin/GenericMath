@@ -95,6 +95,7 @@ namespace Math.LinearAlgebra
         /// Returns a new the instance with same degree like the calling instance.
         /// </summary>
         /// <returns>The instance with same dimension.</returns>
+        /// <param name="degree">The degree of the new polynomial.</param>
         public IPolynomial<T, TStruct> ReturnNewInstance(UInt32 degree)
         {
             return new Polynomial<T, TStruct>(degree);
@@ -159,15 +160,21 @@ namespace Math.LinearAlgebra
         void CheckOutOfRange(UInt32 index)
         {
             if (this.Degree == UInt32.MaxValue)
-                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualsMaxUnsignedInteger,
-                    String.Format("Vector class: The index is equal to max value"));
+            {
+                var errorMessage = String.Format("Vector class: The index is equal to max value");
 
+                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualsMaxUnsignedInteger, errorMessage);
+            }
 
             if (this.Degree + 1 < index)
-                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, 
-                    String.Format("Vector class: The index ({0}) is greater or equal then the column dimension ({1})", 
-                        index, this.Degree));
-              
+            {
+                var errorMessage = String.Format(
+                                       "Vector class: The index ({0}) is greater or equal then the column dimension ({1})", 
+                                       index, 
+                                       this.Degree);
+
+                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, errorMessage);
+            }                              
         }
 
         #endregion

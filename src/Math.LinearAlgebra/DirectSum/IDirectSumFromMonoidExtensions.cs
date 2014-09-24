@@ -56,6 +56,7 @@ namespace Math.LinearAlgebra
             where TMonoid : IMonoid<T>, new()
         {
             var group = new TMonoid();
+
             // Todo throw right exception
             if (tuple1.Dimension != tuple2.Dimension)
                 throw new IndexOutOfRangeException("The dimension of the two vectors do not agree");

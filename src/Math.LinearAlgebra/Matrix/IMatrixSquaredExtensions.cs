@@ -50,6 +50,8 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <returns>The jordan algorithm.</returns>
         /// <param name="matrix">The matrix.</param>
+        /// <typeparam name="T">The underlying set.</typeparam>
+        /// <typeparam name="TField">The underlying structure (field).</typeparam>
         public static IMatrix<T, TField> GaussJordanAlgorithm<T, TField>(this IMatrix<T, TField> matrix)
             where T : IComparable
             where TField : IField<T>, new()
@@ -64,6 +66,8 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <returns>The steps for calculating the inverse matrix. (The inverse matrix is the last one in the list)</returns>
         /// <param name="matrix">The matrix.</param>
+        /// <typeparam name="T">The underlying set.</typeparam>
+        /// <typeparam name="TField">The underlying structure (field).</typeparam>
         public static List<IMatrix<T, TField>> GaussJordanAlgorithmWithSteps<T, TField>(this IMatrix<T, TField> matrix)
             where T : IComparable
             where TField : IField<T>, new()
@@ -96,8 +100,10 @@ namespace Math.LinearAlgebra
 
         #region HELPER METHODS
 
-        static IMatrix<T, TField> GaussJordanAlgorithmStep<T, TField>(IMatrix<T, TField> matrix, UInt32 column, 
-                                                                      IList<UInt32> permutationVector)
+        static IMatrix<T, TField> GaussJordanAlgorithmStep<T, TField>(
+            IMatrix<T, TField> matrix, 
+            UInt32 column, 
+            IList<UInt32> permutationVector)
             where T : IComparable
             where TField : IField<T>, new()
         { // TODO !!the Gaus jordan algorithm is not correct yet!!!

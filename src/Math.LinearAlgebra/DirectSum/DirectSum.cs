@@ -158,13 +158,21 @@ namespace Math.LinearAlgebra
         void CheckOutOfRange(UInt32 index)
         {
             if (this.Dimension == UInt32.MaxValue)
-                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualsMaxUnsignedInteger,
+            {
+                throw new LinearAlgebraException(
+                    LinearAlgebraExceptionType.IndexEqualsMaxUnsignedInteger,
                     String.Format("Vector class: The index is equal to max value"));
-               
+            }
+                               
             if (this.Dimension + 1 < index)
-                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension,
-                    String.Format("Vector class: The index ({0}) is greater or equal then the column dimension ({1})", 
-                        index, this.Dimension));
+            {
+                var errorMessage = String.Format(
+                                       "Vector class: The index ({0}) is greater or equal then the column dimension ({1})", 
+                                       index, 
+                                       this.Dimension);
+
+                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, errorMessage);
+            }
         }
 
         #endregion

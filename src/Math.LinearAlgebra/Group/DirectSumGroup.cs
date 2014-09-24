@@ -17,19 +17,21 @@ namespace Math.LinearAlgebra
     /// <summary>
     /// Direct sum group.
     /// </summary>
-    public class DirectSumGroup<T, TGroup> : DirectSumMonoid<T, TGroup>, IGroup<IDirectSum<T, TGroup>>
+    /// <typeparam name="T">The underlying set.</typeparam>
+    /// <typeparam name="TGroup">The underlying structure</typeparam>
+    public class DirectSumGroup<T, TGroup> : DirectSumMonoid<T, TGroup>, IGroup<DirectSum<T, TGroup>>
         where TGroup : IGroup<T>, new()
     {
         #region ctors
 
         /// <summary>
-        /// Initialises a new instance of the <see cref="DirectSumGroup{T, TStruct}"/> class.
+        /// Initialises a new instance of the <see cref="DirectSumGroup{T, TGroup}"/> class.
         /// </summary>
-        /// <param name="dimension">Dimension.</param>
+        /// <param name="dimension">The dimension.</param>
         public DirectSumGroup(UInt32 dimension)
             : base(dimension)
         {
-            base.Dimension = dimension;
+            // Nothing to do here
         }
 
         #endregion
@@ -41,9 +43,15 @@ namespace Math.LinearAlgebra
         /// </summary>
         /// <param name="element">The element.</param>
         /// <returns>The inverse of element (-element)</returns>
-        public IDirectSum<T, TGroup> Inverse(IDirectSum<T, TGroup> element)
+        /// <exception cref="InvalidCastException">When the cast to DirectSum from interface was not possible</exception>
+        public DirectSum<T, TGroup> Inverse(DirectSum<T, TGroup> element)
         {
-            return element.InverseElement();
+            var tuple = element.InverseElement() as DirectSum<T, TGroup>;
+
+            if (tuple == null)
+                throw new InvalidCastException();
+
+            return tuple;
         }
 
         #endregion

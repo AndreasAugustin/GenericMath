@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="SpecialVectors.cs" company="${Company}">
+// <copyright file="SpecialDirectSums.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>

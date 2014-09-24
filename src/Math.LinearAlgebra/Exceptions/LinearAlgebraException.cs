@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="DirectSumException.cs" company="${Company}">
+// <copyright file="LinearAlgebraException.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -34,8 +34,8 @@ namespace Math.LinearAlgebra
         /// <summary>
         /// Initialises a new instance of the <see cref="LinearAlgebraException"/> class.
         /// </summary>
-        /// <param name="message">The message.</param>
         /// <param name="exceptionType">Exception type.</param>
+        /// <param name="message">The message.</param>
         public LinearAlgebraException(LinearAlgebraExceptionType exceptionType, String message)
             : base(message)
         {
@@ -45,9 +45,9 @@ namespace Math.LinearAlgebra
         /// <summary>
         /// Initialises a new instance of the <see cref="LinearAlgebraException"/> class.
         /// </summary>
+        /// <param name="exceptionType">Exception type.</param>
         /// <param name="info">The info.</param>
         /// <param name="context">The context.</param>
-        /// <param name="exceptionType">Exception type.</param>
         protected LinearAlgebraException(LinearAlgebraExceptionType exceptionType, SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
@@ -59,7 +59,7 @@ namespace Math.LinearAlgebra
         #region properties
 
         /// <summary>
-        /// Gets or sets the type of the exception.
+        /// Gets the type of the exception.
         /// </summary>
         /// <value>The type of the exception.</value>
         public LinearAlgebraExceptionType ExceptionType

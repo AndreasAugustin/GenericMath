@@ -19,32 +19,53 @@ namespace Math.LinearAlgebra
     /// </summary>
     /// <typeparam name="T">The underlying base set.</typeparam>
     /// <typeparam name="TMonoid">The underlying structure for the base set.</typeparam>
-    public class DirectSumMonoid<T, TMonoid> : IMonoid<IDirectSum<T, TMonoid>>
+    public class DirectSumMonoid<T, TMonoid> : IMonoid<DirectSum<T, TMonoid>>
         where TMonoid : IMonoid<T>, new()
     {
         #region fields
 
-        /// <summary>
-        /// The dimension.
-        /// </summary>
-        protected UInt32 Dimension;
+        private UInt32 _dimension;
 
         #endregion
 
         #region ctors
 
         /// <summary>
-        /// Initialises a new instance of the <see cref="DirectSumMonoid{T, TStruct}"/> class.
+        /// Initialises a new instance of the <see cref="DirectSumMonoid{T, TMonoid}"/> class.
         /// </summary>
-        /// <param name="dimension">Dimension.</param>
+        /// <param name="dimension">The dimension of the monoid in this class.</param>
         public DirectSumMonoid(UInt32 dimension)
         {
-            Dimension = dimension;
+            this._dimension = dimension;
         }
 
         #endregion
 
+        /// <summary>
+        /// Gets the dimension.
+        /// </summary>
+        /// <value>The dimension.</value>
+        public UInt32 Dimension
+        {
+            get
+            {
+                return this._dimension;
+            }
+        }
+
         #region IMonoid implementation
+
+        /// <summary>
+        /// Gets the zero element of the group.
+        /// </summary>
+        /// <value>The zero.</value>
+        public DirectSum<T, TMonoid> Zero
+        {
+            get
+            {
+                return new SpecialDirectSums().ZeroTuple<T, TMonoid>(this.Dimension);
+            }
+        }
 
         /// <summary>
         /// Addition of the specified leftElement and rightElement.
@@ -52,21 +73,19 @@ namespace Math.LinearAlgebra
         /// <param name="leftElement">Left element.</param>
         /// <param name="rightElement">Right element.</param>
         /// <returns>The addition of the leftElement and rightElement (leftElement + rightElement)</returns>
-        public IDirectSum<T, TMonoid> Addition(IDirectSum<T, TMonoid> leftElement, IDirectSum<T, TMonoid> rightElement)
+        /// <exception cref="InvalidCastException">When the cast was not possible.</exception>
+        /// <exception cref="NotSupportedException">When the dimension of the parameters is not equal to the set dimension of the instance.</exception>
+        public DirectSum<T, TMonoid> Addition(DirectSum<T, TMonoid> leftElement, DirectSum<T, TMonoid> rightElement)
         {
-            return leftElement.Add(rightElement);
-        }
+            if (leftElement.Dimension != this.Dimension)
+                throw new NotSupportedException("The dimension is not set right");
 
-        /// <summary>
-        /// Gets the zero element of the group.
-        /// </summary>
-        /// <value>The zero.</value>
-        public IDirectSum<T, TMonoid> Zero
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            var tuple = leftElement.Add(rightElement) as DirectSum<T, TMonoid>;
+
+            if (tuple == null)
+                throw new InvalidCastException();
+
+            return tuple;
         }
 
         #endregion

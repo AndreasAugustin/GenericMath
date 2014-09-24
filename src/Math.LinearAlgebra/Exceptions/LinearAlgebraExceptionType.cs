@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="DirectSumExceptionType.cs" company="${Company}">
+// <copyright file="LinearAlgebraExceptionType.cs" company="${Company}">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>

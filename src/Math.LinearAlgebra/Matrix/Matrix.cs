@@ -41,7 +41,7 @@ namespace Math.LinearAlgebra
         public Matrix(UInt32 dimension)
             : this(dimension, dimension)
         {
-
+            // Noting to do here
         }
 
         /// <summary>
@@ -189,25 +189,41 @@ namespace Math.LinearAlgebra
         void CheckColumnOutOfRange(UInt32 columnIndex)
         {
             if (ColumnDimension == UInt32.MaxValue)
-                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, 
+            {
+                throw new LinearAlgebraException(
+                    LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, 
                     String.Format("Matrix class: The index is equal to max value"));
+            }
 
             if (ColumnDimension + 1 < columnIndex)
-                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension,
-                    String.Format("Matrix class: The column ({0}) is greater or equal then the column dimension ({1})",
-                        columnIndex, ColumnDimension));                
+            {
+                var errorMessage = String.Format(
+                                       "Matrix class: The column ({0}) is greater or equal then the column dimension ({1})",
+                                       columnIndex,
+                                       ColumnDimension);
+
+                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, errorMessage); 
+            }               
         }
 
         void CheckRowOutOfRange(UInt32 rowIndex)
         {
             if (this.RowDimension == UInt32.MaxValue)
-                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, 
-                    String.Format("Matrix class: The index is equal to max value"));
+            {
+                var errorMessage = String.Format("Matrix class: The index is equal to max value");
+
+                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, errorMessage);
+            }
 
             if (this.RowDimension + 1 < rowIndex)
-                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension,
-                    String.Format("Matrix class: The row ({0}) is greater or equal then the row dimension ({1})",
-                        rowIndex, ColumnDimension));                
+            {
+                var errorMessage = String.Format(
+                                       "Matrix class: The row ({0}) is greater or equal then the row dimension ({1})",
+                                       rowIndex, 
+                                       ColumnDimension);
+
+                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, errorMessage);   
+            }                             
         }
 
         #endregion

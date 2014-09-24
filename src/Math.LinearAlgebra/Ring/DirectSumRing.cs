@@ -17,7 +17,9 @@ namespace Math.LinearAlgebra
     /// <summary>
     /// Direct sum ring.
     /// </summary>
-    public class DirectSumRing<T, TRing> : DirectSumGroup<T, TRing>, IRing<IDirectSum<T, TRing>>
+    /// <typeparam name="T">The underlying set.</typeparam>
+    /// <typeparam name="TRing">The underlying structure</typeparam>
+    public class DirectSumRing<T, TRing> : DirectSumGroup<T, TRing>, IRing<DirectSum<T, TRing>>
         where TRing : IRing<T>, new()
     {
         #region ctors
@@ -25,11 +27,11 @@ namespace Math.LinearAlgebra
         /// <summary>
         /// Initialises a new instance of the <see cref="DirectSumRing{T, TRing}"/> class.
         /// </summary>
-        /// <param name="dimension">Dimension.</param>
+        /// <param name="dimension">The dimension.</param>
         public DirectSumRing(UInt32 dimension)
             : base(dimension)
         {
-
+            // Nothing to do here.
         }
 
         #endregion
@@ -37,26 +39,32 @@ namespace Math.LinearAlgebra
         #region IRING implementation
 
         /// <summary>
+        /// Gets the one element of the ring.
+        /// </summary>
+        /// <value>The one.</value>
+        public DirectSum<T, TRing> One
+        {
+            get
+            {
+                return new SpecialDirectSums().OneTuple<T, TRing>(this.Dimension);
+            }
+        }
+
+        /// <summary>
         /// Multiplication of the specified leftElement and rightElement.
         /// </summary>
         /// <param name="leftElement">Left element.</param>
         /// <param name="rightElement">Right element.</param>
         /// <returns>The multiplication of the leftElement and rightElement (leftElement * rightElement)</returns>
-        public IDirectSum<T, TRing> Multiplication(IDirectSum<T, TRing> leftElement, IDirectSum<T, TRing> rightElement)
+        /// <exception cref="InvalidCastException">Thrown when the cast was not possible.</exception>
+        public DirectSum<T, TRing> Multiplication(DirectSum<T, TRing> leftElement, DirectSum<T, TRing> rightElement)
         {
-            return leftElement.Multiply(rightElement);
-        }
+            var tuple = leftElement.Multiply(rightElement) as DirectSum<T, TRing>;
 
-        /// <summary>
-        /// Gets the one element of the ring.
-        /// </summary>
-        /// <value>The one.</value>
-        public IDirectSum<T, TRing> One
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            if (tuple == null)
+                throw new InvalidCastException();
+
+            return tuple;
         }
 
         #endregion

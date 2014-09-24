@@ -32,10 +32,13 @@ namespace Math.LinearAlgebra
         /// <returns>The multiplication vector1 * vector2.</returns>
         public static IDirectSum<T, TRing> Multiply<T, TRing>(this IDirectSum<T, TRing> tuple1, IDirectSum<T, TRing> tuple2)
             where TRing : IRing<T>, new()
-        {// TODO throw right exception
+        {
             if (tuple1.Dimension != tuple2.Dimension)
+            {
+                // TODO throw right exception
                 throw new IndexOutOfRangeException("The vector dimensions need to agree");
-
+            }
+                
             var ring = new TRing();
 
             var result = tuple1.ReturnNewInstance(tuple1.Dimension);
