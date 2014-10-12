@@ -1,8 +1,8 @@
 ﻿//  *************************************************************
-// <copyright file="ConsoleLogger.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="ConsoleLogger.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  26 / 8 / 2014 Created the Class
@@ -13,6 +13,9 @@ namespace GenericMath.Console
     using System;
     using System.Diagnostics;
 
+    /// <summary>
+    /// Logger for the <see cref="Console"/> class.
+    /// </summary>
     public class ConsoleLogger : TraceListener
     {
         #region implemented abstract members of TraceListener

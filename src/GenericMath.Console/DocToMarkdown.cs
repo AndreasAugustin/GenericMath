@@ -14,12 +14,15 @@ namespace GenericMath.Console
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Text.RegularExpressions;
     using System.Xml;
     using System.Xml.Linq;
 
     using GenericMath.Common;
 
+    /// <summary>
+    /// Converts a xml document to markdown.
+    /// <see href="https://gist.github.com/lontivero/593fc51f1208555112e0"/>
+    /// </summary>
     public static class DocToMarkdown
     {
         #region fields
@@ -64,7 +67,7 @@ namespace GenericMath.Console
                 { "param", "|Name | Description |\n|-----|------|\n|{0}: |{1}|\n" },
                 { "exception", "[[{0}|{0}]]: {1}\n\n" },
                 { "returns", "Returns: {0}\n\n" },
-                { "none", "" },
+                { "none", String.Empty },
                 { "c", "{0}\n\n" }, // TODO change (<c>)
                 { "typeparam", "|Name | Description |\n|-----|------|\n|{0}: |{1}|\n" }, // TODO change (<typeparam>)
                 { "value", "{0}\n\n" }, // TODO change (<value>)
@@ -76,7 +79,8 @@ namespace GenericMath.Console
                 });
             var methods = new Dictionary<string, Func<XElement, IEnumerable<string>>>
             {
-                {"doc", x => new[]
+                {
+                    "doc", x => new[]
                     {
                         x.Element("assembly").Element("name").Value,
                         x.Element("members").Elements("member").ToMarkDown()
@@ -85,11 +89,11 @@ namespace GenericMath.Console
                 { "type", x => d("name", x) },
                 { "field", x => d("name", x) },
                 { "property", x => d("name", x) },
-                { "method",x => d("name", x) },
+                { "method", x => d("name", x) },
                 { "event", x => d("name", x) },
-                { "summary", x => new[]{ x.Nodes().ToMarkDown() } },
-                { "remarks", x => new[]{ x.Nodes().ToMarkDown() } },
-                { "example", x => new[]{ x.Value.ToCodeBlock() } },
+                { "summary", x => new[] { x.Nodes().ToMarkDown() } },
+                { "remarks", x => new[] { x.Nodes().ToMarkDown() } },
+                { "example", x => new[] { x.Value.ToCodeBlock() } },
                 { "seePage", x => d("cref", x) },
                 { "seeAnchor", x =>
                     {
@@ -100,11 +104,11 @@ namespace GenericMath.Console
                 },
                 { "param", x => d("name", x) },
                 { "exception", x => d("cref", x) },
-                { "returns", x => new[]{ x.Nodes().ToMarkDown() } },
+                { "returns", x => new[] { x.Nodes().ToMarkDown() } },
                 { "none", x => new string[0] },
                 { "typeparam", x => d("name", x) }, // TODO change (<typeparam>)
-                { "value", x => new[]{ x.Nodes().ToMarkDown() } }, // TODO change (<value>)
-                { "c", x => new[]{ x.Nodes().ToMarkDown() } }, // TODO change (<c>)
+                { "value", x => new[] { x.Nodes().ToMarkDown() } }, // TODO change (<value>)
+                { "c", x => new[] { x.Nodes().ToMarkDown() } }, // TODO change (<c>)
             };
 
             string name;
@@ -144,7 +148,7 @@ namespace GenericMath.Console
                 }
 
                 var vals = methods[name](el).ToArray();
-                string str = "";
+                String str = String.Empty;
                 switch (vals.Length)
                 {
                     case 1:
@@ -182,7 +186,6 @@ namespace GenericMath.Console
                     ((XText)e).Value.Replace('\n', ' '),
                     @"\s+",
                     String.Empty);
-
             }
                 
             return String.Empty;
@@ -190,7 +193,9 @@ namespace GenericMath.Console
 
         private static String ToMarkDown(this IEnumerable<XNode> es)
         {
-            return es.Aggregate("", (current, x) => current + x.ToMarkDown());
+            return es.Aggregate(
+                String.Empty,
+                (current, x) => current + x.ToMarkDown());
         }
 
         private static String ToCodeBlock(this String s)
@@ -199,7 +204,7 @@ namespace GenericMath.Console
                             new char[] { '\n' },
                             StringSplitOptions.RemoveEmptyEntries);
             var blank = lines[0].TakeWhile(x => x == ' ').Count() - 4;
-            return string.Join(
+            return String.Join(
                 "\n",
                 lines.Select(x => new string(x.SkipWhile((
                                 y,

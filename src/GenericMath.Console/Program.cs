@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="Program.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="Program.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -12,7 +12,7 @@ namespace GenericMath.Console
 {
     using System;
 
-    class MainClass
+    public class MainClass
     {
         public static void Main(string[] args)
         {
