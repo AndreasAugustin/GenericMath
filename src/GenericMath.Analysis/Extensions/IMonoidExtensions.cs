@@ -1,18 +1,18 @@
 ﻿//  *************************************************************
-// <copyright file="MonoidExtensions.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IMonoidExtensions.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  11 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Analysis
+namespace GenericMath.Analysis
 {
     using System;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Extension methods for IGroup.
@@ -30,9 +30,14 @@ namespace Math.Analysis
         /// <param name="rightFunction">Right function.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <returns>The Addition of the left function with the right function.</returns>
-        public static Func<T, T, T> Addition<T>(this IMonoid<T> monoid, Func<T, T, T> leftFunction, Func<T, T, T> rightFunction)
+        public static Func<T, T, T> Addition<T>(
+            this IMonoid<T> monoid,
+            Func<T, T, T> leftFunction,
+            Func<T, T, T> rightFunction)
         {
-            return (left, right) => monoid.Addition(leftFunction(left, right), rightFunction(left, right));
+            return (left, right) => monoid.Addition(
+                leftFunction(left, right),
+                rightFunction(left, right));
         }
 
         /// <summary>
@@ -44,7 +49,10 @@ namespace Math.Analysis
         /// <param name="rightFunction">Right function.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <returns>The Addition of the left function with the right function.</returns>
-        public static Func<T, T> Addition<T>(this IMonoid<T> monoid, Func<T, T> leftFunction, Func<T, T> rightFunction)
+        public static Func<T, T> Addition<T>(
+            this IMonoid<T> monoid,
+            Func<T, T> leftFunction,
+            Func<T, T> rightFunction)
         {
             return (x) => monoid.Addition(leftFunction(x), rightFunction(x));
         }

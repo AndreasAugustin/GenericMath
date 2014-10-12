@@ -1,18 +1,18 @@
 ﻿//  *************************************************************
-// <copyright file="IGroupExtensions.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IGroupExtensions.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  22 / 9 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Analysis
+namespace GenericMath.Analysis
 {
     using System;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Extension methods for <see cref="IGroup{T}"/> classes.
@@ -28,7 +28,9 @@ namespace Math.Analysis
         /// <param name="group">The group.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <param name = "function">The function.</param>
-        public static Func<T, T> InverseFunction<T>(this IGroup<T> group, Func<T, T> function)
+        public static Func<T, T> InverseFunction<T>(
+            this IGroup<T> group,
+            Func<T, T> function)
         {
             return (x) => group.Inverse(function(x));
         }
