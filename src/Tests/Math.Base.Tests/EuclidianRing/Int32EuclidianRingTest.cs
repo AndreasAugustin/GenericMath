@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="Int32EuclidianRingTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="Int32EuclidianRingTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -15,14 +15,14 @@ namespace Math.Base.Tests
     using NUnit.Framework;
 
     /// <summary>
-    /// Integer euclidian ring test.
+    /// Test for the <see cref="Int32EuclidianRing"/> class. 
     /// </summary>
     [TestFixture]
     public class Int32EuclidianRingTest : TemplateEuclidianRingTest<Int32>
     {
         #region fields
 
-        IEuclidianRing<Int32> _euclidianRing;
+        private IEuclidianRing<Int32> _euclidianRing;
 
         #endregion
 

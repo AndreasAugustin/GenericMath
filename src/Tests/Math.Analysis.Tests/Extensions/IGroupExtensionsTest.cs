@@ -1,12 +1,13 @@
 ﻿//  *************************************************************
-// <copyright file="IGroupExtensionsTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IGroupExtensionsTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  22 / 9 / 2014 Created the Class
 // *************************************************************
+
 namespace Math.Analysis.Tests
 {
     using System;
@@ -26,13 +27,15 @@ namespace Math.Analysis.Tests
     {
         #region properties
 
-        static IEnumerable<TestCaseData> GroupsWithElements
+        private static IEnumerable<TestCaseData> GroupsWithElements
         {
             get
             {
                 yield return new TestCaseData(5, new Int32Group());
                 yield return new TestCaseData(4.5, new DoubleGroup());
-                yield return new TestCaseData(new Complex(123, 34), new ComplexGroup());
+                yield return new TestCaseData(
+                    new Complex(123, 34),
+                    new ComplexGroup());
             }
         }
 
@@ -46,7 +49,9 @@ namespace Math.Analysis.Tests
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         [Test]
         [TestCaseSource("GroupsWithElements")]
-        public void InverseFunction_AddWithFunction_PointsEqualsMock<T>(T value, IGroup<T> group)
+        public void InverseFunction_AddWithFunction_PointsEqualsMock<T>(
+            T value,
+            IGroup<T> group)
         {
             Func<T, T> functionMock = Substitute.For<Func<T, T>>();
             functionMock(value).Returns(value);

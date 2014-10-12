@@ -1,8 +1,8 @@
 ﻿//  *************************************************************
-// <copyright file="IntervalTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IntervalTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  22 / 9 / 2014 Created the Class
@@ -13,12 +13,13 @@ namespace Math.Base.Tests
     using System;
     using System.Collections.Generic;
 
-    using NSubstitute;
     using NUnit.Framework;
 
     /// <summary>
     /// Test methods for the <see cref="Interval{T, TStruct}"/>class.
     /// </summary>
+    /// <typeparam name="T">The underlying set.</typeparam>
+    /// <typeparam name="TStruct">The underlying structure.</typeparam>
     [TestFixture]
     public abstract class IntervalTest<T, TStruct>
         where T : IComparable
@@ -65,7 +66,9 @@ namespace Math.Base.Tests
         [Category("IntervalTest")]
         [Test]
         [TestCaseSource("ConstructTestDataSource")]
-        public virtual void Construct_RightParameter_IsNotNull(T minElement, T maxElement)
+        public virtual void Construct_RightParameter_IsNotNull(
+            T minElement,
+            T maxElement)
         {
             var interval = new Interval<T, TStruct>(minElement, maxElement);
             Assert.IsNotNull(interval);
@@ -79,25 +82,32 @@ namespace Math.Base.Tests
         [Category("IntervalTest")]
         [Test]
         [TestCaseSource("ConstructThrowsTestDataSource")]
-        public virtual void Construct_WrongParameter_ThrowsException(T minElement, T maxElement)
+        public virtual void Construct_WrongParameter_ThrowsException(
+            T minElement,
+            T maxElement)
         {
-            Assert.Throws<AccessViolationException>(() => new Interval<T, TStruct>(minElement, maxElement));
+            Assert.Throws<AccessViolationException>(() => new Interval<T, TStruct>(
+                    minElement,
+                    maxElement));
         }
 
         /// <summary>
         /// Determines whether this instance is in interval check value equals expected the specified minElement
-        /// maxElement elementTocheck expected.
+        /// maxElement equals expected.
         /// </summary>
-        /// <returns><c>true</c> if this instance is in interval check value equals expected the specified minElement maxElement
         /// elementTocheck expected; otherwise, <c>false</c>.</returns>
         /// <param name="minElement">Minimum element.</param>
         /// <param name="maxElement">Max element.</param>
-        /// <param name="elementToCheck">Element tocheck.</param>
+        /// <param name="elementToCheck">Element to check.</param>
         /// <param name="expected">If set to <c>true</c> expected.</param>
         [Category("IntervalTest")]
         [Test]
         [TestCaseSource("TestDataSource")]
-        public virtual void IsInInterval_CheckValue_EqualsExpected(T minElement, T maxElement, T elementToCheck, Boolean expected)
+        public virtual void IsInInterval_CheckValue_EqualsExpected(
+            T minElement,
+            T maxElement,
+            T elementToCheck,
+            Boolean expected)
         {
             var interval = new Interval<T, TStruct>(minElement, maxElement);
             var result = interval.IsinInterval(elementToCheck);

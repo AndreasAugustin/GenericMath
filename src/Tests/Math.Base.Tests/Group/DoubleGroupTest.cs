@@ -1,8 +1,8 @@
 ﻿//  *************************************************************
-// <copyright file="DoubleGroupTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="DoubleGroupTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  15 / 8 / 2014 Created the Class
@@ -22,7 +22,7 @@ namespace Math.Base.Tests
     {
         #region fields
 
-        DoubleGroup _group;
+        private DoubleGroup _group;
 
         #endregion
 
@@ -66,7 +66,10 @@ namespace Math.Base.Tests
         [Category("GroupTest")]
         [TestCase(2.0, -2.5, -0.5)]
         [TestCase(4.5, -4.5, 0)]
-        public override void TestAddition(Double leftInput, Double rightInput, Double expectedSum)
+        public override void TestAddition(
+            Double leftInput,
+            Double rightInput,
+            Double expectedSum)
         {
             this.TemplateTestAddition(leftInput, rightInput, expectedSum);
         }

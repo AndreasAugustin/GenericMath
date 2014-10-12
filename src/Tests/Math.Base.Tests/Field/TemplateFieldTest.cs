@@ -1,8 +1,8 @@
 ﻿//  *************************************************************
-// <copyright file="TemplateRingTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="TemplateFieldTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  17 / 8 / 2014 Created the Class
@@ -50,7 +50,7 @@ namespace Math.Base.Tests
         /// <param name="expected">The expected value.</param>
         protected void TemplateTestMultiplicationInverse(T input, T expected)
         {
-            var result = Field.MultiplicationInverse(input);
+            var result = this.Field.MultiplicationInverse(input);
             Assert.AreEqual(expected, result);
         }
 

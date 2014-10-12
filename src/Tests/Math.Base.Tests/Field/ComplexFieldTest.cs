@@ -1,8 +1,8 @@
 ﻿//  *************************************************************
-// <copyright file="ComplexFieldTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="ComplexFieldTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  20 / 9 / 2014 Created the Class
@@ -16,12 +16,15 @@ namespace Math.Base.Tests
     using Math.Base;
     using NUnit.Framework;
 
+    /// <summary>
+    /// Tests for the <see cref="ComplexField"/> class.
+    /// </summary>
     [TestFixture]
     public class ComplexFieldTest : TemplateFieldTest<Complex>
     {
         #region fields
 
-        IField<Complex> _field;
+        private IField<Complex> _field;
 
         #endregion
 
@@ -41,12 +44,20 @@ namespace Math.Base.Tests
             }
         }
 
-        IEnumerable<TestCaseData> Source
+        private IEnumerable<TestCaseData> Source
         {
             get
             {
-                yield return new TestCaseData(new Complex(3.2, 0), new Complex(1 / 3.2, 0));
-                yield return new TestCaseData(new Complex(0, 10), new Complex(0, -(1 / 10.0)));
+                yield return new TestCaseData(
+                    new Complex(3.2, 0),
+                    new Complex(
+                        1 / 3.2,
+                        0));
+                yield return new TestCaseData(
+                    new Complex(0, 10),
+                    new Complex(
+                        0,
+                        -(1 / 10.0)));
             }
         }
 
@@ -64,7 +75,9 @@ namespace Math.Base.Tests
         [Test]
         [Category("FieldTest")]
         [TestCaseSource("Source")]
-        public override void TestMultiplicationInverse(Complex input, Complex expected)
+        public override void TestMultiplicationInverse(
+            Complex input,
+            Complex expected)
         {
             this.TemplateTestMultiplicationInverse(input, expected);
         }

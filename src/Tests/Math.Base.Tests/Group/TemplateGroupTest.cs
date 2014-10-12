@@ -1,8 +1,8 @@
 ﻿//  *************************************************************
-// <copyright file="TemplateGroupTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="TemplateGroupTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  17 / 8 / 2014 Created the Class
@@ -39,7 +39,10 @@ namespace Math.Base.Tests
         /// <param name="expectedSum">The expected sum from left and right input.</param>
         [Test]
         [Category("GroupTest")]
-        public abstract void TestAddition(T leftInput, T rightInput, T expectedSum);
+        public abstract void TestAddition(
+            T leftInput,
+            T rightInput,
+            T expectedSum);
 
         /// <summary>
         /// Tests the inverse.
@@ -58,7 +61,8 @@ namespace Math.Base.Tests
         /// <param name="expected">The expected inverse.</param>
         protected void TemplateTestInverse(T input, T expected)
         {
-            Assert.AreEqual(expected, Group.Inverse(input));
+            var result = this.Group.Inverse(input);
+            Assert.AreEqual(expected, result);
         }
 
         /// <summary>
@@ -68,9 +72,13 @@ namespace Math.Base.Tests
         /// <param name="leftInput">The left input.</param>
         /// <param name="rightInput">The right input.</param>
         /// <param name="expectedSum">The expected sum from left and right input.</param>
-        protected void TemplateTestAddition(T leftInput, T rightInput, T expectedSum)
+        protected void TemplateTestAddition(
+            T leftInput,
+            T rightInput,
+            T expectedSum)
         {
-            Assert.AreEqual(expectedSum, Group.Addition(leftInput, rightInput));
+            var result = this.Group.Addition(leftInput, rightInput);
+            Assert.AreEqual(expectedSum, result);
         }
 
         #endregion

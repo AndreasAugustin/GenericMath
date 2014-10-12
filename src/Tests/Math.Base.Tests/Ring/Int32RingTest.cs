@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="Int32RingTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="Int32RingTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -22,7 +22,7 @@ namespace Math.Base.Tests
     {
         #region fields
 
-        IRing<Int32> _ring;
+        private IRing<Int32> _ring;
 
         #endregion
 
@@ -60,7 +60,10 @@ namespace Math.Base.Tests
         [Category("RingTest")]
         [TestCase(3, 5, 15)]
         [TestCase(4, -10, -40)]
-        public override void TestMultiplication(Int32 leftInput, Int32 rightInput, Int32 expected)
+        public override void TestMultiplication(
+            Int32 leftInput,
+            Int32 rightInput,
+            Int32 expected)
         {
             this.TemplateTestMultiplication(leftInput, rightInput, expected);
         }

@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="Int32GroupTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="Int32GroupTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -22,7 +22,7 @@ namespace Math.Base.Tests
     {
         #region fields
 
-        Int32Group _group;
+        private Int32Group _group;
 
         #endregion
 
@@ -68,7 +68,10 @@ namespace Math.Base.Tests
         [Test]
         [TestCase(2, -3, -1)]
         [TestCase(4, -4, 0)]
-        public override void TestAddition(Int32 leftInput, Int32 rightInput, Int32 expectedSum)
+        public override void TestAddition(
+            Int32 leftInput,
+            Int32 rightInput,
+            Int32 expectedSum)
         {
             this.TemplateTestAddition(leftInput, rightInput, expectedSum);
         }

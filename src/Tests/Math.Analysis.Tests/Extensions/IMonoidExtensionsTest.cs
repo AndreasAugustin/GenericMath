@@ -1,8 +1,8 @@
 ﻿//  *************************************************************
-// <copyright file="IMonoidExtensionsTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IMonoidExtensionsTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  11 / 8 / 2014 Created the Class
@@ -26,33 +26,55 @@ namespace Math.Analysis.Tests
     {
         #region properties
 
-        static IEnumerable<TestCaseData> AdditionOfTwoAdditonFunctionsSource
+        private static IEnumerable<TestCaseData> AdditionOfTwoAdditonFunctionsSource
         {
             get
             {
                 yield return new TestCaseData(2, 3, 10, new Int32Group());
-                yield return new TestCaseData(2.0, 3.5, 11.0, new DoubleGroup());
-                yield return new TestCaseData(new Complex(2, 4), new Complex(4, 2), new Complex(12, 12), new ComplexGroup());
+                yield return new TestCaseData(
+                    2.0,
+                    3.5,
+                    11.0,
+                    new DoubleGroup());
+                yield return new TestCaseData(
+                    new Complex(2, 4),
+                    new Complex(
+                        4,
+                        2),
+                    new Complex(
+                        12,
+                        12),
+                    new ComplexGroup());
             }
         }
 
-        static IEnumerable<TestCaseData> AdditionLeftMultiplicationFunctionRightAdditionFunctionFunctionSource
+        private static IEnumerable<TestCaseData> AdditionLeftMultiplicationFunctionRightAdditionFunctionFunctionSource
         {
             get
             {
                 yield return new TestCaseData(2, 3, 11, new Int32Ring());
                 yield return new TestCaseData(1.0, 3.5, 8.0, new DoubleRing());
-                yield return new TestCaseData(new Complex(1, 0), new Complex(0, 1), new Complex(1, 2), new ComplexRing());
+                yield return new TestCaseData(
+                    new Complex(1, 0),
+                    new Complex(
+                        0,
+                        1),
+                    new Complex(
+                        1,
+                        2),
+                    new ComplexRing());
             }
         }
 
-        static IEnumerable<TestCaseData> GroupsWithElements
+        private static IEnumerable<TestCaseData> GroupsWithElements
         {
             get
             {
                 yield return new TestCaseData(5, new Int32Group());
                 yield return new TestCaseData(4.5, new DoubleGroup());
-                yield return new TestCaseData(new Complex(123, 34), new ComplexGroup());
+                yield return new TestCaseData(
+                    new Complex(123, 34),
+                    new ComplexGroup());
             }
         }
 
@@ -70,7 +92,11 @@ namespace Math.Analysis.Tests
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         [Test]
         [TestCaseSource("AdditionOfTwoAdditonFunctionsSource")]
-        public void Addition_OfTwoAdditionFunctions_PointsAreEqual<T>(T value1, T value2, T expectedResult, IMonoid<T> monoid)
+        public void Addition_OfTwoAdditionFunctions_PointsAreEqual<T>(
+            T value1,
+            T value2,
+            T expectedResult,
+            IMonoid<T> monoid)
         {
             Func<T, T, T> func1 = monoid.Addition;
             Func<T, T, T> func2 = monoid.Addition;
@@ -91,8 +117,11 @@ namespace Math.Analysis.Tests
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         [Test]
         [TestCaseSource("AdditionLeftMultiplicationFunctionRightAdditionFunctionFunctionSource")]
-        public void Addition_LeftMultiplicationFunctionRightAdditionFunction_PointsAreEqual<T>(T value1, T value2, 
-                                                                                               T expectedResult, IRing<T> ring)
+        public void Addition_LeftMultiplicationFunctionRightAdditionFunction_PointsAreEqual<T>(
+            T value1,
+            T value2, 
+            T expectedResult,
+            IRing<T> ring)
         {
             Func<T, T, T> func1 = ring.Addition; 
             Func<T, T, T> func2 = ring.Multiplication;
@@ -111,12 +140,16 @@ namespace Math.Analysis.Tests
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         [Test]
         [TestCaseSource("GroupsWithElements")]
-        public void ZeroFunction_PointsEqualsMock<T>(T value, IMonoid<T> monoid)
+        public void ZeroFunction_PointsEqualsMock<T>(
+            T value,
+            IMonoid<T> monoid)
         {
             Func<T, T> functionMock = Substitute.For<Func<T, T>>();
             functionMock(value).Returns(value);
 
-            var testFunction = monoid.Addition(monoid.ZeroFunction(), functionMock);
+            var testFunction = monoid.Addition(
+                                   monoid.ZeroFunction(),
+                                   functionMock);
 
             Assert.AreEqual(functionMock(value), testFunction(value));
         }

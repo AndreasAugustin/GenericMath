@@ -46,9 +46,9 @@ namespace Math.LinearAlgebra.Tests
         }
 
         /// <summary>
-        /// Gets the int32 list.
+        /// Gets the integer list.
         /// </summary>
-        /// <value>The int32 list.</value>
+        /// <value>The integer list.</value>
         public List<List<Double>> DoubleList2
         {
             get
@@ -69,7 +69,7 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                return this._complexList ?? (_complexList = 
+                return this._complexList ?? (this._complexList = 
                     new List<List<Complex>>
                 { 
                     new List<Complex>
@@ -95,9 +95,9 @@ namespace Math.LinearAlgebra.Tests
         }
 
         /// <summary>
-        /// Gets the int32 list.
+        /// Gets the integer list.
         /// </summary>
-        /// <value>The int32 list.</value>
+        /// <value>The integer list.</value>
         public List<List<Int32>> Int32List
         {
             get
@@ -111,9 +111,9 @@ namespace Math.LinearAlgebra.Tests
         }
 
         /// <summary>
-        /// Gets the group int32 source.
+        /// Gets the group integer source.
         /// </summary>
-        /// <value>The group int32 source.</value>
+        /// <value>The group integer source.</value>
         public IMatrix<Int32, Int32Group> GroupInt32Source
         {
             get

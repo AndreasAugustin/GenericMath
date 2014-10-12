@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="ComplexGroupTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="ComplexGroupTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -23,7 +23,7 @@ namespace Math.Base.Tests
     {
         #region fields
 
-        ComplexGroup _group;
+        private ComplexGroup _group;
 
         #endregion
 
@@ -41,21 +41,41 @@ namespace Math.Base.Tests
             }
         }
 
-        static IEnumerable<TestCaseData> InverseTestDataSource
+        private static IEnumerable<TestCaseData> InverseTestDataSource
         {
             get
             {
-                yield return new TestCaseData(new Complex(2, 3), new Complex(-2, -3));
-                yield return new TestCaseData(new Complex(4, -2), new Complex(-4, 2));
+                yield return new TestCaseData(
+                    new Complex(2, 3),
+                    new Complex(
+                        -2,
+                        -3));
+                yield return new TestCaseData(
+                    new Complex(4, -2),
+                    new Complex(
+                        -4,
+                        2));
             }
         }
 
-        static IEnumerable<TestCaseData> AdditionTestDataSource
+        private static IEnumerable<TestCaseData> AdditionTestDataSource
         {
             get
             {
-                yield return new TestCaseData(new Complex(2, 3), new Complex(-2, -3), Complex.Zero);
-                yield return new TestCaseData(new Complex(3, -3), new Complex(4, -2), new Complex(7, -5));
+                yield return new TestCaseData(
+                    new Complex(2, 3),
+                    new Complex(
+                        -2,
+                        -3),
+                    Complex.Zero);
+                yield return new TestCaseData(
+                    new Complex(3, -3),
+                    new Complex(
+                        4,
+                        -2),
+                    new Complex(
+                        7,
+                        -5));
             }
         }
 
@@ -85,7 +105,10 @@ namespace Math.Base.Tests
         [Category("GroupTest")]
         [TestCaseSource("AdditionTestDataSource")]
         [Test]
-        public override void TestAddition(Complex leftInput, Complex rightInput, Complex expectedSum)
+        public override void TestAddition(
+            Complex leftInput,
+            Complex rightInput,
+            Complex expectedSum)
         {
             this.TemplateTestAddition(leftInput, rightInput, expectedSum);
         }

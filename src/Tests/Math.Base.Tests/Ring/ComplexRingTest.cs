@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="ComplexRingTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="ComplexRingTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -23,7 +23,7 @@ namespace Math.Base.Tests
     {
         #region fields
 
-        IRing<Complex> _ring;
+        private IRing<Complex> _ring;
 
         #endregion
 
@@ -45,12 +45,24 @@ namespace Math.Base.Tests
 
         #endregion
 
-        static IEnumerable<TestCaseData> MultiplicationTestDataSource
+        private static IEnumerable<TestCaseData> MultiplicationTestDataSource
         {
             get
             {
-                yield return new TestCaseData(new Complex(2, 0), new Complex(-2, -3), new Complex(-4, -6));
-                yield return new TestCaseData(new Complex(4, -2), Complex.One, new Complex(4, -2));
+                yield return new TestCaseData(
+                    new Complex(2, 0),
+                    new Complex(
+                        -2,
+                        -3),
+                    new Complex(
+                        -4,
+                        -6));
+                yield return new TestCaseData(
+                    new Complex(4, -2),
+                    Complex.One,
+                    new Complex(
+                        4,
+                        -2));
             }
         }
 
@@ -66,7 +78,10 @@ namespace Math.Base.Tests
         /// <param name="expected">Expected solution.</param>
         [Category("RingTest")]
         [TestCaseSource("MultiplicationTestDataSource")]
-        public override void TestMultiplication(Complex leftInput, Complex rightInput, Complex expected)
+        public override void TestMultiplication(
+            Complex leftInput,
+            Complex rightInput,
+            Complex expected)
         {
             this.TemplateTestMultiplication(leftInput, rightInput, expected);
         }

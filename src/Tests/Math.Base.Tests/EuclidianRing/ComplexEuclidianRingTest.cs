@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="ComplexEuclidianRingTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="ComplexEuclidianRingTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -17,14 +17,14 @@ namespace Math.Base.Tests
     using NUnit.Framework;
 
     /// <summary>
-    /// Complex euclidian ring test.
+    /// Test for the <see cref="ComplexEuclidianRing"/> class.
     /// </summary>
     [TestFixture]
     public class ComplexEuclidianRingTest : TemplateEuclidianRingTest<Complex>
     {
         #region fields
 
-        IEuclidianRing<Complex> _euclidianRing;
+        private IEuclidianRing<Complex> _euclidianRing;
 
         #endregion
 
@@ -44,7 +44,7 @@ namespace Math.Base.Tests
             }
         }
 
-        static IEnumerable<TestCaseData> EuclidianNormTestDataSource
+        private static IEnumerable<TestCaseData> EuclidianNormTestDataSource
         {
             get
             {

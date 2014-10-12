@@ -17,6 +17,9 @@ namespace Math.LinearAlgebra.Tests
     using Math.Base;
     using NUnit.Framework;
 
+    /// <summary>
+    /// Tests for the <see cref="IMatrixFromGroupExtensions"/> class.
+    /// </summary>
     [TestFixture]
     public class IMatrixFromGroupExtensionsTest
     {
@@ -70,7 +73,8 @@ namespace Math.LinearAlgebra.Tests
         [Category("MatrixFromGroupExtensionTest")]
         [Test]
         [TestCaseSource("InverseDataSource")]
-        public void Inverse_CheckResultWithExpected_EqualsElementalInverse<T, TGroup>(T hack1,
+        public void Inverse_CheckResultWithExpected_EqualsElementalInverse<T, TGroup>(
+            T hack1,
             TGroup hack2, 
             IMatrix<T, TGroup> matrix)
             where TGroup : IGroup<T>, new()

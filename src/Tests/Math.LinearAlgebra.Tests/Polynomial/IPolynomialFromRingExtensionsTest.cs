@@ -65,6 +65,15 @@ namespace Math.LinearAlgebra.Tests
 
         #region methods
 
+        /// <summary>
+        /// Tests the multiply method.
+        /// </summary>
+        /// <param name="hackForGenericParameter1">Hack for generic parameter1.</param>
+        /// <param name="hackForGenericParameter2">Hack for generic parameter2.</param>
+        /// <param name="tuple1">The first tuple.</param>
+        /// <param name="tuple2">The second tuple.</param>
+        /// <typeparam name="T">The underlying set.</typeparam>
+        /// <typeparam name="TRing">The underlying ring.</typeparam>
         [Test]
         [Category("PolynomialFromRingTest")]
         [TestCaseSource("PolynomialMultiplyTestDataSource")]

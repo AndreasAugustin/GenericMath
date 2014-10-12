@@ -1,8 +1,8 @@
 ﻿//  *************************************************************
-// <copyright file="UInt32MonoidTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="UInt32MonoidTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  22 / 8 / 2014 Created the Class
@@ -22,7 +22,7 @@ namespace Math.Base.Tests
     {
         #region fields
 
-        UInt32Monoid _mondoid;
+        private UInt32Monoid _mondoid;
 
         #endregion
 
@@ -54,7 +54,10 @@ namespace Math.Base.Tests
         [Test]
         [TestCase((UInt32)2, (UInt32)3, (UInt32)5)]
         [TestCase((UInt32)4, (UInt32)4, (UInt32)8)]
-        public override void TestAddition(UInt32 leftInput, UInt32 rightInput, UInt32 expectedSum)
+        public override void TestAddition(
+            UInt32 leftInput,
+            UInt32 rightInput,
+            UInt32 expectedSum)
         {
             this.TemplateTestAddition(leftInput, rightInput, expectedSum);
         }

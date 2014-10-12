@@ -1,8 +1,8 @@
 ﻿//  *************************************************************
-// <copyright file="DoubleEuclidianRingTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="DoubleFieldTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  18 / 8 / 2014 Created the Class
@@ -15,14 +15,14 @@ namespace Math.Base.Tests
     using NUnit.Framework;
 
     /// <summary>
-    /// Double field test.
+    /// Test for the <see cref="DoubleField"/> class.
     /// </summary>
     [TestFixture]
     public class DoubleFieldTest : TemplateFieldTest<Double>
     {
         #region fields
 
-        IField<Double> _field;
+        private IField<Double> _field;
 
         #endregion
 
@@ -57,7 +57,9 @@ namespace Math.Base.Tests
         [Category("FieldTest")]
         [TestCase(2.0, 0.5)]
         [TestCase(4.0, 0.25)]
-        public override void TestMultiplicationInverse(Double input, Double expected)
+        public override void TestMultiplicationInverse(
+            Double input,
+            Double expected)
         {
             this.TemplateTestMultiplicationInverse(input, expected);
         }

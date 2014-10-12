@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="DoubleIntervalTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="DoubleIntervalTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -16,8 +16,9 @@ namespace Math.Base.Tests
     using NUnit.Framework;
 
     /// <summary>
-    /// Test for intervalls with Double as underlying set.
+    /// Test for double intervals.
     /// </summary>
+    /// <typeparam name="TStructure">The underlying structure.</typeparam>
     [TestFixture(typeof(DoubleMonoid))]
     [TestFixture(typeof(DoubleField))]
     [TestFixture(typeof(DoubleRing))]
@@ -26,7 +27,6 @@ namespace Math.Base.Tests
         where TStructure : IStructure<Double>, new()
     {
         #region implemented abstract members of IntervalTest
-
 
         protected override IEnumerable<TestCaseData> TestDataSource
         {
@@ -75,7 +75,9 @@ namespace Math.Base.Tests
         [Category("IntervalTest")]
         [Test]
         [TestCaseSource("ConstructTestDataSource")]
-        public override void Construct_RightParameter_IsNotNull(double minElement, double maxElement)
+        public override void Construct_RightParameter_IsNotNull(
+            Double minElement,
+            Double maxElement)
         {
             base.Construct_RightParameter_IsNotNull(minElement, maxElement);
         }
@@ -88,29 +90,37 @@ namespace Math.Base.Tests
         [Category("IntervalTest")]
         [Test]
         [TestCaseSource("ConstructThrowsTestDataSource")]
-        public override void Construct_WrongParameter_ThrowsException(double minElement, double maxElement)
+        public override void Construct_WrongParameter_ThrowsException(
+            Double minElement,
+            Double maxElement)
         {
-            base.Construct_WrongParameter_ThrowsException(minElement, maxElement);
+            base.Construct_WrongParameter_ThrowsException(
+                minElement,
+                maxElement);
         }
 
         /// <summary>
         /// Determines whether this instance is in interval check value equals expected the specified minElement
-        /// maxElement elementTocheck expected.
+        /// maxElement equals expected.
         /// </summary>
-        /// <returns>true</returns>
-        /// <c>false</c>
         /// <param name="minElement">Minimum element.</param>
         /// <param name="maxElement">Max element.</param>
-        /// <param name="elementToCheck">Element tocheck.</param>
         /// <param name="elementToCheck">Element to check.</param>
         /// <param name="expected">If set to <c>true</c> expected.</param>
         [Category("IntervalTest")]
         [Test]
         [TestCaseSource("TestDataSource")]
-        public override void IsInInterval_CheckValue_EqualsExpected(double minElement, double maxElement, 
-                                                                    double elementToCheck, bool expected)
+        public override void IsInInterval_CheckValue_EqualsExpected(
+            Double minElement,
+            Double maxElement, 
+            Double elementToCheck,
+            Boolean expected)
         {
-            base.IsInInterval_CheckValue_EqualsExpected(minElement, maxElement, elementToCheck, expected);
+            base.IsInInterval_CheckValue_EqualsExpected(
+                minElement,
+                maxElement,
+                elementToCheck,
+                expected);
         }
 
         #endregion

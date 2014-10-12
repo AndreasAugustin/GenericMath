@@ -17,6 +17,9 @@ namespace Math.LinearAlgebra.Tests
     using Math.Base;
     using NUnit.Framework;
 
+    /// <summary>
+    /// Tests for the <see cref="IPolynomialExtensions"/> class. 
+    /// </summary>
     [TestFixture]
     public class IPolynomialExtensionsTest
     {

@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="DoubleEuclidianRingTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="DoubleEuclidianRingTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -15,14 +15,14 @@ namespace Math.Base.Tests
     using NUnit.Framework;
 
     /// <summary>
-    /// Double euclidian ring test.
+    /// Test for the <see cref="DoubleEuclidianRing"/> class.
     /// </summary>
     [TestFixture]
     public class DoubleEuclidianRingTest : TemplateEuclidianRingTest<Double>
     {
         #region fields
 
-        IEuclidianRing<Double> _euclidianRing;
+        private IEuclidianRing<Double> _euclidianRing;
 
         #endregion
 

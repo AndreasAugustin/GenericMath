@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="TemplateMonoidTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="TemplateMonoidTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -39,7 +39,10 @@ namespace Math.Base.Tests
         /// <param name="expectedSum">The expected sum from left and right input.</param>
         [Test]
         [Category("MonoidTest")]
-        public abstract void TestAddition(T leftInput, T rightInput, T expectedSum);
+        public abstract void TestAddition(
+            T leftInput,
+            T rightInput,
+            T expectedSum);
 
         /// <summary>
         /// Tests the addition method.
@@ -48,9 +51,14 @@ namespace Math.Base.Tests
         /// <param name="leftInput">The left input.</param>
         /// <param name="rightInput">The right input.</param>
         /// <param name="expectedSum">The expected sum from left and right input.</param>
-        protected void TemplateTestAddition(T leftInput, T rightInput, T expectedSum)
+        protected void TemplateTestAddition(
+            T leftInput,
+            T rightInput,
+            T expectedSum)
         {
-            Assert.AreEqual(expectedSum, Monoid.Addition(leftInput, rightInput));
+            var result = this.Monoid.Addition(leftInput, rightInput);
+
+            Assert.AreEqual(expectedSum, result);
         }
 
         #endregion

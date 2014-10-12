@@ -54,7 +54,7 @@ namespace Math.LinearAlgebra.Tests
             }
         }
 
-        IEnumerable<TestCaseData> TraceSource
+        private IEnumerable<TestCaseData> TraceSource
         {
             get
             {
@@ -105,7 +105,7 @@ namespace Math.LinearAlgebra.Tests
         }
 
         /// <summary>
-        /// Tests the GausJordanAlgorithm method.
+        /// Tests the GaussJordanAlgorithm method.
         /// </summary>
         /// <param name="hack1">Hack to get first generic parameter.</param>
         /// <param name="hack2">Hack to get second generic parameter.</param>
@@ -116,7 +116,7 @@ namespace Math.LinearAlgebra.Tests
         [Category("MatrixSquaredExtensionTest")]
         [TestCaseSource("GaussJordanSource")]
         [Ignore]
-        public void GausJordanAlgorithm_Run_IsNotNull<T, TField>(
+        public void GaussJordanAlgorithm_Run_IsNotNull<T, TField>(
             T hack1,
             TField hack2,
             IMatrix<T, TField> matrix)
@@ -130,7 +130,7 @@ namespace Math.LinearAlgebra.Tests
             Assert.IsNotNull(resultList);
 
             throw new ArithmeticException("The calculation is not correct yet");
-            // Check if the under triangle has zero values
+            //// Check if the under triangle has zero values
         }
 
         #endregion

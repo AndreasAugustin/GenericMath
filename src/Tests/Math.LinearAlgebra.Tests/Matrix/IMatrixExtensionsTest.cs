@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="IMatrixExtensionsTest.cs" company="$SuperDevelop">
+// <copyright file="IMatrixExtensionsTest.cs" company="SuperDevelop">
 //     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -129,8 +129,8 @@ namespace Math.LinearAlgebra.Tests
         /// <summary>
         /// Gets the row vector check result with expected equals expected.
         /// </summary>
-        /// <param name="hack1">Hack1.</param>
-        /// <param name="hack2">Hack2.</param>
+        /// <param name="hack1">The first Hack1.</param>
+        /// <param name="hack2">The second Hack2.</param>
         /// <param name="rowIndex">Row index.</param>
         /// <param name="matrix">The matrix.</param>
         /// <param name="underlyingList">Underlying list for the matrix.</param>
@@ -169,11 +169,11 @@ namespace Math.LinearAlgebra.Tests
         /// <summary>
         /// Tests the matrix transpose extension method.
         /// </summary>
-        /// <param name="hack1">Hack1.</param>
-        /// <param name="hack2">Hack2.</param>
-        /// <param name="matrix">Matrix.</param>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        /// <typeparam name="TStruct">The 2nd type parameter.</typeparam>
+        /// <param name="hack1">The first Hack1.</param>
+        /// <param name="hack2">The second Hack2.</param>
+        /// <param name="matrix">The matrix.</param>
+        /// <typeparam name="T">The underlying set.</typeparam>
+        /// <typeparam name="TStruct">The underlying structure.</typeparam>
         [Category("MatrixExtensionTest")]
         [Test]
         [TestCaseSource("TransposeDataSource")]
@@ -202,11 +202,11 @@ namespace Math.LinearAlgebra.Tests
         /// <summary>
         /// Tests the matrix copy extension method.
         /// </summary>
-        /// <param name="hack1">Hack1.</param>
-        /// <param name="hack2">Hack2.</param>
-        /// <param name="matrix">Matrix.</param>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        /// <typeparam name="TStruct">The 2nd type parameter.</typeparam>
+        /// <param name="hack1">The frist Hack1.</param>
+        /// <param name="hack2">The second Hack2.</param>
+        /// <param name="matrix">The matrix.</param>
+        /// <typeparam name="T">The underlying set.</typeparam>
+        /// <typeparam name="TStruct">The underlying structure.</typeparam>
         [Category("MatrixExtensionTest")]
         [Test]
         [TestCaseSource("TransposeDataSource")]

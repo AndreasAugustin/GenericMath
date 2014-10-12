@@ -77,7 +77,8 @@ namespace Math.LinearAlgebra.Tests
         [Category("MatrixFromMonoidExtensionTest")]
         [Test]
         [TestCaseSource("AddDataSource")]
-        public void Add_CheckResultWithExpected_EqualsExpected<T, TMonoid>(T hack1,
+        public void Add_CheckResultWithExpected_EqualsExpected<T, TMonoid>(
+            T hack1,
             TMonoid hack2, 
             IMatrix<T, TMonoid> matrix, 
             List<List<T>> underlyingList)

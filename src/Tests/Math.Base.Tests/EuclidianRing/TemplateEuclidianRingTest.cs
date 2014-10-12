@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="TemplateEuclidianRingTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="TemplateEuclidianRingTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -52,7 +52,8 @@ namespace Math.Base.Tests
         /// <param name="expected">The expected value.</param>
         protected void TemplateTestEuclidianNorm(T input, Double expected)
         {
-            Assert.AreEqual(expected, EuclidianRing.Norm(input));
+            var result = this.EuclidianRing.Norm(input);
+            Assert.AreEqual(expected, result);
         }
 
         #endregion
