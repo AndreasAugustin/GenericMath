@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shfbBuild product="Sandcastle Help File Builder" version="2014.5.31.0" projectFile="C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\documentation.shfbproj" started="12/10/2014 13:07:46">
+<buildStep step="Initializing">
+Finding tools...
+The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
+Locating components in the following folder(s):
+   C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc
+Using presentation style &#39;VS2013&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013&#39;
+Loading and initializing plug-ins...
+Lightweight Website Style Version 2014.5.31.0
+Copyright &#169; 2006-2014, Eric Woodruff, All Rights Reserved
+Portions Copyright &#169; 2014, Sam Harwell, All Rights Reserved
+</buildStep>
+<buildStep step="ClearWorkFolder">
+Clearing working folder...
+</buildStep>
+<buildStep step="ValidatingDocumentationSources">
+Validating and copying documentation source information
+Source: C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\GenericMath.Console\bin\Debug\GenericMath.Console.exe
+    Found assembly &#39;C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\GenericMath.Console\bin\Debug\GenericMath.Console.exe&#39;
+Source: C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\GenericMath.Console\bin\Debug\GenericMath.Console.xml
+Source: C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Tests\GenericMath.Parser.Tests\bin\Debug\GenericMath.Parser.Tests.dll
+    Found assembly &#39;C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Tests\GenericMath.Parser.Tests\bin\Debug\GenericMath.Parser.Tests.dll&#39;
+Source: C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Tests\GenericMath.Parser.Tests\bin\Debug\GenericMath.Parser.Tests.xml
+Source: C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\GenricMath.Parser\bin\Debug\GenricMath.Parser.dll
+    Found assembly &#39;C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\GenricMath.Parser\bin\Debug\GenricMath.Parser.dll&#39;
+Source: C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\GenricMath.Parser\bin\Debug\GenricMath.Parser.xml
+Source: C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Tests\Math.Analysis.Tests\bin\Debug\Math.Analyisis.Tests.dll
+    Found assembly &#39;C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Tests\Math.Analysis.Tests\bin\Debug\Math.Analyisis.Tests.dll&#39;
+Source: C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Tests\Math.Analysis.Tests\bin\Debug\Math.Analyisis.Tests.xml
+Source: C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Math.Base\bin\Debug\Math.Base.dll
+    Found assembly &#39;C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Math.Base\bin\Debug\Math.Base.dll&#39;
+Source: C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Tests\Math.Base.Tests\bin\Debug\Math.Base.Tests.dll
+    Found assembly &#39;C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Tests\Math.Base.Tests\bin\Debug\Math.Base.Tests.dll&#39;
+Source: C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Tests\Math.Base.Tests\bin\Debug\Math.Base.Tests.xml
+Source: C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Math.Base\bin\Debug\Math.Base.xml
+Source: C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Math.LinearAlgebra\bin\Debug\Math.LinearAlgebra.dll
+    Found assembly &#39;C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Math.LinearAlgebra\bin\Debug\Math.LinearAlgebra.dll&#39;
+Source: C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Tests\Math.LinearAlgebra.Tests\bin\Debug\Math.LinearAlgebra.Tests.dll
+    Found assembly &#39;C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Tests\Math.LinearAlgebra.Tests\bin\Debug\Math.LinearAlgebra.Tests.dll&#39;
+Source: C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Tests\Math.LinearAlgebra.Tests\bin\Debug\Math.LinearAlgebra.Tests.xml
+Source: C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Math.LinearAlgebra\bin\Debug\Math.LinearAlgebra.xml
+
+Copying XML comments files
+    C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\GenericMath.Console\bin\Debug\GenericMath.Console.xml -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\GenericMath.Console.xml
+    C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Tests\GenericMath.Parser.Tests\bin\Debug\GenericMath.Parser.Tests.xml -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\GenericMath.Parser.Tests.xml
+    C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\GenricMath.Parser\bin\Debug\GenricMath.Parser.xml -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\GenricMath.Parser.xml
+    C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Tests\Math.Analysis.Tests\bin\Debug\Math.Analyisis.Tests.xml -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Math.Analyisis.Tests.xml
+    C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Tests\Math.Base.Tests\bin\Debug\Math.Base.Tests.xml -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Math.Base.Tests.xml
+    C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Math.Base\bin\Debug\Math.Base.xml -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Math.Base.xml
+    C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Tests\Math.LinearAlgebra.Tests\bin\Debug\Math.LinearAlgebra.Tests.xml -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Math.LinearAlgebra.Tests.xml
+    C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\src\Math.LinearAlgebra\bin\Debug\Math.LinearAlgebra.xml -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Math.LinearAlgebra.xml
+</buildStep>
+<buildStep step="GenerateSharedContent">
+Generating shared content files (en-US, Englisch (USA))...
+<plugIn name="Lightweight Website Style" behavior="After" priority="1000">
+</plugIn>    Last step completed in 00:00:00.0100
+</buildStep>
+<buildStep step="GenerateApiFilter">
+Generating API filter for MRefBuilder...
+    Last step completed in 00:00:00.0110
+</buildStep>
+<buildStep step="GenerateReflectionInfo">
+Generating reflection information...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Der Buildvorgang wurde am 12/10/2014 13:07:48 gestartet.
+Projekt &quot;C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\GenerateRefInfo.proj&quot; auf Knoten &quot;1&quot; (Standardziele).
+PrepareForBuild:
+  Das Verzeichnis &quot;obj\Debug\&quot; wird erstellt.
+GenerateRefInfo:
+  MRefBuilder (v2014.5.31.0)
+  Copyright &#184; 2006-2014, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#184; 2006-2014, Eric Woodruff, All Rights Reserved.
+  Loaded 8 assemblies for reflection and 1 dependency assemblies.
+  Wrote information on 8 namespaces, 112 types, and 354 members
+  Die Datei wird von &quot;reflection.org&quot; in &quot;reflection.all&quot; kopiert.
+  XslTransform (v2014.5.31.0)
+  Copyright &#184; 2006-2014, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#184; 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\MergeDuplicates.xsl&#39;.
+Die Erstellung von Projekt &quot;C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\GenerateRefInfo.proj&quot; ist abgeschlossen (Standardziele).
+
+Der Buildvorgang wurde erfolgreich ausgefhrt.
+
+Verstrichene Zeit 00:00:04.52
+    Last step completed in 00:00:05.2983
+</buildStep>
+<buildStep step="TransformReflectionInfo">
+Transforming reflection output...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Der Buildvorgang wurde am 12/10/2014 13:07:53 gestartet.
+Projekt &quot;C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\TransformManifest.proj&quot; auf Knoten &quot;1&quot; (Standardziele).
+TransformManifest:
+  XslTransform (v2014.5.31.0)
+  Copyright &#184; 2006-2014, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#184; 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\ApplyVSDocModel.xsl&#39;.
+  Die Datei wird von &quot;reflection.xml&quot; in &quot;reflection.nofilenames&quot; kopiert.
+  XslTransform (v2014.5.31.0)
+  Copyright &#184; 2006-2014, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#184; 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\AddFilenames.xsl&#39;.
+    Unique name M_Math_LinearAlgebra_LinearAlgebraException__ctor_1 generated for M:Math.LinearAlgebra.LinearAlgebraException.#ctor(Math.LinearAlgebra.LinearAlgebraExceptionType,System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+    Unique name M_Math_LinearAlgebra_LinearAlgebraException__ctor_2 generated for M:Math.LinearAlgebra.LinearAlgebraException.#ctor(Math.LinearAlgebra.LinearAlgebraExceptionType,System.String)
+    Unique name M_Math_LinearAlgebra_Matrix_2__ctor_1 generated for M:Math.LinearAlgebra.Matrix`2.#ctor(System.UInt32,System.UInt32)
+    Unique name M_Math_LinearAlgebra_SpecialMatrices_ZeroMatrix__2_1 generated for M:Math.LinearAlgebra.SpecialMatrices.ZeroMatrix``2(System.UInt32,System.UInt32)
+  XslTransform (v2014.5.31.0)
+  Copyright &#184; 2006-2014, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#184; 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\ReflectionToManifest.xsl&#39;.
+Die Erstellung von Projekt &quot;C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\TransformManifest.proj&quot; ist abgeschlossen (Standardziele).
+
+Der Buildvorgang wurde erfolgreich ausgefhrt.
+
+Verstrichene Zeit 00:00:02.35
+    Last step completed in 00:00:02.9012
+</buildStep>
+<buildStep step="GenerateNamespaceSummaries">
+Generating namespace summary information...
+    Last step completed in 00:00:00.0410
+</buildStep>
+<buildStep step="CopyAdditionalContent">
+Copying additional content files...
+No additional content to copy
+    Last step completed in 00:00:00.0050
+</buildStep>
+<buildStep step="MergeTablesOfContents">
+Merging conceptual and additional tables of contents...
+    Last step completed in 00:00:00.0050
+</buildStep>
+<buildStep step="GenerateIntermediateTableOfContents">
+Generating intermediate table of contents file...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Der Buildvorgang wurde am 12/10/2014 13:07:56 gestartet.
+Projekt &quot;C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\GenerateIntermediateTOC.proj&quot; auf Knoten &quot;1&quot; (Standardziele).
+GenerateIntermediateTOC:
+  XslTransform (v2014.5.31.0)
+  Copyright &#184; 2006-2014, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#184; 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\CreateVSToc.xsl&#39;.
+Die Erstellung von Projekt &quot;C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\GenerateIntermediateTOC.proj&quot; ist abgeschlossen (Standardziele).
+
+Der Buildvorgang wurde erfolgreich ausgefhrt.
+
+Verstrichene Zeit 00:00:01.66
+Generating conceptual content intermediate TOC file...
+    Last step completed in 00:00:02.3451
+</buildStep>
+<buildStep step="CreateBuildAssemblerConfigs">
+Creating Sandcastle configuration files...
+    sandcastle.config
+    Last step completed in 00:00:00.0810
+</buildStep>
+<buildStep step="MergeCustomConfigs">
+Merging custom build component configurations
+C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\sandcastle.config
+    Last step completed in 00:00:00.0350
+</buildStep>
+<buildStep step="BuildReferenceTopics">
+Building reference help topics...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Der Buildvorgang wurde am 12/10/2014 13:07:58 gestartet.
+Projekt &quot;C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj&quot; auf Knoten &quot;1&quot; (Standardziele).
+BuildReferenceTopics:
+  BuildAssembler (v2014.5.31.0)
+  Copyright &#184; 2006-2014, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#184; 2006-2014, Eric Woodruff, All Rights Reserved.
+  Loading configuration...
+  Processing topics...
+BuildAssembler : warning : ResolveReferenceLinksComponent: [R:Project_Documentation] Unknown reference link target &#39;GenericMath.Parser&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [R:Project_Documentation] Invalid reference link target &#39;GenericMath.Parser&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [R:Project_Documentation] Unknown reference link target &#39;GenericMath.Analysis&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [R:Project_Documentation] Invalid reference link target &#39;GenericMath.Analysis&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [R:Project_Documentation] Unknown reference link target &#39;GenericMath.Base&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [R:Project_Documentation] Invalid reference link target &#39;GenericMath.Base&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [R:Project_Documentation] Unknown reference link target &#39;GenericMath.LinearAlgebra&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [R:Project_Documentation] Invalid reference link target &#39;GenericMath.LinearAlgebra&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:GenericMath.Console.ConsoleLogger] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:GenericMath.Console.DocToMarkdown] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [N:GenericMath.Parser.Tests] Unknown reference link target &#39;GenericMath.Parser&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [N:GenericMath.Parser.Tests] Invalid reference link target &#39;GenericMath.Parser&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [N:GenericMath.Parser.Tests] Unknown reference link target &#39;!:DirectSumParser&lt;T, TStruct&gt;&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [N:GenericMath.Parser.Tests] Invalid reference link target &#39;!:DirectSumParser&lt;T, TStruct&gt;&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [T:GenericMath.Parser.Tests.DirectSumParserTest] Unknown reference link target &#39;!:DirectSumParser&lt;T, TStruct&gt;&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [T:GenericMath.Parser.Tests.DirectSumParserTest] Invalid reference link target &#39;!:DirectSumParser&lt;T, TStruct&gt;&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:GenericMath.Parser.Tests.MatrixParserTest] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:GenericMath.Parser.Tests.PolynomialParserTest.Parse_ValidParse_ElementEqualsExpected(System.String,System.Int32)] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:GenericMath.Parser.Tests.PolynomialParserTest.Parse_ValidParse_ElementEqualsExpected(System.String,System.Int32)] Missing &lt;param name=&quot;inputString&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:GenericMath.Parser.Tests.PolynomialParserTest.Parse_ValidParse_ElementEqualsExpected(System.String,System.Int32)] Missing &lt;param name=&quot;expected&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:GenericMath.Parser.Tests.PolynomialParserTest.Parser] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:GenricMath.Parser.DirectSumParser`3.Parse(System.String)] Missing &lt;returns&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:GenricMath.Parser.Int32Parser.Parse(System.String)] Missing &lt;returns&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:GenricMath.Parser.IntervalParser`3] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:GenricMath.Parser.IntervalParser`3] Missing &lt;typeparam name=&quot;TStruct&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:GenricMath.Parser.IntervalParser`3] Missing &lt;typeparam name=&quot;TTypeParser&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:GenricMath.Parser.IntervalParser`3.Parse(System.String)] Missing &lt;returns&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:GenricMath.Parser.IParser`1] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:GenricMath.Parser.IParser`1] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:GenricMath.Parser.IParser`1.Parse(System.String)] Missing &lt;returns&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:GenricMath.Parser.ITypeParser`1] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:GenricMath.Parser.ITypeParser`1.Parse(System.String)] Missing &lt;returns&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:GenricMath.Parser.MatrixParser`3] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:GenricMath.Parser.MatrixParser`3] Missing &lt;typeparam name=&quot;TStruct&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:GenricMath.Parser.MatrixParser`3] Missing &lt;typeparam name=&quot;TTypeParser&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:GenricMath.Parser.MatrixParser`3.Parse(System.String)] Missing &lt;returns&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:GenricMath.Parser.PolynomialParser`3] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:GenricMath.Parser.PolynomialParser`3] Missing &lt;typeparam name=&quot;TStruct&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:GenricMath.Parser.PolynomialParser`3] Missing &lt;typeparam name=&quot;TTypeParser&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:GenricMath.Parser.PolynomialParser`3.Parse(System.String)] Missing &lt;returns&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [N:Math.Analysis.Tests] Unknown reference link target &#39;GenericMath.Analysis&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [N:Math.Analysis.Tests] Invalid reference link target &#39;GenericMath.Analysis&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [N:Math.Analysis.Tests] Unknown reference link target &#39;T:Math.Analysis.IFieldExtensions&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [N:Math.Analysis.Tests] Unknown reference link target &#39;T:Math.Analysis.IGroupExtensions&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Math.Analysis.Tests.IFieldExtensionsTest] Unknown reference link target &#39;T:Math.Analysis.IFieldExtensions&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunction_CalculateAtPoint_EqualsExpectedPoint``1(``0,Math.Base.IField{``0},``0)] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunction_CalculateAtPoint_EqualsExpectedPoint``1(``0,Math.Base.IField{``0},``0)] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunction_CalculateAtPoint_EqualsExpectedPoint``1(``0,Math.Base.IField{``0},``0)] Missing &lt;param name=&quot;point&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunction_CalculateAtPoint_EqualsExpectedPoint``1(``0,Math.Base.IField{``0},``0)] Missing &lt;param name=&quot;field&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunction_CalculateAtPoint_EqualsExpectedPoint``1(``0,Math.Base.IField{``0},``0)] Missing &lt;param name=&quot;expeced&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunction_CalculateAtZero_ThrowsException``1(``0,Math.Base.IField{``0})] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunction_CalculateAtZero_ThrowsException``1(``0,Math.Base.IField{``0})] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunction_CalculateAtZero_ThrowsException``1(``0,Math.Base.IField{``0})] Missing &lt;param name=&quot;zero&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunction_CalculateAtZero_ThrowsException``1(``0,Math.Base.IField{``0})] Missing &lt;param name=&quot;field&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunctionWithFunc_CalculateAtPoint_EqualsExpectedPoint``1(``0,Math.Base.IField{``0},``0)] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunctionWithFunc_CalculateAtPoint_EqualsExpectedPoint``1(``0,Math.Base.IField{``0},``0)] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunctionWithFunc_CalculateAtPoint_EqualsExpectedPoint``1(``0,Math.Base.IField{``0},``0)] Missing &lt;param name=&quot;point&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunctionWithFunc_CalculateAtPoint_EqualsExpectedPoint``1(``0,Math.Base.IField{``0},``0)] Missing &lt;param name=&quot;field&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunctionWithFunc_CalculateAtPoint_EqualsExpectedPoint``1(``0,Math.Base.IField{``0},``0)] Missing &lt;param name=&quot;expected&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunctionWithFunc_CalculateAtPointFuncIsZero_ThrowsException``1(``0,Math.Base.IField{``0})] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunctionWithFunc_CalculateAtPointFuncIsZero_ThrowsException``1(``0,Math.Base.IField{``0})] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunctionWithFunc_CalculateAtPointFuncIsZero_ThrowsException``1(``0,Math.Base.IField{``0})] Missing &lt;param name=&quot;point&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.Analysis.Tests.IFieldExtensionsTest.MultiplicationInverseFunctionWithFunc_CalculateAtPointFuncIsZero_ThrowsException``1(``0,Math.Base.IField{``0})] Missing &lt;param name=&quot;field&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Math.Analysis.Tests.IGroupExtensionsTest] Unknown reference link target &#39;T:Math.Analysis.IGroupExtensions&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Math.Base.DoubleField] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Math.Base.IField`1.MultiplicationInverse(`0)] Unknown reference link target &#39;!:DivideByZeroException&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Math.Base.IField`1.MultiplicationInverse(`0)] Invalid reference link target &#39;!:DivideByZeroException&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Math.Base.IVectorRoom`4] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Math.Base.IVectorRoom`4] Missing &lt;typeparam name=&quot;TF&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Math.Base.IVectorRoom`4] Missing &lt;typeparam name=&quot;TField&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Math.Base.IVectorRoom`4] Missing &lt;typeparam name=&quot;TG&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Math.Base.IVectorRoom`4] Missing &lt;typeparam name=&quot;TGroup&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [N:Math.Base.Tests] Unknown reference link target &#39;GenericMath.Base&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [N:Math.Base.Tests] Invalid reference link target &#39;GenericMath.Base&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Math.Base.Tests.ComplexFieldTest] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Math.Base.Tests.DoubleIntervalTest`1] Missing &lt;typeparam name=&quot;TStructure&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [P:Math.Base.Tests.DoubleIntervalTest`1.ConstructTestDataSource] Unknown reference link target &#39;T:NUnit.Framework.TestCaseData&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [P:Math.Base.Tests.DoubleIntervalTest`1.ConstructThrowsTestDataSource] Unknown reference link target &#39;T:NUnit.Framework.TestCaseData&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Math.Base.Tests.DoubleIntervalTest`1.TestDataSource] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [P:Math.Base.Tests.DoubleIntervalTest`1.TestDataSource] Unknown reference link target &#39;T:NUnit.Framework.TestCaseData&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Math.Base.Tests.IntervalTest`2] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Math.Base.Tests.IntervalTest`2] Missing &lt;typeparam name=&quot;TStruct&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [P:Math.Base.Tests.IntervalTest`2.ConstructTestDataSource] Unknown reference link target &#39;T:NUnit.Framework.TestCaseData&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [P:Math.Base.Tests.IntervalTest`2.ConstructThrowsTestDataSource] Unknown reference link target &#39;T:NUnit.Framework.TestCaseData&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [P:Math.Base.Tests.IntervalTest`2.TestDataSource] Unknown reference link target &#39;T:NUnit.Framework.TestCaseData&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [N:Math.LinearAlgebra.Tests] Unknown reference link target &#39;GenericMath.LinearAlgebra&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [N:Math.LinearAlgebra.Tests] Invalid reference link target &#39;GenericMath.LinearAlgebra&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixExtensionsTest.GetColumnVector_CheckResultWithExpected_EqualsExpected``2(``0,``1,System.UInt32,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;param name=&quot;columnIndex&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixExtensionsTest.GetColumnVector_CheckResultWithExpected_EqualsExpected``2(``0,``1,System.UInt32,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;param name=&quot;underlyingList&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixExtensionsTest.GetRowVector_CheckResultWithExpected_EqualsExpected``2(``0,``1,System.UInt32,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixExtensionsTest.GetRowVector_CheckResultWithExpected_EqualsExpected``2(``0,``1,System.UInt32,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixExtensionsTest.GetRowVector_CheckResultWithExpected_EqualsExpected``2(``0,``1,System.UInt32,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;typeparam name=&quot;TStruct&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixExtensionsTest.GetRowVector_CheckResultWithExpected_EqualsExpected``2(``0,``1,System.UInt32,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;param name=&quot;hack1&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixExtensionsTest.GetRowVector_CheckResultWithExpected_EqualsExpected``2(``0,``1,System.UInt32,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;param name=&quot;hack2&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixExtensionsTest.GetRowVector_CheckResultWithExpected_EqualsExpected``2(``0,``1,System.UInt32,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;param name=&quot;rowIndex&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixExtensionsTest.GetRowVector_CheckResultWithExpected_EqualsExpected``2(``0,``1,System.UInt32,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;param name=&quot;matrix&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixExtensionsTest.GetRowVector_CheckResultWithExpected_EqualsExpected``2(``0,``1,System.UInt32,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;param name=&quot;underlyingList&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Math.LinearAlgebra.Tests.IMatrixFromGroupExtensionsTest] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixFromGroupExtensionsTest.Inverse_CheckResultWithExpected_EqualsElementalInverse``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1})] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixFromGroupExtensionsTest.Inverse_CheckResultWithExpected_EqualsElementalInverse``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1})] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixFromGroupExtensionsTest.Inverse_CheckResultWithExpected_EqualsElementalInverse``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1})] Missing &lt;typeparam name=&quot;TGroup&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixFromGroupExtensionsTest.Inverse_CheckResultWithExpected_EqualsElementalInverse``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1})] Missing &lt;param name=&quot;hack1&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixFromGroupExtensionsTest.Inverse_CheckResultWithExpected_EqualsElementalInverse``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1})] Missing &lt;param name=&quot;hack2&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixFromGroupExtensionsTest.Inverse_CheckResultWithExpected_EqualsElementalInverse``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1})] Missing &lt;param name=&quot;matrix&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixFromMonoidExtensionsTest.Add_CheckResultWithExpected_EqualsExpected``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixFromMonoidExtensionsTest.Add_CheckResultWithExpected_EqualsExpected``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixFromMonoidExtensionsTest.Add_CheckResultWithExpected_EqualsExpected``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;typeparam name=&quot;TMonoid&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixFromMonoidExtensionsTest.Add_CheckResultWithExpected_EqualsExpected``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;param name=&quot;hack1&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixFromMonoidExtensionsTest.Add_CheckResultWithExpected_EqualsExpected``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;param name=&quot;hack2&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixFromMonoidExtensionsTest.Add_CheckResultWithExpected_EqualsExpected``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;param name=&quot;matrix&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixFromMonoidExtensionsTest.Add_CheckResultWithExpected_EqualsExpected``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;param name=&quot;underlyingList&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixSquaredExtensionsTest.Trace_CalculatrTrace_EqualsExpected``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixSquaredExtensionsTest.Trace_CalculatrTrace_EqualsExpected``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixSquaredExtensionsTest.Trace_CalculatrTrace_EqualsExpected``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;typeparam name=&quot;TMonoid&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixSquaredExtensionsTest.Trace_CalculatrTrace_EqualsExpected``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;param name=&quot;hack1&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixSquaredExtensionsTest.Trace_CalculatrTrace_EqualsExpected``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;param name=&quot;hack2&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixSquaredExtensionsTest.Trace_CalculatrTrace_EqualsExpected``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;param name=&quot;matrix&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IMatrixSquaredExtensionsTest.Trace_CalculatrTrace_EqualsExpected``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})] Missing &lt;param name=&quot;underlyingList&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Math.LinearAlgebra.Tests.IPolynomialExtensionsTest] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IPolynomialFromGroupExtensionsTest.InverseElement``2(``0,``1,Math.LinearAlgebra.IPolynomial{``0,``1})] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IPolynomialFromGroupExtensionsTest.InverseElement``2(``0,``1,Math.LinearAlgebra.IPolynomial{``0,``1})] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IPolynomialFromGroupExtensionsTest.InverseElement``2(``0,``1,Math.LinearAlgebra.IPolynomial{``0,``1})] Missing &lt;typeparam name=&quot;TGroup&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IPolynomialFromGroupExtensionsTest.InverseElement``2(``0,``1,Math.LinearAlgebra.IPolynomial{``0,``1})] Missing &lt;param name=&quot;hackForGenericParameter&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IPolynomialFromGroupExtensionsTest.InverseElement``2(``0,``1,Math.LinearAlgebra.IPolynomial{``0,``1})] Missing &lt;param name=&quot;underlyingGroup&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IPolynomialFromGroupExtensionsTest.InverseElement``2(``0,``1,Math.LinearAlgebra.IPolynomial{``0,``1})] Missing &lt;param name=&quot;poly&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IPolynomialFromRingExtensionsTest.Multiply_MultiplyTwoPolynomials_DegreeEqualsxpecedDegree``2(``0,``1,Math.LinearAlgebra.IPolynomial{``0,``1},Math.LinearAlgebra.IPolynomial{``0,``1})] Missing &lt;summary&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IPolynomialFromRingExtensionsTest.Multiply_MultiplyTwoPolynomials_DegreeEqualsxpecedDegree``2(``0,``1,Math.LinearAlgebra.IPolynomial{``0,``1},Math.LinearAlgebra.IPolynomial{``0,``1})] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IPolynomialFromRingExtensionsTest.Multiply_MultiplyTwoPolynomials_DegreeEqualsxpecedDegree``2(``0,``1,Math.LinearAlgebra.IPolynomial{``0,``1},Math.LinearAlgebra.IPolynomial{``0,``1})] Missing &lt;typeparam name=&quot;TRing&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IPolynomialFromRingExtensionsTest.Multiply_MultiplyTwoPolynomials_DegreeEqualsxpecedDegree``2(``0,``1,Math.LinearAlgebra.IPolynomial{``0,``1},Math.LinearAlgebra.IPolynomial{``0,``1})] Missing &lt;param name=&quot;hackForGenericParameter1&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IPolynomialFromRingExtensionsTest.Multiply_MultiplyTwoPolynomials_DegreeEqualsxpecedDegree``2(``0,``1,Math.LinearAlgebra.IPolynomial{``0,``1},Math.LinearAlgebra.IPolynomial{``0,``1})] Missing &lt;param name=&quot;hackForGenericParameter2&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IPolynomialFromRingExtensionsTest.Multiply_MultiplyTwoPolynomials_DegreeEqualsxpecedDegree``2(``0,``1,Math.LinearAlgebra.IPolynomial{``0,``1},Math.LinearAlgebra.IPolynomial{``0,``1})] Missing &lt;param name=&quot;tuple1&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Math.LinearAlgebra.Tests.IPolynomialFromRingExtensionsTest.Multiply_MultiplyTwoPolynomials_DegreeEqualsxpecedDegree``2(``0,``1,Math.LinearAlgebra.IPolynomial{``0,``1},Math.LinearAlgebra.IPolynomial{``0,``1})] Missing &lt;param name=&quot;tuple2&quot;/&gt; documentation [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Math.LinearAlgebra.Tests.MatrixTest`2] Unknown reference link target &#39;!:DirectSumException&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Math.LinearAlgebra.Tests.MatrixTest`2] Invalid reference link target &#39;!:DirectSumException&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Math.LinearAlgebra.Tests.MatrixTest`2] Unknown reference link target &#39;!:DirectSumException&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Math.LinearAlgebra.Tests.MatrixTest`2] Invalid reference link target &#39;!:DirectSumException&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Math.LinearAlgebra.Tests.MatrixTest`2.Indexer_SettingToHighIndex_ThrowsPolynomialException(System.UInt32,System.UInt32)] Unknown reference link target &#39;!:DirectSumException&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Math.LinearAlgebra.Tests.MatrixTest`2.Indexer_SettingToHighIndex_ThrowsPolynomialException(System.UInt32,System.UInt32)] Invalid reference link target &#39;!:DirectSumException&#39;. [C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj]
+  Processed 649 topic(s)
+  138 warning(s)
+  CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 5 of 15.
+  CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 8 of 30.
+Die Erstellung von Projekt &quot;C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\BuildReferenceTopics.proj&quot; ist abgeschlossen (Standardziele).
+
+Der Buildvorgang wurde erfolgreich ausgefhrt.
+
+Verstrichene Zeit 00:00:14.56
+    Last step completed in 00:00:15.2279
+</buildStep>
+<buildStep step="CombiningIntermediateTocFiles">
+Combining conceptual and API intermediate TOC files...
+
+Clearing any prior web output
+    Last step completed in 00:00:00.5630
+</buildStep>
+<buildStep step="ExtractingHtmlInfo">
+Extracting HTML info for HTML Help 1 and/or website...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Sandcastle Help File Builder, version 2014.5.31.0
+Copyright &#184; 2006-2014, Eric Woodruff, All Rights Reserved
+E-Mail: Eric@EWoodruff.us
+
+Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
+
+Processing website files in C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website
+Processed 649 HTML files
+Sorting keywords and generating See Also indices
+Saving website keyword index to C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\WebKI.xml
+Saving website table of contents to C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\WebTOC.xml
+    Last step completed in 00:00:03.8752
+</buildStep>
+<buildStep step="CopyStandardHelpContent">
+Copying standard help content...
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertCaution.png -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\AlertCaution.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertNote.png -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\AlertNote.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertSecurity.png -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\AlertSecurity.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CFW.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\CFW.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CodeExample.png -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\CodeExample.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\favicon.ico -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\favicon.ico
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privclass.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\privclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privdelegate.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\privdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privenumeration.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\privenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privevent.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\privevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privextension.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\privextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privfield.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\privfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privinterface.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\privinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privmethod.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\privmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privproperty.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\privproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privstructure.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\privstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protclass.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\protclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protdelegate.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\protdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protenumeration.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\protenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protevent.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\protevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protextension.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\protextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protfield.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\protfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protinterface.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\protinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protmethod.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\protmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protoperator.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\protoperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protproperty.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\protproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protstructure.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\protstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubclass.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\pubclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubdelegate.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\pubdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubenumeration.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\pubenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubevent.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\pubevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubextension.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\pubextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubfield.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\pubfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubinterface.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\pubinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubmethod.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\pubmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\puboperator.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\puboperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubproperty.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\pubproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubstructure.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\pubstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionCollapsed.png -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\SectionCollapsed.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionExpanded.png -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\SectionExpanded.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\slMobile.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\slMobile.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\static.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\static.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\xna.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\xna.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\scripts\branding.js -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\scripts\branding.js
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-cs-CZ.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-cs-CZ.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-de-DE.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-de-DE.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-en-US.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-en-US.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-es-ES.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-es-ES.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-fr-FR.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-fr-FR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Help1.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-Help1.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Help2.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-Help2.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-HelpViewer.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-HelpViewer.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-it-IT.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-it-IT.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ja-JP.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-ja-JP.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ko-KR.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-ko-KR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pl-PL.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-pl-PL.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pt-BR.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-pt-BR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ru-RU.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-ru-RU.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-tr-TR.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-tr-TR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Website.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-Website.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-CN.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-zh-CN.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-TW.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding-zh-TW.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding.css -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\styles\branding.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\index.html -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\index.html
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\search.html -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\search.html
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\SearchHelp.aspx -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\SearchHelp.aspx
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\SearchHelp.inc.php -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\SearchHelp.inc.php
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\SearchHelp.php -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\SearchHelp.php
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\Web.Config -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\Web.Config
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\Search.png -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\Search.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocClose.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\TocClose.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocCollapsed.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\TocCollapsed.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocExpanded.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\TocExpanded.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocOpen.gif -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\icons\TocOpen.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\scripts\branding-Website.js -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\scripts\branding-Website.js
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\scripts\jquery-1.11.0.min.js -&gt; C:\Users\andy\Documents\GitHub\Xamarin\GenericMath\doc\Help\Working\Output\Website\scripts\jquery-1.11.0.min.js
+    Last step completed in 00:00:00.7410
+</buildStep>
+<buildStep step="GenerateHelpFormatTableOfContents">
+Generating website table of contents file...
+    Last step completed in 00:00:00.0060
+</buildStep>
+<buildStep step="GenerateFullTextIndex">
+Generating full-text index for the website...
+
+<plugIn name="Lightweight Website Style" behavior="After" priority="1000">
+Adding lightweight search and TOC elements to each topic...
+</plugIn>    Last step completed in 00:00:04.2532
+</buildStep>
+<buildStep step="CopyingWebsiteFiles">
+Copying website files to output folder...
+
+Copied 100 files
+Copied 200 files
+Copied 300 files
+Copied 400 files
+Copied 500 files
+Copied 600 files
+Copied 700 files
+Copied 800 files
+Copied 900 files
+Copied 1000 files
+Copied 1024 files for the website content
+    Last step completed in 00:00:02.6952
+</buildStep>
+<buildStep step="Completed">
+
+Build completed successfully at 10/12/2014 01:08 PM.  Total time: 00:00:39.2872
+
+</buildStep>
+</shfbBuild>

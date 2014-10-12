@@ -17,6 +17,9 @@ namespace GenericMath.Parser.Tests
     using GenricMath.Parser;
     using NUnit.Framework;
 
+    /// <summary>
+    /// Test for the <see cref="MatrixParser{T, TStruct, TParser}"/> class.
+    /// </summary>
     [TestFixture]
     public class MatrixParserTest
     {
@@ -58,7 +61,9 @@ namespace GenericMath.Parser.Tests
         [Test]
         [Category("MatrixParser")]
         [TestCaseSource("TestCaseSource")]
-        public void Parse_ValidParse_ElementEqualsExpected(String inputString, Int32 expected)
+        public void Parse_ValidParse_ElementEqualsExpected(
+            String inputString,
+            Int32 expected)
         {
             var result = Parser.Parse(inputString);
 

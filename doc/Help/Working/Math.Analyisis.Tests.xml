@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Math.Analyisis.Tests</name>
+    </assembly>
+    <members>
+        <member name="T:Math.Analysis.Tests.IRingExtensionsTest">
+            <summary>
+            Test for the IRing extensions.
+            </summary>
+        </member>
+        <member name="M:Math.Analysis.Tests.IRingExtensionsTest.Multiplication">
+            <summary>
+            Tests the addition extension.
+            </summary>
+        </member>
+        <member name="T:Math.Analysis.Tests.IMonoidExtensionsTest">
+            <summary>
+            Tests for the IGroupExtensions
+            </summary>
+        </member>
+        <member name="M:Math.Analysis.Tests.IMonoidExtensionsTest.Addition_OfTwoAdditionFunctions_PointsAreEqual``1(``0,``0,``0,Math.Base.IMonoid{``0})">
+            <summary>
+            Test the addition of two functions.
+            </summary>
+            <param name="value1">the second value.</param>
+            <param name="value2">The first value.</param>
+            <param name="expectedResult">The expected result.</param>
+            <param name="monoid">The group.</param>
+            <typeparam name="T">The 1st type parameter.</typeparam>
+        </member>
+        <member name="M:Math.Analysis.Tests.IMonoidExtensionsTest.Addition_LeftMultiplicationFunctionRightAdditionFunction_PointsAreEqual``1(``0,``0,``0,Math.Base.IRing{``0})">
+            <summary>
+            Additions the left argument multiplication function.
+            </summary>
+            <param name="value1">The first value.</param>
+            <param name="value2">The second value2.</param>
+            <param name="expectedResult">Expected result.</param>
+            <param name="ring">The ring.</param>
+            <typeparam name="T">The 1st type parameter.</typeparam>
+        </member>
+        <member name="M:Math.Analysis.Tests.IMonoidExtensionsTest.ZeroFunction_PointsEqualsMock``1(``0,Math.Base.IMonoid{``0})">
+            <summary>
+            Zeros the function equals mock.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="monoid">The group.</param>
+            <typeparam name="T">The 1st type parameter.</typeparam>
+        </member>
+        <member name="T:Math.Analysis.Tests.IGroupExtensionsTest">
+            <summary>
+            Tests for the <see cref="T:Math.Analysis.IGroupExtensions"/> class.
+            </summary>
+        </member>
+        <member name="M:Math.Analysis.Tests.IGroupExtensionsTest.InverseFunction_AddWithFunction_PointsEqualsMock``1(``0,Math.Base.IGroup{``0})">
+            <summary>
+            Inverses the function add with function points equals mock.
+            </summary>
+            <param name="value">the value.</param>
+            <param name="group">The group.</param>
+            <typeparam name="T">The 1st type parameter.</typeparam>
+        </member>
+        <member name="T:Math.Analysis.Tests.IFieldExtensionsTest">
+            <summary>
+            Test methods for the <see cref="T:Math.Analysis.IFieldExtensions"/> class.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,8 +1,8 @@
 ﻿//  *************************************************************
-// <copyright file="PolynomialParserTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="PolynomialParserTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  24 / 9 / 2014 Created the Class
@@ -13,8 +13,8 @@ namespace GenericMath.Parser.Tests
     using System;
     using System.Collections.Generic;
 
-    using Math.Base;
     using GenricMath.Parser;
+    using Math.Base;
     using NUnit.Framework;
 
     /// <summary>
@@ -57,7 +57,9 @@ namespace GenericMath.Parser.Tests
         [Category("PolynomialParser")]
         [TestCaseSource("TestCaseSource")]
         [Ignore]
-        public void Parse_ValidParse_ElementEqualsExpected(String inputString, Int32 expected)
+        public void Parse_ValidParse_ElementEqualsExpected(
+            String inputString,
+            Int32 expected)
         {
             var result = Parser.Parse(inputString);
 

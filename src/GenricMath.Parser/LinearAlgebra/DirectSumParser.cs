@@ -12,7 +12,6 @@ namespace GenricMath.Parser
 {
     using System;
     using System.Collections.Generic;
-    using System.Text.RegularExpressions;
 
     using GenericMath.Common;
     using Math.Base;
@@ -23,14 +22,14 @@ namespace GenricMath.Parser
     /// </summary>
     /// <typeparam name="T">The underlying set.</typeparam>
     /// <typeparam name="TStruct">The underlying structure.</typeparam>
-    /// <typeparam name="TTypeParser">The parser for the type.</typeparam>
-    public class DirectSumParser<T, TStruct, TTypeParser> : IParser<DirectSum<T, TStruct>>
+    /// <typeparam name="TParser">The parser for the type.</typeparam>
+    public class DirectSumParser<T, TStruct, TParser> : IParser<DirectSum<T, TStruct>>
         where TStruct : IStructure<T>, new()
-        where TTypeParser : ITypeParser<T>, new()
+        where TParser : IParser<T>, new()
     {
         #region fields
 
-        private readonly TTypeParser _typeParser = new TTypeParser();
+        private readonly TParser _typeParser = new TParser();
         private readonly IRegex _regex = new RegexAdapter();
         private List<T> _entries = new List<T>();
 

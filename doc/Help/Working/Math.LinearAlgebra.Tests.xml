@@ -1,0 +1,497 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Math.LinearAlgebra.Tests</name>
+    </assembly>
+    <members>
+        <member name="T:Math.LinearAlgebra.Tests.DirectSumTest`2">
+            <summary>
+            Test methods for the <see cref="T:Math.LinearAlgebra.DirectSum`2"/> class.
+            </summary>
+            <typeparam name="T">The set,</typeparam>
+            <typeparam name="TStruct">The structure.</typeparam>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.DirectSumTest`2.Initialize_CheckDimension_EqualsGivenDimension(System.UInt32)">
+            <summary>
+            Initializes the check dimension equals given dimension.
+            </summary>
+            <param name="givenDimension">The dimension.</param>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.DirectSumTest`2.Indexer_SettingToHighDimension_ThrowsVectorException(System.UInt32,System.UInt32)">
+            <summary>
+            Indexers the setting to high dimension throws vector exception.
+            </summary>
+            <param name="dimension">The dimension.</param>
+            <param name="index">The index.</param>
+        </member>
+        <member name="T:Math.LinearAlgebra.Tests.IDirectSumExtensionsTest">
+            <summary>
+            Vector extensions test.
+            </summary>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.IDirectSumExtensionsTest.Copy_IsNewInstance_VectorsAreEqual``2(``0,``1,Math.LinearAlgebra.IDirectSum{``0,``1})">
+            <summary>
+            Tests the copy method.
+            Checks if the copied vector is a new instance 
+            and that the vectors equal each other.
+            </summary>
+            <param name="hackForGenericParameter1">The first parameter is not needed for the test, only to make the method work.</param>
+            <param name="hackForGenericParameter2">The second parameter is not needed for the test, only to make the method work.</param>
+            <param name="tuple">The vector for the test.</param>
+            <typeparam name="T">The underlying set.</typeparam>
+            <typeparam name="TStruct">The underlying structure for the set.</typeparam>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.IDirectSumExtensionsTest.InsertionSort_Sort_AreEqual``2(``0,``1,Math.LinearAlgebra.IDirectSum{``0,``1},System.Collections.Generic.List{``0})">
+            <summary>
+            Tests the insertionSort method.
+            Checks if the copied vector is a new instance 
+            and that the vectors equal each other.
+            </summary>
+            <param name="hackForGenericParameter1">The first parameter is not needed for the test, only to make the method work.</param>
+            <param name="hackForGenericParameter2">The second parameter is not needed for the test, only to make the method work.</param>
+            <param name="tupleToSort">The vector for the test.</param>
+            <param name="list">The expected vector to compare.</param>
+            <typeparam name="T">The underlying set.</typeparam>
+            <typeparam name="TStruct">The underlying structure for the set.</typeparam>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.IDirectSumExtensionsTest.BubbleSort_Sort_AreEqual``2(``0,``1,Math.LinearAlgebra.IDirectSum{``0,``1},System.Collections.Generic.List{``0})">
+            <summary>
+            Tests the insertionSort method.
+            Checks if the copied vector is a new instance 
+            and that the vectors equal each other.
+            </summary>
+            <param name="hackForGenericParameter1">The first parameter is not needed for the test, only to make the method work.</param>
+            <param name="hackForGenericParameter2">The second parameter is not needed for the test, only to make the method work.</param>
+            <param name="tupleToSort">The vector for the test.</param>
+            <param name="list">The expected vector to compare.</param>
+            <typeparam name="T">The underlying set.</typeparam>
+            <typeparam name="TStruct">The underlying structure for the set.</typeparam>
+        </member>
+        <member name="T:Math.LinearAlgebra.Tests.IDirectSumFromMonoidExtensionsTest">
+            <summary>
+            Test for the extension methods for direct sums for monoids.
+            </summary>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.IDirectSumFromMonoidExtensionsTest.SumElements_EqualsExpectedValue``2(``0,``1,Math.LinearAlgebra.IDirectSum{``0,``1})">
+            <summary>
+            Checks the SumElements method.
+            </summary>
+            <param name="expectedValue">Expected value.</param>
+            <param name="hackForGenericParameter">Hack for generic parameter.</param>
+            <param name="tuple">The tuple.</param>
+            <typeparam name="T">The underlying set.</typeparam>
+            <typeparam name="TMonoid">The underlying monoid.</typeparam>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.IDirectSumFromMonoidExtensionsTest.Add_AddTwoTuples_EqualsExpectedTuple``2(``0,``1,Math.LinearAlgebra.IDirectSum{``0,``1},Math.LinearAlgebra.IDirectSum{``0,``1},Math.LinearAlgebra.IDirectSum{``0,``1})">
+            <summary>
+            Adds the add two tuples equals expected tuple.
+            </summary>
+            <param name="hackForGenericParameter1">Hack for generic parameter1.</param>
+            <param name="hackForGenericParameter2">Hack for generic parameter2.</param>
+            <param name="tuple1">The first tuple.</param>
+            <param name="tuple2">The second tuple.</param>
+            <param name="expectedTuple">Expected tuple.</param>
+            <typeparam name="T">The first type parameter.</typeparam>
+            <typeparam name="TMonoid">The second type parameter.</typeparam>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.IDirectSumFromMonoidExtensionsTest.Injection_InjectNewDimension_DimensionEqualsExpected``2(``0,``1,Math.LinearAlgebra.IDirectSum{``0,``1},System.UInt32)">
+            <summary>
+            Injections the inject new dimension dimension equals expected.
+            </summary>
+            <param name="hackForGenericParameter1">Hack for generic parameter1.</param>
+            <param name="monoid">The monoid.</param>
+            <param name="tuple">The tuple.</param>
+            <param name="additionalDimensions">Additional dimensions.</param>
+            <typeparam name="T">The first type parameter.</typeparam>
+            <typeparam name="TMonoid">The second type parameter.</typeparam>
+        </member>
+        <member name="T:Math.LinearAlgebra.Tests.IDirectSumFromGroupExtensionsTest">
+            <summary>
+            Test methods for the extension methods for IDirectSum with groups as structure.
+            Underlying class is <see cref="T:Math.LinearAlgebra.IDirectSumFromGroupExtensions"/>.
+            </summary>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.IDirectSumFromGroupExtensionsTest.InverseElement``2(``0,``1,Math.LinearAlgebra.IDirectSum{``0,``1})">
+            <summary>
+            Tests the inverting of an element.
+            </summary>
+            <param name="hackForGenericParameter">Hack for generic parameter.</param>
+            <param name="underlyingGroup">Underlying group.</param>
+            <param name="tuple">The Tuple.</param>
+            <typeparam name="T">The underlying set.</typeparam>
+            <typeparam name="TGroup">The underlying group.</typeparam>
+        </member>
+        <member name="T:Math.LinearAlgebra.Tests.IDirectSumFromRingExtensionsTest">
+            <summary>
+            Test class for the <see cref="T:Math.LinearAlgebra.IDirectSumFromRingExtensions"/> class. 
+            </summary>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.IDirectSumFromRingExtensionsTest.Multiply_MultiplyTwoTuples_EqualsExpectedTuple``2(``0,``1,Math.LinearAlgebra.IDirectSum{``0,``1},Math.LinearAlgebra.IDirectSum{``0,``1},Math.LinearAlgebra.IDirectSum{``0,``1})">
+            <summary>
+            Test the Multipliy method. Multiplie two tuples and checks if the reuslt equals the expected tuple.
+            </summary>
+            <param name="hackForGenericParameter1">Hack for generic parameter1.</param>
+            <param name="hackForGenericParameter2">Hack for generic parameter2.</param>
+            <param name="tuple1">The frist tuple.</param>
+            <param name="tuple2">The second tuple.</param>
+            <param name="expectedTuple">Expected tuple.</param>
+            <typeparam name="T">The underlying set.</typeparam>
+            <typeparam name="TRing">The underlying ring.</typeparam>
+        </member>
+        <member name="T:Math.LinearAlgebra.Tests.FakeDirectSumTestDataSource">
+            <summary>
+            Contains data source for the direct sum tests.
+            </summary>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeDirectSumTestDataSource.DoubleList">
+            <summary>
+            Gets the double list.
+            </summary>
+            <value>The double list.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeDirectSumTestDataSource.ComplexList">
+            <summary>
+            Gets the complex list.
+            </summary>
+            <value>The complex list.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeDirectSumTestDataSource.Int32List">
+            <summary>
+            Gets the integer list.
+            </summary>
+            <value>The integer list.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeDirectSumTestDataSource.GroupInt32IDirectSumSource">
+            <summary>
+            Gets the group integer I direct sum source.
+            </summary>
+            <value>The group integer I direct sum source.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeDirectSumTestDataSource.RingInt32IDirectSumSource">
+            <summary>
+            Gets the ring integer I direct sum source.
+            </summary>
+            <value>The ring integer I direct sum source.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeDirectSumTestDataSource.RingComplexIDirectSumSource">
+            <summary>
+            Gets the ring complex I direct sum source.
+            </summary>
+            <value>The ring complex I direct sum source.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeDirectSumTestDataSource.FieldDoubleIDirectSumSource">
+            <summary>
+            Gets the field double I direct sum source.
+            </summary>
+            <value>The field double I direct sum source.</value>
+        </member>
+        <member name="T:Math.LinearAlgebra.Tests.PolynomialTest`2">
+            <summary>
+            Test methods for the <see cref="T:Math.LinearAlgebra.Polynomial`2"/> class.
+            </summary>
+            <typeparam name="T">The underlying set.</typeparam>
+            <typeparam name="TStruct">The underlying structure for T.</typeparam>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.PolynomialTest`2.Initialize_CheckDegree_EqualsGivenDegree(System.UInt32)">
+            <summary>
+            Initializes a new polynomial with given degree and checks the degree.
+            </summary>
+            <param name="givenDegree">The degree.</param>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.PolynomialTest`2.Indexer_SettingToHighIndex_ThrowsPolynomialException(System.UInt32,System.UInt32)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Math.LinearAlgebra.Polynomial`2"/> class with given degree.
+            Queries the polynomial for index out of range.
+            Throws a <see cref="T:Math.LinearAlgebra.LinearAlgebraException"/>. 
+            </summary>
+            <param name="degree">The dimension.</param>
+            <param name="index">The index.</param>
+        </member>
+        <member name="T:Math.LinearAlgebra.Tests.MatrixTest`2">
+            <summary>
+            Tests for the <see cref="T:Math.LinearAlgebra.Matrix`2"/> class.
+            </summary>
+            <typeparam name="T">The underlying set.</typeparam>
+            <typeparam name="TStruct">The underlying structure for T.</typeparam>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.MatrixTest`2.Initialize_CheckRowDimension_EqualsGivenRowDimension(System.UInt32)">
+            <summary>
+            Initializes a new matrix with given row dimension and checks the row dimension.
+            </summary>
+            <param name="rowDimension">The rowDimension.</param>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.MatrixTest`2.Initialize_CheckColumnDimension_EqualsGivenColumnDimension(System.UInt32)">
+            <summary>
+            Initializes a new matrix with given column dimension and checks the column dimension.
+            </summary>
+            <param name="columnDimension">The column dimension.</param>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.MatrixTest`2.InitializeSquared_CheckDimension_EqualsGivenDimension(System.UInt32)">
+            <summary>
+            Initializes a new squared matrix with given dimension and checks the dimension.
+            </summary>
+            <param name="dimension">The dimension for squared matrix.</param>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.MatrixTest`2.Indexer_SettingToHighIndex_ThrowsPolynomialException(System.UInt32,System.UInt32)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Math.LinearAlgebra.Polynomial`2"/> class with given degree.
+            Queries the polynomial for index out of range.
+            Throws a <see cref="!:DirectSumException"/>. 
+            </summary>
+            <param name="dimension">The dimension.</param>
+            <param name="rowIndex">The index.</param>
+        </member>
+        <member name="T:Math.LinearAlgebra.Tests.FakePolynomialTestDataSource">
+            <summary>
+            Fake polynomial test data source.
+            </summary>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakePolynomialTestDataSource.DoubleList">
+            <summary>
+            Gets the double list.
+            </summary>
+            <value>The double list.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakePolynomialTestDataSource.ComplexList">
+            <summary>
+            Gets the complex list.
+            </summary>
+            <value>The complex list.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakePolynomialTestDataSource.Int32List">
+            <summary>
+            Gets the integer list.
+            </summary>
+            <value>The integer list.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakePolynomialTestDataSource.GroupInt32IPolynomialSource">
+            <summary>
+            Gets the group integer I polynomial source.
+            </summary>
+            <value>The group integer polynomial source.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakePolynomialTestDataSource.RingInt32IPolynomialSource">
+            <summary>
+            Gets the ring integer polynomial source.
+            </summary>
+            <value>The ring integer polynomial source.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakePolynomialTestDataSource.RingComplexIPolynomialSource">
+            <summary>
+            Gets the ring complex polynomial source.
+            </summary>
+            <value>The ring complex polynomial source.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakePolynomialTestDataSource.FieldDoubleIPolynomialSource">
+            <summary>
+            Gets the field double polynomial source.
+            </summary>
+            <value>The field double polynomial source.</value>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.IPolynomialExtensionsTest.Copy_IsNewInstance_PolynomialsAreEqual``2(``0,``1,Math.LinearAlgebra.IPolynomial{``0,``1})">
+            <summary>
+            Checks if the copy function returns a new instance with equal entries.
+            </summary>
+            <param name="hackForGenericParameter1">Hack for generic parameter1.</param>
+            <param name="hackForGenericParameter2">Hack for generic parameter2.</param>
+            <param name="polynomial">The polynomial to copy.</param>
+            <typeparam name="T">The underlying set.</typeparam>
+            <typeparam name="TStruct">The underlying structure.</typeparam>
+        </member>
+        <member name="T:Math.LinearAlgebra.Tests.IPolynomialFromMonoidExtensionsTest">
+            <summary>
+            Tests for the extension methods for polynomials with underlying Monoid structure.
+            </summary>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.IPolynomialFromMonoidExtensionsTest.Add_AddTwoTuples_EqualsExpectedTuple``2(``0,``1,Math.LinearAlgebra.IPolynomial{``0,``1},Math.LinearAlgebra.IPolynomial{``0,``1},Math.LinearAlgebra.IPolynomial{``0,``1})">
+            <summary>
+            Adds the add two tuples equals expected tuple.
+            </summary>
+            <param name="hackForGenericParameter1">Hack for generic parameter1.</param>
+            <param name="hackForGenericParameter2">Hack for generic parameter2.</param>
+            <param name="polynomial1">The left polynomial.</param>
+            <param name="polynomial2">The right polynomial.</param>
+            <param name="expectedPolynomial">Expected polynomial.</param>
+            <typeparam name="T">The underlying set.</typeparam>
+            <typeparam name="TMonoid">The underlying monoid.</typeparam>
+        </member>
+        <member name="T:Math.LinearAlgebra.Tests.IPolynomialFromGroupExtensionsTest">
+            <summary>
+            Test methods for the extension methods of IPolynomial with group structure.
+            </summary>
+        </member>
+        <member name="T:Math.LinearAlgebra.Tests.IPolynomialFromRingExtensionsTest">
+            <summary>
+            Tests for the IPolynomial extensions with underlying ring as structure.
+            </summary>
+        </member>
+        <member name="T:Math.LinearAlgebra.Tests.FakeMatrixTestDataSource">
+            <summary>
+            Data source for the matrix test classes.
+            </summary>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeMatrixTestDataSource.DoubleList">
+            <summary>
+            Gets the double list.
+            </summary>
+            <value>The double list.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeMatrixTestDataSource.ComplexList">
+            <summary>
+            Gets the complex list.
+            </summary>
+            <value>The complex list.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeMatrixTestDataSource.Int32List">
+            <summary>
+            Gets the int32 list.
+            </summary>
+            <value>The int32 list.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeMatrixTestDataSource.GroupInt32Source">
+            <summary>
+            Gets the group int32 source.
+            </summary>
+            <value>The group int32 source.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeMatrixTestDataSource.RingInt32Source">
+            <summary>
+            Gets the ring int32 source.
+            </summary>
+            <value>The ring int32 source.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeMatrixTestDataSource.RingComplexSource">
+            <summary>
+            Gets the ring complex source.
+            </summary>
+            <value>The ring complex source.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeMatrixTestDataSource.FieldDoubleSource">
+            <summary>
+            Gets the field double source.
+            </summary>
+            <value>The field double source.</value>
+        </member>
+        <member name="T:Math.LinearAlgebra.Tests.IMatrixExtensionsTest">
+            <summary>
+            Tests for the extensions methods of IMatrix.
+            </summary>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.IMatrixExtensionsTest.GetColumnVector_CheckResultWithExpected_EqualsExpected``2(``0,``1,System.UInt32,Math.LinearAlgebra.IMatrix{``0,``1},System.Collections.Generic.List{System.Collections.Generic.List{``0}})">
+            <summary>
+            Gets the column vector check result with expected equals expected.
+            </summary>
+            <param name="hack1">Hack for generic parameter.</param>
+            <param name="hack2">Hack for generic structure.</param>
+            <param name = "columnIndex"></param>
+            <param name="matrix">Matrix.</param>
+            <typeparam name="T">The 1st type parameter.</typeparam>
+            <typeparam name="TStruct">The 2nd type parameter.</typeparam>
+            <param name = "underlyingList"></param>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.IMatrixExtensionsTest.Transpose_CheckResultWithGivenParameter_EqualsExpected``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1})">
+            <summary>
+            Tests the matrix transpose extension method.
+            </summary>
+            <param name="hack1">Hack1.</param>
+            <param name="hack2">Hack2.</param>
+            <param name="matrix">Matrix.</param>
+            <typeparam name="T">The 1st type parameter.</typeparam>
+            <typeparam name="TStruct">The 2nd type parameter.</typeparam>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.IMatrixExtensionsTest.Copy_CheckResultWithGivenParameter_EqualsExpected``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1})">
+            <summary>
+            Tests the matrix copy extension method.
+            </summary>
+            <param name="hack1">Hack1.</param>
+            <param name="hack2">Hack2.</param>
+            <param name="matrix">Matrix.</param>
+            <typeparam name="T">The 1st type parameter.</typeparam>
+            <typeparam name="TStruct">The 2nd type parameter.</typeparam>
+        </member>
+        <member name="T:Math.LinearAlgebra.Tests.IMatrixFromRingExtensionsTest">
+            <summary>
+            Tests for the extension methods for IMatrix with underlying Ring as structure.
+            </summary>
+        </member>
+        <member name="T:Math.LinearAlgebra.Tests.IMatrixFromMonoidExtensionsTest">
+            <summary>
+            Test methods for the extension methods for the IMatrix.
+            </summary>
+        </member>
+        <member name="T:Math.LinearAlgebra.Tests.IMatrixSquaredExtensionsTest">
+            <summary>
+            Tests for the extension methods for squared matrices.
+            </summary>
+        </member>
+        <member name="M:Math.LinearAlgebra.Tests.IMatrixSquaredExtensionsTest.GausJordanAlgorithm_Run_IsNotNull``2(``0,``1,Math.LinearAlgebra.IMatrix{``0,``1})">
+            <summary>
+            Gauses the jordan algorithm run is not null.
+            </summary>
+            <param name="hack1">Hack to get generic parameter.</param>
+            <param name="hack2">Hack to get generic parameter.</param>
+            <param name="matrix">Matrix.</param>
+            <typeparam name="T">The 1st type parameter.</typeparam>
+            <typeparam name="TField">The 2nd type parameter.</typeparam>
+        </member>
+        <member name="T:Math.LinearAlgebra.Tests.FakeMatrixSquaredTestDataSource">
+            <summary>
+            TestData Source for squared matrizes.
+            </summary>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeMatrixSquaredTestDataSource.DoubleList">
+            <summary>
+            Gets the double list.
+            </summary>
+            <value>The double list.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeMatrixSquaredTestDataSource.DoubleList2">
+            <summary>
+            Gets the int32 list.
+            </summary>
+            <value>The int32 list.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeMatrixSquaredTestDataSource.ComplexList">
+            <summary>
+            Gets the complex list.
+            </summary>
+            <value>The complex list.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeMatrixSquaredTestDataSource.Int32List">
+            <summary>
+            Gets the int32 list.
+            </summary>
+            <value>The int32 list.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeMatrixSquaredTestDataSource.GroupInt32Source">
+            <summary>
+            Gets the group int32 source.
+            </summary>
+            <value>The group int32 source.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeMatrixSquaredTestDataSource.RingInt32Source">
+            <summary>
+            Gets the ring int32 source.
+            </summary>
+            <value>The ring int32 source.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeMatrixSquaredTestDataSource.FieldComplexSource">
+            <summary>
+            Gets the ring complex source.
+            </summary>
+            <value>The ring complex source.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeMatrixSquaredTestDataSource.FieldDoubleSource">
+            <summary>
+            Gets the field double source.
+            </summary>
+            <value>The field double source.</value>
+        </member>
+        <member name="P:Math.LinearAlgebra.Tests.FakeMatrixSquaredTestDataSource.FieldDoubleSource2">
+            <summary>
+            Gets the field double2 source.
+            </summary>
+            <value>The field double2 source.</value>
+        </member>
+    </members>
+</doc>

@@ -5,8 +5,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B9684EF5-50EB-471D-B899-9F0A231EB9A2}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>GenricMath.Parser</RootNamespace>
-    <AssemblyName>GenricMath.Parser</AssemblyName>
+    <RootNamespace>GenericMath.Parser</RootNamespace>
+    <AssemblyName>GenericMath.Parser</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -18,7 +18,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <DocumentationFile>bin\Debug\GenricMath.Parser.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\GenericMath.Parser.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -34,7 +34,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LinearAlgebra\DirectSumParser.cs" />
-    <Compile Include="Contracts\ITypeParser.cs" />
     <Compile Include="TypeParser\Int32Parser.cs" />
     <Compile Include="Base\IntervalParser.cs" />
     <Compile Include="Contracts\IParser.cs" />
@@ -43,18 +42,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Math.Analysis\Math.Analysis.csproj">
-      <Project>{1974448B-2DDF-4F3A-A044-8D27B97ACBEE}</Project>
-      <Name>Math.Analysis</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Math.Base\Math.Base.csproj">
-      <Project>{32112762-A4EA-4A22-8F40-235A366445A9}</Project>
-      <Name>Math.Base</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Math.LinearAlgebra\Math.LinearAlgebra.csproj">
-      <Project>{FA62DC06-710E-4615-9E6F-C5E77D5B3202}</Project>
-      <Name>Math.LinearAlgebra</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GenericMath.Common\GenericMath.Common.csproj">
       <Project>{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}</Project>
       <Name>GenericMath.Common</Name>

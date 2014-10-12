@@ -1,8 +1,8 @@
 ﻿//  *************************************************************
-// <copyright file="DirectSumParserTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="DirectSumParserTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  24 / 9 / 2014 Created the Class
@@ -13,13 +13,13 @@ namespace GenericMath.Parser.Tests
     using System;
     using System.Collections.Generic;
 
+    using GenricMath.Parser;
     using Math.Base;
     using Math.LinearAlgebra;
-    using GenricMath.Parser;
     using NUnit.Framework;
 
     /// <summary>
-    /// Test for the <see cref="DirectSumParser{T, TStruct}"/> class.
+    /// Test for the <see cref="DirectSumParser{T, TStruct, TParser}"/> class.
     /// </summary>
     [TestFixture]
     public class DirectSumParserTest
@@ -62,7 +62,9 @@ namespace GenericMath.Parser.Tests
         [Test]
         [Category("DirectSumParserTest")]
         [TestCaseSource("TestDataSet")]
-        public void Parse_ValidParse_EqualsExpected(String stringInput, Int32 expected)
+        public void Parse_ValidParse_EqualsExpected(
+            String stringInput,
+            Int32 expected)
         {
             var result = Parser.Parse(stringInput);
             Assert.IsNotNull(result);

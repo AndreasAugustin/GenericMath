@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>GenericMath.Console</name>
+  </assembly>
+  <members>
+    <member name="M:GenericMath.Console.ConsoleLogger.Write(System.String)">
+      <summary>
+            Write the specified message.
+            </summary>
+      <param name="message">The message.</param>
+    </member>
+    <member name="M:GenericMath.Console.ConsoleLogger.WriteLine(System.String)">
+      <summary>
+            Writes the line.
+            </summary>
+      <param name="message">The message.</param>
+    </member>
+    <member name="N:GenericMath.Console">
+      <summary>GenericMath.Console is a console application to do math calculations.</summary>
+    </member>
+    <member name="N:GenericMath.Parser.Tests">
+      <summary>Unit test project for the <see cref="GenericMath.Parser" /> project.</summary>
+    </member>
+    <member name="N:GenricMath.Parser">
+      <summary>Project to parse strings into generic math objects</summary>
+    </member>
+    <member name="N:Math.Analysis.Tests">
+      <summary>Unit test project for the <see cref="GenericMath.Analysis" /> project.</summary>
+    </member>
+    <member name="N:Math.Base">
+      <summary>Class library which contains base structures.</summary>
+    </member>
+    <member name="N:Math.Base.Tests">
+      <summary>Unit test project for the <see cref="GenericMath.Base" /> project.</summary>
+    </member>
+    <member name="N:Math.LinearAlgebra">
+      <summary>Class Library which contains classes for linear algebra operations.</summary>
+    </member>
+    <member name="N:Math.LinearAlgebra.Tests">
+      <summary>Unit test project for the <see cref="GenericMath.LinearAlgebra" /> project.</summary>
+    </member>
+  </members>
+</doc>

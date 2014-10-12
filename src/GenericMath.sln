@@ -3,25 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.LinearAlgebra.Tests", "Tests\Math.LinearAlgebra.Tests\Math.LinearAlgebra.Tests.csproj", "{577920B2-9289-4CC9-8F56-291E9F436495}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Base.Tests", "Tests\Math.Base.Tests\Math.Base.Tests.csproj", "{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Analysis.Tests", "Tests\Math.Analysis.Tests\Math.Analysis.Tests.csproj", "{57422D4B-3791-4023-AA99-F236C9E68476}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Base.Tests", "Tests\GenericMath.Base.Tests\GenericMath.Base.Tests.csproj", "{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Parser.Tests", "Tests\GenericMath.Parser.Tests\GenericMath.Parser.Tests.csproj", "{11DE12D6-4F86-4696-A408-1FAED8F2EE88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Analysis", "Math.Analysis\Math.Analysis.csproj", "{1974448B-2DDF-4F3A-A044-8D27B97ACBEE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.LinearAlgebra.Tests", "Tests\GenericMath.LinearAlgebra.Tests\GenericMath.LinearAlgebra.Tests.csproj", "{577920B2-9289-4CC9-8F56-291E9F436495}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.LinearAlgebra", "Math.LinearAlgebra\Math.LinearAlgebra.csproj", "{FA62DC06-710E-4615-9E6F-C5E77D5B3202}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Analysis.Tests", "Tests\GenericMath.Analysis.Tests\GenericMath.Analysis.Tests.csproj", "{57422D4B-3791-4023-AA99-F236C9E68476}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Base", "Math.Base\Math.Base.csproj", "{32112762-A4EA-4A22-8F40-235A366445A9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenricMath.Parser", "GenricMath.Parser\GenricMath.Parser.csproj", "{B9684EF5-50EB-471D-B899-9F0A231EB9A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Parser", "GenricMath.Parser\GenericMath.Parser.csproj", "{B9684EF5-50EB-471D-B899-9F0A231EB9A2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Console", "GenericMath.Console\GenericMath.Console.csproj", "{A543E822-202D-4FD8-84BC-37C8F9F969A5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Common", "GenericMath.Common\GenericMath.Common.csproj", "{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Analysis", "GenericMath.Analysis\GenericMath.Analysis.csproj", "{1974448B-2DDF-4F3A-A044-8D27B97ACBEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Base", "GenericMath.Base\GenericMath.Base.csproj", "{32112762-A4EA-4A22-8F40-235A366445A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.LinearAlgebra", "GenericMath.LinearAlgebra\GenericMath.LinearAlgebra.csproj", "{FA62DC06-710E-4615-9E6F-C5E77D5B3202}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,10 +71,10 @@ Global
 		{FA62DC06-710E-4615-9E6F-C5E77D5B3202}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{577920B2-9289-4CC9-8F56-291E9F436495} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
 		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
-		{57422D4B-3791-4023-AA99-F236C9E68476} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
 		{11DE12D6-4F86-4696-A408-1FAED8F2EE88} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
+		{577920B2-9289-4CC9-8F56-291E9F436495} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
+		{57422D4B-3791-4023-AA99-F236C9E68476} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = GenericMath.Console\GenericMath.Console.csproj

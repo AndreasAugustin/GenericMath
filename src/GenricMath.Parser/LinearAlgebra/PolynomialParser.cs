@@ -11,8 +11,6 @@
 namespace GenricMath.Parser
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text.RegularExpressions;
 
     using Math.Base;
     using Math.LinearAlgebra;
@@ -20,13 +18,13 @@ namespace GenricMath.Parser
     /// <summary>
     /// Polynomial parser.
     /// </summary>
-    public class PolynomialParser<T, TStruct, TTypeParser> : IParser<Polynomial<T, TStruct>>
+    public class PolynomialParser<T, TStruct, TParser> : IParser<Polynomial<T, TStruct>>
         where TStruct : IStructure<T>, new()
-        where TTypeParser : ITypeParser<T>, new()
+        where TParser : IParser<T>, new()
     {
         #region fields
 
-        readonly TTypeParser _parser = new TTypeParser();
+        readonly TParser _parser = new TParser();
 
         #endregion
 
@@ -42,6 +40,5 @@ namespace GenricMath.Parser
         }
 
         #endregion
-
     }
 }

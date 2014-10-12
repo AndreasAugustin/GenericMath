@@ -1,8 +1,8 @@
 ﻿//  *************************************************************
-// <copyright file="Int32OrdinaryParser.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="Int32OrdinaryParser.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  24 / 9 / 2014 Created the Class
@@ -12,12 +12,10 @@ namespace GenricMath.Parser
 {
     using System;
 
-    using Math.Base;
-
     /// <summary>
     /// Parser for Int32 values.
     /// </summary>
-    public class Int32Parser : ITypeParser<Int32>
+    public class Int32Parser : IParser<Int32>
     {
         #region ITypeParser implementation
 
@@ -36,6 +34,5 @@ namespace GenricMath.Parser
         }
 
         #endregion
-       
     }
 }

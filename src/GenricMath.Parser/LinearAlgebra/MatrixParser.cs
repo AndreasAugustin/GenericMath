@@ -11,7 +11,6 @@
 namespace GenricMath.Parser
 {
     using System;
-    using System.Collections.Generic;
     using System.Text.RegularExpressions;
 
     using Math.Base;
@@ -20,13 +19,13 @@ namespace GenricMath.Parser
     /// <summary>
     /// Matrix parser.
     /// </summary>
-    public class MatrixParser<T, TStruct, TTypeParser> : IParser<Matrix<T, TStruct>>
+    public class MatrixParser<T, TStruct, TParser> : IParser<Matrix<T, TStruct>>
         where TStruct : IStructure<T>, new()
-        where TTypeParser : ITypeParser<T>, new()
+        where TParser : IParser<T>, new()
     {
         #region fields
 
-        readonly TTypeParser _parser = new TTypeParser();
+        readonly TParser _parser = new TParser();
 
         #endregion
 
@@ -57,7 +56,9 @@ namespace GenricMath.Parser
                 if (columns == 0)
                 {
                     columns = temp.Length;
-                    mat = new Matrix<T, TStruct>((UInt32)rows.Length, (UInt32)columns);
+                    mat = new Matrix<T, TStruct>(
+                        (UInt32)rows.Length,
+                        (UInt32)columns);
                 }
                     
                 if (columns != temp.Length)
@@ -74,6 +75,5 @@ namespace GenricMath.Parser
         }
 
         #endregion
-
     }
 }

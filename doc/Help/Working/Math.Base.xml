@@ -1,0 +1,549 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Math.Base</name>
+    </assembly>
+    <members>
+        <member name="T:Math.Base.DoubleGroup">
+            <summary>
+            Double group. Mathematical group for Double values.
+            </summary>
+        </member>
+        <member name="T:Math.Base.DoubleMonoid">
+            <summary>
+            Monoid for real numbers.
+            </summary>
+        </member>
+        <member name="T:Math.Base.IMonoid`1">
+            <summary>
+            Interface for creating monoid structures.
+            </summary>
+            <typeparam name="T">The underlying Set.</typeparam>
+        </member>
+        <member name="T:Math.Base.IStructure`1">
+            <summary>
+            Interface for structures.
+            </summary>
+            <typeparam name="T">The type parameter.</typeparam>
+        </member>
+        <member name="M:Math.Base.IMonoid`1.Addition(`0,`0)">
+            <summary>
+            Addition of the specified leftElement and rightElement.
+            </summary>
+            <param name="leftElement">Left element.</param>
+            <param name="rightElement">Right element.</param>
+            <returns>The addition of the leftElement and rightElement (leftElement + rightElement)</returns>
+        </member>
+        <member name="P:Math.Base.IMonoid`1.Zero">
+            <summary>
+            Gets the zero element of the group.
+            </summary>
+            <value>The zero.</value>
+        </member>
+        <member name="M:Math.Base.DoubleMonoid.Addition(System.Double,System.Double)">
+            <summary>
+            Addition of the specified leftElement and rightElement.
+            </summary>
+            <param name="leftElement">Left element.</param>
+            <param name="rightElement">Right element.</param>
+            <returns>The addition of the leftElement and rightElement (leftElement + rightElement)</returns>
+        </member>
+        <member name="M:Math.Base.DoubleMonoid.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:Math.Base.DoubleGroup"/>.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents the current <see cref="T:Math.Base.DoubleGroup"/>.</returns>
+        </member>
+        <member name="P:Math.Base.DoubleMonoid.Zero">
+            <summary>
+            Gets the zero element of the group.
+            </summary>
+            <value>The zero.</value>
+        </member>
+        <member name="T:Math.Base.IGroup`1">
+            <summary>
+            Interface for defining group structures.
+            </summary>
+            <typeparam name="T">The type parameter is the set of the elements for the group.</typeparam>
+        </member>
+        <member name="M:Math.Base.IGroup`1.Inverse(`0)">
+            <summary>
+            Returns the inverse of the specified element.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>The inverse of element (-element)</returns>
+        </member>
+        <member name="M:Math.Base.DoubleGroup.Inverse(System.Double)">
+            <summary>
+            Returns the inverse of the specified element.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>The inverse of element (-element)</returns>
+        </member>
+        <member name="M:Math.Base.DoubleGroup.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:Math.Base.DoubleGroup"/>.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents the current <see cref="T:Math.Base.DoubleGroup"/>.</returns>
+        </member>
+        <member name="T:Math.Base.Int32Group">
+            <summary>
+            Integer group. Mathematical group for integer values.
+            </summary>
+        </member>
+        <member name="T:Math.Base.Int32Monoid">
+            <summary>
+            Monoid structure for Integer.
+            </summary>
+        </member>
+        <member name="M:Math.Base.Int32Monoid.Addition(System.Int32,System.Int32)">
+            <summary>
+            Addition of the specified leftElement and rightElement.
+            </summary>
+            <param name="leftElement">Left element.</param>
+            <param name="rightElement">Right element.</param>
+            <returns>The addition of the leftElement and rightElement (leftElement + rightElement)</returns>
+        </member>
+        <member name="M:Math.Base.Int32Monoid.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:Math.Base.Int32Monoid"/>.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents the current <see cref="T:Math.Base.Int32Monoid"/>.</returns>
+        </member>
+        <member name="P:Math.Base.Int32Monoid.Zero">
+            <summary>
+            Gets the zero element of the group.
+            </summary>
+            <value>The zero.</value>
+        </member>
+        <member name="M:Math.Base.Int32Group.Inverse(System.Int32)">
+            <summary>
+            Returns the inverse of the specified element.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>The inverse of element (-element)</returns>
+        </member>
+        <member name="M:Math.Base.Int32Group.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:Math.Base.Int32Group"/>.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents the current <see cref="T:Math.Base.Int32Group"/>.</returns>
+        </member>
+        <member name="T:Math.Base.ComplexGroup">
+            <summary>
+            Group with complex numbers.
+            </summary>
+        </member>
+        <member name="T:Math.Base.ComplexMonoid">
+            <summary>
+            Monoid for complex numbers.
+            </summary>
+        </member>
+        <member name="M:Math.Base.ComplexMonoid.Addition(System.Numerics.Complex,System.Numerics.Complex)">
+            <summary>
+            Addition of the specified leftElement and rightElement.
+            </summary>
+            <param name="leftElement">Left element.</param>
+            <param name="rightElement">Right element.</param>
+            <returns>The addition of the leftElement and rightElement (leftElement + rightElement)</returns>
+        </member>
+        <member name="M:Math.Base.ComplexMonoid.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:Math.Base.ComplexMonoid"/>.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents the current <see cref="T:Math.Base.ComplexMonoid"/>.</returns>
+        </member>
+        <member name="P:Math.Base.ComplexMonoid.Zero">
+            <summary>
+            Gets the zero element of the group.
+            </summary>
+            <value>The zero.</value>
+        </member>
+        <member name="M:Math.Base.ComplexGroup.Inverse(System.Numerics.Complex)">
+            <summary>
+            Returns the inverse of the specified element.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>The inverse of element (-element)</returns>
+        </member>
+        <member name="M:Math.Base.ComplexGroup.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Math.Base.DoubleRing">
+            <summary>
+            Double ring. Mathematical ring for Double values.
+            </summary>
+        </member>
+        <member name="T:Math.Base.IRing`1">
+            <summary>
+            Interface for declaring a ring (Here it is an integer ring).
+            </summary>
+            <typeparam name="T">The type parameter is the set of the elements for the ring.</typeparam> 
+        </member>
+        <member name="M:Math.Base.IRing`1.Multiplication(`0,`0)">
+            <summary>
+            Multiplication of the specified leftElement and rightElement.
+            </summary>
+            <param name="leftElement">Left element.</param>
+            <param name="rightElement">Right element.</param>
+            <returns>The multiplication of the leftElement and rightElement (leftElement * rightElement)</returns>
+        </member>
+        <member name="P:Math.Base.IRing`1.One">
+            <summary>
+            Gets the one element of the ring.
+            </summary>
+            <value>The one.</value>
+        </member>
+        <member name="M:Math.Base.DoubleRing.Multiplication(System.Double,System.Double)">
+            <summary>
+            Multiplication of the specified leftElement and rightElement.
+            </summary>
+            <param name="leftElement">Left element.</param>
+            <param name="rightElement">Right element.</param>
+            <returns>The multiplication of the leftElement and rightElement (leftElement * rightElement)</returns>
+        </member>
+        <member name="M:Math.Base.DoubleRing.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Math.Base.DoubleRing.One">
+            <summary>
+            Gets the one element of the ring.
+            </summary>
+            <value>The one.</value>
+        </member>
+        <member name="T:Math.Base.ComplexRing">
+            <summary>
+            Complex ring. Mathematical ring for complex values.
+            </summary>
+        </member>
+        <member name="M:Math.Base.ComplexRing.Multiplication(System.Numerics.Complex,System.Numerics.Complex)">
+            <summary>
+            Multiplication of the specified leftElement and rightElement.
+            </summary>
+            <param name="leftElement">Left element.</param>
+            <param name="rightElement">Right element.</param>
+            <returns>The multiplication of the leftElement and rightElement (leftElement * rightElement)</returns>
+        </member>
+        <member name="M:Math.Base.ComplexRing.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Math.Base.ComplexRing.One">
+            <summary>
+            Gets the one element of the ring.
+            </summary>
+            <value>The one.</value>
+        </member>
+        <member name="T:Math.Base.Int32Ring">
+            <summary>
+            Integer ring. Mathematical ring for Integer values.
+            </summary>
+        </member>
+        <member name="M:Math.Base.Int32Ring.Multiplication(System.Int32,System.Int32)">
+            <summary>
+            Multiplication of the specified leftElement and rightElement.
+            </summary>
+            <param name="leftElement">Left element.</param>
+            <param name="rightElement">Right element.</param>
+            <returns>The multiplication of the leftElement and rightElement (leftElement * rightElement)</returns>
+        </member>
+        <member name="M:Math.Base.Int32Ring.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Math.Base.Int32Ring.One">
+            <summary>
+            Gets the one element of the ring.
+            </summary>
+            <value>The one.</value>
+        </member>
+        <member name="T:Math.Base.IEuclidianRing`1">
+            <summary>
+            Interface for the calculators.
+            </summary>
+            <typeparam name="T">Refers to the object for the calculations.</typeparam>
+        </member>
+        <member name="M:Math.Base.IEuclidianRing`1.Norm(`0)">
+            <summary>
+            Calculates the norm of element.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>The norm of element.</returns>
+        </member>
+        <member name="T:Math.Base.DoubleEuclidianRing">
+            <summary>
+            Double calculator.
+            </summary>
+        </member>
+        <member name="M:Math.Base.DoubleEuclidianRing.Norm(System.Double)">
+            <summary>
+            Calculates the norm of element.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>The norm of element.</returns>
+        </member>
+        <member name="M:Math.Base.DoubleEuclidianRing.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Math.Base.ComplexEuclidianRing">
+            <summary>
+            Complex calculator.
+            </summary>
+        </member>
+        <member name="M:Math.Base.ComplexEuclidianRing.Norm(System.Numerics.Complex)">
+            <summary>
+            Calculates the norm of element.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>The norm of element.</returns>
+        </member>
+        <member name="M:Math.Base.ComplexEuclidianRing.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Math.Base.Int32EuclidianRing">
+            <summary>
+            Integer calculator.
+            </summary>
+        </member>
+        <member name="M:Math.Base.Int32EuclidianRing.Norm(System.Int32)">
+            <summary>
+            Calculates the norm of element.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>The norm of element.</returns>
+        </member>
+        <member name="M:Math.Base.Int32EuclidianRing.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Math.Base.UInt32Monoid">
+            <summary>
+            Monoid with unsigned integers.
+            </summary>
+        </member>
+        <member name="M:Math.Base.UInt32Monoid.Addition(System.UInt32,System.UInt32)">
+            <summary>
+            Addition of the specified leftElement and rightElement.
+            </summary>
+            <param name="leftElement">Left element.</param>
+            <param name="rightElement">Right element.</param>
+            <returns>The addition of the leftElement and rightElement (leftElement + rightElement)</returns>
+        </member>
+        <member name="P:Math.Base.UInt32Monoid.Zero">
+            <summary>
+            Gets the zero element of the group.
+            </summary>
+            <value>The zero.</value>
+        </member>
+        <member name="T:Math.Base.IField`1">
+            <summary>
+            Interface for defining fields.
+            </summary>
+            <typeparam name="T">The underlying set.</typeparam>
+        </member>
+        <member name="M:Math.Base.IField`1.MultiplicationInverse(`0)">
+            <summary>
+            Gets the inverse for the ring multiplication.
+            </summary>
+            <returns>The inverse.</returns>
+            <param name="element">The element.</param>
+            <exception cref="!:DivideByZeroException">Thrown when the element is the zero element of the underlying group.</exception>
+        </member>
+        <member name="M:Math.Base.DoubleField.MultiplicationInverse(System.Double)">
+            <summary>
+            Gets the inverse for the ring multiplication.
+            </summary>
+            <returns>The inverse.</returns>
+            <param name="element">The element.</param>
+            <exception cref="T:System.DivideByZeroException">Thrown when the element is the zero element.</exception>
+        </member>
+        <member name="T:Math.Base.IModule`4">
+            <summary>
+            Interface for the module structure.
+            </summary>
+            <typeparam name="TR">the set of the underlying ring.</typeparam>
+            <typeparam name="TRing">The ring structure.</typeparam>
+            <typeparam name="TG">The set of the underlying group.</typeparam>
+            <typeparam name="TGroup">The group structure</typeparam>
+        </member>
+        <member name="M:Math.Base.IModule`4.ScalarMultiply(`1,`3)">
+            <summary>
+            Scalar multiplication of the group element with the scalar from the ring.
+            </summary>
+            <returns>The multiply.</returns>
+            <param name="scalar">The scalar.</param>
+            <param name="groupElement">Group element.</param>
+        </member>
+        <member name="T:Math.Base.IntegerExtension">
+            <summary>
+            Extension Methods for the Integer class.
+            </summary>
+        </member>
+        <member name="M:Math.Base.IntegerExtension.EuclidianAlgorithm(System.Int32,System.Int32)">
+            <summary>
+            Calculates the gcd (greatest common divisor) with the euclidian algorithm.
+            </summary>
+            <returns>The gcd of a and b.</returns>
+            <param name="a">The alpha component.</param>
+            <param name="b">The blue component.</param>
+            <returns>The gcd of a and b</returns>
+        </member>
+        <member name="M:Math.Base.IntegerExtension.ExtendedEuclidianAlgorithm(System.Int32,System.Int32,System.Int32@,System.Int32@)">
+            <summary>
+            Extends the euclidian algorithm.
+            It also calculates x,y.
+            gcd(a,b) = a * x + b * y.
+            </summary>
+            <returns>The euclidian algorithm.</returns>
+            <param name="a">The alpha component.</param>
+            <param name="b">The blue component.</param>
+            <param name="x">The x coordinate.</param>
+            <param name="y">The y coordinate.</param>
+            <returns>The gcd of a and b</returns>
+        </member>
+        <member name="M:Math.Base.IntegerExtension.ChineseRestTerm(System.Int32[],System.Int32[])">
+            <summary>
+            Calculates the chinese rest term algorithm.
+            Calculates a solution for the equation 
+            result = x[0] mod moduli[0]
+            result = x[1] mod moduli[1]
+            .....
+            result = x[n] mod moduli[n]
+            It needs to be true that gcd(moduli) = 1
+            </summary>
+            <returns>The rest term.</returns>
+            <param name="moduli">The moduli.</param>
+            <param name="x">The parameters.</param>
+            <returns>The solution for the equation posted above.</returns>
+        </member>
+        <member name="T:Math.Base.ComplexField">
+            <summary>
+            Complex field.
+            </summary>
+        </member>
+        <member name="M:Math.Base.ComplexField.MultiplicationInverse(System.Numerics.Complex)">
+            <summary>
+            Gets the inverse for the ring multiplication.
+            </summary>
+            <returns>The inverse.</returns>
+            <param name="element">The element.</param>
+            <exception cref="T:System.DivideByZeroException">Thrown when the element is the zero element of the underlying group.</exception>
+        </member>
+        <member name="T:Math.Base.IRingExtensions">
+            <summary>
+            Extension methods for Rings.
+            </summary>
+        </member>
+        <member name="M:Math.Base.IRingExtensions.Pow``1(Math.Base.IRing{``0},``0,System.UInt32)">
+            <summary>
+            Multiplies the specified element power times.
+            </summary>
+            <param name="ring">The ring.</param>
+            <param name="element">The element.</param>
+            <param name="power">The power.</param>
+            <typeparam name="T">The 1st type parameter.</typeparam>
+            <returns>The result.</returns>
+        </member>
+        <member name="T:Math.Base.IInterval`2">
+            <summary>
+            Interface for defining intervals for a set T.
+            </summary>
+            <typeparam name="T">The underlying set.</typeparam>
+            <typeparam name="TStruct">The underlying structure for the elements.</typeparam>
+        </member>
+        <member name="M:Math.Base.IInterval`2.IsinInterval(`0)">
+            <summary>
+            Determines whether this element is within interval.
+            </summary>
+            <returns><c>true</c> if the element lies in the interval; otherwise, <c>false</c>.</returns>
+            <param name="elementToCheck">Element to check.</param>
+        </member>
+        <member name="P:Math.Base.IInterval`2.MaxElement">
+            <summary>
+            Gets the max element.
+            </summary>
+            <value>The max element.</value>
+        </member>
+        <member name="P:Math.Base.IInterval`2.MinElement">
+            <summary>
+            Gets the minimum element.
+            </summary>
+            <value>The minimum element.</value>
+        </member>
+        <member name="T:Math.Base.Interval`2">
+            <summary>
+            Implementation of <see cref="T:Math.Base.IInterval`2"/>
+            </summary>
+            <typeparam name="T">The underlying set.</typeparam>
+            <typeparam name="TStruct">The underlying structure.</typeparam>
+        </member>
+        <member name="M:Math.Base.Interval`2.#ctor(`0,`0)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Math.Base.Interval`2"/> class.
+            </summary>
+            <param name="minElement">Minimum element.</param>
+            <param name="maxElement">Max element.</param>
+            <exception cref="T:System.AccessViolationException">Thrown when the minElement is greater or equal maxElement</exception>
+        </member>
+        <member name="M:Math.Base.Interval`2.IsinInterval(`0)">
+            <summary>
+            Determines whether this element is within interval.
+            </summary>
+            <returns><c>true</c> if the element is in the Interval else <c>false</c></returns>
+            <param name="elementToCheck">Element to check.</param>
+        </member>
+        <member name="M:Math.Base.Interval`2.Equals(Math.Base.Interval{`0,`1})">
+            <summary>
+            Determines whether the specified <see cref="T:Math.Base.Interval`2"/> is equal to the current 
+            <see cref="T:Math.Base.Interval`2"/>.
+            </summary>
+            <param name="other">The <see cref="T:Math.Base.Interval`2"/> to compare with the current 
+            <see cref="T:Math.Base.Interval`2"/>.</param>
+            <returns><c>true</c> if the specified <see cref="T:Math.Base.Interval`2"/> is equal to the current
+            <see cref="T:Math.Base.Interval`2"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Math.Base.Interval`2.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:Math.Base.Interval`2"/>.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents the current <see cref="T:Math.Base.Interval`2"/>.</returns>
+        </member>
+        <member name="P:Math.Base.Interval`2.MaxElement">
+            <summary>
+            Gets the max element.
+            </summary>
+            <value>The max element.</value>
+        </member>
+        <member name="P:Math.Base.Interval`2.MinElement">
+            <summary>
+            Gets the minimum element.
+            </summary>
+            <value>The minimum element.</value>
+        </member>
+    </members>
+</doc>
