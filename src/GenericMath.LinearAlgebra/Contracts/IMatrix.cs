@@ -1,19 +1,19 @@
 ﻿//  *************************************************************
-// <copyright file="IMatrix.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IMatrix.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  23 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
     using System.Collections.Generic;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Interface for the matrix class.
@@ -55,7 +55,9 @@ namespace Math.LinearAlgebra
         /// <returns>The new instance.</returns>
         /// <param name="rowDimension">Row dimension.</param>
         /// <param name="columnDimension">Column dimension.</param>
-        IMatrix<T, TStruct> ReturnNewInstance(UInt32 rowDimension, UInt32 columnDimension);
+        IMatrix<T, TStruct> ReturnNewInstance(
+            UInt32 rowDimension,
+            UInt32 columnDimension);
 
         #endregion
     }

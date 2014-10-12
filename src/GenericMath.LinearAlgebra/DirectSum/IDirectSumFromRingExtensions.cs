@@ -1,18 +1,18 @@
 ﻿//  *************************************************************
-// <copyright file="IDirectSumFromRingExtensions.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IDirectSumFromRingExtensions.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  18 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Extension methods for the <see cref="DirectSum{T, IStructure}"/> class.
@@ -30,7 +30,9 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TRing">The underlying structure.</typeparam>
         /// <returns>The multiplication vector1 * vector2.</returns>
-        public static IDirectSum<T, TRing> Multiply<T, TRing>(this IDirectSum<T, TRing> tuple1, IDirectSum<T, TRing> tuple2)
+        public static IDirectSum<T, TRing> Multiply<T, TRing>(
+            this IDirectSum<T, TRing> tuple1,
+            IDirectSum<T, TRing> tuple2)
             where TRing : IRing<T>, new()
         {
             if (tuple1.Dimension != tuple2.Dimension)
@@ -60,7 +62,9 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TRing">The underlying structure.</typeparam>
         /// <returns>The vector^power.</returns>
-        public static IDirectSum<T, TRing> Pow<T, TRing>(this IDirectSum<T, TRing> tuple, UInt32 power)
+        public static IDirectSum<T, TRing> Pow<T, TRing>(
+            this IDirectSum<T, TRing> tuple,
+            UInt32 power)
             where TRing : IRing<T>, new()
         {
             var result = tuple.ReturnNewInstance(tuple.Dimension);
@@ -87,7 +91,9 @@ namespace Math.LinearAlgebra
         /// <param name="vector2">The right vector.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static T ScalarProduct<T, TStruct>(this IDirectSum<T, TStruct> vector1, IDirectSum<T, TStruct> vector2)
+        public static T ScalarProduct<T, TStruct>(
+            this IDirectSum<T, TStruct> vector1,
+            IDirectSum<T, TStruct> vector2)
             where TStruct : IRing<T>, new()
         {
             var ring = new TStruct();
@@ -96,7 +102,11 @@ namespace Math.LinearAlgebra
 
             for (UInt32 i = 0; i < vector1.Dimension; i++)
             {
-                result = ring.Addition(result, ring.Multiplication(vector1[i], vector2[i]));           
+                result = ring.Addition(
+                    result,
+                    ring.Multiplication(
+                        vector1[i],
+                        vector2[i]));           
             }
 
             return result;
@@ -110,7 +120,9 @@ namespace Math.LinearAlgebra
         /// <param name="scalar">The scalar.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TRing">The underlying structure.</typeparam>
-        public static IDirectSum<T, TRing> ScalarMultiply<T, TRing>(this IDirectSum<T, TRing> tuple, T scalar)
+        public static IDirectSum<T, TRing> ScalarMultiply<T, TRing>(
+            this IDirectSum<T, TRing> tuple,
+            T scalar)
             where TRing : IRing<T>, new()
         {
             var ring = new TRing();

@@ -1,18 +1,18 @@
 ﻿//  *************************************************************
-// <copyright file="IPolynomialFromRingExtensions.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IPolynomialFromRingExtensions.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  20 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Polynomial from ring extensions.
@@ -29,7 +29,9 @@ namespace Math.LinearAlgebra
         /// <param name="power">The power.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TRing">The underlying structure.</typeparam>
-        public static IPolynomial<T, TRing> Pow<T, TRing>(this IPolynomial<T, TRing> polynomial, UInt32 power)
+        public static IPolynomial<T, TRing> Pow<T, TRing>(
+            this IPolynomial<T, TRing> polynomial,
+            UInt32 power)
             where TRing : IRing<T>, new()
         {
             var result = polynomial.Copy();
@@ -51,7 +53,9 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TRing">The underlying structure.</typeparam>
         /// <returns>The product of polynomial1 and polynomial2.</returns>
-        public static IPolynomial<T, TRing> Multiply<T, TRing>(this IPolynomial<T, TRing> polynomial1, IPolynomial<T, TRing> polynomial2)
+        public static IPolynomial<T, TRing> Multiply<T, TRing>(
+            this IPolynomial<T, TRing> polynomial1,
+            IPolynomial<T, TRing> polynomial2)
             where TRing : IRing<T>, new()
         {
             var degree = polynomial1.Degree + polynomial2.Degree;
@@ -72,7 +76,9 @@ namespace Math.LinearAlgebra
                     var k = i - j;
                     var factor1 = polynomial1.Degree >= j ? polynomial1[j] : baseStructure.One;
                     var factor2 = polynomial2.Degree >= k ? polynomial2[k] : baseStructure.One;
-                    x = baseStructure.Addition(x, baseStructure.Multiplication(factor1, factor2));
+                    x = baseStructure.Addition(
+                        x,
+                        baseStructure.Multiplication(factor1, factor2));
                 }
 
                 poly[i] = x;
@@ -89,7 +95,9 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TRing">The underlying structure.</typeparam>
         /// <returns>The point calculation for the polynomial.</returns>
-        public static T Calculate<T, TRing>(this IPolynomial<T, TRing> polynomial, T x)
+        public static T Calculate<T, TRing>(
+            this IPolynomial<T, TRing> polynomial,
+            T x)
             where TRing : IRing<T>, new()
         {
             var ring = new TRing();
@@ -97,7 +105,9 @@ namespace Math.LinearAlgebra
 
             for (UInt32 i = 0; i <= polynomial.Degree; i++)
             {
-                var calculatedCoefficient = ring.Multiplication(ring.Pow(x, i), polynomial[i]);
+                var calculatedCoefficient = ring.Multiplication(
+                                                ring.Pow(x, i),
+                                                polynomial[i]);
                 result = ring.Addition(result, calculatedCoefficient);
             }
 
@@ -112,7 +122,9 @@ namespace Math.LinearAlgebra
         /// <param name="scalar">The scalar.</param>
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TRing">The underlying structure.</typeparam>
-        public static IPolynomial<T, TRing> ScalarMultiply<T, TRing>(this IPolynomial<T, TRing> polynomial, T scalar)
+        public static IPolynomial<T, TRing> ScalarMultiply<T, TRing>(
+            this IPolynomial<T, TRing> polynomial,
+            T scalar)
             where TRing : IRing<T>, new()
         {
             var poly = polynomial.ReturnNewInstance(polynomial.Degree);

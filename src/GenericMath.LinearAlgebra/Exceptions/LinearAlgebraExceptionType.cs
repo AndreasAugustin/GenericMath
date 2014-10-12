@@ -1,14 +1,14 @@
 ﻿//  *************************************************************
-// <copyright file="LinearAlgebraExceptionType.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="LinearAlgebraExceptionType.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  13 / 9 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System.ComponentModel;
 

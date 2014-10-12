@@ -1,18 +1,18 @@
 ﻿//  *************************************************************
-// <copyright file="IDirectSumExtensions.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IDirectSumExtensions.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  18 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Extension methods for the <see cref="IDirectSum{T, TStruct}"/> class.
@@ -54,8 +54,10 @@ namespace Math.LinearAlgebra
         {
             var vec = tuple.Copy();
             if (tuple.Dimension < 2)
+            {
                 return vec;
-
+            }
+                
             for (UInt32 j = 1; j < vec.Dimension; j++)
             {
                 var key = vec[j];
@@ -67,9 +69,12 @@ namespace Math.LinearAlgebra
                     vec[i + 1] = vec[i];                   
                     vec[i] = key;
 
-                    if (i == 0) // Security because UInt32
+                    // Security because UInt32
+                    if (i == 0)
+                    {
                         break;
-
+                    }
+                        
                     i--;
                 }
             }
@@ -91,7 +96,9 @@ namespace Math.LinearAlgebra
             var vec = tuple.Copy();
 
             if (vec.Dimension <= 1)
+            {
                 return vec;
+            }
 
             for (var i = 0; i < vec.Dimension - 1; i++)
             {

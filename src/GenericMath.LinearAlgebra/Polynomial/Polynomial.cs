@@ -1,21 +1,21 @@
 ﻿//  *************************************************************
-// <copyright file="Polynomial.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="Polynomial.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  19 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Text;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Polynomial from set.
@@ -27,14 +27,14 @@ namespace Math.LinearAlgebra
     {
         #region fields
 
-        readonly List<T> _coefficients;
+        private readonly List<T> _coefficients;
 
         #endregion
 
         #region ctors
 
         /// <summary>
-        /// Initialises a new instance of the <see cref="Polynomial{T, TStruct}"/> class.
+        /// Initializes a new instance of the <see cref="Polynomial{T, TStruct}"/> class.
         /// </summary>
         /// <param name="degree">The degree of the polynomial.</param>
         public Polynomial(UInt32 degree)
@@ -72,18 +72,18 @@ namespace Math.LinearAlgebra
         {
             get
             {
-                CheckState();
-                CheckOutOfRange(index);
+                this.CheckState();
+                this.CheckOutOfRange(index);
 
-                return _coefficients[(Int32)index];
+                return this._coefficients[(Int32)index];
             }
 
             set
             {
-                CheckState();
-                CheckOutOfRange(index);
+                this.CheckState();
+                this.CheckOutOfRange(index);
 
-                _coefficients[(Int32)index] = value;
+                this._coefficients[(Int32)index] = value;
             }
         }
 
@@ -115,15 +115,21 @@ namespace Math.LinearAlgebra
         public Boolean Equals(Polynomial<T, TStruct> other)
         {
             if (other == null)
+            {
                 return false;
+            }
 
             if (Object.ReferenceEquals(this, other))
+            {
                 return true;
+            }
 
-            for (UInt32 i = 0; i < _coefficients.Count; i++)
+            for (UInt32 i = 0; i < this._coefficients.Count; i++)
             {
                 if (!this[i].Equals(other[i]))
+                {
                     return false;
+                }
             }
 
             return true;
@@ -139,8 +145,10 @@ namespace Math.LinearAlgebra
         /// <returns>A string that represents the current object.</returns>
         public override string ToString()
         {
-            var str = new StringBuilder(String.Format("Degree: {0}| ", Degree));
-            for (UInt32 i = Degree; i > 0; i--)
+            var str = new StringBuilder(String.Format(
+                              "Degree: {0}| ",
+                              this.Degree));
+            for (UInt32 i = this.Degree; i > 0; i--)
             {
                 str.AppendFormat("{0}*x^{1} + ", this[i], i);
             }
@@ -156,7 +164,7 @@ namespace Math.LinearAlgebra
 
         #region helper methods
 
-        void CheckOutOfRange(UInt32 index)
+        private void CheckOutOfRange(UInt32 index)
         {
             if (this.Degree == UInt32.MaxValue)
             {
@@ -187,7 +195,7 @@ namespace Math.LinearAlgebra
         #region debug methods
 
         [Conditional("DEBUG")]
-        void CheckState()
+        private void CheckState()
         {
             var methodName = new StackTrace().GetFrame(1).GetMethod().Name;
             Trace.Write("Hi");

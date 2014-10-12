@@ -1,18 +1,18 @@
 ﻿//  *************************************************************
-// <copyright file="IPolynomialFromMonoidExtensions.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IPolynomialFromMonoidExtensions.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  22 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Extensions methods for the <see cref="Polynomial{T, TStruct}"/> class.
@@ -30,7 +30,9 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TMonoid">The underlying structure.</typeparam>
         /// <returns>A new polynomial as a sum of polynomial1 and polynomial2.</returns>
-        public static IPolynomial<T, TMonoid> Add<T, TMonoid>(this IPolynomial<T, TMonoid> polynomial1, IPolynomial<T, TMonoid> polynomial2)
+        public static IPolynomial<T, TMonoid> Add<T, TMonoid>(
+            this IPolynomial<T, TMonoid> polynomial1,
+            IPolynomial<T, TMonoid> polynomial2)
             where TMonoid : IMonoid<T>, new()
         {
             var poly1HasMaxDegree = polynomial1.Degree >= polynomial2.Degree;
@@ -45,7 +47,9 @@ namespace Math.LinearAlgebra
             {
                 // TODO implement left and right elements (do not necessary need to be commutative)
                 var otherDegreeValid = polyWithLowerOrEqualMaxDegree.Degree >= polyWithMaxDegree.Degree;
-                poly[i] = monoid.Addition(polyWithMaxDegree[i], otherDegreeValid ? polyWithLowerOrEqualMaxDegree[i] : monoid.Zero);
+                poly[i] = monoid.Addition(
+                    polyWithMaxDegree[i],
+                    otherDegreeValid ? polyWithLowerOrEqualMaxDegree[i] : monoid.Zero);
             }
 
             return poly;

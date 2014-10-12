@@ -1,18 +1,18 @@
 ﻿//  *************************************************************
-// <copyright file="DirectSumMonoid.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="DirectSumMonoid.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  31 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Monoid structure for direct sums.
@@ -31,7 +31,7 @@ namespace Math.LinearAlgebra
         #region ctors
 
         /// <summary>
-        /// Initialises a new instance of the <see cref="DirectSumMonoid{T, TMonoid}"/> class.
+        /// Initializes a new instance of the <see cref="DirectSumMonoid{T, TMonoid}"/> class.
         /// </summary>
         /// <param name="dimension">The dimension of the monoid in this class.</param>
         public DirectSumMonoid(UInt32 dimension)
@@ -75,15 +75,21 @@ namespace Math.LinearAlgebra
         /// <returns>The addition of the leftElement and rightElement (leftElement + rightElement)</returns>
         /// <exception cref="InvalidCastException">When the cast was not possible.</exception>
         /// <exception cref="NotSupportedException">When the dimension of the parameters is not equal to the set dimension of the instance.</exception>
-        public DirectSum<T, TMonoid> Addition(DirectSum<T, TMonoid> leftElement, DirectSum<T, TMonoid> rightElement)
+        public DirectSum<T, TMonoid> Addition(
+            DirectSum<T, TMonoid> leftElement,
+            DirectSum<T, TMonoid> rightElement)
         {
             if (leftElement.Dimension != this.Dimension)
+            {
                 throw new NotSupportedException("The dimension is not set right");
-
+            }
+                
             var tuple = leftElement.Add(rightElement) as DirectSum<T, TMonoid>;
 
             if (tuple == null)
+            {
                 throw new InvalidCastException();
+            }
 
             return tuple;
         }

@@ -1,18 +1,18 @@
 ﻿//  *************************************************************
-// <copyright file="IMatrixFromRingExtensions.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IMatrixFromRingExtensions.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  22 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Extension methods for the <see cref="Matrix{T, TStruct}"/> class.
@@ -29,10 +29,14 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TRing">The underlying structure.</typeparam>
         /// <returns>Lambda * A.</returns>
-        public static IMatrix<T, TRing> ScalarMultiply<T, TRing>(this IMatrix<T, TRing> matrix, T scalar)
+        public static IMatrix<T, TRing> ScalarMultiply<T, TRing>(
+            this IMatrix<T, TRing> matrix,
+            T scalar)
             where TRing : IRing<T>, new()
         {
-            var result = matrix.ReturnNewInstance(matrix.RowDimension, matrix.ColumnDimension);
+            var result = matrix.ReturnNewInstance(
+                             matrix.RowDimension,
+                             matrix.ColumnDimension);
             var ring = new TRing();
 
             for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
@@ -55,13 +59,19 @@ namespace Math.LinearAlgebra
         /// <param name="matrix2">The right Matrix.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TRing">The underlying structure.</typeparam>
-        public static IMatrix<T, TRing> MultiplyMatrix<T, TRing>(this IMatrix<T, TRing> matrix1, IMatrix<T, TRing> matrix2)
+        public static IMatrix<T, TRing> MultiplyMatrix<T, TRing>(
+            this IMatrix<T, TRing> matrix1,
+            IMatrix<T, TRing> matrix2)
             where TRing : IRing<T>, new()
         {
             if (matrix1.ColumnDimension != matrix2.RowDimension)
+            {
                 throw new IndexOutOfRangeException("The ColumnDimension of matrix1 needs to be the same like the RowDimension of matrix2");
+            }
 
-            var result = matrix1.ReturnNewInstance(matrix1.RowDimension, matrix2.ColumnDimension);
+            var result = matrix1.ReturnNewInstance(
+                             matrix1.RowDimension,
+                             matrix2.ColumnDimension);
 
             var baseStructure = new TRing();
 
@@ -71,7 +81,11 @@ namespace Math.LinearAlgebra
                 {
                     for (UInt32 k = 0; k < matrix1.ColumnDimension; k++)
                     {
-                        result[i, j] = baseStructure.Addition(result[i, j], baseStructure.Multiplication(matrix1[i, k], matrix2[k, j]));
+                        result[i, j] = baseStructure.Addition(
+                            result[i, j],
+                            baseStructure.Multiplication(
+                                matrix1[i, k],
+                                matrix2[k, j]));
                     }
                 }
             }
@@ -87,7 +101,9 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TRing">The underlying structure.</typeparam>
         /// <returns>The power of the matrix with power.</returns>
-        public static IMatrix<T, TRing> Pow<T, TRing>(this IMatrix<T, TRing> matrix, UInt32 power)
+        public static IMatrix<T, TRing> Pow<T, TRing>(
+            this IMatrix<T, TRing> matrix,
+            UInt32 power)
             where TRing : IRing<T>, new()
         {
             var result = matrix.Copy();
@@ -109,11 +125,15 @@ namespace Math.LinearAlgebra
         /// <param name="vector">The vector.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TRing">The underlying structure.</typeparam>
-        public static IDirectSum<T, TRing> MultiplyVector<T, TRing>(this IMatrix<T, TRing> matrix, IDirectSum<T, TRing> vector)
+        public static IDirectSum<T, TRing> MultiplyVector<T, TRing>(
+            this IMatrix<T, TRing> matrix,
+            IDirectSum<T, TRing> vector)
             where TRing : IRing<T>, new()
         {
             if (matrix.ColumnDimension != vector.Dimension)
+            {
                 throw new IndexOutOfRangeException("The ColumnDimension of the matrix needs to equal the row dimension of the vector");
+            }
 
             var baseStructure = new TRing();
             var vect = vector.ReturnNewInstance(matrix.RowDimension);
@@ -122,7 +142,11 @@ namespace Math.LinearAlgebra
             {
                 for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
                 {
-                    vect[i] = baseStructure.Addition(vect[i], baseStructure.Multiplication(matrix[i, j], vector[j]));
+                    vect[i] = baseStructure.Addition(
+                        vect[i],
+                        baseStructure.Multiplication(
+                            matrix[i, j],
+                            vector[j]));
                 }
             }
 

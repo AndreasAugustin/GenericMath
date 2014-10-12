@@ -1,19 +1,19 @@
 ﻿//  *************************************************************
-// <copyright file="IMatrixSquaredExtensions.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IMatrixSquaredExtensions.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  17 / 7 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
     using System.Collections.Generic;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Matrix squared extensions.
@@ -92,7 +92,7 @@ namespace Math.LinearAlgebra
                               matrixCopy,
                               j,
                               permutationVector);
-                matrixCopy = mat;					
+                matrixCopy = mat;
                 list.Add(mat);
             }
 
@@ -150,7 +150,8 @@ namespace Math.LinearAlgebra
                 permutationVector[(Int32)r] = permTemp;
             }
                 
-            var inverseDouble = field.MultiplicationInverse(matrixCopy[column, column]);
+            var inverseDouble = field.MultiplicationInverse(
+                                    matrixCopy[column, column]);
 
             for (UInt32 i = 0; i < n; i++)
             {
@@ -161,8 +162,10 @@ namespace Math.LinearAlgebra
                 for (UInt32 k = 0; k < n; k++)
                 {
                     if (k == column)
+                    {
                         continue;
-
+                    }
+                        
                     var temp = field.Inverse(field.Multiplication(
                                        matrixCopy[i, column],
                                        matrixCopy[column, k]));
@@ -179,7 +182,8 @@ namespace Math.LinearAlgebra
                 var tempVec = new List<T>(new T[n]);
                 for (UInt32 k = 0; k < n; k++)
                 {
-                    tempVec[(Int32)permutationVector[(Int32)k]] = matrixCopy[i, k];
+                    tempVec[(Int32)permutationVector[(Int32)k]] = 
+                        matrixCopy[i, k];
                 }
 
                 for (UInt32 k = 0; k < n; k++)
@@ -191,11 +195,13 @@ namespace Math.LinearAlgebra
             return matrixCopy;
         }
 
-        static void CheckSquared<T, TStruct>(this IMatrix<T, TStruct> matrix)
+        private static void CheckSquared<T, TStruct>(this IMatrix<T, TStruct> matrix)
             where TStruct : IStructure<T>, new()
         {
             if (matrix.RowDimension != matrix.ColumnDimension)
+            {
                 throw new NotSupportedException("The row and column dimension do not agree");
+            }
         }
 
         #endregion

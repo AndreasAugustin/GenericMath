@@ -1,18 +1,18 @@
 ﻿//  *************************************************************
-// <copyright file="IMatrixFromGroupExtensions.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IMatrixFromGroupExtensions.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  22 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Extension methods for the <see cref="Matrix{T, TStruct}"/> class.
@@ -31,7 +31,9 @@ namespace Math.LinearAlgebra
         public static IMatrix<T, TGroup> Inverse<T, TGroup>(this IMatrix<T, TGroup> matrix)
             where TGroup : IGroup<T>, new()
         {
-            var mat = matrix.ReturnNewInstance(matrix.RowDimension, matrix.ColumnDimension);
+            var mat = matrix.ReturnNewInstance(
+                          matrix.RowDimension,
+                          matrix.ColumnDimension);
 
             var baseStructure = new TGroup();
 

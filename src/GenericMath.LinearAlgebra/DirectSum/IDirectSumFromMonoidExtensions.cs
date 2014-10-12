@@ -1,18 +1,18 @@
 ﻿//  *************************************************************
-// <copyright file="IDirectSumFromMonoidExtensions.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IDirectSumFromMonoidExtensions.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  22 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Extensions methods for the <see cref="DirectSum{T, TStruct}"/> class.
@@ -52,14 +52,18 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TMonoid">The underlying structure.</typeparam>
         /// <returns>vector1 + vector2.</returns>
-        public static IDirectSum<T, TMonoid> Add<T, TMonoid>(this IDirectSum<T, TMonoid> tuple1, IDirectSum<T, TMonoid> tuple2)
+        public static IDirectSum<T, TMonoid> Add<T, TMonoid>(
+            this IDirectSum<T, TMonoid> tuple1,
+            IDirectSum<T, TMonoid> tuple2)
             where TMonoid : IMonoid<T>, new()
         {
             var group = new TMonoid();
 
             // Todo throw right exception
             if (tuple1.Dimension != tuple2.Dimension)
+            {
                 throw new IndexOutOfRangeException("The dimension of the two vectors do not agree");
+            }
 
             var result = tuple1.ReturnNewInstance(tuple1.Dimension);
 
@@ -83,7 +87,9 @@ namespace Math.LinearAlgebra
         /// The first values are the values of the original vector. The other values are the zero elements of the group
         /// associated with T.
         /// </returns>
-        public static IDirectSum<T, TMonoid> Injection<T, TMonoid>(this IDirectSum<T, TMonoid> tuple, UInt32 additionalDimensions)
+        public static IDirectSum<T, TMonoid> Injection<T, TMonoid>(
+            this IDirectSum<T, TMonoid> tuple,
+            UInt32 additionalDimensions)
             where TMonoid : IMonoid<T>, new()
         {
             var newDimension = tuple.Dimension + additionalDimensions;

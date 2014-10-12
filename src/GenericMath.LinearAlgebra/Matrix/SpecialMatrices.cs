@@ -1,18 +1,18 @@
 ﻿//  *************************************************************
-// <copyright file="SpecialMatrices.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="SpecialMatrices.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  17 / 7 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Special matrices.
@@ -31,7 +31,7 @@ namespace Math.LinearAlgebra
         public Matrix<T, TGroup> ZeroMatrix<T, TGroup>(UInt32 dimension)
             where TGroup : IGroup<T>, new()
         {
-            return ZeroMatrix<T, TGroup>(dimension, dimension);
+            return this.ZeroMatrix<T, TGroup>(dimension, dimension);
         }
 
         /// <summary>
@@ -42,7 +42,9 @@ namespace Math.LinearAlgebra
         /// <param name="columnDimension">Column dimension.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TGroup">The underlying structure.</typeparam>
-        public Matrix<T, TGroup> ZeroMatrix<T, TGroup>(UInt32 rowDimension, UInt32 columnDimension)
+        public Matrix<T, TGroup> ZeroMatrix<T, TGroup>(
+            UInt32 rowDimension,
+            UInt32 columnDimension)
             where TGroup : IGroup<T>, new()
         {
             var matrix = new Matrix<T, TGroup>(rowDimension, columnDimension);

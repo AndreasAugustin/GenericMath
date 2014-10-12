@@ -1,18 +1,18 @@
 ﻿//  *************************************************************
-// <copyright file="IMatrixFromMonoidExtensions.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IMatrixFromMonoidExtensions.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  22 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Extensions methods for the <see cref="Matrix{T, TStruct}"/> class.
@@ -30,23 +30,33 @@ namespace Math.LinearAlgebra
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TGroup">The underlying structure.</typeparam>
         /// <returns>The addition of left and right matrices.</returns>
-        public static IMatrix<T, TGroup> Add<T, TGroup>(this IMatrix<T, TGroup> leftMatrix, IMatrix<T, TGroup> rightMatrix)
+        public static IMatrix<T, TGroup> Add<T, TGroup>(
+            this IMatrix<T, TGroup> leftMatrix,
+            IMatrix<T, TGroup> rightMatrix)
             where TGroup : IGroup<T>, new()
         {
             if (leftMatrix.ColumnDimension != rightMatrix.ColumnDimension)
+            {
                 throw new NotSupportedException("The column dimension of the matrizes need to agree");
-
-            if (leftMatrix.RowDimension != rightMatrix.RowDimension)
-                throw new NotSupportedException("The row dimension of the matrizes need to agree");
+            }
                 
-            var result = leftMatrix.ReturnNewInstance(leftMatrix.RowDimension, leftMatrix.ColumnDimension);
+            if (leftMatrix.RowDimension != rightMatrix.RowDimension)
+            {
+                throw new NotSupportedException("The row dimension of the matrizes need to agree");
+            }
+                
+            var result = leftMatrix.ReturnNewInstance(
+                             leftMatrix.RowDimension,
+                             leftMatrix.ColumnDimension);
             var group = new TGroup();
 
             for (UInt32 j = 0; j < leftMatrix.ColumnDimension; j++)
             {
                 for (UInt32 i = 0; i < leftMatrix.RowDimension; i++)
                 {
-                    result[i, j] = group.Addition(leftMatrix[i, j], rightMatrix[i, j]);
+                    result[i, j] = group.Addition(
+                        leftMatrix[i, j],
+                        rightMatrix[i, j]);
                 }
             }
 

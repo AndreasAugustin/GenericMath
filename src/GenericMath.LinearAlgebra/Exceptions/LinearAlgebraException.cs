@@ -1,14 +1,14 @@
 ﻿//  *************************************************************
-// <copyright file="LinearAlgebraException.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="LinearAlgebraException.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  22 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
     using System.Runtime.Serialization;
@@ -22,7 +22,7 @@ namespace Math.LinearAlgebra
         #region ctors
 
         /// <summary>
-        /// Initialises a new instance of the <see cref="LinearAlgebraException"/> class.
+        /// Initializes a new instance of the <see cref="LinearAlgebraException"/> class.
         /// </summary>
         /// <param name="exceptionType">Exception type.</param>
         public LinearAlgebraException(LinearAlgebraExceptionType exceptionType)
@@ -32,23 +32,28 @@ namespace Math.LinearAlgebra
         }
 
         /// <summary>
-        /// Initialises a new instance of the <see cref="LinearAlgebraException"/> class.
+        /// Initializes a new instance of the <see cref="LinearAlgebraException"/> class.
         /// </summary>
         /// <param name="exceptionType">Exception type.</param>
         /// <param name="message">The message.</param>
-        public LinearAlgebraException(LinearAlgebraExceptionType exceptionType, String message)
+        public LinearAlgebraException(
+            LinearAlgebraExceptionType exceptionType,
+            String message)
             : base(message)
         {
             this.ExceptionType = exceptionType;
         }
 
         /// <summary>
-        /// Initialises a new instance of the <see cref="LinearAlgebraException"/> class.
+        /// Initializes a new instance of the <see cref="LinearAlgebraException"/> class.
         /// </summary>
         /// <param name="exceptionType">Exception type.</param>
         /// <param name="info">The info.</param>
         /// <param name="context">The context.</param>
-        protected LinearAlgebraException(LinearAlgebraExceptionType exceptionType, SerializationInfo info, StreamingContext context)
+        protected LinearAlgebraException(
+            LinearAlgebraExceptionType exceptionType,
+            SerializationInfo info,
+            StreamingContext context)
             : base(info, context)
         {
             this.ExceptionType = exceptionType;

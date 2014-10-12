@@ -1,20 +1,20 @@
 ﻿//  *************************************************************
-// <copyright file="Matrix.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="Matrix.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  15 / 7 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
     using System.Collections.Generic;
     using System.Text;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Creates a matrix. 
@@ -27,14 +27,14 @@ namespace Math.LinearAlgebra
     {
         #region FIELDS
 
-        readonly List<List<T>> _entries;
+        private readonly List<List<T>> _entries;
 
         #endregion
 
         #region ctor
 
         /// <summary>
-        /// Initialises a new instance of the <see cref="Matrix{T, TStruct}"/> class.
+        /// Initializes a new instance of the <see cref="Matrix{T, TStruct}"/> class.
         /// The matrix is squared.
         /// </summary>
         /// <param name="dimension">The Dimension of the matrix.</param>
@@ -45,20 +45,20 @@ namespace Math.LinearAlgebra
         }
 
         /// <summary>
-        /// Initialises a new instance of the <see cref="Matrix{T, TStruct}"/> class.
+        /// Initializes a new instance of the <see cref="Matrix{T, TStruct}"/> class.
         /// </summary>
         /// <param name="rowDimension">Row dimension.</param>
         /// <param name="columnDimension">Column dimension.</param>
         public Matrix(UInt32 rowDimension, UInt32 columnDimension)
         {
-            _entries = new List<List<T>>();
+            this._entries = new List<List<T>>();
             for (var i = 0; i < columnDimension; i++)
             {
-                _entries.Add(new List<T>(new T[rowDimension]));
+                this._entries.Add(new List<T>(new T[rowDimension]));
             }
                 
-            RowDimension = rowDimension;
-            ColumnDimension = columnDimension;
+            this.RowDimension = rowDimension;
+            this.ColumnDimension = columnDimension;
         }
 
         #endregion
@@ -94,17 +94,17 @@ namespace Math.LinearAlgebra
         public T this[UInt32 row, UInt32 column]
         {
             get
-            {	
-                CheckOutOfRange(row, column);
+            {
+                this.CheckOutOfRange(row, column);
 
-                return _entries[(Int32)column][(Int32)row]; 
+                return this._entries[(Int32)column][(Int32)row]; 
             }
 
             set
             {      
-                CheckOutOfRange(row, column);
+                this.CheckOutOfRange(row, column);
 
-                _entries[(Int32)column][(Int32)row] = value;
+                this._entries[(Int32)column][(Int32)row] = value;
             }
         }
 
@@ -173,7 +173,9 @@ namespace Math.LinearAlgebra
                 for (UInt32 i = 0; i < this.RowDimension; i++)
                 {
                     if (!other[i, j].Equals(this[i, j]))
+                    {
                         return false;
+                    }
                 }
             }
 
@@ -184,28 +186,28 @@ namespace Math.LinearAlgebra
 
         #region METHODS
 
-        void CheckOutOfRange(UInt32 rowIndex, UInt32 columnIndex)
+        private void CheckOutOfRange(UInt32 rowIndex, UInt32 columnIndex)
         {
-            CheckColumnOutOfRange(columnIndex);
+            this.CheckColumnOutOfRange(columnIndex);
 
-            CheckRowOutOfRange(rowIndex);
+            this.CheckRowOutOfRange(rowIndex);
         }
 
-        void CheckColumnOutOfRange(UInt32 columnIndex)
+        private void CheckColumnOutOfRange(UInt32 columnIndex)
         {
-            if (ColumnDimension == UInt32.MaxValue)
+            if (this.ColumnDimension == UInt32.MaxValue)
             {
                 throw new LinearAlgebraException(
                     LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, 
                     String.Format("Matrix class: The index is equal to max value"));
             }
 
-            if (ColumnDimension + 1 < columnIndex)
+            if (this.ColumnDimension + 1 < columnIndex)
             {
                 var errorMessage = String.Format(
                                        "Matrix class: The column ({0}) is greater or equal then the column dimension ({1})",
                                        columnIndex,
-                                       ColumnDimension);
+                                       this.ColumnDimension);
 
                 throw new LinearAlgebraException(
                     LinearAlgebraExceptionType.IndexEqualOrGreaterDimension,
@@ -213,7 +215,7 @@ namespace Math.LinearAlgebra
             }               
         }
 
-        void CheckRowOutOfRange(UInt32 rowIndex)
+        private void CheckRowOutOfRange(UInt32 rowIndex)
         {
             if (this.RowDimension == UInt32.MaxValue)
             {
@@ -229,7 +231,7 @@ namespace Math.LinearAlgebra
                 var errorMessage = String.Format(
                                        "Matrix class: The row ({0}) is greater or equal then the row dimension ({1})",
                                        rowIndex, 
-                                       ColumnDimension);
+                                       this.ColumnDimension);
 
                 throw new LinearAlgebraException(
                     LinearAlgebraExceptionType.IndexEqualOrGreaterDimension,

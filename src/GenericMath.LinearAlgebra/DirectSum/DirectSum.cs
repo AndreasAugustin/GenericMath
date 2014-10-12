@@ -1,22 +1,21 @@
 ﻿//  *************************************************************
-// <copyright file="DirectSum.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="DirectSum.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  21 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
-    using System.Linq;
     using System.Text;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// The Vector class.
@@ -31,19 +30,19 @@ namespace Math.LinearAlgebra
         /// <summary>
         /// The entries of the vector.
         /// </summary>
-        readonly List<T> _entries;
+        private readonly List<T> _entries;
 
         #endregion
 
         #region ctors
 
         /// <summary>
-        /// Initialises a new instance of the <see cref="DirectSum{T,TStruct}"/> class.
+        /// Initializes a new instance of the <see cref="DirectSum{T,TStruct}"/> class.
         /// </summary>
         /// <param name="dimension">The dimension.</param>
         public DirectSum(UInt32 dimension)
         {
-            CheckState();
+            this.CheckState();
 
             this._entries = new List<T>(new T[dimension]);
             this.Dimension = dimension;
@@ -74,20 +73,20 @@ namespace Math.LinearAlgebra
         {
             get
             { 
-                CheckState();
+                this.CheckState();
 
-                CheckOutOfRange(index);
+                this.CheckOutOfRange(index);
 
-                return _entries[(Int32)index]; 
+                return this._entries[(Int32)index]; 
             }
 
             set
             {
-                CheckState();
+                this.CheckState();
 
-                CheckOutOfRange(index);
+                this.CheckOutOfRange(index);
 
-                _entries[(Int32)index] = value; 
+                this._entries[(Int32)index] = value; 
             }
         }
 
@@ -102,9 +101,9 @@ namespace Math.LinearAlgebra
         public override String ToString()
         {
             var str = new StringBuilder("Index and entries: \n");
-            for (var i = 0; i < Dimension; i++)
+            for (var i = 0; i < this.Dimension; i++)
             {
-                str.AppendFormat("{0}:{1}; ", i, _entries[i]);
+                str.AppendFormat("{0}:{1}; ", i, this._entries[i]);
             }
 
             return str.ToString();
@@ -137,15 +136,21 @@ namespace Math.LinearAlgebra
         public Boolean Equals(DirectSum<T, TStruct> other)
         {
             if (other == null)
+            {
                 return false;
+            }
 
             if (Object.ReferenceEquals(this, other))
+            {
                 return true;
+            }
 
-            for (UInt32 i = 0; i < _entries.Count; i++)
+            for (UInt32 i = 0; i < this._entries.Count; i++)
             {
                 if (!this[i].Equals(other[i]))
+                {
                     return false;
+                }
             }
 
             return true;
@@ -155,7 +160,7 @@ namespace Math.LinearAlgebra
 
         #region helper methods
 
-        void CheckOutOfRange(UInt32 index)
+        private void CheckOutOfRange(UInt32 index)
         {
             if (this.Dimension == UInt32.MaxValue)
             {
@@ -171,7 +176,9 @@ namespace Math.LinearAlgebra
                                        index, 
                                        this.Dimension);
 
-                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, errorMessage);
+                throw new LinearAlgebraException(
+                    LinearAlgebraExceptionType.IndexEqualOrGreaterDimension,
+                    errorMessage);
             }
         }
 
@@ -180,12 +187,14 @@ namespace Math.LinearAlgebra
         #region debug methods
 
         [Conditional("DEBUG")]
-        void CheckState()
+        private void CheckState()
         {
             var methodName = new StackTrace().GetFrame(1).GetMethod().Name;
             Trace.Write("Hi");
             Console.WriteLine("--- Entering check state for vector");
-            Console.WriteLine(String.Format("The constraint type is {0}", typeof(T)));
+            Console.WriteLine(String.Format(
+                    "The constraint type is {0}",
+                    typeof(T)));
             Console.Write("\t called by");
             Console.WriteLine(methodName);
         }

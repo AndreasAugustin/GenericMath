@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="IMatrixExtensions.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IMatrixExtensions.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -8,11 +8,11 @@
 //   1.0.0  17 / 7 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Extension methods for the matrix class. <see cref="Matrix{T, TStruct}"/> class.
@@ -29,12 +29,18 @@ namespace Math.LinearAlgebra
         /// <param name ="columnIndex">The column index.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static DirectSum<T, TStruct> GetColumnVector<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 columnIndex)
+        public static DirectSum<T, TStruct> GetColumnVector<T, TStruct>(
+            this IMatrix<T, TStruct> matrix,
+            UInt32 columnIndex)
             where TStruct : IStructure<T>, new()
         {
             if (columnIndex >= matrix.ColumnDimension)
-                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, "The indx is not right");
-
+            {
+                throw new LinearAlgebraException(
+                    LinearAlgebraExceptionType.IndexEqualOrGreaterDimension,
+                    "The indx is not right");
+            }
+                
             var rowDimension = matrix.RowDimension;
             var tuple = new DirectSum<T, TStruct>(rowDimension);
 
@@ -54,11 +60,17 @@ namespace Math.LinearAlgebra
         /// <param name="rowIndex">Column index.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
-        public static DirectSum<T, TStruct> GetRowVector<T, TStruct>(this IMatrix<T, TStruct> matrix, UInt32 rowIndex)
+        public static DirectSum<T, TStruct> GetRowVector<T, TStruct>(
+            this IMatrix<T, TStruct> matrix,
+            UInt32 rowIndex)
             where TStruct : IStructure<T>, new()
         {
             if (rowIndex >= matrix.RowDimension)
-                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, "The indx is not right");
+            {
+                throw new LinearAlgebraException(
+                    LinearAlgebraExceptionType.IndexEqualOrGreaterDimension,
+                    "The indx is not right");
+            }
 
             var columnDimension = matrix.ColumnDimension;
             var tuple = new DirectSum<T, TStruct>(columnDimension);
@@ -81,7 +93,9 @@ namespace Math.LinearAlgebra
         public static IMatrix<T, TStruct> Transpose<T, TStruct>(this IMatrix<T, TStruct> matrix)
             where TStruct : IStructure<T>, new()
         {
-            var result = matrix.ReturnNewInstance(matrix.ColumnDimension, matrix.RowDimension); // n x m Matrix -> m x n - Matrix
+            var result = matrix.ReturnNewInstance(
+                             matrix.ColumnDimension,
+                             matrix.RowDimension); // n x m Matrix -> m x n - Matrix
 
             for (UInt32 i = 0; i < matrix.RowDimension; i++)
             {
@@ -104,7 +118,9 @@ namespace Math.LinearAlgebra
         public static IMatrix<T, TStruct> Copy<T, TStruct>(this IMatrix<T, TStruct> matrix)
             where TStruct : IStructure<T>, new()
         {
-            var mat = matrix.ReturnNewInstance(matrix.RowDimension, matrix.ColumnDimension);
+            var mat = matrix.ReturnNewInstance(
+                          matrix.RowDimension,
+                          matrix.ColumnDimension);
 
             for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
             {

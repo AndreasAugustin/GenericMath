@@ -1,18 +1,18 @@
 ﻿//  *************************************************************
-// <copyright file="DirectSumGroup.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="DirectSumGroup.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  31 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra
+namespace GenericMath.LinearAlgebra
 {
     using System;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Direct sum group.
@@ -25,7 +25,7 @@ namespace Math.LinearAlgebra
         #region ctors
 
         /// <summary>
-        /// Initialises a new instance of the <see cref="DirectSumGroup{T, TGroup}"/> class.
+        /// Initializes a new instance of the <see cref="DirectSumGroup{T, TGroup}"/> class.
         /// </summary>
         /// <param name="dimension">The dimension.</param>
         public DirectSumGroup(UInt32 dimension)
@@ -49,8 +49,10 @@ namespace Math.LinearAlgebra
             var tuple = element.InverseElement() as DirectSum<T, TGroup>;
 
             if (tuple == null)
+            {
                 throw new InvalidCastException();
-
+            }
+                
             return tuple;
         }
 
