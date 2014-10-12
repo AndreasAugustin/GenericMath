@@ -1,8 +1,8 @@
 ﻿//  *************************************************************
-// <copyright file="IConsole.cs" company="${Company}">
+// <copyright file="IConsole.cs" company="SuperDevelop">
 //     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  12 / 10 / 2014 Created the Class

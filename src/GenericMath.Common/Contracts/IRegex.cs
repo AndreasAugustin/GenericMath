@@ -24,7 +24,7 @@ namespace GenericMath.Common
         /// </summary>
         /// <param name="input">The input.</param>
         /// <param name="pattern">The pattern.</param>
-        /// <returns>An array with the splitted strings.</returns>
+        /// <returns>An array with the split string.</returns>
         String[] Split(String input, String pattern);
 
         /// <summary>

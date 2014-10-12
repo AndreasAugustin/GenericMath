@@ -25,6 +25,7 @@ namespace GenericMath.Common
         /// </summary>
         /// <param name="input">The input.</param>
         /// <param name="pattern">The pattern.</param>
+        /// <returns>An array with the split string.</returns>
         public String[] Split(String input, String pattern)
         {
             return Regex.Split(input, pattern);
@@ -36,6 +37,7 @@ namespace GenericMath.Common
         /// <param name="input">The input.</param>
         /// <param name="pattern">The pattern.</param>
         /// <param name="replacement">The replacement.</param>
+        /// <returns>A string with the replaced characters.</returns>
         public String Replace(String input, String pattern, String replacement)
         {
             return Regex.Replace(input, pattern, replacement);
