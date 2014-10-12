@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="PolynomialTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="PolynomialTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -35,9 +35,9 @@ namespace Math.LinearAlgebra.Tests
         /// <param name="givenDegree">The degree.</param>
         [Test]
         [Category("PolynomialTest")]
-        [TestCase((UInt32)2)]
-        [TestCase((UInt32)6)]
-        public void Initialize_CheckDegree_EqualsGivenDegree(UInt32 givenDegree)
+        [TestCase((uint)2)]
+        [TestCase((uint)6)]
+        public void Initialize_CheckDegree_EqualsGivenDegree(uint givenDegree)
         {
             var poly = new Polynomial<T, TStruct>(givenDegree);
             Assert.IsNotNull(poly);
@@ -48,15 +48,17 @@ namespace Math.LinearAlgebra.Tests
         /// <summary>
         /// Initialises a new instance of the <see cref="Polynomial{T, TStruct}"/> class with given degree.
         /// Queries the polynomial for index out of range.
-        /// Throws a <see cref="DirectSumException"/>. 
+        /// Throws a <see cref="LinearAlgebraException"/>. 
         /// </summary>
         /// <param name="degree">The dimension.</param>
         /// <param name="index">The index.</param>
         [Test]
         [Category("PolynomialTest")]
-        [TestCase((UInt32)2, (UInt32)4)]
-        [TestCase((UInt32)1, (UInt32)4)]
-        public void Indexer_SettingToHighIndex_ThrowsPolynomialException(UInt32 degree, UInt32 index)
+        [TestCase((uint)2, (uint)4)]
+        [TestCase((uint)1, (uint)4)]
+        public void Indexer_SettingToHighIndex_ThrowsPolynomialException(
+            uint degree,
+            uint index)
         {
             var value = default(T);
             var poly = new Polynomial<T, TStruct>(degree);

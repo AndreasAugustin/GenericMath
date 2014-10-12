@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="ComplexMonoid.cs" company="${Company}">
+// <copyright file="ComplexMonoid.cs" company="SuperDevelop">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -10,7 +10,6 @@
 
 namespace Math.Base
 {
-    using System;
     using System.Numerics;
 
     /// <summary>
@@ -61,7 +60,11 @@ namespace Math.Base
         /// <returns>A <see cref="System.String"/> that represents the current <see cref="ComplexMonoid"/>.</returns>
         public override string ToString()
         {
-            return String.Format("[{0}: Zero={1}, Generic argument type: {2}]", this.GetType().Name, this.Zero, typeof(Complex));
+            return string.Format(
+                "[{0}: Zero={1}, Generic argument type: {2}]",
+                this.GetType().Name,
+                this.Zero,
+                typeof(Complex));
         }
 
         #endregion

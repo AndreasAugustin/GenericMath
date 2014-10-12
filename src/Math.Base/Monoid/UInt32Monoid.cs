@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="UInt32Monoid.cs" company="${Company}">
+// <copyright file="UInt32Monoid.cs" company="SuperDevelop">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -15,7 +15,7 @@ namespace Math.Base
     /// <summary>
     /// Monoid with unsigned integers.
     /// </summary>
-    public class UInt32Monoid : IMonoid<UInt32>
+    public class UInt32Monoid : IMonoid<uint>
     {
         #region IMonoid implementation
 
@@ -23,11 +23,11 @@ namespace Math.Base
         /// Gets the zero element of the group.
         /// </summary>
         /// <value>The zero.</value>
-        public UInt32 Zero
+        public uint Zero
         {
             get
             {
-                return UInt32.MinValue;
+                return uint.MinValue;
             }
         }
 
@@ -37,7 +37,7 @@ namespace Math.Base
         /// <param name="leftElement">Left element.</param>
         /// <param name="rightElement">Right element.</param>
         /// <returns>The addition of the leftElement and rightElement (leftElement + rightElement)</returns>
-        public UInt32 Addition(UInt32 leftElement, UInt32 rightElement)
+        public uint Addition(uint leftElement, uint rightElement)
         {
             return leftElement + rightElement;
         }

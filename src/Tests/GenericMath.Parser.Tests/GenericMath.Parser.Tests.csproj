@@ -32,6 +32,9 @@
     <Reference Include="nunit.framework">
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files %28x86%29\Xamarin Studio\AddIns\NUnit\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

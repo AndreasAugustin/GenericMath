@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="IntegerExtension.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IntegerExtension.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -57,7 +57,11 @@ namespace Math.Base
         /// <param name="x">The x coordinate.</param>
         /// <param name="y">The y coordinate.</param>
         /// <returns>The gcd of a and b</returns>
-        public static Int32 ExtendedEuclidianAlgorithm(this Int32 a, Int32 b, out Int32 x, out Int32 y)
+        public static Int32 ExtendedEuclidianAlgorithm(
+            this Int32 a,
+            Int32 b,
+            out Int32 x,
+            out Int32 y)
         {
             Int32 q;
             Int32 r;
@@ -115,8 +119,10 @@ namespace Math.Base
         public static Int32 ChineseRestTerm(this Int32[] moduli, Int32[] x)
         {
             if (moduli.Length != x.Length)
+            {
                 throw new IndexOutOfRangeException("The index for the moduli and the x do not agree");
-				
+            }
+                	
             var multipliers = new Int32[moduli.Length];
             var result = 0;
             var modulus = ChineseRestTermHelper(moduli, ref multipliers);
@@ -132,7 +138,9 @@ namespace Math.Base
 
         #region HELPER METHODS
 
-        static Int32 ChineseRestTermHelper(Int32[] moduli, ref Int32[] multipliers)
+        private static Int32 ChineseRestTermHelper(
+            Int32[] moduli,
+            ref Int32[] multipliers)
         {
             var modulus = 1;
 
@@ -151,10 +159,15 @@ namespace Math.Base
             {
                 m = modulus / moduli[i];
 
-                gcd = m.ExtendedEuclidianAlgorithm(moduli[i], out inverse, out y);
+                gcd = m.ExtendedEuclidianAlgorithm(
+                    moduli[i],
+                    out inverse,
+                    out y);
                 if (gcd != 1)
+                {
                     throw new InvalidOperationException("gcd(moduli) != 1"); // TODO find other solution (extend to integer rings)
-
+                }
+                    
                 multipliers[i] = inverse * (m % modulus); 
             }
 
@@ -166,7 +179,7 @@ namespace Math.Base
         #region DEBUG METHODS
 
         [Conditional("DEBUG")]
-        static void Checkvariable<T>(Expression<Func<T>> expr) where T : struct
+        private static void Checkvariable<T>(Expression<Func<T>> expr) where T : struct
         {
             // Grab name of calling method
             var methodName = new StackTrace().GetFrame(1).GetMethod().Name;
@@ -174,7 +187,9 @@ namespace Math.Base
             Console.WriteLine(string.Format("Method: {0}", methodName));
             var body = (MemberExpression)expr.Body;
             Console.WriteLine("Name is: {0}", body.Member.Name);
-            Console.WriteLine("Value is: {0}", ((FieldInfo)body.Member).GetValue(((ConstantExpression)body.Expression).Value));
+            Console.WriteLine(
+                "Value is: {0}",
+                ((FieldInfo)body.Member).GetValue(((ConstantExpression)body.Expression).Value));
         }
 
         #endregion

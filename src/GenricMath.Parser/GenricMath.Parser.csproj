@@ -61,5 +61,6 @@
     <Folder Include="Contracts\" />
     <Folder Include="TypeParser\" />
     <Folder Include="Base\" />
+    <Folder Include="Operators\" />
   </ItemGroup>
 </Project>

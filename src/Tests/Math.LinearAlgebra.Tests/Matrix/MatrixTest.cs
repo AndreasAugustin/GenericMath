@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="MatrixTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="MatrixTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -21,9 +21,9 @@ namespace Math.LinearAlgebra.Tests
     /// </summary>
     /// <typeparam name="T">The underlying set.</typeparam>
     /// <typeparam name="TStruct">The underlying structure for T.</typeparam>
-    [TestFixture(typeof(Double), typeof(DoubleMonoid))]
+    [TestFixture(typeof(double), typeof(DoubleMonoid))]
     [TestFixture(typeof(Complex), typeof(ComplexGroup))]
-    [TestFixture(typeof(Int32), typeof(Int32Ring))]
+    [TestFixture(typeof(int), typeof(Int32Ring))]
     public class MatrixTest<T, TStruct>
         where TStruct : IStructure<T>, new()
     {
@@ -35,9 +35,9 @@ namespace Math.LinearAlgebra.Tests
         /// <param name="rowDimension">The rowDimension.</param>
         [Test]
         [Category("MatrixTest")]
-        [TestCase((UInt32)2)]
-        [TestCase((UInt32)6)]
-        public void Initialize_CheckRowDimension_EqualsGivenRowDimension(UInt32 rowDimension)
+        [TestCase((uint)2)]
+        [TestCase((uint)6)]
+        public void Initialize_CheckRowDimension_EqualsGivenRowDimension(uint rowDimension)
         {
             var matrix = new Matrix<T, TStruct>(rowDimension, 1);
             Assert.IsNotNull(matrix);
@@ -51,9 +51,9 @@ namespace Math.LinearAlgebra.Tests
         /// <param name="columnDimension">The column dimension.</param>
         [Test]
         [Category("MatrixTest")]
-        [TestCase((UInt32)2)]
-        [TestCase((UInt32)6)]
-        public void Initialize_CheckColumnDimension_EqualsGivenColumnDimension(UInt32 columnDimension)
+        [TestCase((uint)2)]
+        [TestCase((uint)6)]
+        public void Initialize_CheckColumnDimension_EqualsGivenColumnDimension(uint columnDimension)
         {
             var matrix = new Matrix<T, TStruct>(1, columnDimension);
             Assert.IsNotNull(matrix);
@@ -67,9 +67,9 @@ namespace Math.LinearAlgebra.Tests
         /// <param name="dimension">The dimension for squared matrix.</param>
         [Test]
         [Category("MatrixTest")]
-        [TestCase((UInt32)2)]
-        [TestCase((UInt32)6)]
-        public void InitializeSquared_CheckDimension_EqualsGivenDimension(UInt32 dimension)
+        [TestCase((uint)2)]
+        [TestCase((uint)6)]
+        public void InitializeSquared_CheckDimension_EqualsGivenDimension(uint dimension)
         {
             var matrix = new Matrix<T, TStruct>(dimension);
             Assert.IsNotNull(matrix);
@@ -87,9 +87,11 @@ namespace Math.LinearAlgebra.Tests
         /// <param name="rowIndex">The index.</param>
         [Test]
         [Category("MatrixTest")]
-        [TestCase((UInt32)2, (UInt32)4)]
-        [TestCase((UInt32)1, (UInt32)4)]
-        public void Indexer_SettingToHighIndex_ThrowsPolynomialException(UInt32 dimension, UInt32 rowIndex)
+        [TestCase((uint)2, (uint)4)]
+        [TestCase((uint)1, (uint)4)]
+        public void Indexer_SettingToHighIndex_ThrowsPolynomialException(
+            uint dimension,
+            uint rowIndex)
         {
             var value = default(T);
             var matrix = new Matrix<T, TStruct>(dimension);

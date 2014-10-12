@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="Int32Monoid.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="Int32Monoid.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -15,7 +15,7 @@ namespace Math.Base
     /// <summary>
     /// Monoid structure for Integer.
     /// </summary>
-    public class Int32Monoid : IMonoid<Int32>
+    public class Int32Monoid : IMonoid<int>
     {
         #region implementation of IMonoid
 
@@ -25,7 +25,7 @@ namespace Math.Base
         /// Gets the zero element of the group.
         /// </summary>
         /// <value>The zero.</value>
-        public Int32 Zero
+        public int Zero
         {
             get
             {
@@ -43,7 +43,7 @@ namespace Math.Base
         /// <param name="leftElement">Left element.</param>
         /// <param name="rightElement">Right element.</param>
         /// <returns>The addition of the leftElement and rightElement (leftElement + rightElement)</returns>
-        public Int32 Addition(Int32 leftElement, Int32 rightElement)
+        public int Addition(int leftElement, int rightElement)
         {
             return leftElement + rightElement;
         }
@@ -58,9 +58,13 @@ namespace Math.Base
         /// Returns a <see cref="System.String"/> that represents the current <see cref="Int32Monoid"/>.
         /// </summary>
         /// <returns>A <see cref="System.String"/> that represents the current <see cref="Int32Monoid"/>.</returns>
-        public override String ToString()
+        public override string ToString()
         {
-            return String.Format("[{0}: Zero={1}, Generic argument type: {2}]", this.GetType().Name, this.Zero, typeof(Int32));
+            return string.Format(
+                "[{0}: Zero={1}, Generic argument type: {2}]",
+                this.GetType().Name,
+                this.Zero,
+                typeof(int));
         }
 
         #endregion

@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="IGroup.cs" company="${Company}">
+// <copyright file="IGroup.cs" company="SuperDevelop">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>

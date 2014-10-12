@@ -12,7 +12,7 @@ namespace Math.Base
 {
     using System;
 
-    public class DoubleField : DoubleRing, IField<Double>
+    public class DoubleField : DoubleRing, IField<double>
     {
         #region IFIELD implementaiton
 
@@ -24,9 +24,11 @@ namespace Math.Base
         /// <exception cref="DivideByZeroException">Thrown when the element is the zero element.</exception>
         public double MultiplicationInverse(double element)
         {
-            if (Math.Abs(element) < Double.Epsilon)
+            if (Math.Abs(element) < double.Epsilon)
+            {
                 throw new DivideByZeroException("Cannot divide through zero");
-
+            }
+                
             return 1 / element;
         }
 

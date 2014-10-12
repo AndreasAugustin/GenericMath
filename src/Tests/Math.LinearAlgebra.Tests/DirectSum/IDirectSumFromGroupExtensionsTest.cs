@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="IDirectSumFromGroupExtensionsTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IDirectSumFromGroupExtensionsTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -18,7 +18,7 @@ namespace Math.LinearAlgebra.Tests
     using NUnit.Framework;
 
     /// <summary>
-    /// Test methods for the extesnion methods for IDirectSum with groups as strucure.
+    /// Test methods for the extension methods for IDirectSum with groups as structure.
     /// Underlying class is <see cref="IDirectSumFromGroupExtensions"/>.
     /// </summary>
     [TestFixture]
@@ -26,40 +26,56 @@ namespace Math.LinearAlgebra.Tests
     {
         #region fields
 
-        FakeDirectSumTestDataSource _mockDirectSumTestDataSource;
+        private FakeDirectSumTestDataSource _mockDirectSumTestDataSource;
 
         #endregion
 
         #region properties
 
-        FakeDirectSumTestDataSource MockDirectSumTestDataSource
+        private FakeDirectSumTestDataSource MockDirectSumTestDataSource
         {
             get
             {
-                return _mockDirectSumTestDataSource ?? (_mockDirectSumTestDataSource = new FakeDirectSumTestDataSource());
+                return this._mockDirectSumTestDataSource ?? (this._mockDirectSumTestDataSource = new FakeDirectSumTestDataSource());
             }
         }
 
-        IEnumerable<TestCaseData> DirectSumInverseElementTestDataSource
+        private IEnumerable<TestCaseData> DirectSumInverseElementTestDataSource
         {
             get
             {
-                yield return new TestCaseData(0, new Int32Group(), MockDirectSumTestDataSource.GroupInt32IDirectSumSource);
-                yield return new TestCaseData(3.678, new DoubleField(), MockDirectSumTestDataSource.FieldDoubleIDirectSumSource);
-                yield return new TestCaseData(new Complex(5, 58), new ComplexRing(), MockDirectSumTestDataSource.RingComplexIDirectSumSource);
+                yield return new TestCaseData(
+                    0,
+                    new Int32Group(),
+                    this.MockDirectSumTestDataSource.GroupInt32IDirectSumSource);
+                yield return new TestCaseData(
+                    3.678,
+                    new DoubleField(),
+                    this.MockDirectSumTestDataSource.FieldDoubleIDirectSumSource);
+                yield return new TestCaseData(
+                    new Complex(5, 58),
+                    new ComplexRing(),
+                    this.MockDirectSumTestDataSource.RingComplexIDirectSumSource);
             }
         }
 
         #endregion
 
         /// <summary>
-        /// Tests the InverseElement Method.
+        /// Tests the inverting of an element.
         /// </summary>
+        /// <param name="hackForGenericParameter">Hack for generic parameter.</param>
+        /// <param name="underlyingGroup">Underlying group.</param>
+        /// <param name="tuple">The Tuple.</param>
+        /// <typeparam name="T">The underlying set.</typeparam>
+        /// <typeparam name="TGroup">The underlying group.</typeparam>
         [Test]
         [Category("DirectSumTest")]
         [TestCaseSource("DirectSumInverseElementTestDataSource")]
-        public void InverseElement<T, TGroup>(T hackForGenericParameter, TGroup underlyingGroup, 
-                                              IDirectSum<T, TGroup> tuple)
+        public void InverseElement<T, TGroup>(
+            T hackForGenericParameter, 
+            TGroup underlyingGroup, 
+            IDirectSum<T, TGroup> tuple)
             where TGroup : IGroup<T>, new()
         {
             var inverseElement = tuple.InverseElement();
@@ -68,7 +84,7 @@ namespace Math.LinearAlgebra.Tests
 
             Assert.AreEqual(tuple.Dimension, inverseElement.Dimension);
 
-            for (UInt32 i = 0; i < tuple.Dimension; i++)
+            for (uint i = 0; i < tuple.Dimension; i++)
             {
                 var expectedInverse = underlyingGroup.Inverse(tuple[i]);
                 Assert.AreEqual(expectedInverse, inverseElement[i]);

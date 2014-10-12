@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="DoubleMonoid.cs" company="${Company}">
+// <copyright file="DoubleMonoid.cs" company="SuperDevelop">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -15,7 +15,7 @@ namespace Math.Base
     /// <summary>
     /// Monoid for real numbers.
     /// </summary>
-    public class DoubleMonoid : IMonoid<Double>
+    public class DoubleMonoid : IMonoid<double>
     {
         #region implementation of IGroup
 
@@ -25,7 +25,7 @@ namespace Math.Base
         /// Gets the zero element of the group.
         /// </summary>
         /// <value>The zero.</value>
-        public Double Zero
+        public double Zero
         {
             get
             {
@@ -43,7 +43,7 @@ namespace Math.Base
         /// <param name="leftElement">Left element.</param>
         /// <param name="rightElement">Right element.</param>
         /// <returns>The addition of the leftElement and rightElement (leftElement + rightElement)</returns>
-        public Double Addition(Double leftElement, Double rightElement)
+        public double Addition(double leftElement, double rightElement)
         {
             return leftElement + rightElement;
         }
@@ -60,7 +60,11 @@ namespace Math.Base
         /// <returns>A <see cref="System.String"/> that represents the current <see cref="DoubleGroup"/>.</returns>
         public override string ToString()
         {
-            return String.Format("[{0}: Zero={1}, Generic argument type: {2}]", this.GetType().Name, Zero, typeof(Double));
+            return string.Format(
+                "[{0}: Zero={1}, Generic argument type: {2}]",
+                this.GetType().Name,
+                Zero,
+                typeof(double));
         }
 
         #endregion

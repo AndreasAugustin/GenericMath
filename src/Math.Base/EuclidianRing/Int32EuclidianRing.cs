@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="Int32EuclidianRing.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="Int32EuclidianRing.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -15,7 +15,7 @@ namespace Math.Base
     /// <summary>
     /// Integer calculator.
     /// </summary>
-    public class Int32EuclidianRing : Int32Ring, IEuclidianRing<Int32>
+    public class Int32EuclidianRing : Int32Ring, IEuclidianRing<int>
     {
         #region methods
 
@@ -26,7 +26,7 @@ namespace Math.Base
         /// </summary>
         /// <param name="element">The element.</param>
         /// <returns>The norm of element.</returns>
-        public Double Norm(Int32 element)
+        public double Norm(int element)
         {
             return Math.Abs(element);
         }
@@ -44,7 +44,11 @@ namespace Math.Base
         /// <filterpriority>2</filterpriority>
         public override string ToString()
         {
-            return String.Format("[{0}: Zero={1}, Generic argument type: {2}]", this.GetType().Name, this.Zero, typeof(Int32));
+            return string.Format(
+                "[{0}: Zero={1}, Generic argument type: {2}]",
+                this.GetType().Name,
+                this.Zero,
+                typeof(int));
         }
 
         #endregion

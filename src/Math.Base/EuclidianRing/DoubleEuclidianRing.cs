@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="DoubleEuclidianRing.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="DoubleEuclidianRing.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -15,7 +15,7 @@ namespace Math.Base
     /// <summary>
     /// Double calculator.
     /// </summary>
-    public class DoubleEuclidianRing : DoubleRing, IEuclidianRing<Double>
+    public class DoubleEuclidianRing : DoubleRing, IEuclidianRing<double>
     {
         #region methods
 
@@ -26,7 +26,7 @@ namespace Math.Base
         /// </summary>
         /// <param name="element">The element.</param>
         /// <returns>The norm of element.</returns>
-        public Double Norm(Double element)
+        public double Norm(double element)
         {
             return Math.Abs(element);
         }
@@ -44,7 +44,11 @@ namespace Math.Base
         /// <filterpriority>2</filterpriority>
         public override string ToString()
         {
-            return String.Format("[{0}: Zero={1}, Generic argument type: {2}]", this.GetType().Name, this.Zero, typeof(Double));
+            return string.Format(
+                "[{0}: Zero={1}, Generic argument type: {2}]",
+                this.GetType().Name,
+                this.Zero,
+                typeof(double));
         }
 
         #endregion

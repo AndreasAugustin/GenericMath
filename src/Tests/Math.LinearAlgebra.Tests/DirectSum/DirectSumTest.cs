@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="DirectSumTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="DirectSumTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -36,9 +36,9 @@ namespace Math.LinearAlgebra.Tests
         /// <param name="givenDimension">The dimension.</param>
         [Test]
         [Category("DirectSumTest")]
-        [TestCase((UInt32)2)]
-        [TestCase((UInt32)6)]
-        public void Initialize_CheckDimension_EqualsGivenDimension(UInt32 givenDimension)
+        [TestCase((uint)2)]
+        [TestCase((uint)6)]
+        public void Initialize_CheckDimension_EqualsGivenDimension(uint givenDimension)
         {
             var vec = new DirectSum<T, TStruct>(givenDimension);
             Assert.IsNotNull(vec);
@@ -53,9 +53,11 @@ namespace Math.LinearAlgebra.Tests
         /// <param name="index">The index.</param>
         [Test]
         [Category("DirectSumTest")]
-        [TestCase((UInt32)2, (UInt32)4)]
-        [TestCase((UInt32)1, (UInt32)4)]
-        public void Indexer_SettingToHighDimension_ThrowsVectorException(UInt32 dimension, UInt32 index)
+        [TestCase((uint)2, (uint)4)]
+        [TestCase((uint)1, (uint)4)]
+        public void Indexer_SettingToHighDimension_ThrowsVectorException(
+            uint dimension,
+            uint index)
         {
             var value = default(T);
             var vec = new DirectSum<T, TStruct>(dimension);

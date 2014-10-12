@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="IPolynomialExtensionsTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IPolynomialExtensionsTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -22,27 +22,36 @@ namespace Math.LinearAlgebra.Tests
     {
         #region fields
 
-        FakePolynomialTestDataSource _mockPolynomialTestSource;
+        private FakePolynomialTestDataSource _mockPolynomialTestSource;
 
         #endregion
 
         #region properties
 
-        FakePolynomialTestDataSource MockPolynomialTestSource
+        private FakePolynomialTestDataSource MockPolynomialTestSource
         {
             get
             {
-                return _mockPolynomialTestSource ?? (_mockPolynomialTestSource = new FakePolynomialTestDataSource());
+                return this._mockPolynomialTestSource ?? (this._mockPolynomialTestSource = new FakePolynomialTestDataSource());
             }
         }
 
-        IEnumerable<TestCaseData> PolynomialCopyTestDataSource
+        private IEnumerable<TestCaseData> PolynomialCopyTestDataSource
         {
             get
             {
-                yield return new TestCaseData(default(Int32), new Int32Group(), MockPolynomialTestSource.GroupInt32IPolynomialSource);
-                yield return new TestCaseData(default(Double), new DoubleField(), MockPolynomialTestSource.FieldDoubleIPolynomialSource);
-                yield return new TestCaseData(default(Complex), new ComplexRing(), MockPolynomialTestSource.RingComplexIPolynomialSource);
+                yield return new TestCaseData(
+                    default(int),
+                    new Int32Group(),
+                    this.MockPolynomialTestSource.GroupInt32IPolynomialSource);
+                yield return new TestCaseData(
+                    default(double),
+                    new DoubleField(),
+                    this.MockPolynomialTestSource.FieldDoubleIPolynomialSource);
+                yield return new TestCaseData(
+                    default(Complex),
+                    new ComplexRing(),
+                    this.MockPolynomialTestSource.RingComplexIPolynomialSource);
             }
         }
 
@@ -51,23 +60,26 @@ namespace Math.LinearAlgebra.Tests
         #region methods
 
         /// <summary>
-        /// Checks if the copy function returns a new instance with euqal entries.
+        /// Checks if the copy function returns a new instance with equal entries.
         /// </summary>
         /// <param name="hackForGenericParameter1">Hack for generic parameter1.</param>
         /// <param name="hackForGenericParameter2">Hack for generic parameter2.</param>
         /// <param name="polynomial">The polynomial to copy.</param>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        /// <typeparam name="TStruct">The 2nd type parameter.</typeparam>
+        /// <typeparam name="T">The underlying set.</typeparam>
+        /// <typeparam name="TStruct">The underlying structure.</typeparam>
         [Category("PolynomialTest")]
         [Test]
         [TestCaseSource("PolynomialCopyTestDataSource")]
-        public void Copy_IsNewInstance_PolynomialsAreEqual<T, TStruct>(T hackForGenericParameter1, TStruct hackForGenericParameter2, IPolynomial<T, TStruct> polynomial)
+        public void Copy_IsNewInstance_PolynomialsAreEqual<T, TStruct>(
+            T hackForGenericParameter1,
+            TStruct hackForGenericParameter2,
+            IPolynomial<T, TStruct> polynomial)
             where TStruct : IStructure<T>, new()
         {
             var polynomialCopy = polynomial.Copy();
 
             // the references and the type should not be the same.
-            Assert.IsFalse(Object.ReferenceEquals(polynomial, polynomialCopy));
+            Assert.IsFalse(object.ReferenceEquals(polynomial, polynomialCopy));
 
             // The values should be the same.
             Assert.AreEqual(polynomial.Degree, polynomialCopy.Degree);         

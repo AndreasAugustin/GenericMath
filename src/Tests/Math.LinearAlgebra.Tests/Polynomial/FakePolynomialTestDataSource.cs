@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="FakePolynomialTestDataSource.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="FakePolynomialTestDataSource.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -23,9 +23,9 @@ namespace Math.LinearAlgebra.Tests
     {
         #region fields
 
-        List<Int32> _int32List;
-        List<Double> _doubleList;
-        List<Complex> _complexList;
+        private List<int> _int32List;
+        private List<double> _doubleList;
+        private List<Complex> _complexList;
 
         #endregion
 
@@ -35,11 +35,11 @@ namespace Math.LinearAlgebra.Tests
         /// Gets the double list.
         /// </summary>
         /// <value>The double list.</value>
-        public List<Double> DoubleList
+        public List<double> DoubleList
         {
             get
             {
-                return _doubleList ?? (_doubleList = new List<Double>{ 3.678 });
+                return this._doubleList ?? (this._doubleList = new List<double>{ 3.678 });
             }
         }
 
@@ -51,37 +51,40 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                return _complexList ?? (_complexList = new List<Complex>{ new Complex(1, 2), new Complex(4, 56) });
+                return this._complexList ?? (this._complexList = new List<Complex>
+                { 
+                    new Complex(1, 2), 
+                    new Complex(4, 56)
+                });
             }
         }
 
         /// <summary>
-        /// Gets the int32 list.
+        /// Gets the integer list.
         /// </summary>
-        /// <value>The int32 list.</value>
-        public List<Int32> Int32List
+        /// <value>The integer list.</value>
+        public List<int> Int32List
         {
             get
             {
-                return _int32List ?? (_int32List = new List<int>{ 2, -2 });
+                return this._int32List ?? (this._int32List = new List<int>{ 2, -2 });
             }
-
         }
 
         /// <summary>
-        /// Gets the group int32 I polynomial source.
+        /// Gets the group integer I polynomial source.
         /// </summary>
-        /// <value>The group int32 polynomial source.</value>
-        public IPolynomial<Int32, Int32Group> GroupInt32IPolynomialSource
+        /// <value>The group integer polynomial source.</value>
+        public IPolynomial<int, Int32Group> GroupInt32IPolynomialSource
         {
             get
             {               
-                var degree = (UInt32)Int32List.Count - 1;
-                var poly = new Polynomial<Int32, Int32Group>(degree);
+                var degree = (uint)this.Int32List.Count - 1;
+                var poly = new Polynomial<int, Int32Group>(degree);
 
-                for (UInt32 i = 0; i < degree + 1; i++)
+                for (uint i = 0; i < degree + 1; i++)
                 {
-                    poly[i] = Int32List[(Int32)i];
+                    poly[i] = this.Int32List[(int)i];
                 }
 
                 return poly;
@@ -89,19 +92,19 @@ namespace Math.LinearAlgebra.Tests
         }
 
         /// <summary>
-        /// Gets the ring int32 polynomial source.
+        /// Gets the ring integer polynomial source.
         /// </summary>
-        /// <value>The ring int32 polynomial source.</value>
-        public IPolynomial<Int32, Int32Ring> RingInt32IPolynomialSource
+        /// <value>The ring integer polynomial source.</value>
+        public IPolynomial<int, Int32Ring> RingInt32IPolynomialSource
         {
             get
             {               
-                var degree = (UInt32)Int32List.Count - 1;
-                var poly = new Polynomial<Int32, Int32Ring>(degree);
+                var degree = (uint)this.Int32List.Count - 1;
+                var poly = new Polynomial<int, Int32Ring>(degree);
 
-                for (UInt32 i = 0; i < degree + 1; i++)
+                for (uint i = 0; i < degree + 1; i++)
                 {
-                    poly[i] = Int32List[(Int32)i];
+                    poly[i] = this.Int32List[(int)i];
                 }
 
                 return poly;
@@ -116,12 +119,12 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                var degree = (UInt32)ComplexList.Count - 1;
+                var degree = (uint)this.ComplexList.Count - 1;
                 var poly = new Polynomial<Complex, ComplexRing>(degree);
 
-                for (UInt32 i = 0; i < degree + 1; i++)
+                for (uint i = 0; i < degree + 1; i++)
                 {
-                    poly[i] = ComplexList[(Int32)i];
+                    poly[i] = this.ComplexList[(int)i];
                 }
 
                 return poly;
@@ -132,16 +135,16 @@ namespace Math.LinearAlgebra.Tests
         /// Gets the field double polynomial source.
         /// </summary>
         /// <value>The field double polynomial source.</value>
-        public IPolynomial<Double, DoubleField> FieldDoubleIPolynomialSource
+        public IPolynomial<double, DoubleField> FieldDoubleIPolynomialSource
         {
             get
             {
-                var degree = (UInt32)DoubleList.Count - 1;
-                var poly = new Polynomial<Double, DoubleField>(degree);
+                var degree = (uint)this.DoubleList.Count - 1;
+                var poly = new Polynomial<double, DoubleField>(degree);
 
-                for (UInt32 i = 0; i < degree + 1; i++)
+                for (uint i = 0; i < degree + 1; i++)
                 {
-                    poly[i] = DoubleList[(Int32)i];
+                    poly[i] = this.DoubleList[(int)i];
                 }
 
                 return poly;
