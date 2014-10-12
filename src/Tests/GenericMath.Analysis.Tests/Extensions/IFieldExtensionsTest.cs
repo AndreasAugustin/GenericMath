@@ -8,14 +8,14 @@
 //   1.0.0  22 / 9 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Analysis.Tests
+namespace GenericMath.Analysis.Tests
 {
     using System;
     using System.Collections.Generic;
     using System.Numerics;
 
-    using Math.Analysis;
-    using Math.Base;
+    using GenericMath.Analysis;
+    using GenericMath.Base;
     using NUnit.Framework;
 
     /// <summary>
@@ -91,7 +91,7 @@ namespace Math.Analysis.Tests
         /// </summary>
         /// <param name="point">The point.</param>
         /// <param name="field">The field.</param>
-        /// <param name="expected">The expeced value.</param>
+        /// <param name="expected">The expected value.</param>
         /// <typeparam name="T">The underlying set.</typeparam>
         [Category("IFieldExtensionsTest")]
         [Test]
@@ -129,7 +129,7 @@ namespace Math.Analysis.Tests
         }
 
         /// <summary>
-        /// Tests the MultiplicationInverseFunctionWithFunc.
+        /// Tests the MultiplicationInverseFunctionWithFunction method.
         /// </summary>
         /// <param name="point">The point.</param>
         /// <param name="field">The field.</param>
@@ -153,7 +153,7 @@ namespace Math.Analysis.Tests
         }
 
         /// <summary>
-        /// Tests the MultiplicationInverseFunctionWithFunc.
+        /// Tests the MultiplicationInverseFunctionWithFunction.
         /// </summary>
         /// <param name="point">The point.</param>
         /// <param name="field">The field.</param>

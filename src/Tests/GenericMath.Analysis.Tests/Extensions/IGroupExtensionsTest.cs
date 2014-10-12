@@ -8,14 +8,14 @@
 //   1.0.0  22 / 9 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Analysis.Tests
+namespace GenericMath.Analysis.Tests
 {
     using System;
     using System.Collections.Generic;
     using System.Numerics;
 
-    using Math.Analysis;
-    using Math.Base;
+    using GenericMath.Analysis;
+    using GenericMath.Base;
     using NSubstitute;
     using NUnit.Framework;
 

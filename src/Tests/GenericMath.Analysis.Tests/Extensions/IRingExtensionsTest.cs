@@ -8,11 +8,11 @@
 //   1.0.0  11 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Analysis.Tests
+namespace GenericMath.Analysis.Tests
 {
     using System;
 
-    using Math.Base;
+    using GenericMath.Base;
     using NUnit.Framework;
 
     /// <summary>

@@ -8,13 +8,13 @@
 //   1.0.0  11 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Analysis.Tests
+namespace GenericMath.Analysis.Tests
 {
     using System;
     using System.Collections.Generic;
     using System.Numerics;
 
-    using Math.Base;
+    using GenericMath.Base;
     using NSubstitute;
     using NUnit.Framework;
 
