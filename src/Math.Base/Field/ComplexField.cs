@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="ComplexField.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="ComplexField.cs" company="SuperDevelop>
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -27,8 +27,10 @@ namespace Math.Base
         public Complex MultiplicationInverse(Complex element)
         {
             if (element == Complex.Zero)
+            {
                 throw new DivideByZeroException();
-
+            }
+                
             return Complex.Reciprocal(element);
         }
     }

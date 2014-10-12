@@ -62,10 +62,20 @@ namespace Math.LinearAlgebra.Tests
 
         #region methods
 
+        /// <summary>
+        /// Test for the inverse element.
+        /// </summary>
+        /// <param name="hackForGenericParameter">Hack for generic parameter.</param>
+        /// <param name="underlyingGroup">Underlying group.</param>
+        /// <param name="poly">The polynomial.</param>
+        /// <typeparam name="T">The underlying set.</typeparam>
+        /// <typeparam name="TGroup">The underlying group.</typeparam>
         [Test]
         [Category("PolynomialTest")]
         [TestCaseSource("PolynomialInverseElementTestDataSource")]
-        public void InverseElement<T, TGroup>(T hackForGenericParameter, TGroup underlyingGroup, 
+        public void InverseElement<T, TGroup>(
+            T hackForGenericParameter, 
+            TGroup underlyingGroup, 
             IPolynomial<T, TGroup> poly)
             where TGroup : IGroup<T>, new()
         {

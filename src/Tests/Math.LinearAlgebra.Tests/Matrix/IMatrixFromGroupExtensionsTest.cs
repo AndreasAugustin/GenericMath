@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="IMatrixFromGroupExtensionsTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IMatrixFromGroupExtensionsTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -22,27 +22,36 @@ namespace Math.LinearAlgebra.Tests
     {
         #region fields
 
-        FakeMatrixTestDataSource _mockDataSource;
+        private FakeMatrixTestDataSource _mockDataSource;
 
         #endregion
 
         #region properties
 
-        FakeMatrixTestDataSource MockDataSource
+        private FakeMatrixTestDataSource MockDataSource
         {
             get
             {
-                return _mockDataSource ?? (_mockDataSource = new FakeMatrixTestDataSource());
+                return this._mockDataSource ?? (this._mockDataSource = new FakeMatrixTestDataSource());
             }
         }
 
-        IEnumerable<TestCaseData> InverseDataSource
+        private IEnumerable<TestCaseData> InverseDataSource
         {
             get
             {
-                yield return new TestCaseData(default(Int32), new Int32Group(), MockDataSource.GroupInt32Source);
-                yield return new TestCaseData(default(Double), new DoubleField(), MockDataSource.FieldDoubleSource);
-                yield return new TestCaseData(default(Complex), new ComplexRing(), MockDataSource.RingComplexSource);
+                yield return new TestCaseData(
+                    default(Int32),
+                    new Int32Group(),
+                    this.MockDataSource.GroupInt32Source);
+                yield return new TestCaseData(
+                    default(Double),
+                    new DoubleField(),
+                    this.MockDataSource.FieldDoubleSource);
+                yield return new TestCaseData(
+                    default(Complex),
+                    new ComplexRing(),
+                    this.MockDataSource.RingComplexSource);
             }
         }
 
@@ -50,11 +59,20 @@ namespace Math.LinearAlgebra.Tests
 
         #region methods
 
+        /// <summary>
+        /// Tests the inverse method.
+        /// </summary>
+        /// <param name="hack1">The first Hack1.</param>
+        /// <param name="hack2">The second Hack2.</param>
+        /// <param name="matrix">The Matrix.</param>
+        /// <typeparam name="T">The underlying set.</typeparam>
+        /// <typeparam name="TGroup">The underlying group.</typeparam>
         [Category("MatrixFromGroupExtensionTest")]
         [Test]
         [TestCaseSource("InverseDataSource")]
-        public void Inverse_CheckResultWithExpected_EqualsElementalInverse<T, TGroup>(T hack1, TGroup hack2, 
-                                                                                      IMatrix<T, TGroup> matrix)
+        public void Inverse_CheckResultWithExpected_EqualsElementalInverse<T, TGroup>(T hack1,
+            TGroup hack2, 
+            IMatrix<T, TGroup> matrix)
             where TGroup : IGroup<T>, new()
         {
             var result = matrix.Inverse();

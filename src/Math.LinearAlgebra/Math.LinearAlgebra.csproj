@@ -6,7 +6,7 @@
     <ProjectGuid>{FA62DC06-710E-4615-9E6F-C5E77D5B3202}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Math.LinearAlgebra</RootNamespace>
-    <AssemblyName>Math</AssemblyName>
+    <AssemblyName>Math.LinearAlgebra</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -17,7 +17,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <DocumentationFile>bin\Debug\Math.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\Math.LinearAlgebra.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>

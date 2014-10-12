@@ -39,7 +39,7 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                return this._doubleList ?? (this._doubleList = new List<double>{ 3.678 });
+                return this._doubleList ?? (this._doubleList = new List<Double>{ 3.678 });
             }
         }
 

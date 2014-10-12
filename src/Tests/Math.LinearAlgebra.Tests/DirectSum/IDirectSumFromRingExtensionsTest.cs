@@ -120,7 +120,7 @@ namespace Math.LinearAlgebra.Tests
         #region methods
 
         /// <summary>
-        /// Test the Multipliy method. Multiplie two tuples and checks if the reuslt equals the expected tuple.
+        /// Test the Multipliy method. Multiplies two tuples and checks if the reuslt equals the expected tuple.
         /// </summary>
         /// <param name="hackForGenericParameter1">Hack for generic parameter1.</param>
         /// <param name="hackForGenericParameter2">Hack for generic parameter2.</param>

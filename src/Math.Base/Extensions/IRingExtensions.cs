@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="IRingExtensions.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IRingExtensions.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -25,7 +25,7 @@ namespace Math.Base
         /// <param name="power">The power.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <returns>The result.</returns>
-        public static T Pow<T>(this IRing<T> ring, T element, UInt32 power)
+        public static T Pow<T>(this IRing<T> ring, T element, uint power)
         {
             var result = ring.One;
             for (var i = 0; i < power; i++)

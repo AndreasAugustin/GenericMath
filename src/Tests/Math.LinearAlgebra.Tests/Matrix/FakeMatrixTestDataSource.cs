@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="FakeMatrixTestDataSource.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="FakeMatrixTestDataSource.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -23,9 +23,9 @@ namespace Math.LinearAlgebra.Tests
     {
         #region fields
 
-        List<List<Int32>> _int32List;
-        List<List<Double>> _doubleList;
-        List<List<Complex>> _complexList;
+        private List<List<Int32>> _int32List;
+        private List<List<Double>> _doubleList;
+        private List<List<Complex>> _complexList;
 
         #endregion
 
@@ -39,8 +39,8 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                return _doubleList ?? (
-                    _doubleList = new List<List<Double>>{ new List<Double>{ 3.678, 4.78 }, new List<Double>{ 2.3, 2.6 } });
+                return this._doubleList ?? (
+                    this._doubleList = new List<List<Double>>{ new List<Double>(){ 3.678, 4.78 }, new List<Double>{ 2.3, 2.6 } });
             }
         }
 
@@ -52,9 +52,10 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                return _complexList ?? (_complexList = 
+                return this._complexList ?? (this._complexList = 
                     new List<List<Complex>>
-                { new List<Complex>{ new Complex(1, 2), new Complex(4, 56) },
+                { 
+                    new List<Complex>{ new Complex(1, 2), new Complex(4, 56) },
                     new List<Complex>{ new Complex(3, -5), new Complex(-3, -1) },
                     new List<Complex>{ new Complex(-3, -5), new Complex(3, 1) }
                 });
@@ -62,26 +63,25 @@ namespace Math.LinearAlgebra.Tests
         }
 
         /// <summary>
-        /// Gets the int32 list.
+        /// Gets the integer list.
         /// </summary>
-        /// <value>The int32 list.</value>
+        /// <value>The integer list.</value>
         public List<List<Int32>> Int32List
         {
             get
             {
-                return _int32List ?? (
-                    _int32List = new List<List<Int32>>
+                return this._int32List ?? (
+                    this._int32List = new List<List<Int32>>
                 { 
                     new List<Int32>{ 2, -2, 5 }, new List<Int32>{ -2, 2, 15 }, new List<Int32>{ 2, 20, 5 }
                 });
             }
-
         }
 
         /// <summary>
-        /// Gets the group int32 source.
+        /// Gets the group integer source.
         /// </summary>
-        /// <value>The group int32 source.</value>
+        /// <value>The group integer source.</value>
         public IMatrix<Int32, Int32Group> GroupInt32Source
         {
             get
@@ -89,13 +89,15 @@ namespace Math.LinearAlgebra.Tests
                 var rowDimension = (UInt32)this.Int32List.Count; 
                 var columnDimension = (UInt32)this.Int32List[0].Count;
 
-                var matrix = new Matrix<Int32, Int32Group>(rowDimension, columnDimension);
+                var matrix = new Matrix<Int32, Int32Group>(
+                                 rowDimension,
+                                 columnDimension);
 
                 for (UInt32 i = 0; i < rowDimension; i++)
                 {
                     for (UInt32 j = 0; j < columnDimension; j++)
                     {
-                        matrix[i, j] = (this.Int32List[(Int32)i])[(Int32)j];
+                        matrix[i, j] = this.Int32List[(Int32)i][(Int32)j];
                     }
                 }
 
@@ -104,9 +106,9 @@ namespace Math.LinearAlgebra.Tests
         }
 
         /// <summary>
-        /// Gets the ring int32 source.
+        /// Gets the ring integer source.
         /// </summary>
-        /// <value>The ring int32 source.</value>
+        /// <value>The ring integer source.</value>
         public IMatrix<Int32, Int32Ring> RingInt32Source
         {
             get
@@ -114,13 +116,15 @@ namespace Math.LinearAlgebra.Tests
                 var rowDimension = (UInt32)this.Int32List.Count; 
                 var columnDimension = (UInt32)this.Int32List[0].Count;
 
-                var matrix = new Matrix<Int32, Int32Ring>(rowDimension, columnDimension);
+                var matrix = new Matrix<Int32, Int32Ring>(
+                                 rowDimension,
+                                 columnDimension);
 
                 for (UInt32 i = 0; i < rowDimension; i++)
                 {
                     for (UInt32 j = 0; j < columnDimension; j++)
                     {
-                        matrix[i, j] = (this.Int32List[(Int32)i])[(Int32)j];
+                        matrix[i, j] = this.Int32List[(Int32)i][(Int32)j];
                     }
                 }
 
@@ -139,13 +143,15 @@ namespace Math.LinearAlgebra.Tests
                 var rowDimension = (UInt32)this.ComplexList.Count; 
                 var columnDimension = (UInt32)this.ComplexList[0].Count;
 
-                var matrix = new Matrix<Complex, ComplexRing>(rowDimension, columnDimension);
+                var matrix = new Matrix<Complex, ComplexRing>(
+                                 rowDimension,
+                                 columnDimension);
 
                 for (UInt32 i = 0; i < rowDimension; i++)
                 {
                     for (UInt32 j = 0; j < columnDimension; j++)
                     {
-                        matrix[i, j] = (this.ComplexList[(Int32)i])[(Int32)j];
+                        matrix[i, j] = this.ComplexList[(Int32)i][(Int32)j];
                     }
                 }
 
@@ -164,13 +170,15 @@ namespace Math.LinearAlgebra.Tests
                 var rowDimension = (UInt32)this.DoubleList.Count; 
                 var columnDimension = (UInt32)this.DoubleList[0].Count;
 
-                var matrix = new Matrix<Double, DoubleField>(rowDimension, columnDimension);
+                var matrix = new Matrix<Double, DoubleField>(
+                                 rowDimension,
+                                 columnDimension);
 
                 for (UInt32 i = 0; i < rowDimension; i++)
                 {
                     for (UInt32 j = 0; j < columnDimension; j++)
                     {
-                        matrix[i, j] = (this.DoubleList[(Int32)i])[(Int32)j];
+                        matrix[i, j] = this.DoubleList[(Int32)i][(Int32)j];
                     }
                 }
 

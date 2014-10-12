@@ -118,7 +118,9 @@ namespace Math.LinearAlgebra
         /// <returns>The new instance.</returns>
         /// <param name="rowDimension">Row dimension.</param>
         /// <param name="columnDimension">Column dimension.</param>
-        public IMatrix<T, TStruct> ReturnNewInstance(UInt32 rowDimension, UInt32 columnDimension)
+        public IMatrix<T, TStruct> ReturnNewInstance(
+            UInt32 rowDimension,
+            UInt32 columnDimension)
         {
             return new Matrix<T, TStruct>(rowDimension, columnDimension);
         }
@@ -131,10 +133,13 @@ namespace Math.LinearAlgebra
         /// Returns a string that represents the current object.
         /// </summary>
         /// <returns>A string that represents the current object.</returns>
-        /// <filterpriority>2</filterpriority>
         public override string ToString()
         {
-            var str = new StringBuilder(String.Format("Rows: {0}, Columns: {1} {2}", this.RowDimension, this.ColumnDimension, Environment.NewLine));
+            var str = new StringBuilder(String.Format(
+                              "Rows: {0}, Columns: {1} {2}",
+                              this.RowDimension,
+                              this.ColumnDimension,
+                              Environment.NewLine));
 
             for (UInt32 i = 0; i < this.RowDimension; i++)
             {
@@ -202,7 +207,9 @@ namespace Math.LinearAlgebra
                                        columnIndex,
                                        ColumnDimension);
 
-                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, errorMessage); 
+                throw new LinearAlgebraException(
+                    LinearAlgebraExceptionType.IndexEqualOrGreaterDimension,
+                    errorMessage); 
             }               
         }
 
@@ -212,7 +219,9 @@ namespace Math.LinearAlgebra
             {
                 var errorMessage = String.Format("Matrix class: The index is equal to max value");
 
-                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, errorMessage);
+                throw new LinearAlgebraException(
+                    LinearAlgebraExceptionType.IndexEqualOrGreaterDimension,
+                    errorMessage);
             }
 
             if (this.RowDimension + 1 < rowIndex)
@@ -222,7 +231,9 @@ namespace Math.LinearAlgebra
                                        rowIndex, 
                                        ColumnDimension);
 
-                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, errorMessage);   
+                throw new LinearAlgebraException(
+                    LinearAlgebraExceptionType.IndexEqualOrGreaterDimension,
+                    errorMessage);   
             }                             
         }
 

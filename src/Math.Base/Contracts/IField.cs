@@ -23,7 +23,6 @@ namespace Math.Base
         /// </summary>
         /// <returns>The inverse.</returns>
         /// <param name="element">The element.</param>
-        /// <exception cref="DivideByZeroException">Thrown when the element is the zero element of the underlying group.</exception>
         T MultiplicationInverse(T element);
 
         #endregion

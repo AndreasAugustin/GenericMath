@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="Interval.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="Interval.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -24,7 +24,7 @@ namespace Math.Base
         #region ctors
 
         /// <summary>
-        /// Initialises a new instance of the <see cref="Interval{T, TStruct}"/> class.
+        /// Initializes a new instance of the <see cref="Interval{T, TStruct}"/> class.
         /// </summary>
         /// <param name="minElement">Minimum element.</param>
         /// <param name="maxElement">Max element.</param>
@@ -32,7 +32,9 @@ namespace Math.Base
         public Interval(T minElement, T maxElement)
         {
             if (minElement.CompareTo(maxElement) >= 0)
+            {
                 throw new AccessViolationException("minElement needs to be less then maxElement");
+            }
 
             this.MinElement = minElement;
             this.MaxElement = maxElement;
@@ -67,9 +69,9 @@ namespace Math.Base
         /// </summary>
         /// <returns><c>true</c> if the element is in the Interval else <c>false</c></returns>
         /// <param name="elementToCheck">Element to check.</param>
-        public Boolean IsinInterval(T elementToCheck)
+        public bool IsinInterval(T elementToCheck)
         {
-            return elementToCheck.CompareTo(MinElement) >= 0 && elementToCheck.CompareTo(MaxElement) <= 0;
+            return elementToCheck.CompareTo(this.MinElement) >= 0 && elementToCheck.CompareTo(this.MaxElement) <= 0;
         }
 
         /// <summary>
@@ -80,7 +82,7 @@ namespace Math.Base
         /// <see cref="Interval{T, TStruct}"/>.</param>
         /// <returns><c>true</c> if the specified <see cref="Interval{T, TStruct}"/> is equal to the current
         /// <see cref="Interval{T, TStruct}"/>; otherwise, <c>false</c>.</returns>
-        public Boolean Equals(Interval<T, TStruct> other)
+        public bool Equals(Interval<T, TStruct> other)
         {
             return this.MaxElement.Equals(other.MaxElement) && this.MinElement.Equals(other.MinElement);
         }
@@ -93,9 +95,12 @@ namespace Math.Base
         /// Returns a <see cref="System.String"/> that represents the current <see cref="Interval{T, TStruct}"/>.
         /// </summary>
         /// <returns>A <see cref="System.String"/> that represents the current <see cref="Interval{T, TStruct}"/>.</returns>
-        public override String ToString()
+        public override string ToString()
         {
-            return String.Format("[Interval: MaxElement={0}, MinElement={1}]", MaxElement, MinElement);
+            return string.Format(
+                "[Interval: MaxElement={0}, MinElement={1}]",
+                this.MaxElement,
+                this.MinElement);
         }
 
         #endregion

@@ -46,7 +46,6 @@ namespace Math.LinearAlgebra.Tests
         }
 
         /// <summary>
-        /// Initialises a new instance of the <see cref="Polynomial{T, TStruct}"/> class with given degree.
         /// Queries the polynomial for index out of range.
         /// Throws a <see cref="LinearAlgebraException"/>. 
         /// </summary>

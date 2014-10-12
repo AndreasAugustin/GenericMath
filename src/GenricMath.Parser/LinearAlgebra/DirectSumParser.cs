@@ -1,8 +1,8 @@
 ﻿//  *************************************************************
-// <copyright file="IDirectSumParser.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="DirectSumParser.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  24 / 9 / 2014 Created the Class
@@ -14,6 +14,7 @@ namespace GenricMath.Parser
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
 
+    using GenericMath.Common;
     using Math.Base;
     using Math.LinearAlgebra;
 
@@ -29,8 +30,9 @@ namespace GenricMath.Parser
     {
         #region fields
 
-        List<T> _entries = new List<T>();
-        TTypeParser _typeParser = new TTypeParser();
+        private readonly TTypeParser _typeParser = new TTypeParser();
+        private readonly IRegex _regex = new RegexAdapter();
+        private List<T> _entries = new List<T>();
 
         #endregion
 
@@ -40,18 +42,22 @@ namespace GenricMath.Parser
         /// Parse the specified stringInput.
         /// </summary>
         /// <param name="inputString">String input.</param>
+        /// <returns>A new direct sum with the specified values in the string.</returns>
+        /// <exception cref="NotSupportedException">Thrown if the string is not valid to parse.</exception>
         public DirectSum<T, TStruct> Parse(string inputString)
         {
-            var matchArray = Regex.Split(inputString, ",");
+            var matchArray = this._regex.Split(inputString, ",");
 
             if (matchArray.Length <= 0)
-                throw new NotSupportedException("No match");
-
-            var tuple = new DirectSum<T, TStruct>((UInt32)matchArray.Length);
-
-            for (UInt32 i = 0; i < matchArray.Length; i++)
             {
-                tuple[i] = _typeParser.Parse(matchArray[i]);
+                throw new NotSupportedException("No match");
+            }
+                
+            var tuple = new DirectSum<T, TStruct>((uint)matchArray.Length);
+
+            for (uint i = 0; i < matchArray.Length; i++)
+            {
+                tuple[i] = this._typeParser.Parse(matchArray[i]);
             }
 
             return tuple;

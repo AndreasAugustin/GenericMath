@@ -137,7 +137,6 @@ namespace Math.LinearAlgebra
         /// Returns a string that represents the current object.
         /// </summary>
         /// <returns>A string that represents the current object.</returns>
-        /// <filterpriority>2</filterpriority>
         public override string ToString()
         {
             var str = new StringBuilder(String.Format("Degree: {0}| ", Degree));
@@ -163,7 +162,9 @@ namespace Math.LinearAlgebra
             {
                 var errorMessage = String.Format("Vector class: The index is equal to max value");
 
-                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualsMaxUnsignedInteger, errorMessage);
+                throw new LinearAlgebraException(
+                    LinearAlgebraExceptionType.IndexEqualsMaxUnsignedInteger,
+                    errorMessage);
             }
 
             if (this.Degree + 1 < index)
@@ -173,7 +174,9 @@ namespace Math.LinearAlgebra
                                        index, 
                                        this.Degree);
 
-                throw new LinearAlgebraException(LinearAlgebraExceptionType.IndexEqualOrGreaterDimension, errorMessage);
+                throw new LinearAlgebraException(
+                    LinearAlgebraExceptionType.IndexEqualOrGreaterDimension,
+                    errorMessage);
             }                              
         }
 
@@ -189,7 +192,9 @@ namespace Math.LinearAlgebra
             var methodName = new StackTrace().GetFrame(1).GetMethod().Name;
             Trace.Write("Hi");
             Console.WriteLine("--- Entering check state for vector");
-            Console.WriteLine(String.Format("The constraint type is {0}", typeof(T)));
+            Console.WriteLine(String.Format(
+                    "The constraint type is {0}",
+                    typeof(T)));
             Console.Write("\t called by");
             Console.WriteLine(methodName);
         }

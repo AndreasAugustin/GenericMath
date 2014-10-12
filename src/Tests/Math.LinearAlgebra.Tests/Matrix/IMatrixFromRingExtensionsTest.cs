@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="IMatrixFromRingExtensionsTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IMatrixFromRingExtensionsTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -25,17 +25,17 @@ namespace Math.LinearAlgebra.Tests
     {
         #region fields
 
-        FakeMatrixTestDataSource _mockDataSource;
+        private FakeMatrixTestDataSource _mockDataSource;
 
         #endregion
 
         #region properties
 
-        FakeMatrixTestDataSource MockDataSource
+        private FakeMatrixTestDataSource MockDataSource
         {
             get
             {
-                return _mockDataSource ?? (_mockDataSource = new FakeMatrixTestDataSource());
+                return this._mockDataSource ?? (this._mockDataSource = new FakeMatrixTestDataSource());
             }
         }
 

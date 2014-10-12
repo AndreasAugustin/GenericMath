@@ -6,7 +6,7 @@
     <ProjectGuid>{577920B2-9289-4CC9-8F56-291E9F436495}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Math.LinearAlgebra.Tests</RootNamespace>
-    <AssemblyName>Math.Tests</AssemblyName>
+    <AssemblyName>Math.LinearAlgebra.Tests</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -17,6 +17,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <DocumentationFile>bin\Debug\Math.LinearAlgebra.Tests.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>

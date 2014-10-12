@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="IPolynomialFromRingExtensionsTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IPolynomialFromRingExtensionsTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -25,27 +25,39 @@ namespace Math.LinearAlgebra.Tests
     {
         #region fields
 
-        FakePolynomialTestDataSource _mockDataSource;
+        private FakePolynomialTestDataSource _mockDataSource;
 
         #endregion
 
         #region properties
 
-        FakePolynomialTestDataSource MockDataSource
+        private FakePolynomialTestDataSource MockDataSource
         {
             get
             {
-                return _mockDataSource ?? (_mockDataSource = new FakePolynomialTestDataSource());
+                return this._mockDataSource ?? (this._mockDataSource = new FakePolynomialTestDataSource());
             }
         }
 
-        IEnumerable<TestCaseData> PolynomialMultiplyTestDataSource
+        private IEnumerable<TestCaseData> PolynomialMultiplyTestDataSource
         {
             get
             {
-                yield return new TestCaseData(0, new Int32Ring(), MockDataSource.RingInt32IPolynomialSource, MockDataSource.RingInt32IPolynomialSource);
-                yield return new TestCaseData(3.678, new DoubleField(), MockDataSource.FieldDoubleIPolynomialSource, MockDataSource.FieldDoubleIPolynomialSource);
-                yield return new TestCaseData(new Complex(5, 58), new ComplexRing(), MockDataSource.RingComplexIPolynomialSource, MockDataSource.RingComplexIPolynomialSource);
+                yield return new TestCaseData(
+                    0,
+                    new Int32Ring(),
+                    this.MockDataSource.RingInt32IPolynomialSource,
+                    this.MockDataSource.RingInt32IPolynomialSource);
+                yield return new TestCaseData(
+                    3.678,
+                    new DoubleField(),
+                    this.MockDataSource.FieldDoubleIPolynomialSource,
+                    this.MockDataSource.FieldDoubleIPolynomialSource);
+                yield return new TestCaseData(
+                    new Complex(5, 58),
+                    new ComplexRing(),
+                    this.MockDataSource.RingComplexIPolynomialSource,
+                    this.MockDataSource.RingComplexIPolynomialSource);
             }
         }
 
@@ -56,10 +68,11 @@ namespace Math.LinearAlgebra.Tests
         [Test]
         [Category("PolynomialFromRingTest")]
         [TestCaseSource("PolynomialMultiplyTestDataSource")]
-        public void Multiply_MultiplyTwoPolynomials_DegreeEqualsxpecedDegree<T, TRing>(T hackForGenericParameter1, 
-                                                                                       TRing hackForGenericParameter2, 
-                                                                                       IPolynomial<T, TRing> tuple1, 
-                                                                                       IPolynomial<T, TRing> tuple2)
+        public void Multiply_MultiplyTwoPolynomials_DegreeEqualsxpecedDegree<T, TRing>(
+            T hackForGenericParameter1, 
+            TRing hackForGenericParameter2, 
+            IPolynomial<T, TRing> tuple1, 
+            IPolynomial<T, TRing> tuple2)
             where TRing : IRing<T>, new()
         {
             var result = tuple1.Multiply(tuple2);

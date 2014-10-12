@@ -18,6 +18,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <DocumentationFile>bin\Debug\GenricMath.Parser.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -53,6 +54,10 @@
     <ProjectReference Include="..\Math.LinearAlgebra\Math.LinearAlgebra.csproj">
       <Project>{FA62DC06-710E-4615-9E6F-C5E77D5B3202}</Project>
       <Name>Math.LinearAlgebra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenericMath.Common\GenericMath.Common.csproj">
+      <Project>{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}</Project>
+      <Name>GenericMath.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

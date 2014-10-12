@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="IMatrixSquaredExtensionsTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IMatrixSquaredExtensionsTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -25,26 +25,32 @@ namespace Math.LinearAlgebra.Tests
     {
         #region fields
 
-        FakeMatrixSquaredTestDataSource _mockDataSource;
+        private FakeMatrixSquaredTestDataSource _mockDataSource;
 
         #endregion
 
         #region properties
 
-        FakeMatrixSquaredTestDataSource MockDataSource
+        private FakeMatrixSquaredTestDataSource MockDataSource
         {
             get
             {
-                return _mockDataSource ?? (_mockDataSource = new FakeMatrixSquaredTestDataSource());
+                return this._mockDataSource ?? (this._mockDataSource = new FakeMatrixSquaredTestDataSource());
             }
         }
 
-        IEnumerable<TestCaseData> GaussJordanSource
+        private IEnumerable<TestCaseData> GaussJordanSource
         {
             get
             {
-                yield return new TestCaseData(new Double(), new DoubleField(), MockDataSource.FieldDoubleSource2);
-                yield return new TestCaseData(new Double(), new DoubleField(), MockDataSource.FieldDoubleSource);
+                yield return new TestCaseData(
+                    new Double(),
+                    new DoubleField(),
+                    this.MockDataSource.FieldDoubleSource2);
+                yield return new TestCaseData(
+                    new Double(),
+                    new DoubleField(),
+                    this.MockDataSource.FieldDoubleSource);
             }
         }
 
@@ -52,7 +58,11 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                yield return new TestCaseData(new Double(), new DoubleField(), MockDataSource.FieldDoubleSource, MockDataSource.DoubleList);
+                yield return new TestCaseData(
+                    new Double(),
+                    new DoubleField(),
+                    this.MockDataSource.FieldDoubleSource,
+                    this.MockDataSource.DoubleList);
             }
         }
 
@@ -60,10 +70,23 @@ namespace Math.LinearAlgebra.Tests
 
         #region methods
 
+        /// <summary>
+        /// Tests the trace method.
+        /// </summary>
+        /// <param name="hack1">The first hack1.</param>
+        /// <param name="hack2">The second hack2.</param>
+        /// <param name="matrix">The matrix.</param>
+        /// <param name="underlyingList">Underlying list for the matrix.</param>
+        /// <typeparam name="T">The underlying set.</typeparam>
+        /// <typeparam name="TMonoid">The underlying monoid.</typeparam>
         [Category("MatrixSquaredExtensionsTest")]
         [Test]
         [TestCaseSource("TraceSource")]
-        public void Trace_CalculatrTrace_EqualsExpected<T, TMonoid>(T hack1, TMonoid hack2, IMatrix<T, TMonoid> matrix, List<List<T>> underlyingList)
+        public void Trace_CalculatrTrace_EqualsExpected<T, TMonoid>(
+            T hack1,
+            TMonoid hack2,
+            IMatrix<T, TMonoid> matrix,
+            List<List<T>> underlyingList)
             where TMonoid : IMonoid<T>, new()
         {
             var result = matrix.Trace();
@@ -75,25 +98,28 @@ namespace Math.LinearAlgebra.Tests
 
             for (Int32 i = 0; i < underlyingList.Count; i++)
             {
-                expected = monoid.Addition(expected, (underlyingList[i])[i]);
+                expected = monoid.Addition(expected, underlyingList[i][i]);
             }
 
             Assert.AreEqual(expected, result);
         }
 
         /// <summary>
-        /// Gauses the jordan algorithm run is not null.
+        /// Tests the GausJordanAlgorithm method.
         /// </summary>
-        /// <param name="hack1">Hack to get generic parameter.</param>
-        /// <param name="hack2">Hack to get generic parameter.</param>
-        /// <param name="matrix">Matrix.</param>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        /// <typeparam name="TField">The 2nd type parameter.</typeparam>
+        /// <param name="hack1">Hack to get first generic parameter.</param>
+        /// <param name="hack2">Hack to get second generic parameter.</param>
+        /// <param name="matrix">The matrix.</param>
+        /// <typeparam name="T">The underlying set.</typeparam>
+        /// <typeparam name="TField">The underlying field.</typeparam>
         [Test]
         [Category("MatrixSquaredExtensionTest")]
         [TestCaseSource("GaussJordanSource")]
         [Ignore]
-        public void GausJordanAlgorithm_Run_IsNotNull<T, TField>(T hack1, TField hack2, IMatrix<T, TField> matrix)
+        public void GausJordanAlgorithm_Run_IsNotNull<T, TField>(
+            T hack1,
+            TField hack2,
+            IMatrix<T, TField> matrix)
             where T : IComparable
             where TField : IField<T>, new()
         {

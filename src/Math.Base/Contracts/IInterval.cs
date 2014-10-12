@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="IInterval.cs" company="${Company}">
+// <copyright file="IInterval.cs" company="SuperDevelop">
 //     Copyright (c)  2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
@@ -40,6 +40,6 @@ namespace Math.Base
         /// </summary>
         /// <returns><c>true</c> if the element lies in the interval; otherwise, <c>false</c>.</returns>
         /// <param name="elementToCheck">Element to check.</param>
-        Boolean IsinInterval(T elementToCheck);
+        bool IsinInterval(T elementToCheck);
     }
 }

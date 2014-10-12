@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
-// <copyright file="IMatrixExtensionsTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IMatrixExtensionsTest.cs" company="$SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <author> andy</author>
 // <email>andreas.augustinba@gmx.de</email>
@@ -25,37 +25,61 @@ namespace Math.LinearAlgebra.Tests
     {
         #region fields
 
-        FakeMatrixTestDataSource _mockTestDataSource;
+        private FakeMatrixTestDataSource _mockTestDataSource;
 
         #endregion
 
         #region properties
 
-        FakeMatrixTestDataSource MockTestDataSource
+        private FakeMatrixTestDataSource MockTestDataSource
         {
             get
             {
-                return _mockTestDataSource ?? (_mockTestDataSource = new FakeMatrixTestDataSource());
+                return this._mockTestDataSource ?? (this._mockTestDataSource = new FakeMatrixTestDataSource());
             }
         }
 
-        IEnumerable<TestCaseData> GetVectorDataSource
+        private IEnumerable<TestCaseData> GetVectorDataSource
         {
             get
             {
-                yield return new TestCaseData(default(Int32), new Int32Group(), (UInt32)0, MockTestDataSource.GroupInt32Source, MockTestDataSource.Int32List);
-                yield return new TestCaseData(default(Double), new DoubleField(), (UInt32)0, MockTestDataSource.FieldDoubleSource, MockTestDataSource.DoubleList);
-                yield return new TestCaseData(default(Complex), new ComplexRing(), (UInt32)0, MockTestDataSource.RingComplexSource, MockTestDataSource.ComplexList);
+                yield return new TestCaseData(
+                    default(Int32),
+                    new Int32Group(),
+                    (UInt32)0,
+                    this.MockTestDataSource.GroupInt32Source,
+                    this.MockTestDataSource.Int32List);
+                yield return new TestCaseData(
+                    default(Double),
+                    new DoubleField(),
+                    (UInt32)0,
+                    this.MockTestDataSource.FieldDoubleSource,
+                    this.MockTestDataSource.DoubleList);
+                yield return new TestCaseData(
+                    default(Complex),
+                    new ComplexRing(),
+                    (UInt32)0,
+                    this.MockTestDataSource.RingComplexSource,
+                    this.MockTestDataSource.ComplexList);
             }
         }
 
-        IEnumerable<TestCaseData> TransposeDataSource
+        private IEnumerable<TestCaseData> TransposeDataSource
         {
             get
             {
-                yield return new TestCaseData(default(Int32), new Int32Group(), MockTestDataSource.GroupInt32Source);
-                yield return new TestCaseData(default(Double), new DoubleField(), MockTestDataSource.FieldDoubleSource);
-                yield return new TestCaseData(default(Complex), new ComplexRing(), MockTestDataSource.RingComplexSource);
+                yield return new TestCaseData(
+                    default(Int32),
+                    new Int32Group(),
+                    this.MockTestDataSource.GroupInt32Source);
+                yield return new TestCaseData(
+                    default(Double),
+                    new DoubleField(),
+                    this.MockTestDataSource.FieldDoubleSource);
+                yield return new TestCaseData(
+                    default(Complex),
+                    new ComplexRing(),
+                    this.MockTestDataSource.RingComplexSource);
             }
         }
 
@@ -68,18 +92,20 @@ namespace Math.LinearAlgebra.Tests
         /// </summary>
         /// <param name="hack1">Hack for generic parameter.</param>
         /// <param name="hack2">Hack for generic structure.</param>
-        /// <param name = "columnIndex"></param>
-        /// <param name="matrix">Matrix.</param>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        /// <typeparam name="TStruct">The 2nd type parameter.</typeparam>
-        /// <param name = "underlyingList"></param>
+        /// <param name ="columnIndex">The column index.</param>
+        /// <param name="matrix">The matrix.</param>
+        /// <typeparam name="T">The underlying set.</typeparam>
+        /// <typeparam name="TStruct">The the underlying structure.</typeparam>
+        /// <param name = "underlyingList">The underlying list for the matrix</param>
         [Category("MatrixExtensionTest")]
         [Test]
         [TestCaseSource("GetVectorDataSource")]
-        public void GetColumnVector_CheckResultWithExpected_EqualsExpected<T, TStruct>(T hack1, TStruct hack2, 
-                                                                                       UInt32 columnIndex,
-                                                                                       IMatrix<T, TStruct> matrix, 
-                                                                                       List<List<T>> underlyingList)
+        public void GetColumnVector_CheckResultWithExpected_EqualsExpected<T, TStruct>(
+            T hack1,
+            TStruct hack2, 
+            UInt32 columnIndex,
+            IMatrix<T, TStruct> matrix, 
+            List<List<T>> underlyingList)
                 where TStruct : IStructure<T>, new()
         {
             var result = matrix.GetColumnVector(columnIndex);
@@ -100,13 +126,25 @@ namespace Math.LinearAlgebra.Tests
             }
         }
 
+        /// <summary>
+        /// Gets the row vector check result with expected equals expected.
+        /// </summary>
+        /// <param name="hack1">Hack1.</param>
+        /// <param name="hack2">Hack2.</param>
+        /// <param name="rowIndex">Row index.</param>
+        /// <param name="matrix">The matrix.</param>
+        /// <param name="underlyingList">Underlying list for the matrix.</param>
+        /// <typeparam name="T">The underlying set.</typeparam>
+        /// <typeparam name="TStruct">The underlying structure.</typeparam>
         [Category("MatrixExtensionTest")]
         [Test]
         [TestCaseSource("GetVectorDataSource")]
-        public void GetRowVector_CheckResultWithExpected_EqualsExpected<T, TStruct>(T hack1, TStruct hack2, 
-                                                                                    UInt32 rowIndex,
-                                                                                    IMatrix<T, TStruct> matrix, 
-                                                                                    List<List<T>> underlyingList)
+        public void GetRowVector_CheckResultWithExpected_EqualsExpected<T, TStruct>(
+            T hack1,
+            TStruct hack2, 
+            UInt32 rowIndex,
+            IMatrix<T, TStruct> matrix, 
+            List<List<T>> underlyingList)
             where TStruct : IStructure<T>, new()
         {
             var result = matrix.GetRowVector(rowIndex);
@@ -139,8 +177,10 @@ namespace Math.LinearAlgebra.Tests
         [Category("MatrixExtensionTest")]
         [Test]
         [TestCaseSource("TransposeDataSource")]
-        public void Transpose_CheckResultWithGivenParameter_EqualsExpected<T, TStruct>(T hack1, TStruct hack2, 
-                                                                                       IMatrix<T, TStruct> matrix)
+        public void Transpose_CheckResultWithGivenParameter_EqualsExpected<T, TStruct>(
+            T hack1,
+            TStruct hack2, 
+            IMatrix<T, TStruct> matrix)
             where TStruct : IStructure<T>, new()
         {
             var result = matrix.Transpose();
@@ -170,8 +210,10 @@ namespace Math.LinearAlgebra.Tests
         [Category("MatrixExtensionTest")]
         [Test]
         [TestCaseSource("TransposeDataSource")]
-        public void Copy_CheckResultWithGivenParameter_EqualsExpected<T, TStruct>(T hack1, TStruct hack2, 
-                                                                                  IMatrix<T, TStruct> matrix)
+        public void Copy_CheckResultWithGivenParameter_EqualsExpected<T, TStruct>(
+            T hack1,
+            TStruct hack2, 
+            IMatrix<T, TStruct> matrix)
             where TStruct : IStructure<T>, new()
         {
             var result = matrix.Copy();

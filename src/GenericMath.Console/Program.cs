@@ -17,6 +17,9 @@ namespace GenericMath.Console
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            DocToMarkdown.Parse("haha");
+
             Console.ReadLine();
         }
     }

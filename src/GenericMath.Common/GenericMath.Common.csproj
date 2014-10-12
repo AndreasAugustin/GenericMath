@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A543E822-202D-4FD8-84BC-37C8F9F969A5}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>GenericMath.Console</RootNamespace>
-    <AssemblyName>GenericMath.Console</AssemblyName>
+    <ProjectGuid>{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GenericMath.Common</RootNamespace>
+    <AssemblyName>GenericMath.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -17,8 +17,7 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Externalconsole>true</Externalconsole>
-    <DocumentationFile>bin\Debug\GenericMath.Console.xml</DocumentationFile>
+    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -26,24 +25,21 @@
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Externalconsole>true</Externalconsole>
+    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ConsoleLogger.cs" />
-    <Compile Include="DocToMarkdown.cs" />
+    <Compile Include="Contracts\IRegex.cs" />
+    <Compile Include="Adapter\RegexAdapter.cs" />
+    <Compile Include="Contracts\IConsole.cs" />
+    <Compile Include="Adapter\ConsoleAdapter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\GenericMath.Common\GenericMath.Common.csproj">
-      <Project>{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}</Project>
-      <Name>GenericMath.Common</Name>
-    </ProjectReference>
+    <Folder Include="Contracts\" />
+    <Folder Include="Adapter\" />
   </ItemGroup>
 </Project>

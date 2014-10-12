@@ -116,14 +116,14 @@ namespace Math.Base
         /// <param name="moduli">The moduli.</param>
         /// <param name="x">The parameters.</param>
         /// <returns>The solution for the equation posted above.</returns>
-        public static Int32 ChineseRestTerm(this Int32[] moduli, Int32[] x)
+        public static Int32 ChineseRestTerm(this int[] moduli, int[] x)
         {
             if (moduli.Length != x.Length)
             {
                 throw new IndexOutOfRangeException("The index for the moduli and the x do not agree");
             }
-                	
-            var multipliers = new Int32[moduli.Length];
+
+            var multipliers = new int[moduli.Length];
             var result = 0;
             var modulus = ChineseRestTermHelper(moduli, ref multipliers);
             for (var i = 0; i < moduli.Length; i++)
@@ -138,7 +138,7 @@ namespace Math.Base
 
         #region HELPER METHODS
 
-        private static Int32 ChineseRestTermHelper(
+        private static int ChineseRestTermHelper(
             Int32[] moduli,
             ref Int32[] multipliers)
         {

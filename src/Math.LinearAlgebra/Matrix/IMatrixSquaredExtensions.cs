@@ -88,7 +88,10 @@ namespace Math.LinearAlgebra
             var matrixCopy = matrix.Copy();
             for (UInt32 j = 0; j < matrixCopy.RowDimension; j++)
             {
-                var mat = GaussJordanAlgorithmStep(matrixCopy, j, permutationVector);
+                var mat = GaussJordanAlgorithmStep(
+                              matrixCopy,
+                              j,
+                              permutationVector);
                 matrixCopy = mat;					
                 list.Add(mat);
             }
@@ -100,7 +103,7 @@ namespace Math.LinearAlgebra
 
         #region HELPER METHODS
 
-        static IMatrix<T, TField> GaussJordanAlgorithmStep<T, TField>(
+        private static IMatrix<T, TField> GaussJordanAlgorithmStep<T, TField>(
             IMatrix<T, TField> matrix, 
             UInt32 column, 
             IList<UInt32> permutationVector)
@@ -151,16 +154,22 @@ namespace Math.LinearAlgebra
 
             for (UInt32 i = 0; i < n; i++)
             {
-                matrixCopy[i, column] = field.Multiplication(inverseDouble, matrixCopy[i, column]);
+                matrixCopy[i, column] = field.Multiplication(
+                    inverseDouble,
+                    matrixCopy[i, column]);
                 matrixCopy[column, column] = inverseDouble;
                 for (UInt32 k = 0; k < n; k++)
                 {
                     if (k == column)
                         continue;
 
-                    var temp = field.Inverse(field.Multiplication(matrixCopy[i, column], matrixCopy[column, k]));
+                    var temp = field.Inverse(field.Multiplication(
+                                       matrixCopy[i, column],
+                                       matrixCopy[column, k]));
                     matrixCopy[i, k] = field.Addition(matrixCopy[i, k], temp);
-                    matrixCopy[column, k] = field.Multiplication(field.Inverse(inverseDouble), matrixCopy[column, k]);
+                    matrixCopy[column, k] = field.Multiplication(
+                        field.Inverse(inverseDouble),
+                        matrixCopy[column, k]);
                 }
             }
 
