@@ -2,13 +2,13 @@
 // <copyright file="ComplexEuclidianRingTest.cs" company="SuperDevelop">
 //     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  18 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Base.Tests
+namespace GenericMath.Base.Tests
 {
     using System;
     using System.Collections.Generic;

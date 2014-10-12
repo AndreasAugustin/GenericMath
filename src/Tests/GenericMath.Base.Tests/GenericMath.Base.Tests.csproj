@@ -5,8 +5,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Math.Base.Tests</RootNamespace>
-    <AssemblyName>Math.Base.Tests</AssemblyName>
+    <RootNamespace>GenericMath.Base.Tests</RootNamespace>
+    <AssemblyName>GenericMath.Base.Tests</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -17,7 +17,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <DocumentationFile>bin\Debug\Math.Base.Tests.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\GenericMath.Base.Tests.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -72,5 +72,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\GenericMath.Base\GenericMath.Base.csproj">
+      <Project>{32112762-A4EA-4A22-8F40-235A366445A9}</Project>
+      <Name>GenericMath.Base</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

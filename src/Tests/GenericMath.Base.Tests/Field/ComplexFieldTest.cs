@@ -8,12 +8,12 @@
 //   1.0.0  20 / 9 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Base.Tests
+namespace GenericMath.Base.Tests
 {
     using System.Collections.Generic;
     using System.Numerics;
 
-    using Math.Base;
+    using GenericMath.Base;
     using NUnit.Framework;
 
     /// <summary>

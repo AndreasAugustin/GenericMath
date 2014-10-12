@@ -8,7 +8,7 @@
 //   1.0.0  15 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Base.Tests
+namespace GenericMath.Base.Tests
 {
     using System;
 
