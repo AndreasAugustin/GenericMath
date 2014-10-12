@@ -13,8 +13,9 @@ namespace GenericMath.Parser.Tests
     using System;
     using System.Collections.Generic;
 
-    using GenricMath.Parser;
-    using Math.Base;
+    using GenericMath.Base;
+    using GenericMath.LinearAlgebra;
+    using GenericMath.Parser;
     using NUnit.Framework;
 
     /// <summary>
@@ -27,21 +28,25 @@ namespace GenericMath.Parser.Tests
 
         #region fields
 
-        PolynomialParser<Int32, Int32Monoid, Int32Parser> _parser;
+        private PolynomialParser<Int32, Int32Monoid, Int32Parser> _parser;
 
         #endregion
 
         #region properties
 
+        /// <summary>
+        /// Gets the parser.
+        /// </summary>
+        /// <value>The parser.</value>
         public PolynomialParser<Int32, Int32Monoid, Int32Parser> Parser
         {
             get
             {
-                return _parser ?? (_parser = new PolynomialParser<int, Int32Monoid, Int32Parser>());
+                return this._parser ?? (this._parser = new PolynomialParser<int, Int32Monoid, Int32Parser>());
             }
         }
 
-        IEnumerable<TestCaseData> TestCaseSource
+        private IEnumerable<TestCaseData> TestCaseSource
         {
             get
             {
@@ -53,6 +58,11 @@ namespace GenericMath.Parser.Tests
 
         #region methods
 
+        /// <summary>
+        /// Tests the parse method.
+        /// </summary>
+        /// <param name="inputString">Input string.</param>
+        /// <param name="expected">The expected value.</param>
         [Test]
         [Category("PolynomialParser")]
         [TestCaseSource("TestCaseSource")]
@@ -61,7 +71,7 @@ namespace GenericMath.Parser.Tests
             String inputString,
             Int32 expected)
         {
-            var result = Parser.Parse(inputString);
+            var result = this.Parser.Parse(inputString);
 
             Assert.IsNotNull(result);
 

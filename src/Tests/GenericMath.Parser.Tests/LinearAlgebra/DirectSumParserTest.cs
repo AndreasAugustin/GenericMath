@@ -13,9 +13,9 @@ namespace GenericMath.Parser.Tests
     using System;
     using System.Collections.Generic;
 
-    using GenricMath.Parser;
-    using Math.Base;
-    using Math.LinearAlgebra;
+    using GenericMath.Base;
+    using GenericMath.LinearAlgebra;
+    using GenericMath.Parser;
     using NUnit.Framework;
 
     /// <summary>
@@ -28,21 +28,21 @@ namespace GenericMath.Parser.Tests
 
         #region fields
 
-        DirectSumParser<Int32, Int32Monoid, Int32Parser> _parser;
+        private DirectSumParser<Int32, Int32Monoid, Int32Parser> _parser;
 
         #endregion
 
         #region properties
 
-        DirectSumParser<Int32, Int32Monoid, Int32Parser> Parser
+        private DirectSumParser<Int32, Int32Monoid, Int32Parser> Parser
         {
             get
             {
-                return _parser ?? (_parser = new DirectSumParser<Int32, Int32Monoid, Int32Parser>());
+                return this._parser ?? (this._parser = new DirectSumParser<Int32, Int32Monoid, Int32Parser>());
             }
         }
 
-        IEnumerable<TestCaseData> TestDataSet
+        private IEnumerable<TestCaseData> TestDataSet
         {
             get
             {
@@ -58,7 +58,7 @@ namespace GenericMath.Parser.Tests
         /// Parses the valid parse equals expected.
         /// </summary>
         /// <param name="stringInput">String input.</param>
-        /// <param name="expected">Expected.</param>
+        /// <param name="expected">The expected value.</param>
         [Test]
         [Category("DirectSumParserTest")]
         [TestCaseSource("TestDataSet")]
@@ -66,7 +66,7 @@ namespace GenericMath.Parser.Tests
             String stringInput,
             Int32 expected)
         {
-            var result = Parser.Parse(stringInput);
+            var result = this.Parser.Parse(stringInput);
             Assert.IsNotNull(result);
 
             Assert.IsInstanceOf<DirectSum<Int32, Int32Monoid>>(result);

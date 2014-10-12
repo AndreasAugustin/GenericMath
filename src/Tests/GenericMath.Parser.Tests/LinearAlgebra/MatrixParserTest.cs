@@ -1,8 +1,8 @@
 ﻿//  *************************************************************
-// <copyright file="MathParserTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="MatrixParserTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  24 / 9 / 2014 Created the Class
@@ -13,8 +13,9 @@ namespace GenericMath.Parser.Tests
     using System;
     using System.Collections.Generic;
 
-    using Math.Base;
-    using GenricMath.Parser;
+    using GenericMath.Base;
+    using GenericMath.LinearAlgebra;
+    using GenericMath.Parser;
     using NUnit.Framework;
 
     /// <summary>
@@ -27,21 +28,21 @@ namespace GenericMath.Parser.Tests
 
         #region fields
 
-        MatrixParser<Int32, Int32Group, Int32Parser> _parser;
+        private MatrixParser<Int32, Int32Group, Int32Parser> _parser;
 
         #endregion
 
         #region properties
 
-        MatrixParser<Int32, Int32Group, Int32Parser> Parser
+        private MatrixParser<Int32, Int32Group, Int32Parser> Parser
         {
             get
             {
-                return _parser ?? (_parser = new MatrixParser<int, Int32Group, Int32Parser>());
+                return this._parser ?? (this._parser = new MatrixParser<int, Int32Group, Int32Parser>());
             }
         }
 
-        IEnumerable<ITestCaseData> TestCaseSource
+        private IEnumerable<ITestCaseData> TestCaseSource
         {
             get
             {
@@ -57,7 +58,7 @@ namespace GenericMath.Parser.Tests
         /// Parses the valid parse element equals expected.
         /// </summary>
         /// <param name="inputString">Input string.</param>
-        /// <param name="expected">Expected.</param>
+        /// <param name="expected">The expected value.</param>
         [Test]
         [Category("MatrixParser")]
         [TestCaseSource("TestCaseSource")]
@@ -65,7 +66,7 @@ namespace GenericMath.Parser.Tests
             String inputString,
             Int32 expected)
         {
-            var result = Parser.Parse(inputString);
+            var result = this.Parser.Parse(inputString);
 
             Assert.IsNotNull(result);
 

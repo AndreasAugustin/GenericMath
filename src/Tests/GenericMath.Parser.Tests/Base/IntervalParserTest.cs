@@ -1,8 +1,8 @@
 ﻿//  *************************************************************
-// <copyright file="IntervalParserTest.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="IntervalParserTest.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  24 / 9 / 2014 Created the Class
@@ -13,8 +13,8 @@ namespace GenericMath.Parser.Tests
     using System;
     using System.Collections.Generic;
 
-    using Math.Base;
-    using GenricMath.Parser;
+    using GenericMath.Base;
+    using GenericMath.Parser;
     using NUnit.Framework;
 
     /// <summary>
@@ -27,21 +27,21 @@ namespace GenericMath.Parser.Tests
 
         #region fields
 
-        IntervalParser<Int32, Int32Monoid, Int32Parser> _parser;
+        private IntervalParser<Int32, Int32Monoid, Int32Parser> _parser;
 
         #endregion
 
         #region properties
 
-        IntervalParser<Int32, Int32Monoid, Int32Parser> Parser
+        private IntervalParser<Int32, Int32Monoid, Int32Parser> Parser
         {
             get
             {
-                return _parser ?? (_parser = new IntervalParser<int, Int32Monoid, Int32Parser>());
+                return this._parser ?? (this._parser = new IntervalParser<int, Int32Monoid, Int32Parser>());
             }
         }
 
-        IEnumerable<TestCaseData> TestCaseSource
+        private IEnumerable<TestCaseData> TestCaseSource
         {
             get
             {
@@ -54,7 +54,7 @@ namespace GenericMath.Parser.Tests
         #region methods
 
         /// <summary>
-        /// Parses the valid parse minimum and max equals expcted.
+        /// Parses the valid parse minimum and max equals expected.
         /// </summary>
         /// <param name="inputString">Input string.</param>
         /// <param name="minElement">Minimum element.</param>
@@ -63,13 +63,13 @@ namespace GenericMath.Parser.Tests
         [Category("IntervalParser")]
         [Test]
         [TestCaseSource("TestCaseSource")]
-        public void Parse_ValidParse_MinAndMaxEqualsExpcted(
+        public void Parse_ValidParse_MinAndMaxEqualsExpected(
             String inputString, 
             Int32 minElement, 
             Int32 maxElement, 
             Int32 elementOfInterval)
         {
-            var result = Parser.Parse(inputString);
+            var result = this.Parser.Parse(inputString);
 
             Assert.IsNotNull(result);
 
