@@ -1,14 +1,14 @@
 ﻿//  *************************************************************
-// <copyright file="DoubleRing.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="DoubleRing.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  31 / 7 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Base
+namespace GenericMath.Base
 {
     using System;
 
@@ -63,9 +63,14 @@ namespace Math.Base
         /// </summary>
         /// <returns>A string that represents the current object.</returns>
         /// <filterpriority>2</filterpriority>
-        public override string ToString()
+        public override String ToString()
         {
-            return String.Format("[{0}: Zero={1}, One={2} Generic argument type: {3}]", this.GetType().Name, this.Zero, this.One, typeof(Double));
+            return String.Format(
+                "[{0}: Zero={1}, One={2} Generic argument type: {3}]",
+                this.GetType().Name,
+                this.Zero,
+                this.One,
+                typeof(Double));
         }
 
         #endregion

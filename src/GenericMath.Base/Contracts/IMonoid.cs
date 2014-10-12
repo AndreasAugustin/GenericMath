@@ -8,7 +8,7 @@
 //   1.0.0  22 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Base
+namespace GenericMath.Base
 {
     /// <summary>
     /// Interface for creating monoid structures.

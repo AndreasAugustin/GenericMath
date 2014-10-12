@@ -1,4 +1,4 @@
-﻿//  *************************************************************
+﻿// *************************************************************
 // <copyright file="ComplexField.cs" company="SuperDevelop>
 //     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
@@ -8,7 +8,7 @@
 //   1.0.0  20 / 9 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Base
+namespace GenericMath.Base
 {
     using System;
     using System.Numerics;

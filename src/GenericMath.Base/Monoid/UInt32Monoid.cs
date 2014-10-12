@@ -1,14 +1,14 @@
 ﻿//  *************************************************************
 // <copyright file="UInt32Monoid.cs" company="SuperDevelop">
-//     Copyright (c)  2014 andy. All rights reserved.
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  22 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Base
+namespace GenericMath.Base
 {
     using System;
 
@@ -23,11 +23,11 @@ namespace Math.Base
         /// Gets the zero element of the group.
         /// </summary>
         /// <value>The zero.</value>
-        public uint Zero
+        public UInt32 Zero
         {
             get
             {
-                return uint.MinValue;
+                return UInt32.MinValue;
             }
         }
 
@@ -37,7 +37,7 @@ namespace Math.Base
         /// <param name="leftElement">Left element.</param>
         /// <param name="rightElement">Right element.</param>
         /// <returns>The addition of the leftElement and rightElement (leftElement + rightElement)</returns>
-        public uint Addition(uint leftElement, uint rightElement)
+        public UInt32 Addition(UInt32 leftElement, UInt32 rightElement)
         {
             return leftElement + rightElement;
         }

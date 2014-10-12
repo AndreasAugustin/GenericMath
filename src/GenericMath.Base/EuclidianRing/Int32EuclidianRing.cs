@@ -8,7 +8,7 @@
 //   1.0.0  15 / 7 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Base
+namespace GenericMath.Base
 {
     using System;
 
@@ -26,7 +26,7 @@ namespace Math.Base
         /// </summary>
         /// <param name="element">The element.</param>
         /// <returns>The norm of element.</returns>
-        public double Norm(int element)
+        public Double Norm(Int32 element)
         {
             return Math.Abs(element);
         }
@@ -44,11 +44,11 @@ namespace Math.Base
         /// <filterpriority>2</filterpriority>
         public override string ToString()
         {
-            return string.Format(
+            return String.Format(
                 "[{0}: Zero={1}, Generic argument type: {2}]",
                 this.GetType().Name,
                 this.Zero,
-                typeof(int));
+                typeof(Int32));
         }
 
         #endregion

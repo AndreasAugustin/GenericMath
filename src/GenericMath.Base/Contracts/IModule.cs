@@ -1,14 +1,14 @@
 ﻿//  *************************************************************
 // <copyright file="IModule.cs" company="SuperDevelop">
-//     Copyright (c)  2014 andy. All rights reserved.
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  31 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Base
+namespace GenericMath.Base
 {
     /// <summary>
     /// Interface for the module structure.

@@ -2,14 +2,15 @@
 // <copyright file="IEuclidianRing.cs" company="SuperDevelop">
 //     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0 15/7/ 2014 Created the Class
 // *************************************************************
 
-namespace Math.Base
+namespace GenericMath.Base
 {
+    using System;
 
     /// <summary>
     /// Interface for the calculators.
@@ -24,7 +25,7 @@ namespace Math.Base
         /// </summary>
         /// <param name="element">The element.</param>
         /// <returns>The norm of element.</returns>
-        double Norm(T element);
+        Double Norm(T element);
 
         #endregion
     }

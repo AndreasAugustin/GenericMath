@@ -1,14 +1,14 @@
 ﻿//  *************************************************************
 // <copyright file="DoubleMonoid.cs" company="SuperDevelop">
-//     Copyright (c)  2014 andy. All rights reserved.
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  22 / 8 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Base
+namespace GenericMath.Base
 {
     using System;
 
@@ -25,7 +25,7 @@ namespace Math.Base
         /// Gets the zero element of the group.
         /// </summary>
         /// <value>The zero.</value>
-        public double Zero
+        public Double Zero
         {
             get
             {
@@ -43,7 +43,7 @@ namespace Math.Base
         /// <param name="leftElement">Left element.</param>
         /// <param name="rightElement">Right element.</param>
         /// <returns>The addition of the leftElement and rightElement (leftElement + rightElement)</returns>
-        public double Addition(double leftElement, double rightElement)
+        public Double Addition(Double leftElement, Double rightElement)
         {
             return leftElement + rightElement;
         }
@@ -58,12 +58,12 @@ namespace Math.Base
         /// Returns a <see cref="System.String"/> that represents the current <see cref="DoubleGroup"/>.
         /// </summary>
         /// <returns>A <see cref="System.String"/> that represents the current <see cref="DoubleGroup"/>.</returns>
-        public override string ToString()
+        public override String ToString()
         {
-            return string.Format(
+            return String.Format(
                 "[{0}: Zero={1}, Generic argument type: {2}]",
                 this.GetType().Name,
-                Zero,
+                this.Zero,
                 typeof(double));
         }
 

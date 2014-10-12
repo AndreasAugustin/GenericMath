@@ -2,20 +2,20 @@
 // <copyright file="DoubleEuclidianRing.cs" company="SuperDevelop">
 //     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0 15/7/ 2014 Created the Class
 // *************************************************************
 
-namespace Math.Base
+namespace GenericMath.Base
 {
     using System;
 
     /// <summary>
     /// Double calculator.
     /// </summary>
-    public class DoubleEuclidianRing : DoubleRing, IEuclidianRing<double>
+    public class DoubleEuclidianRing : DoubleRing, IEuclidianRing<Double>
     {
         #region methods
 
@@ -26,7 +26,7 @@ namespace Math.Base
         /// </summary>
         /// <param name="element">The element.</param>
         /// <returns>The norm of element.</returns>
-        public double Norm(double element)
+        public Double Norm(Double element)
         {
             return Math.Abs(element);
         }
@@ -42,13 +42,13 @@ namespace Math.Base
         /// </summary>
         /// <returns>A string that represents the current object.</returns>
         /// <filterpriority>2</filterpriority>
-        public override string ToString()
+        public override String ToString()
         {
-            return string.Format(
+            return String.Format(
                 "[{0}: Zero={1}, Generic argument type: {2}]",
                 this.GetType().Name,
                 this.Zero,
-                typeof(double));
+                typeof(Double));
         }
 
         #endregion

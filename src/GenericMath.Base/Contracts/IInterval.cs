@@ -1,18 +1,16 @@
 ﻿//  *************************************************************
 // <copyright file="IInterval.cs" company="SuperDevelop">
-//     Copyright (c)  2014 andy. All rights reserved.
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  22 / 9 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Base
+namespace GenericMath.Base
 {
     using System;
-
-    using Math.Base;
 
     /// <summary>
     /// Interface for defining intervals for a set T.
@@ -40,6 +38,6 @@ namespace Math.Base
         /// </summary>
         /// <returns><c>true</c> if the element lies in the interval; otherwise, <c>false</c>.</returns>
         /// <param name="elementToCheck">Element to check.</param>
-        bool IsinInterval(T elementToCheck);
+        Boolean IsinInterval(T elementToCheck);
     }
 }

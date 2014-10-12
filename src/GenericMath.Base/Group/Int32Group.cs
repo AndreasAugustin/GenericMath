@@ -1,14 +1,14 @@
 ﻿//  *************************************************************
-// <copyright file="Int32Group.cs" company="${Company}">
-//     Copyright (c)  2014 andy. All rights reserved.
+// <copyright file="Int32Group.cs" company="SuperDevelop">
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  31 / 7 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.Base
+namespace GenericMath.Base
 {
     using System;
 
@@ -43,7 +43,11 @@ namespace Math.Base
         /// <returns>A <see cref="System.String"/> that represents the current <see cref="Int32Group"/>.</returns>
         public override String ToString()
         {
-            return String.Format("[{0}: Zero={1}, Generic argument type: {2}]", this.GetType().Name, this.Zero, typeof(Int32));
+            return String.Format(
+                "[{0}: Zero={1}, Generic argument type: {2}]",
+                this.GetType().Name,
+                this.Zero,
+                typeof(Int32));
         }
 
         #endregion
