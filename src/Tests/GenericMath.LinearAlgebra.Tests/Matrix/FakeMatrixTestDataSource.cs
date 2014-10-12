@@ -2,19 +2,19 @@
 // <copyright file="FakeMatrixTestDataSource.cs" company="SuperDevelop">
 //     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  18 / 9 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra.Tests
+namespace GenericMath.LinearAlgebra.Tests
 {
     using System;
     using System.Collections.Generic;
     using System.Numerics;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Data source for the matrix test classes.
@@ -40,7 +40,7 @@ namespace Math.LinearAlgebra.Tests
             get
             {
                 return this._doubleList ?? (
-                    this._doubleList = new List<List<Double>>{ new List<Double>(){ 3.678, 4.78 }, new List<Double>{ 2.3, 2.6 } });
+                    this._doubleList = new List<List<Double>> { new List<Double> { 3.678, 4.78 }, new List<Double> { 2.3, 2.6 } });
             }
         }
 
@@ -55,9 +55,9 @@ namespace Math.LinearAlgebra.Tests
                 return this._complexList ?? (this._complexList = 
                     new List<List<Complex>>
                 { 
-                    new List<Complex>{ new Complex(1, 2), new Complex(4, 56) },
-                    new List<Complex>{ new Complex(3, -5), new Complex(-3, -1) },
-                    new List<Complex>{ new Complex(-3, -5), new Complex(3, 1) }
+                    new List<Complex> { new Complex(1, 2), new Complex(4, 56) },
+                    new List<Complex> { new Complex(3, -5), new Complex(-3, -1) },
+                    new List<Complex> { new Complex(-3, -5), new Complex(3, 1) }
                 });
             }
         }
@@ -73,7 +73,7 @@ namespace Math.LinearAlgebra.Tests
                 return this._int32List ?? (
                     this._int32List = new List<List<Int32>>
                 { 
-                    new List<Int32>{ 2, -2, 5 }, new List<Int32>{ -2, 2, 15 }, new List<Int32>{ 2, 20, 5 }
+                    new List<Int32> { 2, -2, 5 }, new List<Int32> { -2, 2, 15 }, new List<Int32> { 2, 20, 5 }
                 });
             }
         }

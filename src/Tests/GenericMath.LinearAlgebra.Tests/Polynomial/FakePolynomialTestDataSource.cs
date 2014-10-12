@@ -2,19 +2,19 @@
 // <copyright file="FakePolynomialTestDataSource.cs" company="SuperDevelop">
 //     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
-// <author> andy</author>
+// <author>andy</author>
 // <email>andreas.augustinba@gmx.de</email>
 // *************************************************************
 //   1.0.0  16 / 9 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra.Tests
+namespace GenericMath.LinearAlgebra.Tests
 {
     using System;
     using System.Collections.Generic;
     using System.Numerics;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// Fake polynomial test data source.
@@ -39,7 +39,7 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                return this._doubleList ?? (this._doubleList = new List<Double>{ 3.678 });
+                return this._doubleList ?? (this._doubleList = new List<Double> { 3.678 });
             }
         }
 
@@ -67,7 +67,7 @@ namespace Math.LinearAlgebra.Tests
         {
             get
             {
-                return this._int32List ?? (this._int32List = new List<int>{ 2, -2 });
+                return this._int32List ?? (this._int32List = new List<Int32> { 2, -2 });
             }
         }
 
@@ -75,16 +75,16 @@ namespace Math.LinearAlgebra.Tests
         /// Gets the group integer I polynomial source.
         /// </summary>
         /// <value>The group integer polynomial source.</value>
-        public IPolynomial<int, Int32Group> GroupInt32IPolynomialSource
+        public IPolynomial<Int32, Int32Group> GroupInt32IPolynomialSource
         {
             get
             {               
-                var degree = (uint)this.Int32List.Count - 1;
+                var degree = (UInt32)this.Int32List.Count - 1;
                 var poly = new Polynomial<int, Int32Group>(degree);
 
                 for (uint i = 0; i < degree + 1; i++)
                 {
-                    poly[i] = this.Int32List[(int)i];
+                    poly[i] = this.Int32List[(Int32)i];
                 }
 
                 return poly;

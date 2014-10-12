@@ -8,13 +8,13 @@
 //   1.0.0  20 / 9 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra.Tests
+namespace GenericMath.LinearAlgebra.Tests
 {
     using System;
     using System.Collections.Generic;
     using System.Numerics;
 
-    using Math.Base;
+    using GenericMath.Base;
 
     /// <summary>
     /// TestData Source for squared matrices.
@@ -41,7 +41,7 @@ namespace Math.LinearAlgebra.Tests
             get
             {
                 return this._doubleList ?? (
-                    this._doubleList = new List<List<Double>>{ new List<Double>{ 3.678, 4.78 }, new List<Double>{ 2.3, 2.6 } });
+                    this._doubleList = new List<List<Double>> { new List<Double> { 3.678, 4.78 }, new List<Double> { 2.3, 2.6 } });
             }
         }
 
@@ -56,7 +56,7 @@ namespace Math.LinearAlgebra.Tests
                 return this._doubleList2 ?? (
                     this._doubleList2 = new List<List<Double>>
                 { 
-                    new List<Double>{ 2.0, -2.0, 5.0 }, new List<Double>{ -2.0, 2.0, 15.0 }, new List<Double>{ 2.0, 20.0, 5.0 }
+                    new List<Double> { 2.0, -2.0, 5.0 }, new List<Double> { -2.0, 2.0, 15.0 }, new List<Double> { 2.0, 20.0, 5.0 }
                 });
             }
         }
@@ -105,7 +105,7 @@ namespace Math.LinearAlgebra.Tests
                 return this._int32List ?? (
                     this._int32List = new List<List<Int32>>
                 { 
-                    new List<Int32>{ 2, -2, 5 }, new List<Int32>{ -2, 2, 15 }, new List<Int32>{ 2, 20, 5 }
+                    new List<Int32> { 2, -2, 5 }, new List<Int32> { -2, 2, 15 }, new List<Int32> { 2, 20, 5 }
                 });
             }
         }

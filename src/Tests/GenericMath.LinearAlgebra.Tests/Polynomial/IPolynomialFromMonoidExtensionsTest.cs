@@ -8,13 +8,13 @@
 //   1.0.0  16 / 9 / 2014 Created the Class
 // *************************************************************
 
-namespace Math.LinearAlgebra.Tests
+namespace GenericMath.LinearAlgebra.Tests
 {
     using System;
     using System.Collections.Generic;
     using System.Numerics;
    
-    using Math.Base;
+    using GenericMath.Base;
     using NUnit.Framework;
 
     /// <summary>
