@@ -11,10 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.LinearAlgebra.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Analysis.Tests", "Tests\GenericMath.Analysis.Tests\GenericMath.Analysis.Tests.csproj", "{57422D4B-3791-4023-AA99-F236C9E68476}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Parser", "GenricMath.Parser\GenericMath.Parser.csproj", "{B9684EF5-50EB-471D-B899-9F0A231EB9A2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Console", "GenericMath.Console\GenericMath.Console.csproj", "{A543E822-202D-4FD8-84BC-37C8F9F969A5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Common", "GenericMath.Common\GenericMath.Common.csproj", "{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Analysis", "GenericMath.Analysis\GenericMath.Analysis.csproj", "{1974448B-2DDF-4F3A-A044-8D27B97ACBEE}"
@@ -22,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Base", "GenericMath.Base\GenericMath.Base.csproj", "{32112762-A4EA-4A22-8F40-235A366445A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.LinearAlgebra", "GenericMath.LinearAlgebra\GenericMath.LinearAlgebra.csproj", "{FA62DC06-710E-4615-9E6F-C5E77D5B3202}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Parser", "GenericMath.Parser\GenericMath.Parser.csproj", "{B9684EF5-50EB-471D-B899-9F0A231EB9A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,10 +51,6 @@ Global
 		{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A543E822-202D-4FD8-84BC-37C8F9F969A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A543E822-202D-4FD8-84BC-37C8F9F969A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A543E822-202D-4FD8-84BC-37C8F9F969A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A543E822-202D-4FD8-84BC-37C8F9F969A5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -77,6 +71,6 @@ Global
 		{57422D4B-3791-4023-AA99-F236C9E68476} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = GenericMath.Console\GenericMath.Console.csproj
+		StartupItem = Tests\GenericMath.Base.Tests\GenericMath.Base.Tests.csproj
 	EndGlobalSection
 EndGlobal

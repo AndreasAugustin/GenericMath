@@ -3,6 +3,7 @@
     <CollectionProperty Name="RecognizedWords">
       <Value>monoid</Value>
       <Value>monoids</Value>
+	  <Value>gcd</Value>
     </CollectionProperty>
     <BooleanProperty Name="AutoCheckForUpdate">True</BooleanProperty>
   </GlobalSettings>
