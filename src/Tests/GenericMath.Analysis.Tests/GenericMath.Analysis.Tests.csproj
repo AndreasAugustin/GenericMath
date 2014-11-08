@@ -6,7 +6,7 @@
     <ProjectGuid>{57422D4B-3791-4023-AA99-F236C9E68476}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>GenericMath.Analysis.Tests</RootNamespace>
-    <AssemblyName>GenericMath.Analyisis.Tests</AssemblyName>
+    <AssemblyName>GenericMath.Analysis.Tests</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -17,7 +17,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <DocumentationFile>bin\Debug\GenericMath.Analyisis.Tests.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\GenericMath.Analysis.Tests.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>

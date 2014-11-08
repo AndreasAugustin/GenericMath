@@ -1,12 +1,11 @@
 ﻿//  *************************************************************
-// <copyright file="TemplateFieldTest.cs" company="SuperDevelop">
-//     Copyright (c) 2014 andy. All rights reserved.
+// <copyright file="TemplateFieldTest.cs" company="None">
+//     Copyright (c) 2014 andy.  All rights reserved.
 // </copyright>
+// <license>MIT Licence</license>
 // <author>andy</author>
-// <email>andreas.augustinba@gmx.de</email>
+// <email>andy.augustin@t-online.de</email>
 // *************************************************************
-//   1.0.0  17 / 8 / 2014 Created the Class
-// ************************************************************
 
 namespace GenericMath.Base.Tests
 {
