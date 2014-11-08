@@ -59,6 +59,7 @@
     <Compile Include="Exceptions\LinearAlgebraException.cs" />
     <Compile Include="Exceptions\LinearAlgebraExceptionType.cs" />
     <Compile Include="Matrix\IMatrixSquaredExtensions.cs" />
+    <Compile Include="Matrix\IMatrixFromEuclidianRingExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
 // <copyright file="NLogAdapter.cs" company="None">
-//     Copyright (c) 2014 andy.  All rights reserved.
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <license>MIT Licence</license>
 // <author>andy</author>
@@ -27,7 +27,7 @@ namespace GenericMath.Common
         #region ctors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DocToMarkdown.Common.NLogAdapter"/> class.
+        /// Initializes a new instance of the <see cref="NLogAdapter"/> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
         public NLogAdapter(Logger logger)

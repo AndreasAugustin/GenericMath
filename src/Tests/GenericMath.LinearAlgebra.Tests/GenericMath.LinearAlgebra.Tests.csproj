@@ -64,6 +64,8 @@
     <Compile Include="Matrix\IMatrixFromMonoidExtensionsTest.cs" />
     <Compile Include="Matrix\IMatrixSquaredExtensionsTest.cs" />
     <Compile Include="Matrix\FakeMatrixSquaredTestDataSource.cs" />
+    <Compile Include="Matrix\IMatrixFromEuclidianRingExtensionsTest.cs" />
+    <Compile Include="Matrix\FakeMatrixEuclidianRingTestDataSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\GenericMath.Base\GenericMath.Base.csproj">

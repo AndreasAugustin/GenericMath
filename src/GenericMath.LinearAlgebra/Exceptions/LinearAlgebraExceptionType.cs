@@ -33,5 +33,17 @@ namespace GenericMath.LinearAlgebra
         /// </summary>
         [Description("The index is equal to the max unsigned integer value")]
         IndexEqualsMaxUnsignedInteger = 2,
+
+        /// <summary>
+        /// The matrix is singular.
+        /// </summary>
+        [Description("The matrix is singular")]
+        MatrixIsSingular = 3,
+
+        /// <summary>
+        /// The matrix is not squared.
+        /// </summary>
+        [Description("The matrix is not squared")]
+        MatrixIsNotSquared
     }
 }

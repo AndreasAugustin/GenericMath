@@ -132,7 +132,7 @@ namespace GenericMath.LinearAlgebra
         /// Returns a string that represents the current object.
         /// </summary>
         /// <returns>A string that represents the current object.</returns>
-        public override string ToString()
+        public override String ToString()
         {
             var str = new StringBuilder(String.Format(
                               "Rows: {0}, Columns: {1} {2}",

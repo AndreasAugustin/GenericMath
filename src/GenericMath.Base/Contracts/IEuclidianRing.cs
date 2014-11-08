@@ -17,7 +17,7 @@ namespace GenericMath.Base
     /// <typeparam name="T">Refers to the object for the calculations.</typeparam>
     public interface IEuclidianRing<T> : IRing<T>
     {
-        #region METHODS
+        #region methods
 
         /// <summary>
         /// Calculates the norm of element.

@@ -38,21 +38,6 @@ namespace GenericMath.LinearAlgebra.Tests
             }
         }
 
-        private IEnumerable<TestCaseData> GaussJordanSource
-        {
-            get
-            {
-                yield return new TestCaseData(
-                    new Double(),
-                    new DoubleField(),
-                    this.MockDataSource.FieldDoubleSource2);
-                yield return new TestCaseData(
-                    new Double(),
-                    new DoubleField(),
-                    this.MockDataSource.FieldDoubleSource);
-            }
-        }
-
         private IEnumerable<TestCaseData> TraceSource
         {
             get
@@ -101,35 +86,6 @@ namespace GenericMath.LinearAlgebra.Tests
             }
 
             Assert.AreEqual(expected, result);
-        }
-
-        /// <summary>
-        /// Tests the GaussJordanAlgorithm method.
-        /// </summary>
-        /// <param name="hack1">Hack to get first generic parameter.</param>
-        /// <param name="hack2">Hack to get second generic parameter.</param>
-        /// <param name="matrix">The matrix.</param>
-        /// <typeparam name="T">The underlying set.</typeparam>
-        /// <typeparam name="TField">The underlying field.</typeparam>
-        [Test]
-        [Category("MatrixSquaredExtensionTest")]
-        [TestCaseSource("GaussJordanSource")]
-        [Ignore]
-        public void GaussJordanAlgorithm_Run_IsNotNull<T, TField>(
-            T hack1,
-            TField hack2,
-            IMatrix<T, TField> matrix)
-            where T : IComparable
-            where TField : IField<T>, new()
-        {
-            // TODO GaussJordanAlgorithm (TEST) the arithmetic in the calculation is not right
-            // TODO GaussJordanAlgorithm (TEST) test needs to be written
-            var resultList = matrix.GaussJordanAlgorithmWithSteps();
-
-            Assert.IsNotNull(resultList);
-
-            throw new ArithmeticException("The calculation is not correct yet");
-            //// Check if the under triangle has zero values
         }
 
         #endregion

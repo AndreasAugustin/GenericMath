@@ -232,6 +232,104 @@ namespace GenericMath.LinearAlgebra.Tests
             }
         }
 
+        /// <summary>
+        /// Tests the matrix swap rows extension method.
+        /// </summary>
+        /// <param name="hack1">The frist Hack1.</param>
+        /// <param name="hack2">The second Hack2.</param>
+        /// <param name="matrix">The matrix.</param>
+        /// <typeparam name="T">The underlying set.</typeparam>
+        /// <typeparam name="TStruct">The underlying structure.</typeparam>
+        [Category("MatrixExtensionTest")]
+        [Test]
+        [TestCaseSource("TransposeDataSource")]
+        public void SwapRows_CheckResultWithGivenParameter_EqualsExpected<T, TStruct>(
+            T hack1,
+            TStruct hack2, 
+            IMatrix<T, TStruct> matrix)
+            where TStruct : IStructure<T>, new()
+        {
+            const UInt32 FirstRowIndex = 0;
+            const UInt32 SecondRowIndex = 1;
+            var result = matrix.SwapRows(FirstRowIndex, SecondRowIndex);
+
+            Assert.IsNotNull(result);
+            Assert.IsFalse(Object.ReferenceEquals(matrix, result));
+
+            Assert.AreEqual(matrix.RowDimension, result.RowDimension);
+            Assert.AreEqual(matrix.ColumnDimension, result.ColumnDimension);
+
+            for (UInt32 i = 0; i < matrix.RowDimension; i++)
+            {
+                for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
+                {
+                    if (i != FirstRowIndex && i != SecondRowIndex)
+                    {
+                        Assert.AreEqual(matrix[i, j], result[i, j]);
+                    }
+
+                    if (i == FirstRowIndex)
+                    {
+                        Assert.AreEqual(matrix[SecondRowIndex, j], result[i, j]);
+                    }
+
+                    if (i == SecondRowIndex)
+                    {
+                        Assert.AreEqual(matrix[FirstRowIndex, j], result[i, j]);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Tests the matrix swap columns extension method.
+        /// </summary>
+        /// <param name="hack1">The frist Hack1.</param>
+        /// <param name="hack2">The second Hack2.</param>
+        /// <param name="matrix">The matrix.</param>
+        /// <typeparam name="T">The underlying set.</typeparam>
+        /// <typeparam name="TStruct">The underlying structure.</typeparam>
+        [Category("MatrixExtensionTest")]
+        [Test]
+        [TestCaseSource("TransposeDataSource")]
+        public void SwapColumns_CheckResultWithGivenParameter_EqualsExpected<T, TStruct>(
+            T hack1,
+            TStruct hack2, 
+            IMatrix<T, TStruct> matrix)
+            where TStruct : IStructure<T>, new()
+        {
+            const UInt32 FirstColumnIndex = 0;
+            const UInt32 SecondColumnIndex = 1;
+            var result = matrix.SwapColumns(FirstColumnIndex, SecondColumnIndex);
+
+            Assert.IsNotNull(result);
+            Assert.IsFalse(Object.ReferenceEquals(matrix, result));
+
+            Assert.AreEqual(matrix.RowDimension, result.RowDimension);
+            Assert.AreEqual(matrix.ColumnDimension, result.ColumnDimension);
+
+            for (UInt32 i = 0; i < matrix.RowDimension; i++)
+            {
+                for (UInt32 j = 0; j < matrix.ColumnDimension; j++)
+                {
+                    if (i != FirstColumnIndex && i != SecondColumnIndex)
+                    {
+                        Assert.AreEqual(matrix[i, j], result[i, j]);
+                    }
+
+                    if (i == FirstColumnIndex)
+                    {
+                        Assert.AreEqual(matrix[SecondColumnIndex, j], result[i, j]);
+                    }
+
+                    if (i == SecondColumnIndex)
+                    {
+                        Assert.AreEqual(matrix[FirstColumnIndex, j], result[i, j]);
+                    }
+                }
+            }
+        }
+
         #endregion
     }
 }
