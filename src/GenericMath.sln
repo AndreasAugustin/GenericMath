@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.LinearAlgebra.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Analysis.Tests", "Tests\GenericMath.Analysis.Tests\GenericMath.Analysis.Tests.csproj", "{57422D4B-3791-4023-AA99-F236C9E68476}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Common.Tests", "Tests\GenericMath.Common.Tests\GenericMath.Common.Tests.csproj", "{109106CD-4AB0-49BE-B8CB-7DB7524632FB}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Common", "GenericMath.Common\GenericMath.Common.csproj", "{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Analysis", "GenericMath.Analysis\GenericMath.Analysis.csproj", "{1974448B-2DDF-4F3A-A044-8D27B97ACBEE}"
@@ -27,6 +29,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{109106CD-4AB0-49BE-B8CB-7DB7524632FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{109106CD-4AB0-49BE-B8CB-7DB7524632FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{109106CD-4AB0-49BE-B8CB-7DB7524632FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{109106CD-4AB0-49BE-B8CB-7DB7524632FB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{11DE12D6-4F86-4696-A408-1FAED8F2EE88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{11DE12D6-4F86-4696-A408-1FAED8F2EE88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11DE12D6-4F86-4696-A408-1FAED8F2EE88}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -69,6 +75,7 @@ Global
 		{11DE12D6-4F86-4696-A408-1FAED8F2EE88} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
 		{577920B2-9289-4CC9-8F56-291E9F436495} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
 		{57422D4B-3791-4023-AA99-F236C9E68476} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
+		{109106CD-4AB0-49BE-B8CB-7DB7524632FB} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Tests\GenericMath.Base.Tests\GenericMath.Base.Tests.csproj
