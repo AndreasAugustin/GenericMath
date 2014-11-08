@@ -42,7 +42,7 @@ namespace GenericMath.Parser
         /// <param name="inputString">String input.</param>
         /// <returns>A new direct sum with the specified values in the string.</returns>
         /// <exception cref="NotSupportedException">Thrown if the string is not valid to parse.</exception>
-        public DirectSum<T, TStruct> Parse(string inputString)
+        public DirectSum<T, TStruct> Parse(String inputString)
         {
             var matchArray = this._regex.Split(inputString, ",");
 
