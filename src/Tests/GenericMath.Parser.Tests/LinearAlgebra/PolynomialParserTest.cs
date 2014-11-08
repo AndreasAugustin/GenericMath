@@ -57,6 +57,9 @@ namespace GenericMath.Parser.Tests
         /// <param name = "parser">The parser.</param>
         /// <param name="stringInput">The input.</param>
         /// <param name="expected">The expected direct sum.</param>
+        /// <typeparam name="TSet">The underlying set.</typeparam>
+        /// <typeparam name="TStruct">The underlying structure of the set.</typeparam>
+        /// <typeparam name="TParser">The parser for the underlying set.</typeparam>
         [Test]
         [Category("DirectSumParserTest")]
         [TestCaseSource("TestDataSet")]

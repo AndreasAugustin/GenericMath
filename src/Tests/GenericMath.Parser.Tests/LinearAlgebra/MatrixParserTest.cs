@@ -57,9 +57,12 @@ namespace GenericMath.Parser.Tests
         /// <param name = "hack1">The first hack.</param>
         /// <param name = "hack2">The second hack.</param>
         /// <param name = "hack3">The third hack.</param>
-        /// <param name = "parser"></param>
+        /// <param name = "parser">The parser.</param>
         /// <param name="inputString">The input string.</param>
         /// <param name="expected">The expected matrix.</param>
+        /// <typeparam name="TSet">The underlying set.</typeparam>
+        /// <typeparam name="TStruct">The underlying structure of the set.</typeparam>
+        /// <typeparam name="TParser">The parser for the underlying set.</typeparam>
         [Test]
         [Category("MatrixParser")]
         [TestCaseSource("TestCaseSource")]

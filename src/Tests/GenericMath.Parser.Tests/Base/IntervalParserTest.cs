@@ -22,29 +22,21 @@ namespace GenericMath.Parser.Tests
     [TestFixture]
     public class IntervalParserTest
     {
-        // TODO abstract IntervalParser test
-
-        #region fields
-
-        private IntervalParser<Int32, Int32Monoid, Int32Parser> _parser;
-
-        #endregion
-
         #region properties
-
-        private IntervalParser<Int32, Int32Monoid, Int32Parser> Parser
-        {
-            get
-            {
-                return this._parser ?? (this._parser = new IntervalParser<int, Int32Monoid, Int32Parser>());
-            }
-        }
 
         private IEnumerable<TestCaseData> TestCaseSource
         {
             get
             {
-                yield return new TestCaseData("1:3", 1, 3, 2);
+                var expectedInt32GroupInterval = new Interval<Int32, Int32Group>(1, 3);
+
+                yield return new TestCaseData(
+                    "1:3",
+                    0,
+                    new Int32Group(),
+                    new Int32Parser(),
+                    new IntervalParser<Int32, Int32Group, Int32Parser>(),
+                    expectedInt32GroupInterval);
             }
         }
 
@@ -56,26 +48,33 @@ namespace GenericMath.Parser.Tests
         /// Parses the valid parse minimum and max equals expected.
         /// </summary>
         /// <param name="inputString">Input string.</param>
-        /// <param name="minElement">Minimum element.</param>
-        /// <param name="maxElement">Max element.</param>
-        /// <param name="elementOfInterval">Element of interval.</param>
+        /// <param name="hack1">First hack.</param>
+        /// <param name="hack2">Second hack.</param>
+        /// <param name="hack3">Third hack.</param>
+        /// <param name="parser">The parser.</param>
+        /// <param name="expected">The expected.</param>
+        /// <typeparam name="TSet">The underlying set.</typeparam>
+        /// <typeparam name="TStruct">The underlying structure of the set.</typeparam>
+        /// <typeparam name="TParser">The parser for the underlying set.</typeparam>
         [Category("IntervalParser")]
         [Test]
         [TestCaseSource("TestCaseSource")]
-        public void Parse_ValidParse_MinAndMaxEqualsExpected(
+        public void Parse_ValidParse_ResultEqualsExpected<TSet, TStruct, TParser>(
             String inputString, 
-            Int32 minElement, 
-            Int32 maxElement, 
-            Int32 elementOfInterval)
+            TSet hack1,
+            TStruct hack2,
+            TParser hack3,
+            IntervalParser<TSet, TStruct, TParser> parser,
+            Interval<TSet, TStruct> expected)
+            where TSet : IComparable
+            where TStruct : IStructure<TSet>, new()
+            where TParser : IParser<TSet>, new()
         {
-            var result = this.Parser.Parse(inputString);
+            var result = parser.Parse(inputString);
 
             Assert.IsNotNull(result);
 
-            Assert.AreEqual(minElement, result.MinElement);
-            Assert.AreEqual(maxElement, result.MaxElement);
-
-            Assert.IsTrue(result.IsinInterval(elementOfInterval));
+            Assert.AreEqual(expected, result);
         }
 
         #endregion
