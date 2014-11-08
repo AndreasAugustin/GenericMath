@@ -1,11 +1,10 @@
 ﻿//  *************************************************************
-// <copyright file="AssemblyInfo.cs" company="SuperDevelop">
-//     Copyright (c) 2014 andy. All rights reserved.
+// <copyright file="AssemblyInfo.cs" company="None">
+//     Copyright (c) 2014 andy.  All rights reserved.
 // </copyright>
+// <license>MIT Licence</license>
 // <author>andy</author>
-// <email>andreas.augustinba@gmx.de</email>
-// *************************************************************
-//   1.0.0  11 / 8 / 2014 Created the Class
+// <email>andy.augustin@t-online.de</email>
 // *************************************************************
 
 using System.Reflection;
@@ -16,10 +15,10 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitle("Math.LinearAlgebra")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("SuperDevelop")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("")]
 [assembly: AssemblyCopyright("andy")]
-[assembly: AssemblyTrademark("SuperDevelop")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".

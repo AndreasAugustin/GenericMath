@@ -1,11 +1,10 @@
 ﻿//  *************************************************************
-// <copyright file="LinearAlgebraExceptionType.cs" company="SuperDevelop">
-//     Copyright (c) 2014 andy. All rights reserved.
+// <copyright file="LinearAlgebraExceptionType.cs" company="None">
+//     Copyright (c) 2014 andy.  All rights reserved.
 // </copyright>
+// <license>MIT Licence</license>
 // <author>andy</author>
-// <email>andreas.augustinba@gmx.de</email>
-// *************************************************************
-//   1.0.0  13 / 9 / 2014 Created the Class
+// <email>andy.augustin@t-online.de</email>
 // *************************************************************
 
 namespace GenericMath.LinearAlgebra
