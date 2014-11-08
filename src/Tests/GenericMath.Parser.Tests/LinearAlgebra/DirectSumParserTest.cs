@@ -23,29 +23,21 @@ namespace GenericMath.Parser.Tests
     [TestFixture]
     public class DirectSumParserTest
     {
-        // TODO abstract direct sum parser test
-
-        #region fields
-
-        private DirectSumParser<Int32, Int32Monoid, Int32Parser> _parser;
-
-        #endregion
-
         #region properties
-
-        private DirectSumParser<Int32, Int32Monoid, Int32Parser> Parser
-        {
-            get
-            {
-                return this._parser ?? (this._parser = new DirectSumParser<Int32, Int32Monoid, Int32Parser>());
-            }
-        }
 
         private IEnumerable<TestCaseData> TestDataSet
         {
             get
             {
-                yield return new TestCaseData("1,2,3", 2);
+                var expectedInt32DirectSum = new DirectSum<Int32, Int32Monoid>(3);
+                expectedInt32DirectSum[0] = 1;
+                expectedInt32DirectSum[1] = 2;
+                expectedInt32DirectSum[2] = 3;
+
+                yield return new TestCaseData(0, new Int32Monoid(), new Int32Parser(),
+                    new DirectSumParser<Int32, Int32Monoid, Int32Parser>(),
+                    "1,2,3",
+                    expectedInt32DirectSum);
             }
         }
 
@@ -56,21 +48,29 @@ namespace GenericMath.Parser.Tests
         /// <summary>
         /// Parses the valid parse equals expected.
         /// </summary>
-        /// <param name="stringInput">String input.</param>
-        /// <param name="expected">The expected value.</param>
+        /// <param name = "hack1">First hack.</param>
+        /// <param name = "hack2">Second hack.</param>
+        /// <param name = "hack3">Third hack.</param>
+        /// <param name = "parser">The parser.</param>
+        /// <param name="stringInput">The input.</param>
+        /// <param name="expected">The expected direct sum.</param>
         [Test]
         [Category("DirectSumParserTest")]
         [TestCaseSource("TestDataSet")]
-        public void Parse_ValidParse_EqualsExpected(
+        public void Parse_ValidParse_EqualsExpected<TSet, TStruct, TParser>(
+            TSet hack1,
+            TStruct hack2,
+            TParser hack3,
+            DirectSumParser<TSet, TStruct, TParser> parser,
             String stringInput,
-            Int32 expected)
+            DirectSum<TSet, TStruct> expected)
+            where TStruct : IStructure<TSet>, new()
+            where TParser : IParser<TSet>, new()
         {
-            var result = this.Parser.Parse(stringInput);
+            var result = parser.Parse(stringInput);
             Assert.IsNotNull(result);
 
-            Assert.IsInstanceOf<DirectSum<Int32, Int32Monoid>>(result);
-
-            Assert.AreEqual(expected, result[1]);
+            Assert.AreEqual(expected, result);
         }
 
         #endregion

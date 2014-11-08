@@ -23,29 +23,27 @@ namespace GenericMath.Parser.Tests
     [TestFixture]
     public class MatrixParserTest
     {
-        // TODO abstract test
-
-        #region fields
-
-        private MatrixParser<Int32, Int32Group, Int32Parser> _parser;
-
-        #endregion
-
         #region properties
-
-        private MatrixParser<Int32, Int32Group, Int32Parser> Parser
-        {
-            get
-            {
-                return this._parser ?? (this._parser = new MatrixParser<int, Int32Group, Int32Parser>());
-            }
-        }
 
         private IEnumerable<ITestCaseData> TestCaseSource
         {
             get
             {
-                yield return new TestCaseData("1, 2, 4; 4, 5, 2", 4);
+                var expectedInt32Matrix = new Matrix<Int32, Int32Group>(2, 3);
+                expectedInt32Matrix[0, 0] = 1;
+                expectedInt32Matrix[0, 1] = 2;
+                expectedInt32Matrix[0, 2] = 4;
+                expectedInt32Matrix[1, 0] = 4;
+                expectedInt32Matrix[1, 1] = 5;
+                expectedInt32Matrix[1, 2] = 2;
+
+                yield return new TestCaseData(
+                    0,
+                    new Int32Group(),
+                    new Int32Parser(),
+                    new MatrixParser<Int32, Int32Group, Int32Parser>(),
+                    "1, 2, 4; 4, 5, 2",
+                    expectedInt32Matrix);
             }
         }
 
@@ -56,20 +54,30 @@ namespace GenericMath.Parser.Tests
         /// <summary>
         /// Parses the valid parse element equals expected.
         /// </summary>
-        /// <param name="inputString">Input string.</param>
-        /// <param name="expected">The expected value.</param>
+        /// <param name = "hack1">The first hack.</param>
+        /// <param name = "hack2">The second hack.</param>
+        /// <param name = "hack3">The third hack.</param>
+        /// <param name = "parser"></param>
+        /// <param name="inputString">The input string.</param>
+        /// <param name="expected">The expected matrix.</param>
         [Test]
         [Category("MatrixParser")]
         [TestCaseSource("TestCaseSource")]
-        public void Parse_ValidParse_ElementEqualsExpected(
+        public void Parse_ValidParse_ElementEqualsExpected<TSet, TStruct, TParser>(
+            TSet hack1,
+            TStruct hack2,
+            TParser hack3,
+            MatrixParser<TSet, TStruct, TParser> parser,
             String inputString,
-            Int32 expected)
+            Matrix<TSet, TStruct> expected)
+            where TStruct : IStructure<TSet>, new()
+            where TParser : IParser<TSet>, new()
         {
-            var result = this.Parser.Parse(inputString);
+            var result = parser.Parse(inputString);
 
             Assert.IsNotNull(result);
 
-            Assert.AreEqual(expected, result[0, 2]);
+            Assert.AreEqual(expected, result);
         }
 
         #endregion
