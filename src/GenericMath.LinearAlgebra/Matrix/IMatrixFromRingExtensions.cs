@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
 // <copyright file="IMatrixFromRingExtensions.cs" company="None">
-//     Copyright (c) 2014 andy.  All rights reserved.
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <license>MIT Licence</license>
 // <author>andy</author>
@@ -82,9 +82,7 @@ namespace GenericMath.LinearAlgebra
                     {
                         result[i, j] = baseStructure.Addition(
                             result[i, j],
-                            baseStructure.Multiplication(
-                                matrix1[i, k],
-                                matrix2[k, j]));
+                            baseStructure.Multiplication(matrix1[i, k], matrix2[k, j]));
                     }
                 }
             }
@@ -143,9 +141,7 @@ namespace GenericMath.LinearAlgebra
                 {
                     vect[i] = baseStructure.Addition(
                         vect[i],
-                        baseStructure.Multiplication(
-                            matrix[i, j],
-                            vector[j]));
+                        baseStructure.Multiplication(matrix[i, j], vector[j]));
                 }
             }
 

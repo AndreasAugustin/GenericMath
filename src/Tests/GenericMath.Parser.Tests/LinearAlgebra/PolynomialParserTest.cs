@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
 // <copyright file="PolynomialParserTest.cs" company="None">
-//     Copyright (c) 2014 andy.  All rights reserved.
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <license>MIT Licence</license>
 // <author>andy</author>
@@ -34,7 +34,10 @@ namespace GenericMath.Parser.Tests
                 expectedInt32Polynomial[1] = 2;
                 expectedInt32Polynomial[2] = 3;
 
-                yield return new TestCaseData(0, new Int32Monoid(), new Int32Parser(),
+                yield return new TestCaseData(
+                    0,
+                    new Int32Monoid(),
+                    new Int32Parser(),
                     new PolynomialParser<Int32, Int32Monoid, Int32Parser>(),
                     "1,2,3",
                     expectedInt32Polynomial);

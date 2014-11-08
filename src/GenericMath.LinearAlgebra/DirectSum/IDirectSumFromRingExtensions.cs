@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
 // <copyright file="IDirectSumFromRingExtensions.cs" company="None">
-//     Copyright (c) 2014 andy.  All rights reserved.
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <license>MIT Licence</license>
 // <author>andy</author>
@@ -103,9 +103,7 @@ namespace GenericMath.LinearAlgebra
             {
                 result = ring.Addition(
                     result,
-                    ring.Multiplication(
-                        vector1[i],
-                        vector2[i]));           
+                    ring.Multiplication(vector1[i], vector2[i]));           
             }
 
             return result;

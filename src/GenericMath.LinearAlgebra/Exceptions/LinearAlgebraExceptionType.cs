@@ -1,6 +1,6 @@
 ﻿//  *************************************************************
 // <copyright file="LinearAlgebraExceptionType.cs" company="None">
-//     Copyright (c) 2014 andy.  All rights reserved.
+//     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <license>MIT Licence</license>
 // <author>andy</author>
