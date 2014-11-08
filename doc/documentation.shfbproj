@@ -18,8 +18,10 @@
     <HtmlHelpName>Documentation</HtmlHelpName>
     <Language>en-US</Language>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\src\Tests\GenericMath.Analysis.Tests\bin\Debug\GenericMath.Analysis.Tests.dll" />
+      <DocumentationSource sourceFile="..\src\GenericMath.Analysis\bin\Debug\GenericMath.Analysis.dll" />
+<DocumentationSource sourceFile="..\src\Tests\GenericMath.Analysis.Tests\bin\Debug\GenericMath.Analysis.Tests.dll" />
 <DocumentationSource sourceFile="..\src\Tests\GenericMath.Analysis.Tests\bin\Debug\GenericMath.Analysis.Tests.xml" />
+<DocumentationSource sourceFile="..\src\GenericMath.Analysis\bin\Debug\GenericMath.Analysis.xml" />
 <DocumentationSource sourceFile="..\src\GenericMath.Base\bin\Debug\GenericMath.Base.dll" />
 <DocumentationSource sourceFile="..\src\Tests\GenericMath.Base.Tests\bin\Debug\GenericMath.Base.Tests.dll" />
 <DocumentationSource sourceFile="..\src\Tests\GenericMath.Base.Tests\bin\Debug\GenericMath.Base.Tests.xml" />
@@ -30,9 +32,9 @@
 <DocumentationSource sourceFile="..\src\Tests\GenericMath.LinearAlgebra.Tests\bin\Debug\GenericMath.LinearAlgebra.Tests.dll" />
 <DocumentationSource sourceFile="..\src\Tests\GenericMath.LinearAlgebra.Tests\bin\Debug\GenericMath.LinearAlgebra.Tests.xml" />
 <DocumentationSource sourceFile="..\src\GenericMath.LinearAlgebra\bin\Debug\GenericMath.LinearAlgebra.xml" />
+<DocumentationSource sourceFile="..\src\GenericMath.Parser\bin\Debug\GenericMath.Parser.dll" />
 <DocumentationSource sourceFile="..\src\Tests\GenericMath.Parser.Tests\bin\Debug\GenericMath.Parser.Tests.dll" />
 <DocumentationSource sourceFile="..\src\Tests\GenericMath.Parser.Tests\bin\Debug\GenericMath.Parser.Tests.xml" />
-<DocumentationSource sourceFile="..\src\GenericMath.Parser\bin\Debug\GenericMath.Parser.dll" />
 <DocumentationSource sourceFile="..\src\GenericMath.Parser\bin\Debug\GenericMath.Parser.xml" /></DocumentationSources>
     <MaximumGroupParts>2</MaximumGroupParts>
     <NamespaceGrouping>False</NamespaceGrouping>
@@ -55,15 +57,15 @@
     <PlugInConfigurations />
     <NamespaceSummaries>
       <NamespaceSummaryItem name="GenericMath.Console" isDocumented="True">GenericMath.Console is a console application to do math calculations.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="(global)" isDocumented="True">GenericMath is a library to create math objects in terms of categories.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="GenericMath.Parser.Tests" isDocumented="True">Unit test project for the &lt;see cref="GenericMath.Parser"/&gt; project.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="Math.Analysis.Tests" isDocumented="True">Unit test project for the &lt;see cref="GenericMath.Analysis"/&gt; project.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="Math.Base.Tests" isDocumented="True">Unit test project for the &lt;see cref="GenericMath.Base"/&gt; project.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="Math.LinearAlgebra.Tests" isDocumented="True">Unit test project for the &lt;see cref="GenericMath.LinearAlgebra"/&gt; project.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="GenricMath.Parser" isDocumented="True">Project to parse strings into generic math objects</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="Math.Base" isDocumented="True">Class library which contains base structures.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="Math.LinearAlgebra" isDocumented="True">Class Library which contains classes for linear algebra operations.</NamespaceSummaryItem>
-    </NamespaceSummaries>
+<NamespaceSummaryItem name="(global)" isDocumented="True">GenericMath is a library to create math objects in terms of categories.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="GenericMath.Parser.Tests" isDocumented="True">Unit test project for the &lt;see cref="GenericMath.Parser"/&gt; project.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="GenericMath.Analysis.Tests" isDocumented="True">Unit test project for the &lt;see cref="GenericMath.Analysis"/&gt; project.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="GenericMath.Base" isDocumented="True">Base structures.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="GenericMath.Base.Tests" isDocumented="True">Unit test project for the &lt;see cref="GenericMath.Base"/&gt; project.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="GenericMath.LinearAlgebra.Tests" isDocumented="True">Unit test project for the &lt;see cref="GenericMath.LinearAlgebra"/&gt; project.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="GenericMath.Analysis" isDocumented="True">Analysis structures</NamespaceSummaryItem>
+<NamespaceSummaryItem name="GenericMath.LinearAlgebra" isDocumented="True">Linear algebra structures</NamespaceSummaryItem>
+<NamespaceSummaryItem name="GenericMath.Parser" isDocumented="True">Parser for the structures</NamespaceSummaryItem></NamespaceSummaries>
     <CatalogName>Xamarin Studio</CatalogName>
     <TocParentId>-1</TocParentId>
     <TocParentVersion>100</TocParentVersion>
