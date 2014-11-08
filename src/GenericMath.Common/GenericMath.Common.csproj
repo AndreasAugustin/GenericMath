@@ -34,8 +34,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Contracts\IRegex.cs" />
     <Compile Include="Adapter\RegexAdapter.cs" />
-    <Compile Include="Contracts\IConsole.cs" />
-    <Compile Include="Adapter\ConsoleAdapter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
