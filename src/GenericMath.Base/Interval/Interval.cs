@@ -68,7 +68,7 @@ namespace GenericMath.Base
         /// </summary>
         /// <returns><c>true</c> if the element is in the Interval else <c>false</c></returns>
         /// <param name="elementToCheck">Element to check.</param>
-        public bool IsinInterval(T elementToCheck)
+        public Boolean IsinInterval(T elementToCheck)
         {
             return elementToCheck.CompareTo(this.MinElement) >= 0 && elementToCheck.CompareTo(this.MaxElement) <= 0;
         }
@@ -81,7 +81,7 @@ namespace GenericMath.Base
         /// <see cref="Interval{T, TStruct}"/>.</param>
         /// <returns><c>true</c> if the specified <see cref="Interval{T, TStruct}"/> is equal to the current
         /// <see cref="Interval{T, TStruct}"/>; otherwise, <c>false</c>.</returns>
-        public bool Equals(Interval<T, TStruct> other)
+        public Boolean Equals(Interval<T, TStruct> other)
         {
             return this.MaxElement.Equals(other.MaxElement) && this.MinElement.Equals(other.MinElement);
         }
@@ -94,9 +94,9 @@ namespace GenericMath.Base
         /// Returns a <see cref="System.String"/> that represents the current <see cref="Interval{T, TStruct}"/>.
         /// </summary>
         /// <returns>A <see cref="System.String"/> that represents the current <see cref="Interval{T, TStruct}"/>.</returns>
-        public override string ToString()
+        public override String ToString()
         {
-            return string.Format(
+            return String.Format(
                 "[Interval: MaxElement={0}, MinElement={1}]",
                 this.MaxElement,
                 this.MinElement);
