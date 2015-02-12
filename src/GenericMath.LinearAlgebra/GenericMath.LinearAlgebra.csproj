@@ -7,8 +7,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>GenericMath.LinearAlgebra</RootNamespace>
     <AssemblyName>GenericMath.LinearAlgebra</AssemblyName>
-    <ProductVersion>12.0.0</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -80,6 +79,10 @@
     <ProjectReference Include="..\GenericMath.Base\GenericMath.Base.csproj">
       <Project>{32112762-A4EA-4A22-8F40-235A366445A9}</Project>
       <Name>GenericMath.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj">
+      <Project>{7F36FB73-84B0-4815-BA4D-275885F7A264}</Project>
+      <Name>GenericMath.Base.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

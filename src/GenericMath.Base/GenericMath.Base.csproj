@@ -7,8 +7,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>GenericMath.Base</RootNamespace>
     <AssemblyName>GenericMath.Base</AssemblyName>
-    <ProductVersion>12.0.0</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,36 +40,29 @@
     <Compile Include="Ring\DoubleRing.cs" />
     <Compile Include="Ring\ComplexRing.cs" />
     <Compile Include="Ring\Int32Ring.cs" />
-    <Compile Include="Contracts\IRing.cs" />
-    <Compile Include="Contracts\IGroup.cs" />
-    <Compile Include="Contracts\IEuclidianRing.cs" />
     <Compile Include="EuclidianRing\DoubleEuclidianRing.cs" />
     <Compile Include="EuclidianRing\ComplexEuclidianRing.cs" />
     <Compile Include="EuclidianRing\Int32EuclidianRing.cs" />
-    <Compile Include="Contracts\IStructure.cs" />
-    <Compile Include="Contracts\IMonoid.cs" />
     <Compile Include="Monoid\UInt32Monoid.cs" />
     <Compile Include="Monoid\Int32Monoid.cs" />
     <Compile Include="Monoid\DoubleMonoid.cs" />
     <Compile Include="Monoid\ComplexMonoid.cs" />
-    <Compile Include="Contracts\IField.cs" />
     <Compile Include="Field\DoubleField.cs" />
-    <Compile Include="Contracts\IModule.cs" />
-    <Compile Include="Contracts\IVectorRoom.cs" />
-    <Compile Include="Extensions\IntegerExtension.cs" />
     <Compile Include="Field\ComplexField.cs" />
-    <Compile Include="Extensions\IRingExtensions.cs" />
-    <Compile Include="Contracts\IInterval.cs" />
     <Compile Include="Interval\Interval.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Ring\" />
     <Folder Include="Group\" />
-    <Folder Include="Contracts\" />
-    <Folder Include="Extensions\" />
     <Folder Include="Monoid\" />
     <Folder Include="Field\" />
     <Folder Include="Interval\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj">
+      <Project>{7F36FB73-84B0-4815-BA4D-275885F7A264}</Project>
+      <Name>GenericMath.Base.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

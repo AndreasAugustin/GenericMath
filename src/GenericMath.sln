@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.LinearAlgebra",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Parser", "GenericMath.Parser\GenericMath.Parser.csproj", "{B9684EF5-50EB-471D-B899-9F0A231EB9A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Base.Contracts", "GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj", "{7F36FB73-84B0-4815-BA4D-275885F7A264}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F36FB73-84B0-4815-BA4D-275885F7A264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F36FB73-84B0-4815-BA4D-275885F7A264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F36FB73-84B0-4815-BA4D-275885F7A264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F36FB73-84B0-4815-BA4D-275885F7A264}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -76,8 +82,5 @@ Global
 		{577920B2-9289-4CC9-8F56-291E9F436495} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
 		{57422D4B-3791-4023-AA99-F236C9E68476} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
 		{109106CD-4AB0-49BE-B8CB-7DB7524632FB} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Tests\GenericMath.Base.Tests\GenericMath.Base.Tests.csproj
 	EndGlobalSection
 EndGlobal

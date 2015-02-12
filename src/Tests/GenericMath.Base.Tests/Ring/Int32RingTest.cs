@@ -6,69 +6,70 @@
 // <author>andy</author>
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
+using GenericMath.Base.Contracts;
 
 namespace GenericMath.Base.Tests
 {
-    using System;
+	using System;
 
-    using NUnit.Framework;
+	using NUnit.Framework;
 
-    /// <summary>
-    /// Integer ring test.
-    /// </summary>
-    [TestFixture]
-    public class Int32RingTest : TemplateRingTest<Int32>
-    {
-        #region fields
+	/// <summary>
+	/// Integer ring test.
+	/// </summary>
+	[TestFixture]
+	public class Int32RingTest : TemplateRingTest<Int32>
+	{
+		#region fields
 
-        private IRing<Int32> _ring;
+		private IRing<Int32> _ring;
 
-        #endregion
+		#endregion
 
-        #region properties
+		#region properties
 
-        #region implemented abstract members of TemplateRingTest
+		#region implemented abstract members of TemplateRingTest
 
-        /// <summary>
-        /// Gets the ring.
-        /// </summary>
-        /// <value>The ring.</value>
-        protected override IRing<Int32> Ring
-        {
-            get
-            {
-                return this._ring ?? (this._ring = new Int32Ring());
-            }
-        }
+		/// <summary>
+		/// Gets the ring.
+		/// </summary>
+		/// <value>The ring.</value>
+		protected override IRing<Int32> Ring
+		{ 
+			get
+			{
+				return this._ring ?? (this._ring = new Int32Ring ());
+			}
+		}
 
-        #endregion
+		#endregion
 
-        #endregion
+		#endregion
 
-        #region methods
+		#region methods
 
-        #region implemented abstract members of TemplateRingTest
+		#region implemented abstract members of TemplateRingTest
 
-        /// <summary>
-        /// Tests the multiplication.
-        /// </summary>
-        /// <param name="leftInput">Left input.</param>
-        /// <param name="rightInput">Right input.</param>
-        /// <param name="expected">Expected solution.</param>
-        [Test]
-        [Category("RingTest")]
-        [TestCase(3, 5, 15)]
-        [TestCase(4, -10, -40)]
-        public override void TestMultiplication(
-            Int32 leftInput,
-            Int32 rightInput,
-            Int32 expected)
-        {
-            this.TemplateTestMultiplication(leftInput, rightInput, expected);
-        }
+		/// <summary>
+		/// Tests the multiplication.
+		/// </summary>
+		/// <param name="leftInput">Left input.</param>
+		/// <param name="rightInput">Right input.</param>
+		/// <param name="expected">Expected solution.</param>
+		[Test]
+		[Category ("RingTest")]
+		[TestCase (3, 5, 15)]
+		[TestCase (4, -10, -40)]
+		public override void TestMultiplication (
+			Int32 leftInput,
+			Int32 rightInput,
+			Int32 expected)
+		{
+			this.TemplateTestMultiplication (leftInput, rightInput, expected);
+		}
 
-        #endregion
+		#endregion
 
-        #endregion
-    }
+		#endregion
+	}
 }

@@ -6,89 +6,90 @@
 // <author>andy</author>
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
+using GenericMath.Base.Contracts;
 
 namespace GenericMath.LinearAlgebra.Tests
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Numerics;
+	using System;
+	using System.Collections.Generic;
+	using System.Numerics;
 
-    using GenericMath.Base;
+	using GenericMath.Base;
 
-    using NUnit.Framework;
+	using NUnit.Framework;
 
-    /// <summary>
-    /// Test for the <see cref="IMatrixFromEuclidianRingExtensions"/> class.
-    /// </summary>
-    [TestFixture]
-    public class IMatrixFromEuclidianRingExtensionsTest
-    {
-        #region fields
+	/// <summary>
+	/// Test for the <see cref="IMatrixFromEuclidianRingExtensions"/> class.
+	/// </summary>
+	[TestFixture]
+	public class IMatrixFromEuclidianRingExtensionsTest
+	{
+		#region fields
 
-        private FakeMatrixEuclidianRingTestDataSource _mockDataSource;
+		private FakeMatrixEuclidianRingTestDataSource _mockDataSource;
 
-        #endregion
+		#endregion
 
-        #region properties
+		#region properties
 
-        private FakeMatrixEuclidianRingTestDataSource MockDataSource
-        {
-            get
-            {
-                return this._mockDataSource ?? (this._mockDataSource = new FakeMatrixEuclidianRingTestDataSource());
-            }
-        }
+		private FakeMatrixEuclidianRingTestDataSource MockDataSource
+		{
+			get
+			{
+				return this._mockDataSource ?? (this._mockDataSource = new FakeMatrixEuclidianRingTestDataSource ());
+			}
+		}
 
-        #endregion
+		#endregion
 
-        #region properties
+		#region properties
 
-        private IEnumerable<TestCaseData> GaussJordanSource
-        {
-            get
-            {
-                yield return new TestCaseData(
-                    new Double(),
-                    new DoubleEuclidianRing(),
-                    this.MockDataSource.DoubleSource);
-                yield return new TestCaseData(
-                    new Complex(),
-                    new ComplexEuclidianRing(),
-                    this.MockDataSource.ComplexSource);
-                yield return new TestCaseData(
-                    new Int32(),
-                    new Int32EuclidianRing(),
-                    this.MockDataSource.Int32Source);
-            }
-        }
+		private IEnumerable<TestCaseData> GaussJordanSource
+		{
+			get
+			{
+				yield return new TestCaseData (
+					new Double (),
+					new DoubleEuclidianRing (),
+					this.MockDataSource.DoubleSource);
+				yield return new TestCaseData (
+					new Complex (),
+					new ComplexEuclidianRing (),
+					this.MockDataSource.ComplexSource);
+				yield return new TestCaseData (
+					new Int32 (),
+					new Int32EuclidianRing (),
+					this.MockDataSource.Int32Source);
+			}
+		}
 
-        #endregion
+		#endregion
 
-        #region methods
+		#region methods
 
-        /// <summary>
-        /// Tests the GaussJordanAlgorithm method.
-        /// </summary>
-        /// <param name="hack1">Hack to get first generic parameter.</param>
-        /// <param name="hack2">Hack to get second generic parameter.</param>
-        /// <param name="matrix">The matrix.</param>
-        /// <typeparam name="T">The underlying set.</typeparam>
-        /// <typeparam name="TEuclidianRing">The underlying structure for the set.</typeparam>
-        [Test]
-        [Category("MatrixFromEuclidianRingExtensionTest")]
-        [TestCaseSource("GaussJordanSource")]
-        public void GaussJordanAlgorithm_Run_IsNotNull<T, TEuclidianRing>(
-            T hack1,
-            TEuclidianRing hack2,
-            IMatrix<T, TEuclidianRing> matrix)
+		/// <summary>
+		/// Tests the GaussJordanAlgorithm method.
+		/// </summary>
+		/// <param name="hack1">Hack to get first generic parameter.</param>
+		/// <param name="hack2">Hack to get second generic parameter.</param>
+		/// <param name="matrix">The matrix.</param>
+		/// <typeparam name="T">The underlying set.</typeparam>
+		/// <typeparam name="TEuclidianRing">The underlying structure for the set.</typeparam>
+		[Test]
+		[Category("MatrixFromEuclidianRingExtensionTest")]
+		[TestCaseSource("GaussJordanSource")]
+		public void GaussJordanAlgorithm_Run_IsNotNull<T, TEuclidianRing> (
+			T hack1,
+			TEuclidianRing hack2,
+			IMatrix<T, TEuclidianRing> matrix)
             where TEuclidianRing : IEuclidianRing<T>, new()
-        {
-            var result = matrix.GaussJordanAlgorithm();
+		{
+			var result = matrix.GaussJordanAlgorithm();
 
-            Assert.IsNotNull(result);
-            //// Check if the under triangle has zero values
-        }
+			Assert.IsNotNull(result);
+			//// Check if the under triangle has zero values
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }

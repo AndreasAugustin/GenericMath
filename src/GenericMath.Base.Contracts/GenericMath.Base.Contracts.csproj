@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}</ProjectGuid>
+    <ProjectGuid>{7F36FB73-84B0-4815-BA4D-275885F7A264}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>GenericMath.Common</RootNamespace>
-    <AssemblyName>GenericMath.Common</AssemblyName>
+    <RootNamespace>GenericMath.Base.Contracts</RootNamespace>
+    <AssemblyName>GenericMath.Base.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -29,35 +29,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Xml" />
-    <Reference Include="NLog">
-      <HintPath>..\packages\NLog.3.2.0.0\lib\net45\NLog.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Contracts\IRegex.cs" />
-    <Compile Include="Adapter\RegexAdapter.cs" />
-    <Compile Include="Contracts\ILoggerManager.cs" />
-    <Compile Include="Contracts\ILogger.cs" />
-    <Compile Include="Contracts\IEnvironment.cs" />
-    <Compile Include="Contracts\IConfiguration.cs" />
-    <Compile Include="Adapter\NLogManagerAdapter.cs" />
-    <Compile Include="Adapter\NLogAdapter.cs" />
-    <Compile Include="Code\LogLevel.cs" />
-    <Compile Include="Extensions\LogLevelConverterExtension.cs" />
-    <Compile Include="Adapter\EnvironmentAdapter.cs" />
-    <Compile Include="Adapter\ConfigurationAdapter.cs" />
+    <Compile Include="Contracts\IEuclidianRing.cs" />
+    <Compile Include="Contracts\IField.cs" />
+    <Compile Include="Contracts\IGroup.cs" />
+    <Compile Include="Contracts\IInterval.cs" />
+    <Compile Include="Contracts\IModule.cs" />
+    <Compile Include="Contracts\IMonoid.cs" />
+    <Compile Include="Contracts\IRing.cs" />
+    <Compile Include="Contracts\IStructure.cs" />
+    <Compile Include="Contracts\IVectorRoom.cs" />
+    <Compile Include="Extensions\IntegerExtension.cs" />
+    <Compile Include="Extensions\IRingExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Contracts\" />
-    <Folder Include="Adapter\" />
-    <Folder Include="Code\" />
     <Folder Include="Extensions\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 ﻿//  *************************************************************
-// <copyright file="IField.cs" company="None">
+// <copyright file="IEuclidianRing.cs" company="None">
 //     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
 // <license>MIT Licence</license>
@@ -7,22 +7,24 @@
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
 
-namespace GenericMath.Base
+namespace GenericMath.Base.Contracts
 {
+    using System;
+
     /// <summary>
-    /// Interface for defining fields.
+    /// Interface for the calculators.
     /// </summary>
-    /// <typeparam name="T">The underlying set.</typeparam>
-    public interface IField<T> : IRing<T>, IStructure<T>
+    /// <typeparam name="T">Refers to the object for the calculations.</typeparam>
+    public interface IEuclidianRing<T> : IRing<T>
     {
         #region methods
 
         /// <summary>
-        /// Gets the inverse for the ring multiplication.
+        /// Calculates the norm of element.
         /// </summary>
-        /// <returns>The inverse.</returns>
         /// <param name="element">The element.</param>
-        T MultiplicationInverse(T element);
+        /// <returns>The norm of element.</returns>
+        Double Norm(T element);
 
         #endregion
     }

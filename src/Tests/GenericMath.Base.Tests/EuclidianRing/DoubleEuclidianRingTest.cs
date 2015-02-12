@@ -6,60 +6,59 @@
 // <author>andy</author>
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
+using GenericMath.Base.Contracts;
 
 namespace GenericMath.Base.Tests
 {
-    using System;
+	using System;
 
-    using NUnit.Framework;
+	using NUnit.Framework;
 
-    /// <summary>
-    /// Test for the <see cref="DoubleEuclidianRing"/> class.
-    /// </summary>
-    [TestFixture]
-    public class DoubleEuclidianRingTest : TemplateEuclidianRingTest<Double>
-    {
-        #region fields
+	/// <summary>
+	/// Test for the <see cref="DoubleEuclidianRing"/> class.
+	/// </summary>
+	[TestFixture]
+	public class DoubleEuclidianRingTest : TemplateEuclidianRingTest<Double>
+	{
+		#region fields
 
-        private IEuclidianRing<Double> _euclidianRing;
+		private IEuclidianRing<Double> _euclidianRing;
 
-        #endregion
+		#endregion
 
-        #region properties
+		#region properties
 
-        #region implemented abstract members of TemplateEuclidianRingTest
+		#region implemented abstract members of TemplateEuclidianRingTest
 
-        /// <summary>
-        /// Gets the ring.
-        /// </summary>
-        /// <value>The ring.</value>
-        protected override IEuclidianRing<Double> EuclidianRing
-        {
-            get
-            {
-                return this._euclidianRing ?? (this._euclidianRing = new DoubleEuclidianRing());
-            }
-        }
+		/// <summary>
+		/// Gets the ring.
+		/// </summary>
+		/// <value>The ring.</value>
+		protected override IEuclidianRing<Double> EuclidianRing {
+			get {
+				return this._euclidianRing ?? (this._euclidianRing = new DoubleEuclidianRing ());
+			}
+		}
 
-        #endregion
+		#endregion
 
-        #endregion
+		#endregion
 
-        #region implemented abstract members of TemplateEuclidianRingTest
+		#region implemented abstract members of TemplateEuclidianRingTest
 
-        /// <summary>
-        /// Tests the euclidian norm.
-        /// </summary>
-        /// <param name="input">The input.</param>
-        /// <param name="expected">Expected solution.</param>
-        [Test]
-        [Category("EuclidianRingTest")]
-        [TestCase(-2.0, 2.0)]
-        public override void TestEuclidianNorm(Double input, Double expected)
-        {
-            this.TemplateTestEuclidianNorm(input, expected);
-        }
+		/// <summary>
+		/// Tests the euclidian norm.
+		/// </summary>
+		/// <param name="input">The input.</param>
+		/// <param name="expected">Expected solution.</param>
+		[Test]
+		[Category ("EuclidianRingTest")]
+		[TestCase (-2.0, 2.0)]
+		public override void TestEuclidianNorm (Double input, Double expected)
+		{
+			this.TemplateTestEuclidianNorm (input, expected);
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }

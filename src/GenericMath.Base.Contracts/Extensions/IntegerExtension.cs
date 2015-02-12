@@ -7,7 +7,7 @@
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
 
-namespace GenericMath.Base
+namespace GenericMath.Base.Contracts
 {
     using System;
     using System.Diagnostics;

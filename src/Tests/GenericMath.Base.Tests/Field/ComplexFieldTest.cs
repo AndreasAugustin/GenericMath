@@ -6,81 +6,78 @@
 // <author>andy</author>
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
+using GenericMath.Base.Contracts;
 
 namespace GenericMath.Base.Tests
 {
-    using System.Collections.Generic;
-    using System.Numerics;
+	using System.Collections.Generic;
+	using System.Numerics;
 
-    using GenericMath.Base;
-    using NUnit.Framework;
+	using GenericMath.Base;
+	using NUnit.Framework;
 
-    /// <summary>
-    /// Tests for the <see cref="ComplexField"/> class.
-    /// </summary>
-    [TestFixture]
-    public class ComplexFieldTest : TemplateFieldTest<Complex>
-    {
-        #region fields
+	/// <summary>
+	/// Tests for the <see cref="ComplexField"/> class.
+	/// </summary>
+	[TestFixture]
+	public class ComplexFieldTest : TemplateFieldTest<Complex>
+	{
+		#region fields
 
-        private IField<Complex> _field;
+		private IField<Complex> _field;
 
-        #endregion
+		#endregion
 
-        #region properties
+		#region properties
 
-        #region implemented abstract members of TemplateEuclidianRingTest
+		#region implemented abstract members of TemplateEuclidianRingTest
 
-        /// <summary>
-        /// Gets the field.
-        /// </summary>
-        /// <value>The field.</value>
-        protected override IField<Complex> Field
-        {
-            get
-            {
-                return this._field ?? (this._field = new ComplexField());
-            }
-        }
+		/// <summary>
+		/// Gets the field.
+		/// </summary>
+		/// <value>The field.</value>
+		protected override IField<Complex> Field {
+			get {
+				return this._field ?? (this._field = new ComplexField ());
+			}
+		}
 
-        private IEnumerable<TestCaseData> Source
-        {
-            get
-            {
-                yield return new TestCaseData(
-                    new Complex(3.2, 0),
-                    new Complex(
-                        1 / 3.2,
-                        0));
-                yield return new TestCaseData(
-                    new Complex(0, 10),
-                    new Complex(
-                        0,
-                        -(1 / 10.0)));
-            }
-        }
+		private IEnumerable<TestCaseData> Source {
+			get {
+				yield return new TestCaseData (
+					new Complex (3.2, 0),
+					new Complex (
+						1 / 3.2,
+						0));
+				yield return new TestCaseData (
+					new Complex (0, 10),
+					new Complex (
+						0,
+						-(1 / 10.0)));
+			}
+		}
 
-        #endregion
+		#endregion
 
-        #endregion
+		#endregion
 
-        #region implemented abstract members of TemplateEuclidianRingTest
+		#region implemented abstract members of TemplateEuclidianRingTest
 
-        /// <summary>
-        /// Tests the euclidian norm.
-        /// </summary>
-        /// <param name="input">The input.</param>
-        /// <param name="expected">Expected solution.</param>
-        [Test]
-        [Category("FieldTest")]
-        [TestCaseSource("Source")]
-        public override void TestMultiplicationInverse(
-            Complex input,
-            Complex expected)
-        {
-            this.TemplateTestMultiplicationInverse(input, expected);
-        }
+		/// <summary>
+		/// Tests the euclidian norm.
+		/// </summary>
+		/// <param name="input">The input.</param>
+		/// <param name="expected">Expected solution.</param>
+		[Test]
+		[Category ("FieldTest")]
+		[TestCaseSource ("Source")]
+		public override void TestMultiplicationInverse (
+			Complex input,
+			Complex expected)
+		{
+			this.TemplateTestMultiplicationInverse (input, expected);
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }

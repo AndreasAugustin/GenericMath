@@ -8,8 +8,6 @@
     <RootNamespace>GenericMath.Parser</RootNamespace>
     <AssemblyName>GenericMath.Parser</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ProductVersion>12.0.0</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,6 +53,10 @@
     <ProjectReference Include="..\GenericMath.LinearAlgebra\GenericMath.LinearAlgebra.csproj">
       <Project>{FA62DC06-710E-4615-9E6F-C5E77D5B3202}</Project>
       <Name>GenericMath.LinearAlgebra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj">
+      <Project>{7F36FB73-84B0-4815-BA4D-275885F7A264}</Project>
+      <Name>GenericMath.Base.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

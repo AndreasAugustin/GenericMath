@@ -12,6 +12,7 @@ namespace GenericMath.Analysis
     using System;
 
     using GenericMath.Base;
+	using GenericMath.Base.Contracts;
 
     /// <summary>
     /// Extension methods for IRings.
@@ -78,7 +79,7 @@ namespace GenericMath.Analysis
         /// <returns>The result.</returns>
         public static Func<T, T> Pow<T>(this IRing<T> ring, UInt32 power)
         {
-            return (x) => ring.Pow(x, power);
+			return (x) => ring.Pow (x, power);
         }
 
         #endregion

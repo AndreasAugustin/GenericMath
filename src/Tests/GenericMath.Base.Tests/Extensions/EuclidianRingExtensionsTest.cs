@@ -6,6 +6,7 @@
 // <author>andy</author>
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
+using GenericMath.Base.Contracts;
 
 namespace GenericMath.Base.Tests
 {

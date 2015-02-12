@@ -6,75 +6,74 @@
 // <author>andy</author>
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
+using GenericMath.Base.Contracts;
 
 namespace GenericMath.Base.Tests
 {
-    using System;
+	using System;
 
-    using NUnit.Framework;
+	using NUnit.Framework;
 
-    /// <summary>
-    /// Test for the integer group.
-    /// </summary>
-    [TestFixture]
-    public class Int32GroupTest : TemplateGroupTest<Int32>
-    {
-        #region fields
+	/// <summary>
+	/// Test for the integer group.
+	/// </summary>
+	[TestFixture]
+	public class Int32GroupTest : TemplateGroupTest<Int32>
+	{
+		#region fields
 
-        private Int32Group _group;
+		private Int32Group _group;
 
-        #endregion
+		#endregion
 
-        #region properties
+		#region properties
 
-        /// <summary>
-        /// Gets the group.
-        /// </summary>
-        /// <value>The group.</value>
-        protected override IGroup<Int32> Group
-        {
-            get
-            {
-                return this._group ?? (this._group = new Int32Group());
-            }
-        }
+		/// <summary>
+		/// Gets the group.
+		/// </summary>
+		/// <value>The group.</value>
+		protected override IGroup<Int32> Group {
+			get {
+				return this._group ?? (this._group = new Int32Group ());
+			}
+		}
 
-        #endregion
+		#endregion
 
-        #region methods
+		#region methods
 
-        /// <summary>
-        /// Tests the inverse method.
-        /// </summary>
-        /// <param name="input">The input.</param>
-        /// <param name="expected">The expected inverse.</param>
-        [Category("GroupTest")]
-        [Test]
-        [TestCase(2, -2)]
-        [TestCase(4, -4)]
-        public override void TestInverse(Int32 input, Int32 expected)
-        {
-            this.TemplateTestInverse(input, expected);
-        }
+		/// <summary>
+		/// Tests the inverse method.
+		/// </summary>
+		/// <param name="input">The input.</param>
+		/// <param name="expected">The expected inverse.</param>
+		[Category ("GroupTest")]
+		[Test]
+		[TestCase (2, -2)]
+		[TestCase (4, -4)]
+		public override void TestInverse (Int32 input, Int32 expected)
+		{
+			this.TemplateTestInverse (input, expected);
+		}
 
-        /// <summary>
-        /// Tests the inverse method.
-        /// </summary>
-        /// <param name="leftInput">The left input.</param>
-        /// <param name="rightInput">The right input.</param>
-        /// <param name="expectedSum">The expected sum from left and right input.</param>
-        [Category("GroupTest")]
-        [Test]
-        [TestCase(2, -3, -1)]
-        [TestCase(4, -4, 0)]
-        public override void TestAddition(
-            Int32 leftInput,
-            Int32 rightInput,
-            Int32 expectedSum)
-        {
-            this.TemplateTestAddition(leftInput, rightInput, expectedSum);
-        }
+		/// <summary>
+		/// Tests the inverse method.
+		/// </summary>
+		/// <param name="leftInput">The left input.</param>
+		/// <param name="rightInput">The right input.</param>
+		/// <param name="expectedSum">The expected sum from left and right input.</param>
+		[Category ("GroupTest")]
+		[Test]
+		[TestCase (2, -3, -1)]
+		[TestCase (4, -4, 0)]
+		public override void TestAddition (
+			Int32 leftInput,
+			Int32 rightInput,
+			Int32 expectedSum)
+		{
+			this.TemplateTestAddition (leftInput, rightInput, expectedSum);
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }

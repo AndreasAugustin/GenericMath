@@ -6,85 +6,82 @@
 // <author>andy</author>
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
+using GenericMath.Base.Contracts;
 
 namespace GenericMath.Base.Tests
 {
-    using System.Collections.Generic;
-    using System.Numerics;
+	using System.Collections.Generic;
+	using System.Numerics;
 
-    using NUnit.Framework;
+	using NUnit.Framework;
 
-    /// <summary>
-    /// Complex ring test.
-    /// </summary>
-    [TestFixture]
-    public class ComplexRingTest : TemplateRingTest<Complex>
-    {
-        #region fields
+	/// <summary>
+	/// Complex ring test.
+	/// </summary>
+	[TestFixture]
+	public class ComplexRingTest : TemplateRingTest<Complex>
+	{
+		#region fields
 
-        private IRing<Complex> _ring;
+		private IRing<Complex> _ring;
 
-        #endregion
+		#endregion
 
-        #region properties
+		#region properties
 
-        #region implemented abstract members of TemplateRingTest
+		#region implemented abstract members of TemplateRingTest
 
-        /// <summary>
-        /// Gets the ring.
-        /// </summary>
-        /// <value>The ring.</value>
-        protected override IRing<Complex> Ring
-        {
-            get
-            {
-                return this._ring ?? (this._ring = new ComplexRing());
-            }
-        }
+		/// <summary>
+		/// Gets the ring.
+		/// </summary>
+		/// <value>The ring.</value>
+		protected override IRing<Complex> Ring {
+			get {
+				return this._ring ?? (this._ring = new ComplexRing ());
+			}
+		}
 
-        #endregion
+		#endregion
 
-        private static IEnumerable<TestCaseData> MultiplicationTestDataSource
-        {
-            get
-            {
-                yield return new TestCaseData(
-                    new Complex(2, 0),
-                    new Complex(
-                        -2,
-                        -3),
-                    new Complex(
-                        -4,
-                        -6));
-                yield return new TestCaseData(
-                    new Complex(4, -2),
-                    Complex.One,
-                    new Complex(
-                        4,
-                        -2));
-            }
-        }
+		private static IEnumerable<TestCaseData> MultiplicationTestDataSource {
+			get {
+				yield return new TestCaseData (
+					new Complex (2, 0),
+					new Complex (
+						-2,
+						-3),
+					new Complex (
+						-4,
+						-6));
+				yield return new TestCaseData (
+					new Complex (4, -2),
+					Complex.One,
+					new Complex (
+						4,
+						-2));
+			}
+		}
 
-        #endregion
+		#endregion
 
-        #region implemented abstract members of TemplateRingTest
+		#region implemented abstract members of TemplateRingTest
 
-        /// <summary>
-        /// Tests the multiplication.
-        /// </summary>
-        /// <param name="leftInput">Left input.</param>
-        /// <param name="rightInput">Right input.</param>
-        /// <param name="expected">Expected solution.</param>
-        [Category("RingTest")]
-        [TestCaseSource("MultiplicationTestDataSource")]
-        public override void TestMultiplication(
-            Complex leftInput,
-            Complex rightInput,
-            Complex expected)
-        {
-            this.TemplateTestMultiplication(leftInput, rightInput, expected);
-        }
+		/// <summary>
+		/// Tests the multiplication.
+		/// </summary>
+		/// <param name="leftInput">Left input.</param>
+		/// <param name="rightInput">Right input.</param>
+		/// <param name="expected">Expected solution.</param>
+		[Category ("RingTest")]
+		[TestCaseSource ("MultiplicationTestDataSource")]
+		public override void TestMultiplication (
+			Complex leftInput,
+			Complex rightInput,
+			Complex expected)
+		{
+			this.TemplateTestMultiplication (leftInput, rightInput, expected);
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }

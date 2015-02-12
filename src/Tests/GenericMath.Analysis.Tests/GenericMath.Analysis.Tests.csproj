@@ -7,8 +7,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>GenericMath.Analysis.Tests</RootNamespace>
     <AssemblyName>GenericMath.Analysis.Tests</AssemblyName>
-    <ProductVersion>12.0.0</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,6 +33,7 @@
     <Reference Include="System.Numerics" />
     <Reference Include="nunit.framework">
       <HintPath>..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+      <Package>nunit</Package>
     </Reference>
     <Reference Include="NSubstitute">
       <HintPath>..\..\packages\NSubstitute.1.8.1.0\lib\net40\NSubstitute.dll</HintPath>
@@ -57,6 +57,10 @@
     <ProjectReference Include="..\..\GenericMath.Analysis\GenericMath.Analysis.csproj">
       <Project>{1974448B-2DDF-4F3A-A044-8D27B97ACBEE}</Project>
       <Name>GenericMath.Analysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj">
+      <Project>{7F36FB73-84B0-4815-BA4D-275885F7A264}</Project>
+      <Name>GenericMath.Base.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
