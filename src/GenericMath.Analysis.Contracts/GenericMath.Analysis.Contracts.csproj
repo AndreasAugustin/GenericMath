@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1974448B-2DDF-4F3A-A044-8D27B97ACBEE}</ProjectGuid>
+    <ProjectGuid>{3029E17F-C4A4-4D82-9B2A-D280AE9403F9}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>GenericMath.Analysis</RootNamespace>
-    <AssemblyName>GenericMath.Analysis</AssemblyName>
+    <RootNamespace>GenericMath.Analysis.Contracts</RootNamespace>
+    <AssemblyName>GenericMath.Analysis.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -18,7 +18,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <DocumentationFile>bin\Debug\GenericMath.Analysis.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -33,23 +32,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Extensions\IFieldExtensions.cs" />
+    <Compile Include="Extensions\IGroupExtensions.cs" />
+    <Compile Include="Extensions\IMonoidExtensions.cs" />
+    <Compile Include="Extensions\IRingExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="..\Math.Base\Interval\" />
+    <Folder Include="Contracts\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GenericMath.Base\GenericMath.Base.csproj">
-      <Project>{32112762-A4EA-4A22-8F40-235A366445A9}</Project>
-      <Name>GenericMath.Base</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj">
       <Project>{7F36FB73-84B0-4815-BA4D-275885F7A264}</Project>
       <Name>GenericMath.Base.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GenericMath.Analysis.Contracts\GenericMath.Analysis.Contracts.csproj">
-      <Project>{3029E17F-C4A4-4D82-9B2A-D280AE9403F9}</Project>
-      <Name>GenericMath.Analysis.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

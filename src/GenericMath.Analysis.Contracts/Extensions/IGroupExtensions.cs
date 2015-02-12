@@ -6,13 +6,11 @@
 // <author>andy</author>
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
+using System;
 using GenericMath.Base.Contracts;
 
-namespace GenericMath.Analysis
+namespace GenericMath.Analysis.Contracts
 {
-	using System;
-
-	using GenericMath.Base;
 
 	/// <summary>
 	/// Extension methods for <see cref="IGroup{T}"/> classes.
@@ -32,7 +30,7 @@ namespace GenericMath.Analysis
 			this IGroup<T> group,
 			Func<T, T> function)
 		{
-			return (x) => group.Inverse (function (x));
+			return (x) => group.Inverse(function(x));
 		}
 
 		#endregion

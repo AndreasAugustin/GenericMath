@@ -6,13 +6,11 @@
 // <author>andy</author>
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
+using System;
 using GenericMath.Base.Contracts;
 
-namespace GenericMath.Analysis
+namespace GenericMath.Analysis.Contracts
 {
-	using System;
-
-	using GenericMath.Base;
 
 	/// <summary>
 	/// Extension methods for <see cref="IField{T}"/> classes
@@ -30,11 +28,11 @@ namespace GenericMath.Analysis
 		public static Func<T, T> MultiplicationInverseFunction<T> (this IField<T> field)
 		{
 			return (x) => {
-				if (x.Equals (field.Zero)) {
+				if (x.Equals(field.Zero)) {
 					throw new DivideByZeroException ();
 				}
 
-				return field.MultiplicationInverse (x);
+				return field.MultiplicationInverse(x);
 			};
 		}
 
@@ -50,11 +48,11 @@ namespace GenericMath.Analysis
 			Func<T, T> func)
 		{
 			return (x) => {
-				if (func (x).Equals (field.Zero)) {
+				if (func(x).Equals(field.Zero)) {
 					throw new DivideByZeroException ();
 				}
 
-				return field.MultiplicationInverse (func (x));
+				return field.MultiplicationInverse(func(x));
 			};
 		}
 	}

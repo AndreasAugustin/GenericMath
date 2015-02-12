@@ -1,0 +1,11 @@
+/home/andy/GitHub/GenericMath/src/Tests/GenericMath.Common.Tests/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/andy/GitHub/GenericMath/src/Tests/GenericMath.Common.Tests/bin/Debug/NLog.config
+/home/andy/GitHub/GenericMath/src/Tests/GenericMath.Common.Tests/bin/Debug/GenericMath.Common.Tests.dll.mdb
+/home/andy/GitHub/GenericMath/src/Tests/GenericMath.Common.Tests/bin/Debug/GenericMath.Common.Tests.dll
+/home/andy/GitHub/GenericMath/src/Tests/GenericMath.Common.Tests/obj/Debug/GenericMath.Common.Tests.dll
+/home/andy/GitHub/GenericMath/src/Tests/GenericMath.Common.Tests/obj/Debug/GenericMath.Common.Tests.dll.mdb
+/home/andy/GitHub/GenericMath/src/Tests/GenericMath.Common.Tests/bin/Debug/NSubstitute.dll
+/home/andy/GitHub/GenericMath/src/Tests/GenericMath.Common.Tests/bin/Debug/NLog.dll
+/home/andy/GitHub/GenericMath/src/Tests/GenericMath.Common.Tests/bin/Debug/nunit.framework.dll
+/home/andy/GitHub/GenericMath/src/Tests/GenericMath.Common.Tests/bin/Debug/GenericMath.Common.dll
+/home/andy/GitHub/GenericMath/src/Tests/GenericMath.Common.Tests/bin/Debug/GenericMath.Common.dll.mdb

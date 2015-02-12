@@ -8,11 +8,9 @@
 // *************************************************************
 using GenericMath.Base.Contracts;
 
-namespace GenericMath.Analysis
+namespace GenericMath.Analysis.Contracts
 {
 	using System;
-
-	using GenericMath.Base;
 
 	/// <summary>
 	/// Extension methods for IGroup.
@@ -35,9 +33,9 @@ namespace GenericMath.Analysis
 			Func<T, T, T> leftFunction,
 			Func<T, T, T> rightFunction)
 		{
-			return (left, right) => monoid.Addition (
-				leftFunction (left, right),
-				rightFunction (left, right));
+			return (left, right) => monoid.Addition(
+				leftFunction(left, right),
+				rightFunction(left, right));
 		}
 
 		/// <summary>
@@ -54,7 +52,7 @@ namespace GenericMath.Analysis
 			Func<T, T> leftFunction,
 			Func<T, T> rightFunction)
 		{
-			return (x) => monoid.Addition (leftFunction (x), rightFunction (x));
+			return (x) => monoid.Addition(leftFunction(x), rightFunction(x));
 		}
 
 		/// <summary>
