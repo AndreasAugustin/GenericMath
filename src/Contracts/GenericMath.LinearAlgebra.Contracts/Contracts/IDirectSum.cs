@@ -8,11 +8,9 @@
 // *************************************************************
 using GenericMath.Base.Contracts;
 
-namespace GenericMath.LinearAlgebra
+namespace GenericMath.LinearAlgebra.Contracts
 {
 	using System;
-
-	using GenericMath.Base;
 
 	/// <summary>
 	/// Interface for the direct sum of structures.
@@ -35,7 +33,11 @@ namespace GenericMath.LinearAlgebra
 		/// </summary>
 		/// <param name="index">The index.</param>
 		/// <returns>The value at index.</returns>
-		T this [UInt32 index] { get; set; }
+		T this [UInt32 index]
+		{
+			get;
+			set;
+		}
 
 		#endregion
 

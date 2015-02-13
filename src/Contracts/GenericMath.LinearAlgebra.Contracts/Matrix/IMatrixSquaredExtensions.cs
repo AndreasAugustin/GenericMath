@@ -9,7 +9,7 @@
 using GenericMath.Base.Contracts;
 using GenericMath.LinearAlgebra.Contracts;
 
-namespace GenericMath.LinearAlgebra
+namespace GenericMath.LinearAlgebra.Contracts
 {
 	using System;
 	using System.Collections.Generic;
@@ -53,8 +53,7 @@ namespace GenericMath.LinearAlgebra
             where TStruct : IStructure<T>, new()
 		{
 			if (matrix.RowDimension != matrix.ColumnDimension) {
-				throw new LinearAlgebraException (
-					LinearAlgebraExceptionType.MatrixIsNotSquared,
+				throw new IndexOutOfRangeException (
 					"The row and column dimension do not agree");
 			}
 		}

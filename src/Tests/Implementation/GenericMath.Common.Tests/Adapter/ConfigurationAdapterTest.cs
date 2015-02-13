@@ -9,77 +9,78 @@
 
 namespace GenericMath.Common.Tests
 {
-    using System;
-    using System.Xml.Linq;
+	using System;
+	using System.Xml.Linq;
 
-    using NSubstitute;
-    using NUnit.Framework;
+	using GenericMath.Common.Contracts;
+	using NUnit.Framework;
+	using NSubstitute;
 
-    /// <summary>
-    /// Test for the <see cref="ConfigurationAdapter"/> class.
-    /// </summary>
-    [TestFixture]
-    public class ConfigurationAdapterTest
-    {
-        #region fields
+	/// <summary>
+	/// Test for the <see cref="ConfigurationAdapter"/> class.
+	/// </summary>
+	[TestFixture]
+	public class ConfigurationAdapterTest
+	{
+		#region fields
 
-        private const String ConfigurationString = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" +
-                                                   "<configuration>" +
-                                                   "<appSettings>" +
-                                                   "<add key=\"xmlSource.folder.path\" value=\"\"/>" +
-                                                   "<add key=\"markupTarget.folder.path\" value=\"\"/>" +
-                                                   "<add key=\"markdownType\" value=\"0\"/>" +
-                                                   "<add key=\"logger.global.threshold\" value=\"7\"></add>" +
-                                                   "</appSettings>" +
-                                                   "</configuration>";
+		private const String ConfigurationString = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" +
+		                                           "<configuration>" +
+		                                           "<appSettings>" +
+		                                           "<add key=\"xmlSource.folder.path\" value=\"\"/>" +
+		                                           "<add key=\"markupTarget.folder.path\" value=\"\"/>" +
+		                                           "<add key=\"markdownType\" value=\"0\"/>" +
+		                                           "<add key=\"logger.global.threshold\" value=\"7\"></add>" +
+		                                           "</appSettings>" +
+		                                           "</configuration>";
 
-        #endregion
+		#endregion
 
-        #region properties
+		#region properties
 
-        private XDocument ConfigurationDocument
-        {
-            get
-            {
-                return XDocument.Parse(ConfigurationString);
-            }
-        }
+		private XDocument ConfigurationDocument
+		{
+			get
+			{
+				return XDocument.Parse(ConfigurationString);
+			}
+		}
 
-        #endregion
+		#endregion
 
-        #region methods
+		#region methods
 
-        /// <summary>
-        /// Creates a new object and checks if it is not null.
-        /// </summary>
-        [Test]
-        [Category("Unit test: configuration")]
-        public void Init_CreateClass_ResultIsNotNull()
-        {
-            var loggerManagerStub = Substitute.For<ILoggerManager>();
-            var configuration = new ConfigurationAdapter(loggerManagerStub, String.Empty);
-            Assert.IsNotNull(configuration);
-        }
+		/// <summary>
+		/// Creates a new object and checks if it is not null.
+		/// </summary>
+		[Test]
+		[Category("Unit test: configuration")]
+		public void Init_CreateClass_ResultIsNotNull ()
+		{
+			var loggerManagerStub = Substitute.For<ILoggerManager>();
+			var configuration = new ConfigurationAdapter (loggerManagerStub, String.Empty);
+			Assert.IsNotNull(configuration);
+		}
 
-        /// <summary>
-        /// Calls an index and checks if the result equals the expected value.
-        /// </summary>
-        /// <param name="key">The key.</param>
-        /// <param name="expectedValue">The expected value.</param>
-        [Test]
-        [Category("Unit test: configuration")]
-        [TestCase("markdownType", "0")]
-        [TestCase("logger.global.threshold", "7")]
-        public void Indexer_GetKey_ResultEqualsExpected(String key, String expectedValue)
-        {
-            var loggerManagerStub = Substitute.For<ILoggerManager>();
-            var configuration = new ConfigurationAdapter(loggerManagerStub, String.Empty);
-            configuration.ConfigDocument = this.ConfigurationDocument;
+		/// <summary>
+		/// Calls an index and checks if the result equals the expected value.
+		/// </summary>
+		/// <param name="key">The key.</param>
+		/// <param name="expectedValue">The expected value.</param>
+		[Test]
+		[Category("Unit test: configuration")]
+		[TestCase("markdownType", "0")]
+		[TestCase("logger.global.threshold", "7")]
+		public void Indexer_GetKey_ResultEqualsExpected (String key, String expectedValue)
+		{
+			var loggerManagerStub = Substitute.For<ILoggerManager>();
+			var configuration = new ConfigurationAdapter (loggerManagerStub, String.Empty);
+			configuration.ConfigDocument = this.ConfigurationDocument;
 
-            var result = configuration[key];
-            Assert.AreEqual(expectedValue, result);
-        }
+			var result = configuration [key];
+			Assert.AreEqual(expectedValue, result);
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }

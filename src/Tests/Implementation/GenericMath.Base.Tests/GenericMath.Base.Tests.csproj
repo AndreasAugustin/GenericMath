@@ -33,6 +33,7 @@
     <Reference Include="System.Numerics" />
     <Reference Include="nunit.framework">
       <HintPath>..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Package>nunit</Package>
     </Reference>
     <Reference Include="NSubstitute">
       <HintPath>..\..\packages\NSubstitute.1.8.1.0\lib\net40\NSubstitute.dll</HintPath>
@@ -75,15 +76,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\GenericMath.Base\GenericMath.Base.csproj">
+    <ProjectReference Include="..\..\..\Implementation\GenericMath.Base\GenericMath.Base.csproj">
       <Project>{32112762-A4EA-4A22-8F40-235A366445A9}</Project>
       <Name>GenericMath.Base</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj">
+    <ProjectReference Include="..\..\..\Contracts\GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj">
       <Project>{7F36FB73-84B0-4815-BA4D-275885F7A264}</Project>
       <Name>GenericMath.Base.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\GenericMath.Analysis\GenericMath.Analysis.csproj">
+    <ProjectReference Include="..\..\..\Implementation\GenericMath.Analysis\GenericMath.Analysis.csproj">
       <Project>{1974448B-2DDF-4F3A-A044-8D27B97ACBEE}</Project>
       <Name>GenericMath.Analysis</Name>
     </ProjectReference>

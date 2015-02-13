@@ -54,11 +54,11 @@
       <Project>{FA62DC06-710E-4615-9E6F-C5E77D5B3202}</Project>
       <Name>GenericMath.LinearAlgebra</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj">
+    <ProjectReference Include="..\..\Contracts\GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj">
       <Project>{7F36FB73-84B0-4815-BA4D-275885F7A264}</Project>
       <Name>GenericMath.Base.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Contracts\GenericMath.LinearAlgebra.Contracts\GenericMath.LinearAlgebra.Contracts.csproj">
+    <ProjectReference Include="..\..\Contracts\GenericMath.LinearAlgebra.Contracts\GenericMath.LinearAlgebra.Contracts.csproj">
       <Project>{E1CF5BBE-B469-45F7-8B6B-39D53FDB22A5}</Project>
       <Name>GenericMath.LinearAlgebra.Contracts</Name>
     </ProjectReference>

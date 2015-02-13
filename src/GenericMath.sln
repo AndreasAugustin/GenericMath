@@ -3,37 +3,45 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Base.Tests", "Tests\GenericMath.Base.Tests\GenericMath.Base.Tests.csproj", "{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Parser.Tests", "Tests\GenericMath.Parser.Tests\GenericMath.Parser.Tests.csproj", "{11DE12D6-4F86-4696-A408-1FAED8F2EE88}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.LinearAlgebra.Tests", "Tests\GenericMath.LinearAlgebra.Tests\GenericMath.LinearAlgebra.Tests.csproj", "{577920B2-9289-4CC9-8F56-291E9F436495}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Analysis.Tests", "Tests\GenericMath.Analysis.Tests\GenericMath.Analysis.Tests.csproj", "{57422D4B-3791-4023-AA99-F236C9E68476}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Common.Tests", "Tests\GenericMath.Common.Tests\GenericMath.Common.Tests.csproj", "{109106CD-4AB0-49BE-B8CB-7DB7524632FB}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{AECAFDF3-8137-4112-8862-6337552CD284}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Base.Contracts.Tests", "Tests\Contracts\GenericMath.Base.Contracts.Tests\GenericMath.Base.Contracts.Tests.csproj", "{19F84A7A-9EEF-4BB8-BAB4-48F30F7F9A76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.LinearAlgebra.Contracts.Tests", "Tests\Contracts\GenericMath.Base.Contracts.Tests\GenericMath.LinearAlgebra.Contracts.Tests\GenericMath.LinearAlgebra.Contracts.Tests.csproj", "{FE1428DB-B0DE-42A6-A22A-4AB9ADB523DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementation", "Implementation", "{BC0E1444-8D4A-47BB-9DE7-DCE5D813B340}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Common", "GenericMath.Common\GenericMath.Common.csproj", "{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Analysis.Tests", "Tests\Implementation\GenericMath.Analysis.Tests\GenericMath.Analysis.Tests.csproj", "{57422D4B-3791-4023-AA99-F236C9E68476}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.LinearAlgebra", "GenericMath.LinearAlgebra\GenericMath.LinearAlgebra.csproj", "{FA62DC06-710E-4615-9E6F-C5E77D5B3202}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Base.Tests", "Tests\Implementation\GenericMath.Base.Tests\GenericMath.Base.Tests.csproj", "{AE662243-42D1-4CAA-A0A4-9A60A708F7C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Parser", "GenericMath.Parser\GenericMath.Parser.csproj", "{B9684EF5-50EB-471D-B899-9F0A231EB9A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Common.Tests", "Tests\Implementation\GenericMath.Common.Tests\GenericMath.Common.Tests.csproj", "{109106CD-4AB0-49BE-B8CB-7DB7524632FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.LinearAlgebra.Tests", "Tests\Implementation\GenericMath.LinearAlgebra.Tests\GenericMath.LinearAlgebra.Tests.csproj", "{577920B2-9289-4CC9-8F56-291E9F436495}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Parser.Tests", "Tests\Implementation\GenericMath.Parser.Tests\GenericMath.Parser.Tests.csproj", "{11DE12D6-4F86-4696-A408-1FAED8F2EE88}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{99AA09F7-4363-4508-A023-477F79CDC8FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Analysis.Contracts", "GenericMath.Analysis.Contracts\GenericMath.Analysis.Contracts.csproj", "{3029E17F-C4A4-4D82-9B2A-D280AE9403F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.LinearAlgebra.Contracts", "Contracts\GenericMath.LinearAlgebra.Contracts\GenericMath.LinearAlgebra.Contracts.csproj", "{E1CF5BBE-B469-45F7-8B6B-39D53FDB22A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Base.Contracts", "GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj", "{7F36FB73-84B0-4815-BA4D-275885F7A264}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Common.Contracts", "Contracts\GenericMath.Common.Contracts\GenericMath.Common.Contracts.csproj", "{69314488-774D-4B24-866E-E3FB9E691DB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Base.Contracts", "Contracts\GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj", "{7F36FB73-84B0-4815-BA4D-275885F7A264}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Analysis.Contracts", "Contracts\GenericMath.Analysis.Contracts\GenericMath.Analysis.Contracts.csproj", "{3029E17F-C4A4-4D82-9B2A-D280AE9403F9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementations", "Implementations", "{9C4E379C-4AE9-425B-A637-DFD0D0E9AB3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Base", "GenericMath.Base\GenericMath.Base.csproj", "{32112762-A4EA-4A22-8F40-235A366445A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Analysis", "Implementation\GenericMath.Analysis\GenericMath.Analysis.csproj", "{1974448B-2DDF-4F3A-A044-8D27B97ACBEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Analysis", "GenericMath.Analysis\GenericMath.Analysis.csproj", "{1974448B-2DDF-4F3A-A044-8D27B97ACBEE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Base", "Implementation\GenericMath.Base\GenericMath.Base.csproj", "{32112762-A4EA-4A22-8F40-235A366445A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Common", "Implementation\GenericMath.Common\GenericMath.Common.csproj", "{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.LinearAlgebra", "Implementation\GenericMath.LinearAlgebra\GenericMath.LinearAlgebra.csproj", "{FA62DC06-710E-4615-9E6F-C5E77D5B3202}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Parser", "Implementation\GenericMath.Parser\GenericMath.Parser.csproj", "{B9684EF5-50EB-471D-B899-9F0A231EB9A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +61,10 @@ Global
 		{1974448B-2DDF-4F3A-A044-8D27B97ACBEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1974448B-2DDF-4F3A-A044-8D27B97ACBEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1974448B-2DDF-4F3A-A044-8D27B97ACBEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19F84A7A-9EEF-4BB8-BAB4-48F30F7F9A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19F84A7A-9EEF-4BB8-BAB4-48F30F7F9A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19F84A7A-9EEF-4BB8-BAB4-48F30F7F9A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19F84A7A-9EEF-4BB8-BAB4-48F30F7F9A76}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3029E17F-C4A4-4D82-9B2A-D280AE9403F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3029E17F-C4A4-4D82-9B2A-D280AE9403F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3029E17F-C4A4-4D82-9B2A-D280AE9403F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -73,6 +85,10 @@ Global
 		{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69314488-774D-4B24-866E-E3FB9E691DB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69314488-774D-4B24-866E-E3FB9E691DB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69314488-774D-4B24-866E-E3FB9E691DB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69314488-774D-4B24-866E-E3FB9E691DB4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7F36FB73-84B0-4815-BA4D-275885F7A264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7F36FB73-84B0-4815-BA4D-275885F7A264}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F36FB73-84B0-4815-BA4D-275885F7A264}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -85,22 +101,49 @@ Global
 		{B9684EF5-50EB-471D-B899-9F0A231EB9A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9684EF5-50EB-471D-B899-9F0A231EB9A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9684EF5-50EB-471D-B899-9F0A231EB9A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1CF5BBE-B469-45F7-8B6B-39D53FDB22A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1CF5BBE-B469-45F7-8B6B-39D53FDB22A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1CF5BBE-B469-45F7-8B6B-39D53FDB22A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1CF5BBE-B469-45F7-8B6B-39D53FDB22A5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA62DC06-710E-4615-9E6F-C5E77D5B3202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA62DC06-710E-4615-9E6F-C5E77D5B3202}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA62DC06-710E-4615-9E6F-C5E77D5B3202}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA62DC06-710E-4615-9E6F-C5E77D5B3202}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE1428DB-B0DE-42A6-A22A-4AB9ADB523DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE1428DB-B0DE-42A6-A22A-4AB9ADB523DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE1428DB-B0DE-42A6-A22A-4AB9ADB523DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE1428DB-B0DE-42A6-A22A-4AB9ADB523DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
-		{11DE12D6-4F86-4696-A408-1FAED8F2EE88} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
-		{577920B2-9289-4CC9-8F56-291E9F436495} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
-		{57422D4B-3791-4023-AA99-F236C9E68476} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
-		{109106CD-4AB0-49BE-B8CB-7DB7524632FB} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
 		{AECAFDF3-8137-4112-8862-6337552CD284} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
 		{BC0E1444-8D4A-47BB-9DE7-DCE5D813B340} = {9A9BE1D6-6C99-47DE-AAC3-BE9D36B6286A}
-		{3029E17F-C4A4-4D82-9B2A-D280AE9403F9} = {99AA09F7-4363-4508-A023-477F79CDC8FD}
+		{19F84A7A-9EEF-4BB8-BAB4-48F30F7F9A76} = {AECAFDF3-8137-4112-8862-6337552CD284}
+		{FE1428DB-B0DE-42A6-A22A-4AB9ADB523DF} = {AECAFDF3-8137-4112-8862-6337552CD284}
+		{57422D4B-3791-4023-AA99-F236C9E68476} = {BC0E1444-8D4A-47BB-9DE7-DCE5D813B340}
+		{AE662243-42D1-4CAA-A0A4-9A60A708F7C3} = {BC0E1444-8D4A-47BB-9DE7-DCE5D813B340}
+		{109106CD-4AB0-49BE-B8CB-7DB7524632FB} = {BC0E1444-8D4A-47BB-9DE7-DCE5D813B340}
+		{577920B2-9289-4CC9-8F56-291E9F436495} = {BC0E1444-8D4A-47BB-9DE7-DCE5D813B340}
+		{11DE12D6-4F86-4696-A408-1FAED8F2EE88} = {BC0E1444-8D4A-47BB-9DE7-DCE5D813B340}
+		{E1CF5BBE-B469-45F7-8B6B-39D53FDB22A5} = {99AA09F7-4363-4508-A023-477F79CDC8FD}
+		{69314488-774D-4B24-866E-E3FB9E691DB4} = {99AA09F7-4363-4508-A023-477F79CDC8FD}
 		{7F36FB73-84B0-4815-BA4D-275885F7A264} = {99AA09F7-4363-4508-A023-477F79CDC8FD}
-		{32112762-A4EA-4A22-8F40-235A366445A9} = {9C4E379C-4AE9-425B-A637-DFD0D0E9AB3F}
+		{3029E17F-C4A4-4D82-9B2A-D280AE9403F9} = {99AA09F7-4363-4508-A023-477F79CDC8FD}
 		{1974448B-2DDF-4F3A-A044-8D27B97ACBEE} = {9C4E379C-4AE9-425B-A637-DFD0D0E9AB3F}
+		{32112762-A4EA-4A22-8F40-235A366445A9} = {9C4E379C-4AE9-425B-A637-DFD0D0E9AB3F}
+		{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D} = {9C4E379C-4AE9-425B-A637-DFD0D0E9AB3F}
+		{FA62DC06-710E-4615-9E6F-C5E77D5B3202} = {9C4E379C-4AE9-425B-A637-DFD0D0E9AB3F}
+		{B9684EF5-50EB-471D-B899-9F0A231EB9A2} = {9C4E379C-4AE9-425B-A637-DFD0D0E9AB3F}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = None
+		$1.ResourceNamePolicy = FileFormatDefault
+		$0.TextStylePolicy = $2
+		$2.FileWidth = 120
+		$2.TabsToSpaces = False
+		$2.inheritsSet = VisualStudio
+		$2.inheritsScope = text/plain
+		$2.scope = text/plain
 	EndGlobalSection
 EndGlobal

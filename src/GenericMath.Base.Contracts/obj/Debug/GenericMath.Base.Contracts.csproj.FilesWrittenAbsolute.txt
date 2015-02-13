@@ -1,5 +1,0 @@
-/home/andy/GitHub/GenericMath/src/GenericMath.Base.Contracts/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/andy/GitHub/GenericMath/src/GenericMath.Base.Contracts/bin/Debug/GenericMath.Base.Contracts.dll.mdb
-/home/andy/GitHub/GenericMath/src/GenericMath.Base.Contracts/bin/Debug/GenericMath.Base.Contracts.dll
-/home/andy/GitHub/GenericMath/src/GenericMath.Base.Contracts/obj/Debug/GenericMath.Base.Contracts.dll
-/home/andy/GitHub/GenericMath/src/GenericMath.Base.Contracts/obj/Debug/GenericMath.Base.Contracts.dll.mdb

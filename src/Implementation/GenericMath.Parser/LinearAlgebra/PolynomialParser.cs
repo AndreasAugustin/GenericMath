@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using GenericMath.Base.Contracts;
 using GenericMath.Common;
 using GenericMath.LinearAlgebra;
+using System.Text.RegularExpressions;
 
 namespace GenericMath.Parser
 {
@@ -29,7 +30,6 @@ namespace GenericMath.Parser
 		#region fields
 
 		private readonly TParser _typeParser = new TParser ();
-		private readonly IRegex _regex = new RegexAdapter ();
 		private List<T> _entries = new List<T> ();
 
 		#endregion
@@ -47,7 +47,7 @@ namespace GenericMath.Parser
 		/// <returns>A new polynomial with values from the string.</returns>
 		public Polynomial<T, TStruct> Parse (String inputString)
 		{
-			var matchArray = this._regex.Split(inputString, ",");
+			var matchArray = Regex.Split(inputString, ",");
 
 			if (matchArray.Length <= 0) {
 				throw new NotSupportedException ("No match");

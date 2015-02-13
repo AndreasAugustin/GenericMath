@@ -9,11 +9,9 @@
 using GenericMath.Base.Contracts;
 using GenericMath.LinearAlgebra.Contracts;
 
-namespace GenericMath.LinearAlgebra
+namespace GenericMath.LinearAlgebra.Contracts
 {
 	using System;
-
-	using GenericMath.Base;
 
 	/// <summary>
 	/// Extension methods for the matrix class. <see cref="Matrix{T, TStruct}"/> class.
@@ -21,64 +19,6 @@ namespace GenericMath.LinearAlgebra
 	public static class IMatrixExtensions
 	{
 		#region METHODS
-
-		/// <summary>
-		/// Gets the column vector at column columnIndex.
-		/// </summary>
-		/// <returns>The row vector.</returns>
-		/// <param name="matrix">The matrix.</param>
-		/// <param name ="columnIndex">The column index.</param>
-		/// <typeparam name="T">The 1st type parameter.</typeparam>
-		/// <typeparam name="TStruct">The underlying structure.</typeparam>
-		public static DirectSum<T, TStruct> GetColumnVector<T, TStruct> (
-			this IMatrix<T, TStruct> matrix,
-			UInt32 columnIndex)
-            where TStruct : IStructure<T>, new()
-		{
-			if (columnIndex >= matrix.ColumnDimension) {
-				throw new LinearAlgebraException (
-					LinearAlgebraExceptionType.IndexEqualOrGreaterDimension,
-					"The indx is not right");
-			}
-                
-			var rowDimension = matrix.RowDimension;
-			var tuple = new DirectSum<T, TStruct> (rowDimension);
-
-			for (UInt32 i = 0; i < rowDimension; i++) { 
-				tuple [i] = matrix [i, columnIndex];
-			}
-
-			return tuple;
-		}
-
-		/// <summary>
-		/// Gets the row vector at row rowIndex.
-		/// </summary>
-		/// <returns>The column vector.</returns>
-		/// <param name="matrix">The matrix.</param>
-		/// <param name="rowIndex">Column index.</param>
-		/// <typeparam name="T">The 1st type parameter.</typeparam>
-		/// <typeparam name="TStruct">The underlying structure.</typeparam>
-		public static DirectSum<T, TStruct> GetRowVector<T, TStruct> (
-			this IMatrix<T, TStruct> matrix,
-			UInt32 rowIndex)
-            where TStruct : IStructure<T>, new()
-		{
-			if (rowIndex >= matrix.RowDimension) {
-				throw new LinearAlgebraException (
-					LinearAlgebraExceptionType.IndexEqualOrGreaterDimension,
-					"The indx is not right");
-			}
-
-			var columnDimension = matrix.ColumnDimension;
-			var tuple = new DirectSum<T, TStruct> (columnDimension);
-
-			for (UInt32 j = 0; j < columnDimension; j++) { 
-				tuple [j] = matrix [rowIndex, j];
-			}
-
-			return tuple;
-		}
 
 		/// <summary>
 		/// Transpose the specified matrix.

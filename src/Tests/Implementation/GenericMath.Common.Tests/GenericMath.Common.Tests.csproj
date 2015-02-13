@@ -31,24 +31,18 @@
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="NSubstitute">
-      <HintPath>..\..\packages\NSubstitute.1.8.1.0\lib\net45\NSubstitute.dll</HintPath>
-    </Reference>
-    <Reference Include="NLog">
-      <HintPath>..\..\packages\NLog.3.2.0.0\lib\net45\NLog.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Package>nunit</Package>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\..\..\packages\NLog.3.2.0.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\packages\NSubstitute.1.8.1.0\lib\net45\NSubstitute.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="NLog.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="NLog.xsd" />
-  </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
     <Folder Include="Adapter\" />
@@ -60,9 +54,16 @@
     <Compile Include="Adapter\NLogManagerAdapterTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\GenericMath.Common\GenericMath.Common.csproj">
+    <ProjectReference Include="..\..\..\Implementation\GenericMath.Common\GenericMath.Common.csproj">
       <Project>{67E508C9-6ACD-43E2-B8D5-71E6259F7C5D}</Project>
       <Name>GenericMath.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Contracts\GenericMath.Common.Contracts\GenericMath.Common.Contracts.csproj">
+      <Project>{69314488-774D-4B24-866E-E3FB9E691DB4}</Project>
+      <Name>GenericMath.Common.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

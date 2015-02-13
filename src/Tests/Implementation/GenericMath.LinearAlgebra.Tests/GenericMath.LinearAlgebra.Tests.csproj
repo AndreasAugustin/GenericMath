@@ -33,6 +33,7 @@
     <Reference Include="System.Numerics" />
     <Reference Include="nunit.framework">
       <HintPath>..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Package>nunit</Package>
     </Reference>
     <Reference Include="NSubstitute">
       <HintPath>..\..\packages\NSubstitute.1.8.1.0\lib\net40\NSubstitute.dll</HintPath>
@@ -49,42 +50,42 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DirectSum\DirectSumTest.cs" />
-    <Compile Include="DirectSum\IDirectSumExtensionsTest.cs" />
-    <Compile Include="DirectSum\IDirectSumFromMonoidExtensionsTest.cs" />
-    <Compile Include="DirectSum\IDirectSumFromGroupExtensionsTest.cs" />
-    <Compile Include="DirectSum\IDirectSumFromRingExtensionsTest.cs" />
     <Compile Include="DirectSum\FakeDirectSumTestDataSource.cs" />
     <Compile Include="Polynomial\PolynomialTest.cs" />
     <Compile Include="Matrix\MatrixTest.cs" />
     <Compile Include="Polynomial\FakePolynomialTestDataSource.cs" />
-    <Compile Include="Polynomial\IPolynomialExtensionsTest.cs" />
-    <Compile Include="Polynomial\IPolynomialFromMonoidExtensionsTest.cs" />
-    <Compile Include="Polynomial\IPolynomialFromGroupExtensionsTest.cs" />
-    <Compile Include="Polynomial\IPolynomialFromRingExtensionsTest.cs" />
     <Compile Include="Matrix\FakeMatrixTestDataSource.cs" />
-    <Compile Include="Matrix\IMatrixExtensionsTest.cs" />
-    <Compile Include="Matrix\IMatrixFromRingExtensionsTest.cs" />
-    <Compile Include="Matrix\IMatrixFromGroupExtensionsTest.cs" />
-    <Compile Include="Matrix\IMatrixFromMonoidExtensionsTest.cs" />
-    <Compile Include="Matrix\IMatrixSquaredExtensionsTest.cs" />
     <Compile Include="Matrix\FakeMatrixSquaredTestDataSource.cs" />
-    <Compile Include="Matrix\IMatrixFromEuclidianRingExtensionsTest.cs" />
     <Compile Include="Matrix\FakeMatrixEuclidianRingTestDataSource.cs" />
+    <Compile Include="DirectSum\DirectSumExtensionsTest.cs" />
+    <Compile Include="DirectSum\DirectSumFromGroupExtensionsTest.cs" />
+    <Compile Include="DirectSum\DirectSumFromMonoidExtensionsTest.cs" />
+    <Compile Include="DirectSum\DirectSumFromRingExtensionsTest.cs" />
+    <Compile Include="Matrix\MatrixExtensionsTest.cs" />
+    <Compile Include="Matrix\MatrixFromGroupExtensionsTest.cs" />
+    <Compile Include="Matrix\MatrixFromEuclidianRingExtensionsTest.cs" />
+    <Compile Include="Matrix\MatrixFromMonoidExtensionsTest.cs" />
+    <Compile Include="Matrix\MatrixFromRingExtensionsTest.cs" />
+    <Compile Include="Matrix\MatrixSquaredExtensionsTest.cs" />
+    <Compile Include="Polynomial\PolynomialExtensionsTest.cs" />
+    <Compile Include="Polynomial\PolynomialFromRingExtensionsTest.cs" />
+    <Compile Include="Polynomial\PolynomialFromMonoidExtensionsTest.cs" />
+    <Compile Include="Polynomial\PolynomialFromGroupExtensionsTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\GenericMath.Base\GenericMath.Base.csproj">
+    <ProjectReference Include="..\..\..\Implementation\GenericMath.Base\GenericMath.Base.csproj">
       <Project>{32112762-A4EA-4A22-8F40-235A366445A9}</Project>
       <Name>GenericMath.Base</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\GenericMath.LinearAlgebra\GenericMath.LinearAlgebra.csproj">
+    <ProjectReference Include="..\..\..\Implementation\GenericMath.LinearAlgebra\GenericMath.LinearAlgebra.csproj">
       <Project>{FA62DC06-710E-4615-9E6F-C5E77D5B3202}</Project>
       <Name>GenericMath.LinearAlgebra</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj">
+    <ProjectReference Include="..\..\..\Contracts\GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj">
       <Project>{7F36FB73-84B0-4815-BA4D-275885F7A264}</Project>
       <Name>GenericMath.Base.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Contracts\GenericMath.LinearAlgebra.Contracts\GenericMath.LinearAlgebra.Contracts.csproj">
+    <ProjectReference Include="..\..\..\Contracts\GenericMath.LinearAlgebra.Contracts\GenericMath.LinearAlgebra.Contracts.csproj">
       <Project>{E1CF5BBE-B469-45F7-8B6B-39D53FDB22A5}</Project>
       <Name>GenericMath.LinearAlgebra.Contracts</Name>
     </ProjectReference>

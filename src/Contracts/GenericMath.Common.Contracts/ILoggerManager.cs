@@ -7,57 +7,57 @@
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
 
-namespace GenericMath.Common
+namespace GenericMath.Common.Contracts
 {
-    using System;
+	using System;
 
-    /// <summary>
-    /// Interface for the logger manager
-    /// </summary>
-    public interface ILoggerManager : IDisposable
-    {
-        #region properties
+	/// <summary>
+	/// Interface for the logger manager
+	/// </summary>
+	public interface ILoggerManager : IDisposable
+	{
+		#region properties
 
-        /// <summary>
-        /// Gets or sets the global threshold.
-        /// Log levels below this threshold are not logged.
-        /// </summary>
-        /// <value>The global threshold.</value>
-        LogLevel GlobalThreshold { get; set; }
+		/// <summary>
+		/// Gets or sets the global threshold.
+		/// Log levels below this threshold are not logged.
+		/// </summary>
+		/// <value>The global threshold.</value>
+		LogLevel GlobalThreshold { get; set; }
 
-        #endregion
+		#endregion
 
-        #region methods
+		#region methods
 
-        /// <summary>
-        /// Gets the specified logger.
-        /// </summary>
-        /// <returns>The logger.</returns>
-        /// <param name="loggerName">The logger name.</param>
-        ILogger GetLogger(String loggerName);
+		/// <summary>
+		/// Gets the specified logger.
+		/// </summary>
+		/// <returns>The logger.</returns>
+		/// <param name="loggerName">The logger name.</param>
+		ILogger GetLogger (String loggerName);
 
-        /// <summary>
-        /// Disables the logging.
-        /// </summary>
-        /// <returns>The logging.</returns>
-        IDisposable DisableLogging();
+		/// <summary>
+		/// Disables the logging.
+		/// </summary>
+		/// <returns>The logging.</returns>
+		IDisposable DisableLogging ();
 
-        /// <summary>
-        /// Enables the logging.
-        /// </summary>
-        void EnableLogging();
+		/// <summary>
+		/// Enables the logging.
+		/// </summary>
+		void EnableLogging ();
 
-        /// <summary>
-        /// Determines whether this instance is logging enabled.
-        /// </summary>
-        /// <returns><c>true</c> if this instance is logging enabled; otherwise, <c>false</c>.</returns>
-        Boolean IsLoggingEnabled();
+		/// <summary>
+		/// Determines whether this instance is logging enabled.
+		/// </summary>
+		/// <returns><c>true</c> if this instance is logging enabled; otherwise, <c>false</c>.</returns>
+		Boolean IsLoggingEnabled ();
 
-        /// <summary>
-        /// Dispose all targets and shut down.
-        /// </summary>
-        void ShutDown();
+		/// <summary>
+		/// Dispose all targets and shut down.
+		/// </summary>
+		void ShutDown ();
 
-        #endregion
-    }
+		#endregion
+	}
 }

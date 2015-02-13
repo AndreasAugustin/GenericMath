@@ -27,3 +27,8 @@
 /src/GenericMath.Analysis/obj
 /src/GenericMath.Analysis/bin
 /src/GenericMath.userprefs
+
+/obj/
+
+*.dll
+*.mdb

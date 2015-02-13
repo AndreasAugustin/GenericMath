@@ -8,7 +8,7 @@
 // *************************************************************
 using GenericMath.Base.Contracts;
 
-namespace GenericMath.LinearAlgebra
+namespace GenericMath.LinearAlgebra.Contracts
 {
 	using System;
 
@@ -42,7 +42,11 @@ namespace GenericMath.LinearAlgebra
 		/// <param name="row">The Row.</param>
 		/// <param name="column">The Column.</param>
 		/// <returns>The value at row and column.</returns>
-		T this [UInt32 row, UInt32 column] { get; set; }
+		T this [UInt32 row, UInt32 column]
+		{
+			get;
+			set;
+		}
 
 		#endregion
 

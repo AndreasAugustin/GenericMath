@@ -31,8 +31,37 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Contracts\IDirectSum.cs" />
+    <Compile Include="Contracts\IMatrix.cs" />
+    <Compile Include="Contracts\IPolynomial.cs" />
+    <Compile Include="Matrix\IMatrixExtensions.cs" />
+    <Compile Include="Matrix\IMatrixFromEuclidianRingExtensions.cs" />
+    <Compile Include="Matrix\IMatrixFromGroupExtensions.cs" />
+    <Compile Include="Matrix\IMatrixFromMonoidExtensions.cs" />
+    <Compile Include="Matrix\IMatrixFromRingExtensions.cs" />
+    <Compile Include="Matrix\IMatrixSquaredExtensions.cs" />
+    <Compile Include="DirectSum\IDirectSumExtensions.cs" />
+    <Compile Include="DirectSum\IDirectSumFromGroupExtensions.cs" />
+    <Compile Include="DirectSum\IDirectSumFromMonoidExtensions.cs" />
+    <Compile Include="DirectSum\IDirectSumFromRingExtensions.cs" />
+    <Compile Include="Polynomial\IPolynomialExtensions.cs" />
+    <Compile Include="Polynomial\IPolynomialFromGroupExtensions.cs" />
+    <Compile Include="Polynomial\IPolynomialFromMonoidExtensions.cs" />
+    <Compile Include="Polynomial\IPolynomialFromRingExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Matrix\" />
+    <Folder Include="DirectSum\" />
+    <Folder Include="Polynomial\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj">
+      <Project>{7F36FB73-84B0-4815-BA4D-275885F7A264}</Project>
+      <Name>GenericMath.Base.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

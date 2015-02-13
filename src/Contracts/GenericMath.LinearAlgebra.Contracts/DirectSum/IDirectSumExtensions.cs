@@ -9,11 +9,9 @@
 using GenericMath.Base.Contracts;
 using GenericMath.LinearAlgebra.Contracts;
 
-namespace GenericMath.LinearAlgebra
+namespace GenericMath.LinearAlgebra.Contracts
 {
 	using System;
-
-	using GenericMath.Base;
 
 	/// <summary>
 	/// Extension methods for the <see cref="IDirectSum{T, TStruct}"/> class.

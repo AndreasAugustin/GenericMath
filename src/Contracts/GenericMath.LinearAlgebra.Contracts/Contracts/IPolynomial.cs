@@ -8,7 +8,7 @@
 // *************************************************************
 using GenericMath.Base.Contracts;
 
-namespace GenericMath.LinearAlgebra
+namespace GenericMath.LinearAlgebra.Contracts
 {
 	using System;
 
@@ -39,7 +39,11 @@ namespace GenericMath.LinearAlgebra
 		/// </summary>
 		/// <param name="index">The index of the coefficient.</param>
 		/// <returns>The coefficient at the specified index.</returns>
-		T this [UInt32 index] { get; set; }
+		T this [UInt32 index]
+		{
+			get;
+			set;
+		}
 
 		/// <summary>
 		/// Returns a new the instance with degree set as parameter.

@@ -60,7 +60,7 @@
     <Folder Include="Interval\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj">
+    <ProjectReference Include="..\..\Contracts\GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj">
       <Project>{7F36FB73-84B0-4815-BA4D-275885F7A264}</Project>
       <Name>GenericMath.Base.Contracts</Name>
     </ProjectReference>
