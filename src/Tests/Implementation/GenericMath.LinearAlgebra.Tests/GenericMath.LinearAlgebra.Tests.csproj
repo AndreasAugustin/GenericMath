@@ -36,7 +36,7 @@
       <Package>nunit</Package>
     </Reference>
     <Reference Include="NSubstitute">
-      <HintPath>..\..\packages\NSubstitute.1.8.1.0\lib\net40\NSubstitute.dll</HintPath>
+      <HintPath>..\..\..\packages\NSubstitute.1.8.1.0\lib\net45\NSubstitute.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -66,11 +66,11 @@
     <Compile Include="Matrix\MatrixFromEuclidianRingExtensionsTest.cs" />
     <Compile Include="Matrix\MatrixFromMonoidExtensionsTest.cs" />
     <Compile Include="Matrix\MatrixFromRingExtensionsTest.cs" />
-    <Compile Include="Matrix\MatrixSquaredExtensionsTest.cs" />
     <Compile Include="Polynomial\PolynomialExtensionsTest.cs" />
     <Compile Include="Polynomial\PolynomialFromRingExtensionsTest.cs" />
     <Compile Include="Polynomial\PolynomialFromMonoidExtensionsTest.cs" />
     <Compile Include="Polynomial\PolynomialFromGroupExtensionsTest.cs" />
+    <Compile Include="Matrix\ISquaredMatrixExtensionsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Implementation\GenericMath.Base\GenericMath.Base.csproj">

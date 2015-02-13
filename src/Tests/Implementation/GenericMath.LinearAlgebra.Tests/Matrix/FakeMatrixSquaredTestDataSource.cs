@@ -126,8 +126,8 @@ namespace GenericMath.LinearAlgebra.Tests
 				var columnDimension = (UInt32)this.Int32List [0].Count;
 
 				var matrix = new Matrix<Int32, Int32Group> (
-					                         rowDimension,
-					                         columnDimension);
+					             rowDimension,
+					             columnDimension);
 
 				for (UInt32 i = 0; i < rowDimension; i++) {
 					for (UInt32 j = 0; j < columnDimension; j++) {
@@ -151,8 +151,8 @@ namespace GenericMath.LinearAlgebra.Tests
 				var columnDimension = (UInt32)this.Int32List [0].Count;
 
 				var matrix = new Matrix<Int32, Int32Ring> (
-					                         rowDimension,
-					                         columnDimension);
+					             rowDimension,
+					             columnDimension);
 
 				for (UInt32 i = 0; i < rowDimension; i++) {
 					for (UInt32 j = 0; j < columnDimension; j++) {
@@ -176,8 +176,8 @@ namespace GenericMath.LinearAlgebra.Tests
 				var columnDimension = (UInt32)this.ComplexList [0].Count;
 
 				var matrix = new Matrix<Complex, ComplexField> (
-					                         rowDimension,
-					                         columnDimension);
+					             rowDimension,
+					             columnDimension);
 
 				for (UInt32 i = 0; i < rowDimension; i++) {
 					for (UInt32 j = 0; j < columnDimension; j++) {
@@ -200,9 +200,7 @@ namespace GenericMath.LinearAlgebra.Tests
 				var rowDimension = (UInt32)this.DoubleList.Count; 
 				var columnDimension = (UInt32)this.DoubleList [0].Count;
 
-				var matrix = new Matrix<Double, DoubleField> (
-					                         rowDimension,
-					                         columnDimension);
+				var matrix = new SquaredMatrix<Double, DoubleField> (columnDimension);
 
 				for (UInt32 i = 0; i < rowDimension; i++) {
 					for (UInt32 j = 0; j < columnDimension; j++) {
@@ -226,8 +224,8 @@ namespace GenericMath.LinearAlgebra.Tests
 				var columnDimension = (UInt32)this.DoubleList2 [0].Count;
 
 				var matrix = new Matrix<Double, DoubleField> (
-					                         rowDimension,
-					                         columnDimension);
+					             rowDimension,
+					             columnDimension);
 
 				for (UInt32 i = 0; i < rowDimension; i++) {
 					for (UInt32 j = 0; j < columnDimension; j++) {

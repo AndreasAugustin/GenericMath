@@ -22,7 +22,7 @@ namespace GenericMath.LinearAlgebra.Tests
 	/// Test methods for the extension methods for the IMatrix.
 	/// </summary>
 	[TestFixture]
-	public class IMatrixFromMonoidExtensionsTest
+	public class MatrixFromMonoidExtensionsTest
 	{
 		#region fields
 

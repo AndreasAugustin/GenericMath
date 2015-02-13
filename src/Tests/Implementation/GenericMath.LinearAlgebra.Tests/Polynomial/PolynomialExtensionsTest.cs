@@ -22,7 +22,7 @@ namespace GenericMath.LinearAlgebra.Tests
 	/// Tests for the <see cref="IPolynomialExtensions"/> class. 
 	/// </summary>
 	[TestFixture]
-	public class IPolynomialExtensionsTest
+	public class PolynomialExtensionsTest
 	{
 		#region fields
 

@@ -22,7 +22,7 @@ namespace GenericMath.LinearAlgebra.Tests
 	/// Underlying class is <see cref="IDirectSumFromGroupExtensions"/>.
 	/// </summary>
 	[TestFixture]
-	public class IDirectSumFromGroupExtensionsTest
+	public class DirectSumFromGroupExtensionsTest
 	{
 		#region fields
 

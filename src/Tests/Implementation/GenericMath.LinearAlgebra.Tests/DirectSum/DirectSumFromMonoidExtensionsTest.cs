@@ -22,7 +22,7 @@ namespace GenericMath.LinearAlgebra.Tests
 	/// Test for the extension methods for direct sums for monoids.
 	/// </summary>
 	[TestFixture]
-	public class IDirectSumFromMonoidExtensionsTest
+	public class DirectSumFromMonoidExtensionsTest
 	{
 		#region fields
 

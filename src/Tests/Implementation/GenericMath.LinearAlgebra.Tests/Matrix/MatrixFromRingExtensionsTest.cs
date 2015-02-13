@@ -9,39 +9,39 @@
 
 namespace GenericMath.LinearAlgebra.Tests
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Numerics;
+	using System;
+	using System.Collections.Generic;
+	using System.Numerics;
 
-    using GenericMath.Base;
-    using NUnit.Framework;
+	using GenericMath.Base;
+	using NUnit.Framework;
 
-    /// <summary>
-    /// Tests for the extension methods for IMatrix with underlying Ring as structure.
-    /// </summary>
-    [TestFixture]
-    public class IMatrixFromRingExtensionsTest
-    {
-        #region fields
+	/// <summary>
+	/// Tests for the extension methods for IMatrix with underlying Ring as structure.
+	/// </summary>
+	[TestFixture]
+	public class MatrixFromRingExtensionsTest
+	{
+		#region fields
 
-        private FakeMatrixTestDataSource _mockDataSource;
+		private FakeMatrixTestDataSource _mockDataSource;
 
-        #endregion
+		#endregion
 
-        #region properties
+		#region properties
 
-        private FakeMatrixTestDataSource MockDataSource
-        {
-            get
-            {
-                return this._mockDataSource ?? (this._mockDataSource = new FakeMatrixTestDataSource());
-            }
-        }
+		private FakeMatrixTestDataSource MockDataSource
+		{
+			get
+			{
+				return this._mockDataSource ?? (this._mockDataSource = new FakeMatrixTestDataSource ());
+			}
+		}
 
-        #endregion
+		#endregion
 
-        #region methods
+		#region methods
 
-        #endregion
-    }
+		#endregion
+	}
 }

@@ -22,7 +22,7 @@ namespace GenericMath.LinearAlgebra.Tests
 	/// Tests for the extension methods for squared matrices.
 	/// </summary>
 	[TestFixture]
-	public class IMatrixSquaredExtensionsTest
+	public class ISquaredMatrixExtensionsTest
 	{
 		#region fields
 
@@ -71,7 +71,7 @@ namespace GenericMath.LinearAlgebra.Tests
 		public void Trace_CalculatrTrace_EqualsExpected<T, TMonoid> (
 			T hack1,
 			TMonoid hack2,
-			IMatrix<T, TMonoid> matrix,
+			ISquaredMatrix<T, TMonoid> matrix,
 			List<List<T>> underlyingList)
             where TMonoid : IMonoid<T>, new()
 		{

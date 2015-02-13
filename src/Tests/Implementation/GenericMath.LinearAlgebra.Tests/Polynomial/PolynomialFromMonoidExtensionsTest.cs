@@ -22,7 +22,7 @@ namespace GenericMath.LinearAlgebra.Tests
 	/// Tests for the extension methods for polynomials with underlying Monoid structure.
 	/// </summary>
 	[TestFixture]
-	public class IPolynomialFromMonoidExtensionsTest
+	public class PolynomialFromMonoidExtensionsTest
 	{
 		#region fields
 

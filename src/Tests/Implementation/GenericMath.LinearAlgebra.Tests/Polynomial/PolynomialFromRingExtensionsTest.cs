@@ -22,7 +22,7 @@ namespace GenericMath.LinearAlgebra.Tests
 	/// Tests for the IPolynomial extensions with underlying ring as structure.
 	/// </summary>
 	[TestFixture]
-	public class IPolynomialFromRingExtensionsTest
+	public class PolynomialFromRingExtensionsTest
 	{
 		#region fields
 

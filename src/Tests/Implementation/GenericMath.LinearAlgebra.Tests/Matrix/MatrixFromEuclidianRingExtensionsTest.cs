@@ -23,7 +23,7 @@ namespace GenericMath.LinearAlgebra.Tests
 	/// Test for the <see cref="IMatrixFromEuclidianRingExtensions"/> class.
 	/// </summary>
 	[TestFixture]
-	public class IMatrixFromEuclidianRingExtensionsTest
+	public class MatrixFromEuclidianRingExtensionsTest
 	{
 		#region fields
 

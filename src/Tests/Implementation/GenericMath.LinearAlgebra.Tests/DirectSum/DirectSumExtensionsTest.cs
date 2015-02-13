@@ -22,7 +22,7 @@ namespace GenericMath.LinearAlgebra.Tests
 	/// Vector extensions test.
 	/// </summary>
 	[TestFixture]
-	public class IDirectSumExtensionsTest
+	public class DirectSumExtensionsTest
 	{
 		#region fields
 

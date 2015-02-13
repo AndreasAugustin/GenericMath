@@ -22,7 +22,7 @@ namespace GenericMath.LinearAlgebra.Tests
 	/// Test methods for the extension methods of IPolynomial with group structure.
 	/// </summary>
 	[TestFixture]
-	public class IPolynomialFromGroupExtensionsTest
+	public class PolynomialFromGroupExtensionsTest
 	{
 		#region fields
 
