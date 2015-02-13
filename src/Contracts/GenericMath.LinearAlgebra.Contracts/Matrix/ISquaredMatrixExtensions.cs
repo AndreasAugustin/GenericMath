@@ -6,20 +6,17 @@
 // <author>andy</author>
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
+using System;
+
 using GenericMath.Base.Contracts;
 using GenericMath.LinearAlgebra.Contracts;
 
 namespace GenericMath.LinearAlgebra.Contracts
 {
-	using System;
-	using System.Collections.Generic;
-
-	using GenericMath.Base;
-
 	/// <summary>
 	/// Matrix squared extensions.
 	/// </summary>
-	public static class IMatrixSquaredExtensions
+	public static class ISquaredMatrixExtensions
 	{
 		#region METHODS
 
@@ -30,11 +27,9 @@ namespace GenericMath.LinearAlgebra.Contracts
 		/// <typeparam name="T">The 1st type parameter.</typeparam>
 		/// <typeparam name="TMonoid">The underlying structure.</typeparam>
 		/// <returns>The trace of the matrix.</returns>
-		public static T Trace<T, TMonoid> (this IMatrix<T, TMonoid> matrix)
+		public static T Trace<T, TMonoid> (this ISquaredMatrix<T, TMonoid> matrix)
             where TMonoid : IMonoid<T>, new()
 		{
-			CheckSquared(matrix);
-
 			var baseStructure = new TMonoid ();
 			var result = baseStructure.Zero;
 
@@ -43,19 +38,6 @@ namespace GenericMath.LinearAlgebra.Contracts
 			}
 
 			return result;
-		}
-
-		#endregion
-
-		#region helper methods
-
-		private static void CheckSquared<T, TStruct> (this IMatrix<T, TStruct> matrix)
-            where TStruct : IStructure<T>, new()
-		{
-			if (matrix.RowDimension != matrix.ColumnDimension) {
-				throw new IndexOutOfRangeException (
-					"The row and column dimension do not agree");
-			}
 		}
 
 		#endregion
