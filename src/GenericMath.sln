@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.Base.Contracts.Tests", "Tests\Contracts\GenericMath.Base.Contracts.Tests\GenericMath.Base.Contracts.Tests.csproj", "{19F84A7A-9EEF-4BB8-BAB4-48F30F7F9A76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.LinearAlgebra.Contracts.Tests", "Tests\Contracts\GenericMath.Base.Contracts.Tests\GenericMath.LinearAlgebra.Contracts.Tests\GenericMath.LinearAlgebra.Contracts.Tests.csproj", "{FE1428DB-B0DE-42A6-A22A-4AB9ADB523DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMath.LinearAlgebra.Contracts.Tests", "Tests\Contracts\GenericMath.LinearAlgebra.Contracts.Tests\GenericMath.LinearAlgebra.Contracts.Tests.csproj", "{FE1428DB-B0DE-42A6-A22A-4AB9ADB523DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementation", "Implementation", "{BC0E1444-8D4A-47BB-9DE7-DCE5D813B340}"
 EndProject
