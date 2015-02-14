@@ -8,29 +8,30 @@
 // // *************************************************************
 //
 
-using System;
-using GenericMath.Base.Contracts;
 
 namespace GenericMath.LinearAlgebra.Contracts
 {
-	/// <summary>
-	/// Interface for squared matrizes.
-	/// </summary>
-	public interface ISquaredMatrix<T, TStruct> : IMatrix<T, TStruct>
-		where TStruct : IStructure<T>, new()
-	{
-		/// <summary>
-		/// Gets the dimension.
-		/// </summary>
-		/// <value>The dimension.</value>
-		UInt32 Dimension { get; }
+    using System;
+    using GenericMath.Base.Contracts;
 
-		/// <summary>
-		/// Returns the new instance.
-		/// </summary>
-		/// <returns>The new instance.</returns>
-		/// <param name="dimension">Row dimension.</param>
-		IMatrix<T, TStruct> ReturnNewInstance (
-			UInt32 dimension);
-	}
+    /// <summary>
+    /// Interface for squared matrizes.
+    /// </summary>
+    public interface ISquaredMatrix<T, TStruct> : IMatrix<T, TStruct>
+		where TStruct : IStructure<T>, new()
+    {
+        /// <summary>
+        /// Gets the dimension.
+        /// </summary>
+        /// <value>The dimension.</value>
+        UInt32 Dimension { get; }
+
+        /// <summary>
+        /// Returns the new instance.
+        /// </summary>
+        /// <returns>The new instance.</returns>
+        /// <param name="dimension">Row dimension.</param>
+        IMatrix<T, TStruct> ReturnNewInstance (
+            UInt32 dimension);
+    }
 }

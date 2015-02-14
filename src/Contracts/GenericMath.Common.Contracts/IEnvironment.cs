@@ -9,17 +9,15 @@
 
 namespace GenericMath.Common.Contracts
 {
-	using System;
-
-	/// <summary>
-	/// Interface for environment.
-	/// </summary>
-	public interface IEnvironment
-	{
-		/// <summary>
-		/// Gets the new line.
-		/// </summary>
-		/// <value>The new line.</value>
-		String NewLine { get; }
-	}
+    /// <summary>
+    /// Interface for environment.
+    /// </summary>
+    public interface IEnvironment
+    {
+        /// <summary>
+        /// Gets the new line.
+        /// </summary>
+        /// <value>The new line.</value>
+        string NewLine { get; }
+    }
 }

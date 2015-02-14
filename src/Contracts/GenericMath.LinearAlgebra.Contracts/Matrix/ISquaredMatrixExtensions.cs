@@ -6,13 +6,14 @@
 // <author>andy</author>
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
-using System;
-
-using GenericMath.Base.Contracts;
-using GenericMath.LinearAlgebra.Contracts;
 
 namespace GenericMath.LinearAlgebra.Contracts
 {
+    using System;
+
+    using GenericMath.Base.Contracts;
+    using GenericMath.LinearAlgebra.Contracts;
+
 	/// <summary>
 	/// Matrix squared extensions.
 	/// </summary>

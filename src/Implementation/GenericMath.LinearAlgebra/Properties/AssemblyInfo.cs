@@ -1,4 +1,4 @@
-﻿//  *************************************************************
+//  *************************************************************
 // <copyright file="AssemblyInfo.cs" company="None">
 //     Copyright (c) 2014 andy. All rights reserved.
 // </copyright>
@@ -24,7 +24,7 @@ using System.Runtime.CompilerServices;
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
 // The form "{Major}.{Minor}.*" will automatically update the build and revision,
 // and "{Major}.{Minor}.{Build}.*" will update just the revision.
-[assembly: AssemblyVersion("1.0.*")]
+[assembly:AssemblyVersion("0.1")]
 
 // Make internals visible to test project
 [assembly: InternalsVisibleTo("Math.LinearAlgebra.Tests")]

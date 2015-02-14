@@ -6,52 +6,50 @@
 // <author>andy</author>
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
-using GenericMath.Base.Contracts;
 
 namespace GenericMath.LinearAlgebra.Contracts
 {
-	using System;
+    using System;
+    using GenericMath.Base.Contracts;
 
-	using GenericMath.Base;
-
-	/// <summary>
-	/// Interface for the polynomial.
-	/// </summary>
-	/// <typeparam name="T">The underlying set.</typeparam>
-	/// <typeparam name="TStruct">The underlying structure.</typeparam>
-	public interface IPolynomial<T, TStruct> 
+    /// <summary>
+    /// Interface for the polynomial.
+    /// </summary>
+    /// <typeparam name="T">The underlying set.</typeparam>
+    /// <typeparam name="TStruct">The underlying structure.</typeparam>
+    public interface IPolynomial<T, TStruct> 
         where TStruct : IStructure<T>, new()
-	{
-		#region properties
+    {
+        #region properties
 
-		/// <summary>
-		/// Gets the degree of the polynomial.
-		/// </summary>
-		/// <value>The degree.</value>
-		UInt32 Degree { get; }
+        /// <summary>
+        /// Gets the degree of the polynomial.
+        /// </summary>
+        /// <value>The degree.</value>
+        UInt32 Degree { get; }
 
-		#endregion
+        #endregion
 
-		#region methods
+        #region methods
 
-		/// <summary>
-		/// Gets or sets the coefficients of <see cref="Polynomial{T, TStruct}"/> at the specified index.
-		/// </summary>
-		/// <param name="index">The index of the coefficient.</param>
-		/// <returns>The coefficient at the specified index.</returns>
-		T this [UInt32 index]
-		{
-			get;
-			set;
-		}
+        /// <summary>
+        /// Gets or sets the coefficients of <see cref="Polynomial{T, TStruct}"/> at the specified index.
+        /// </summary>
+        /// <param name="index">The index of the coefficient.</param>
+        /// <returns>The coefficient at the specified index.</returns>
+        T this [UInt32 index]
+        {
+            get;
+            set;
+        }
 
-		/// <summary>
-		/// Returns a new the instance with degree set as parameter.
-		/// </summary>
-		/// <returns>The instance with same dimension.</returns>
-		/// <param name="degree">The degree of the new instance.</param>
-		IPolynomial<T, TStruct> ReturnNewInstance (UInt32 degree);
+        /// <summary>
+        /// Returns a new the instance with degree set as parameter.
+        /// </summary>
+        /// <returns>The instance with same dimension.</returns>
+        /// <param name="degree">The degree of the new instance.</param>
+        IPolynomial<T, TStruct> ReturnNewInstance (UInt32 degree);
 
-		#endregion
-	}
+        #endregion
+    }
 }

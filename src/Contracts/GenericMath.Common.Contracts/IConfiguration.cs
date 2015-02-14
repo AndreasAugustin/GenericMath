@@ -9,25 +9,25 @@
 
 namespace GenericMath.Common.Contracts
 {
-	using System;
+    using System;
 
-	/// <summary>
-	/// Interface for the configuration.
-	/// </summary>
-	public interface IConfiguration
-	{
-		#region indexers
+    /// <summary>
+    /// Interface for the configuration.
+    /// </summary>
+    public interface IConfiguration
+    {
+        #region indexers
 
-		/// <summary>
-		/// Gets the <see cref="IConfiguration"/> with the specified key.
-		/// </summary>
-		/// <param name="key">The key.</param>
-		/// <returns>The configuration entry.</returns>
-		String this [String key]
-		{
-			get;
-		}
+        /// <summary>
+        /// Gets the <see cref="IConfiguration"/> with the specified key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns>The configuration entry.</returns>
+        String this [String key]
+        {
+            get;
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }
