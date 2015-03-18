@@ -6,11 +6,11 @@
 // <author>andy</author>
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
-using System;
-using GenericMath.Base.Contracts;
 
 namespace GenericMath.Analysis.Contracts
 {
+    using System;
+    using GenericMath.Base.Contracts;
 
     /// <summary>
     /// Extension methods for <see cref="IGroup{T}"/> classes.

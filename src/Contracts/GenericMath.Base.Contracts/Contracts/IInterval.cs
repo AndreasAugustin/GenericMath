@@ -37,6 +37,6 @@ namespace GenericMath.Base.Contracts
         /// </summary>
         /// <returns><c>true</c> if the element lies in the interval; otherwise, <c>false</c>.</returns>
         /// <param name="elementToCheck">Element to check.</param>
-        Boolean IsinInterval(T elementToCheck);
+        bool IsinInterval (T elementToCheck);
     }
 }

@@ -7,7 +7,7 @@
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
 
-namespace GenericMath.Common
+namespace GenericMath.Common.Contracts
 {
     /// <summary>
     /// Different log levels for the <see cref="ILogger"/>.

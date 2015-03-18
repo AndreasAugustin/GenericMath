@@ -6,8 +6,6 @@
 // <author>andy</author>
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
-using GenericMath.Base.Contracts;
-using GenericMath.Analysis.Contracts;
 
 namespace GenericMath.Analysis.Tests
 {
@@ -15,7 +13,9 @@ namespace GenericMath.Analysis.Tests
     using System.Collections.Generic;
     using System.Numerics;
 
+    using GenericMath.Analysis.Contracts;
     using GenericMath.Base;
+    using GenericMath.Base.Contracts;
     using NUnit.Framework;
 
     /// <summary>

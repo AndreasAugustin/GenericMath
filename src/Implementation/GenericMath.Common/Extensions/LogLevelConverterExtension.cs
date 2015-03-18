@@ -7,10 +7,12 @@
 // <email>andy.augustin@t-online.de</email>
 // *************************************************************
 
+
 namespace GenericMath.Common
 {
     using System.Collections.Generic;
     using System.Linq;
+    using GenericMath.Common.Contracts;
 
     /// <summary>
     /// Extension method to convert <see cref="LogLevel"/> to the NLog.LogLevel.
@@ -28,7 +30,7 @@ namespace GenericMath.Common
         /// <summary>
         /// Initializes static members of the <see cref="LogLevelConverterExtension"/> class.
         /// </summary>
-        static LogLevelConverterExtension()
+        static LogLevelConverterExtension ()
         {
             InitLogLevelMappingDict();
         }
@@ -42,7 +44,7 @@ namespace GenericMath.Common
         /// </summary>
         /// <returns>The NLog.LogLevel.</returns>
         /// <param name="loglevel">The log level.</param>
-        public static NLog.LogLevel ConvertToNLogLogLevel(this LogLevel loglevel)
+        public static NLog.LogLevel ConvertToNLogLogLevel (this LogLevel loglevel)
         {
             CheckLogLevelMappingDictForKey(loglevel);
 
@@ -54,7 +56,7 @@ namespace GenericMath.Common
         /// </summary>
         /// <returns>The from log level.</returns>
         /// <param name="nloglevel">The NLog.LogLevel.</param>
-        public static LogLevel ConvertFromLogLevel(this NLog.LogLevel nloglevel)
+        public static LogLevel ConvertFromLogLevel (this NLog.LogLevel nloglevel)
         {
             CheckLogLevelMappingDictForValue(nloglevel);
 
@@ -65,23 +67,21 @@ namespace GenericMath.Common
 
         #region helper methods
 
-        private static void CheckLogLevelMappingDictForValue(NLog.LogLevel nloglevel)
+        private static void CheckLogLevelMappingDictForValue (NLog.LogLevel nloglevel)
         {
-            if (!_logLevelMappingDictionary.ContainsValue(nloglevel))
-            {
+            if (!_logLevelMappingDictionary.ContainsValue(nloglevel)) {
                 throw new KeyNotFoundException(nloglevel.ToString());
             }
         }
 
-        private static void CheckLogLevelMappingDictForKey(LogLevel loglevel)
+        private static void CheckLogLevelMappingDictForKey (LogLevel loglevel)
         {
-            if (!_logLevelMappingDictionary.ContainsKey(loglevel))
-            {
+            if (!_logLevelMappingDictionary.ContainsKey(loglevel)) {
                 throw new KeyNotFoundException(loglevel.ToString());
             }
         }
 
-        private static void InitLogLevelMappingDict()
+        private static void InitLogLevelMappingDict ()
         {
             _logLevelMappingDictionary = new Dictionary<LogLevel, NLog.LogLevel>();
             _logLevelMappingDictionary.Add(LogLevel.Off, NLog.LogLevel.Off);

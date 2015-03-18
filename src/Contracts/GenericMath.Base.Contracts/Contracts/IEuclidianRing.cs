@@ -24,7 +24,7 @@ namespace GenericMath.Base.Contracts
         /// </summary>
         /// <param name="element">The element.</param>
         /// <returns>The norm of element.</returns>
-        Double Norm(T element);
+        double Norm (T element);
 
         #endregion
     }

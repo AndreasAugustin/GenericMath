@@ -9,61 +9,63 @@
 
 namespace GenericMath.Common.Tests
 {
-	using System.Collections.Generic;
-	using NUnit.Framework;
+    using System.Collections.Generic;
 
-	/// <summary>
-	/// Test for the <see cref="LogLevelConverterExtension"/>
-	/// </summary>
-	[TestFixture]
-	public class LogLevelConverterExtensionTest
-	{
-		#region properties
+    using GenericMath.Common.Contracts;
+    using NUnit.Framework;
 
-		private IEnumerable<TestCaseData> TestDataSource
-		{
-			get
-			{
-				yield return new TestCaseData (LogLevel.Debug, NLog.LogLevel.Debug);
-				yield return new TestCaseData (LogLevel.Error, NLog.LogLevel.Error);
-				yield return new TestCaseData (LogLevel.Fatal, NLog.LogLevel.Fatal);
-				yield return new TestCaseData (LogLevel.Info, NLog.LogLevel.Info);
-				yield return new TestCaseData (LogLevel.Off, NLog.LogLevel.Off);
-				yield return new TestCaseData (LogLevel.Trace, NLog.LogLevel.Trace);
-				yield return new TestCaseData (LogLevel.Warn, NLog.LogLevel.Warn);
-			}
-		}
+    /// <summary>
+    /// Test for the <see cref="LogLevelConverterExtension"/>
+    /// </summary>
+    [TestFixture]
+    public class LogLevelConverterExtensionTest
+    {
+        #region properties
 
-		#endregion
+        private IEnumerable<TestCaseData> TestDataSource
+        {
+            get
+            {
+                yield return new TestCaseData(LogLevel.Debug, NLog.LogLevel.Debug);
+                yield return new TestCaseData(LogLevel.Error, NLog.LogLevel.Error);
+                yield return new TestCaseData(LogLevel.Fatal, NLog.LogLevel.Fatal);
+                yield return new TestCaseData(LogLevel.Info, NLog.LogLevel.Info);
+                yield return new TestCaseData(LogLevel.Off, NLog.LogLevel.Off);
+                yield return new TestCaseData(LogLevel.Trace, NLog.LogLevel.Trace);
+                yield return new TestCaseData(LogLevel.Warn, NLog.LogLevel.Warn);
+            }
+        }
 
-		/// <summary>
-		/// Converts from <see cref="LogLevel"/> to NLog.LogLevel. The converted result should equal the expected.
-		/// </summary>
-		/// <param name="input">The input.</param>
-		/// <param name="expected">The expected.</param>
-		[Test]
-		[Category("Unit test: nlog")]
-		[TestCaseSource("TestDataSource")]
-		public void ConvertFromLogLevel_Convert_ResultEqualsExpected (LogLevel input, NLog.LogLevel expected)
-		{
-			var result = input.ConvertToNLogLogLevel();
+        #endregion
 
-			Assert.AreEqual(expected, result);
-		}
+        /// <summary>
+        /// Converts from <see cref="LogLevel"/> to NLog.LogLevel. The converted result should equal the expected.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <param name="expected">The expected.</param>
+        [Test]
+        [Category("Unit test: nlog")]
+        [TestCaseSource("TestDataSource")]
+        public void ConvertFromLogLevel_Convert_ResultEqualsExpected (LogLevel input, NLog.LogLevel expected)
+        {
+            var result = input.ConvertToNLogLogLevel();
 
-		/// <summary>
-		/// Converts from NLog.LogLevel to <see cref="LogLevel"/>. The converted result should equal the expected.
-		/// </summary>
-		/// <param name="expected">The expected.</param>
-		/// <param name="input">The input.</param>
-		[Test]
-		[Category("Unit test: nlog")]
-		[TestCaseSource("TestDataSource")]
-		public void ConvertFromNLogLevel_Convert_ResultEqualsExpected (LogLevel expected, NLog.LogLevel input)
-		{
-			var result = input.ConvertFromLogLevel();
+            Assert.AreEqual(expected, result);
+        }
 
-			Assert.AreEqual(expected, result);
-		}
-	}
+        /// <summary>
+        /// Converts from NLog.LogLevel to <see cref="LogLevel"/>. The converted result should equal the expected.
+        /// </summary>
+        /// <param name="expected">The expected.</param>
+        /// <param name="input">The input.</param>
+        [Test]
+        [Category("Unit test: nlog")]
+        [TestCaseSource("TestDataSource")]
+        public void ConvertFromNLogLevel_Convert_ResultEqualsExpected (LogLevel expected, NLog.LogLevel input)
+        {
+            var result = input.ConvertFromLogLevel();
+
+            Assert.AreEqual(expected, result);
+        }
+    }
 }

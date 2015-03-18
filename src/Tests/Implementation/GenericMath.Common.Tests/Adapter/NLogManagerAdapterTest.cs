@@ -12,6 +12,7 @@ namespace GenericMath.Common.Tests
     using System;
     using System.Collections.Generic;
 
+    using GenericMath.Common.Contracts;
     using NUnit.Framework;
 
     /// <summary>
@@ -45,7 +46,7 @@ namespace GenericMath.Common.Tests
         /// </summary>
         [Test]
         [Category("Unit test: Logger manager")]
-        public void Init_CreateInstance_CheckForNull()
+        public void Init_CreateInstance_CheckForNull ()
         {
             var logManager = new NLogManagerAdapter();
 
@@ -59,7 +60,7 @@ namespace GenericMath.Common.Tests
         /// </summary>
         [Test]
         [Category("Unit test: Logger manager")]
-        public void GetLogger_CreateInstance_GetLogger_CheckResultForNull()
+        public void GetLogger_CreateInstance_GetLogger_CheckResultForNull ()
         {
             var logManager = new NLogManagerAdapter();
 
@@ -80,7 +81,7 @@ namespace GenericMath.Common.Tests
         [Test]
         [Category("Unit test: Logger manager")]
         [TestCaseSource("TestDataSource")]
-        public void GlobalThreshold_SetGlobalThreshold_ValueEqualsExpected(LogLevel loglevel)
+        public void GlobalThreshold_SetGlobalThreshold_ValueEqualsExpected (LogLevel loglevel)
         {
             var input = loglevel;
             var logManager = new NLogManagerAdapter();
