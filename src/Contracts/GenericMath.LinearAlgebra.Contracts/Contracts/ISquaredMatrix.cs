@@ -17,9 +17,11 @@ namespace GenericMath.LinearAlgebra.Contracts
     /// <summary>
     /// Interface for squared matrizes.
     /// </summary>
-    public interface ISquaredMatrix<T, TStruct> : IMatrix<T, TStruct>
+    public interface ISquaredMatrix<T, TStruct> 
 		where TStruct : IStructure<T>, new()
     {
+        #region properties
+
         /// <summary>
         /// Gets the dimension.
         /// </summary>
@@ -27,11 +29,29 @@ namespace GenericMath.LinearAlgebra.Contracts
         UInt32 Dimension { get; }
 
         /// <summary>
+        /// Gets or sets the <see cref="IMatrix{T, TStruct}"/> with the specified row column.
+        /// </summary>
+        /// <param name="row">The Row.</param>
+        /// <param name="column">The Column.</param>
+        /// <returns>The value at row and column.</returns>
+        T this [UInt32 row, UInt32 column]
+        {
+            get;
+            set;
+        }
+
+        #endregion
+
+        #region methods
+
+        /// <summary>
         /// Returns the new instance.
         /// </summary>
         /// <returns>The new instance.</returns>
         /// <param name="dimension">Row dimension.</param>
-        IMatrix<T, TStruct> ReturnNewInstance (
+        ISquaredMatrix<T, TStruct> ReturnNewInstance (
             UInt32 dimension);
+
+        #endregion
     }
 }

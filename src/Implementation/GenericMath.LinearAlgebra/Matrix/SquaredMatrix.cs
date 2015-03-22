@@ -11,8 +11,8 @@
 namespace GenericMath.LinearAlgebra
 {
     using System;
-    using GenericMath.LinearAlgebra.Contracts;
     using GenericMath.Base.Contracts;
+    using GenericMath.LinearAlgebra.Contracts;
 
     /// <summary>
     /// Matrix where the rowDimension is equal to the column dimension.
@@ -51,7 +51,7 @@ namespace GenericMath.LinearAlgebra
         /// </summary>
         /// <returns>The new instance.</returns>
         /// <param name="dimension">Row dimension.</param>
-        public IMatrix<T, TStruct> ReturnNewInstance (uint dimension)
+        public ISquaredMatrix<T, TStruct> ReturnNewInstance (uint dimension)
         {
             return new SquaredMatrix<T, TStruct>(dimension);
         }
