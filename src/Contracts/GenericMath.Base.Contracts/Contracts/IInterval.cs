@@ -18,7 +18,7 @@ namespace GenericMath.Base.Contracts
     /// <typeparam name="TStruct">The underlying structure for the elements.</typeparam>
     public interface IInterval<T, TStruct>
         where T : IComparable
-        where TStruct : IStructure<T>, new()
+        where TStruct : IStructure, new()
     {
         /// <summary>
         /// Gets the max element.

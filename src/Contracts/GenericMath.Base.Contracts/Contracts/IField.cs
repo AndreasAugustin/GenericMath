@@ -13,7 +13,7 @@ namespace GenericMath.Base.Contracts
     /// Interface for defining fields.
     /// </summary>
     /// <typeparam name="T">The underlying set.</typeparam>
-    public interface IField<T> : IRing<T>, IStructure<T>
+    public interface IField<T> : IRing<T>, IStructure
     {
         #region methods
 
@@ -22,7 +22,7 @@ namespace GenericMath.Base.Contracts
         /// </summary>
         /// <returns>The inverse.</returns>
         /// <param name="element">The element.</param>
-        T MultiplicationInverse(T element);
+        T MultiplicationInverse (T element);
 
         #endregion
     }

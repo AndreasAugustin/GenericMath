@@ -48,6 +48,7 @@
     <Folder Include="Monoid\" />
     <Folder Include="Field\" />
     <Folder Include="Interval\" />
+    <Folder Include="Factories\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Group\DoubleGroupTest.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Field\ComplexFieldTest.cs" />
     <Compile Include="Interval\IntervalTest.cs" />
     <Compile Include="Interval\DoubleIntervalTest.cs" />
+    <Compile Include="Factories\StructureFactoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

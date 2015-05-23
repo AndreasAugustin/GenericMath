@@ -28,7 +28,7 @@ namespace GenericMath.LinearAlgebra.Contracts
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         /// <returns>The transposed matrix.</returns>
         public static IMatrix<T, TStruct> Transpose<T, TStruct> (this IMatrix<T, TStruct> matrix)
-            where TStruct : IStructure<T>, new()
+            where TStruct : IStructure, new()
         {
             var result = matrix.ReturnNewInstance(
                              matrix.ColumnDimension,
@@ -51,7 +51,7 @@ namespace GenericMath.LinearAlgebra.Contracts
         /// <typeparam name="TStruct">The underlying structure of the set.</typeparam>
         /// <returns>A copy of the matrix.</returns>
         public static IMatrix<T, TStruct> Copy<T, TStruct> (this IMatrix<T, TStruct> matrix)
-            where TStruct : IStructure<T>, new()
+            where TStruct : IStructure, new()
         {
             var mat = matrix.ReturnNewInstance(
                           matrix.RowDimension,
@@ -79,7 +79,7 @@ namespace GenericMath.LinearAlgebra.Contracts
             this IMatrix<T, TStruct> matrix,
             UInt32 firstRowIndex,
             UInt32 secondRowIndex)
-            where TStruct : IStructure<T>, new()
+            where TStruct : IStructure, new()
         {
             var mat = matrix.ReturnNewInstance(
                           matrix.RowDimension,
@@ -117,7 +117,7 @@ namespace GenericMath.LinearAlgebra.Contracts
             this IMatrix<T, TStruct> matrix,
             UInt32 firstColumnIndex,
             UInt32 secondColumnIndex)
-            where TStruct : IStructure<T>, new()
+            where TStruct : IStructure, new()
         {
             var mat = matrix.ReturnNewInstance(
                           matrix.RowDimension,

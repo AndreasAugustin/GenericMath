@@ -44,6 +44,7 @@
     <Folder Include="DirectSum\" />
     <Folder Include="Polynomial\" />
     <Folder Include="Matrix\" />
+    <Folder Include="Factories\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -71,6 +72,7 @@
     <Compile Include="Polynomial\PolynomialFromMonoidExtensionsTest.cs" />
     <Compile Include="Polynomial\PolynomialFromGroupExtensionsTest.cs" />
     <Compile Include="Matrix\ISquaredMatrixExtensionsTest.cs" />
+    <Compile Include="Factories\MatrixFactoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Implementation\GenericMath.Base\GenericMath.Base.csproj">

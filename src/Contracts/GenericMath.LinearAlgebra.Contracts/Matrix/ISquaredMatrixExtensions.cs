@@ -22,7 +22,7 @@ namespace GenericMath.LinearAlgebra.Contracts
         #region METHODS
 
         public static ISquaredMatrix<T, TStruct> Copy<T, TStruct> (this ISquaredMatrix<T, TStruct> matrix)
-            where TStruct : IStructure<T>, new()
+            where TStruct : IStructure, new()
         {
             var newMatrix = matrix.ReturnNewInstance(matrix.Dimension);
 

@@ -50,6 +50,7 @@
     <Compile Include="Field\DoubleField.cs" />
     <Compile Include="Field\ComplexField.cs" />
     <Compile Include="Interval\Interval.cs" />
+    <Compile Include="Factories\StructureFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -58,6 +59,7 @@
     <Folder Include="Monoid\" />
     <Folder Include="Field\" />
     <Folder Include="Interval\" />
+    <Folder Include="Factories\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Contracts\GenericMath.Base.Contracts\GenericMath.Base.Contracts.csproj">

@@ -20,7 +20,7 @@ namespace GenericMath.LinearAlgebra
     /// <typeparam name="T">The underlying set.</typeparam>
     /// <typeparam name="TStruct">The underlying structure.</typeparam>
     public class SquaredMatrix<T, TStruct> : Matrix<T, TStruct> , ISquaredMatrix<T, TStruct>
-		where TStruct : IStructure<T>, new()
+		where TStruct : IStructure, new()
     {
         #region properties
 

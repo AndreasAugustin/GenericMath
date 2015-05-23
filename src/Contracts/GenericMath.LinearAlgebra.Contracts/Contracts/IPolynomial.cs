@@ -18,7 +18,7 @@ namespace GenericMath.LinearAlgebra.Contracts
     /// <typeparam name="T">The underlying set.</typeparam>
     /// <typeparam name="TStruct">The underlying structure.</typeparam>
     public interface IPolynomial<T, TStruct> 
-        where TStruct : IStructure<T>, new()
+        where TStruct : IStructure, new()
     {
         #region properties
 
@@ -43,6 +43,7 @@ namespace GenericMath.LinearAlgebra.Contracts
             set;
         }
 
+        // TODO move into factory
         /// <summary>
         /// Returns a new the instance with degree set as parameter.
         /// </summary>

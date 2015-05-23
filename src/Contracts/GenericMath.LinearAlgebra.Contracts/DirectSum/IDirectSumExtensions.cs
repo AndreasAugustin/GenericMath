@@ -28,7 +28,7 @@ namespace GenericMath.LinearAlgebra.Contracts
         /// <typeparam name="T">The type parameter.</typeparam>
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         public static IDirectSum<T, TStruct> Copy<T, TStruct> (this IDirectSum<T, TStruct> tuple)
-            where TStruct : IStructure<T>, new()
+            where TStruct : IStructure, new()
         {
             var vec = tuple.ReturnNewInstance(tuple.Dimension);
 
@@ -48,7 +48,7 @@ namespace GenericMath.LinearAlgebra.Contracts
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         public static IDirectSum<T, TStruct> InsertionSort<T, TStruct> (this IDirectSum<T, TStruct> tuple)
             where T : IComparable
-            where TStruct : IStructure<T>, new()
+            where TStruct : IStructure, new()
         {
             var vec = tuple.Copy();
             if (tuple.Dimension < 2) {
@@ -85,7 +85,7 @@ namespace GenericMath.LinearAlgebra.Contracts
         /// <typeparam name="TStruct">The underlying structure.</typeparam>
         public static IDirectSum<T, TStruct> BubbleSort<T, TStruct> (this IDirectSum<T, TStruct> tuple) 
             where T : IComparable
-            where TStruct : IStructure<T>, new()
+            where TStruct : IStructure, new()
         {
             var vec = tuple.Copy();
 

@@ -17,7 +17,7 @@ namespace GenericMath.LinearAlgebra.Contracts
     /// <typeparam name="T">The underlying set.</typeparam>
     /// <typeparam name="TStruct">The underlying structure.</typeparam>
     public interface IMatrix<T, TStruct>
-        where TStruct : IStructure<T>, new()
+        where TStruct : IStructure, new()
     {
         #region properties
 
@@ -25,13 +25,13 @@ namespace GenericMath.LinearAlgebra.Contracts
         /// Gets the row dimension.
         /// </summary>
         /// <value>The row dimension.</value>
-        UInt32 RowDimension { get; }
+        uint RowDimension { get; }
 
         /// <summary>
         /// Gets the column dimension.
         /// </summary>
         /// <value>The column dimension.</value>
-        UInt32 ColumnDimension { get; }
+        uint ColumnDimension { get; }
 
         /// <summary>
         /// Gets or sets the <see cref="IMatrix{T, TStruct}"/> with the specified row column.
@@ -39,7 +39,7 @@ namespace GenericMath.LinearAlgebra.Contracts
         /// <param name="row">The Row.</param>
         /// <param name="column">The Column.</param>
         /// <returns>The value at row and column.</returns>
-        T this [UInt32 row, UInt32 column]
+        T this [uint row, uint column]
         {
             get;
             set;
@@ -49,6 +49,7 @@ namespace GenericMath.LinearAlgebra.Contracts
 
         #region methods
 
+        // TODO move into factory
         /// <summary>
         /// Returns the new instance.
         /// </summary>

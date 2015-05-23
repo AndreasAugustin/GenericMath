@@ -43,10 +43,14 @@
     <Compile Include="Contracts\IVectorRoom.cs" />
     <Compile Include="Extensions\IntegerExtension.cs" />
     <Compile Include="Extensions\IRingExtensions.cs" />
+    <Compile Include="Contracts\IFactoryMarker.cs" />
+    <Compile Include="Contracts\IStructureFactory.cs" />
+    <Compile Include="Exceptions\UnregisteredException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Contracts\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
 </Project>

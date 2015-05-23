@@ -18,7 +18,7 @@ namespace GenericMath.LinearAlgebra.Contracts
     /// Interface for squared matrizes.
     /// </summary>
     public interface ISquaredMatrix<T, TStruct> 
-		where TStruct : IStructure<T>, new()
+		where TStruct : IStructure, new()
     {
         #region properties
 
@@ -44,6 +44,7 @@ namespace GenericMath.LinearAlgebra.Contracts
 
         #region methods
 
+        // TODO remove into factory.
         /// <summary>
         /// Returns the new instance.
         /// </summary>

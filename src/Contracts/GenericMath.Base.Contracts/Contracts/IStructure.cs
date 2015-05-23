@@ -13,7 +13,7 @@ namespace GenericMath.Base.Contracts
     /// Interface for structures.
     /// </summary>
     /// <typeparam name="T">The type parameter.</typeparam>
-    public interface IStructure<T>
+    public interface IStructure
     {
         // Nothing to do
     }

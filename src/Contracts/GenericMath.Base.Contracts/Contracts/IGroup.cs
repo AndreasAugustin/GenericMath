@@ -13,7 +13,7 @@ namespace GenericMath.Base.Contracts
     /// Interface for defining group structures.
     /// </summary>
     /// <typeparam name="T">The type parameter is the set of the elements for the group.</typeparam>
-    public interface IGroup<T> : IMonoid<T>, IStructure<T>
+    public interface IGroup<T> : IMonoid<T>, IStructure
     {
         #region methods
 
@@ -22,7 +22,7 @@ namespace GenericMath.Base.Contracts
         /// </summary>
         /// <param name="element">The element.</param>
         /// <returns>The inverse of element (-element)</returns>
-        T Inverse(T element);
+        T Inverse (T element);
 
         #endregion
     }

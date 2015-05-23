@@ -13,7 +13,7 @@ namespace GenericMath.Base.Contracts
     /// Interface for declaring a ring (Here it is an integer ring).
     /// </summary>
     /// <typeparam name="T">The type parameter is the set of the elements for the ring.</typeparam> 
-    public interface IRing<T> : IGroup<T>, IStructure<T>
+    public interface IRing<T> : IGroup<T>, IStructure
     {
         #region properties
 
@@ -33,7 +33,7 @@ namespace GenericMath.Base.Contracts
         /// <param name="leftElement">Left element.</param>
         /// <param name="rightElement">Right element.</param>
         /// <returns>The multiplication of the leftElement and rightElement (leftElement * rightElement)</returns>
-        T Multiplication(T leftElement, T rightElement);
+        T Multiplication (T leftElement, T rightElement);
 
         #endregion
     }

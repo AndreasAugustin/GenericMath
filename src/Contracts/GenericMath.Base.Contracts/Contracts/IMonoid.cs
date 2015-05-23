@@ -13,7 +13,7 @@ namespace GenericMath.Base.Contracts
     /// Interface for creating monoid structures.
     /// </summary>
     /// <typeparam name="T">The underlying Set.</typeparam>
-    public interface IMonoid<T> : IStructure<T>
+    public interface IMonoid<T> : IStructure
     {
         #region properties
 
@@ -33,7 +33,7 @@ namespace GenericMath.Base.Contracts
         /// <param name="leftElement">Left element.</param>
         /// <param name="rightElement">Right element.</param>
         /// <returns>The addition of the leftElement and rightElement (leftElement + rightElement)</returns>
-        T Addition(T leftElement, T rightElement);
+        T Addition (T leftElement, T rightElement);
 
         #endregion
     }

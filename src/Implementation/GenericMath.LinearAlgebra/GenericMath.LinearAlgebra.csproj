@@ -45,6 +45,7 @@
     <Compile Include="Exceptions\LinearAlgebraException.cs" />
     <Compile Include="Exceptions\LinearAlgebraExceptionType.cs" />
     <Compile Include="Matrix\SquaredMatrix.cs" />
+    <Compile Include="Factories\MatrixFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -57,6 +58,7 @@
     <Folder Include="DirectSum\" />
     <Folder Include="Group\" />
     <Folder Include="Ring\" />
+    <Folder Include="Factories\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GenericMath.Base\GenericMath.Base.csproj">

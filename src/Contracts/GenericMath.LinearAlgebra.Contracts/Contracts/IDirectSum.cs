@@ -18,7 +18,7 @@ namespace GenericMath.LinearAlgebra.Contracts
     /// <typeparam name="T">The underlying set.</typeparam>
     /// <typeparam name="TStruct">The structure.</typeparam>
     public interface IDirectSum<T, TStruct> 
-        where TStruct : IStructure<T>, new()
+        where TStruct : IStructure, new()
     {
         #region properties
 
@@ -43,6 +43,7 @@ namespace GenericMath.LinearAlgebra.Contracts
 
         #region methods
 
+        // TODO move into factory
         /// <summary>
         /// Returns the new instance.
         /// </summary>
