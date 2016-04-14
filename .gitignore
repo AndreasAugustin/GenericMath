@@ -1,34 +1,5 @@
-/src/Tests/GenericMath.Parser.Tests/StyleCop.Cache
-/src/Tests/GenericMath.Parser.Tests/obj
-/src/Tests/GenericMath.Parser.Tests/bin
-/src/Tests/GenericMath.LinearAlgebra.Tests/bin
-/src/Tests/GenericMath.LinearAlgebra.Tests/StyleCop.Cache
-/src/Tests/GenericMath.LinearAlgebra.Tests/obj
-/src/Tests/GenericMath.Base.Tests/bin
-/src/Tests/GenericMath.Base.Tests/StyleCop.Cache
-/src/Tests/GenericMath.Base.Tests/obj
-/src/Tests/GenericMath.Analysis.Tests/StyleCop.Cache
-/src/Tests/GenericMath.Analysis.Tests/obj
-/src/Tests/GenericMath.Analysis.Tests/bin
-/src/packages
-/src/GenericMath.Parser/StyleCop.Cache
-/src/GenericMath.Parser/obj
-/src/GenericMath.Parser/bin
-/src/GenericMath.LinearAlgebra/StyleCop.Cache
-/src/GenericMath.LinearAlgebra/obj
-/src/GenericMath.LinearAlgebra/bin
-/src/GenericMath.Common/StyleCop.Cache
-/src/GenericMath.Common/obj
-/src/GenericMath.Common/bin
-/src/GenericMath.Base/StyleCop.Cache
-/src/GenericMath.Base/obj
-/src/GenericMath.Base/bin
-/src/GenericMath.Analysis/StyleCop.Cache
-/src/GenericMath.Analysis/obj
-/src/GenericMath.Analysis/bin
-/src/GenericMath.userprefs
+bin/
+obj/
 
-/obj/
+.idea/
 
-*.dll
-*.mdb
