@@ -1,0 +1,18 @@
+﻿<Properties>
+  <DisabledProjects>
+    <String>Math\Math.LinearAlgebra.csproj</String>
+    <String>..\Math.Tests\Math.LinearAlgebra.Tests.csproj</String>
+    <String>..\Math.LinearAlgebra.Tests\Math.LinearAlgebra.Tests.csproj</String>
+    <String>..\Math.Analysis\Math.Analyisis.Tests\Math.Analysis.Tests.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\andy\Documents\SuperDevelop\Math.LinearAlgebra\Math.LinearAlgebra\Vector\Vector.cs" line="102" column="1" />
+      <Breakpoint file="C:\Users\andy\Documents\SuperDevelop\Math.LinearAlgebra\Math.LinearAlgebra\Vector\Vector.cs" line="95" column="1" />
+      <Breakpoint file="C:\Users\andy\Documents\SuperDevelop\Math.LinearAlgebra\Math.LinearAlgebra\Vector\Vector.cs" line="160" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

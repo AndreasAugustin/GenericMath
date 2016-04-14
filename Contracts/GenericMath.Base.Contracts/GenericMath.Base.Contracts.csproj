@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7F36FB73-84B0-4815-BA4D-275885F7A264}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GenericMath.Base.Contracts</RootNamespace>
+    <AssemblyName>GenericMath.Base.Contracts</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Contracts\IEuclidianRing.cs" />
+    <Compile Include="Contracts\IField.cs" />
+    <Compile Include="Contracts\IGroup.cs" />
+    <Compile Include="Contracts\IInterval.cs" />
+    <Compile Include="Contracts\IModule.cs" />
+    <Compile Include="Contracts\IMonoid.cs" />
+    <Compile Include="Contracts\IRing.cs" />
+    <Compile Include="Contracts\IStructure.cs" />
+    <Compile Include="Contracts\IVectorRoom.cs" />
+    <Compile Include="Extensions\IntegerExtension.cs" />
+    <Compile Include="Extensions\IRingExtensions.cs" />
+    <Compile Include="Contracts\IFactoryMarker.cs" />
+    <Compile Include="Contracts\IStructureFactory.cs" />
+    <Compile Include="Exceptions\UnregisteredException.cs" />
+    <Compile Include="GenericMath.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
+</Project>
