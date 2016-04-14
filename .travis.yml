@@ -1,0 +1,16 @@
+language: csharp
+solution: GenericMath.sln
+sudo: required
+before_install:
+  - sudo apt-get install nunit-console
+before_script:
+  - nuget restore GenericMath.sln
+after_script:
+  - nunit-console Tests/GenericMath.Analysis.Tests/bin/Debug/GenericMath.Analysis.Tests.dll
+  - nunit-console Tests/GenericMath.Base.Tests/bin/Debug/GenericMath.Base.Tests.dll
+  - nunit-console Tests/GenericMath.Common.Tests/bin/Debug/GenericMath.Common.Tests.dll
+  - nunit-console Tests/GenericMath.LinearAlgebra.Tests/bin/Debug/GenericMath.LinearAlgebra.Tests.dll
+  - nunit-console Tests/GenericMath.Parser.Tests/bin/Debug/GenericMath.Parser.Tests.dll
+script:
+  - xbuild /p:Configuration=Debug GenericMath.sln
+
