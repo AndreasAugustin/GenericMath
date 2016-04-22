@@ -7,6 +7,8 @@ GenericMath
 
 [![Windows status](https://ci.appveyor.com/api/projects/status/v3ek4ilpe8ooq4h3?svg=true)](https://ci.appveyor.com/project/AndreasAugustin/genericmath)
 
+[![codecov.io](https://codecov.io/github/AndreasAugustin/GenericMath/coverage.svg?branch=master)](https://codecov.io/github/AndreasAugustin/GenericMath?branch=master)
+
 This repository provides generic math methods.
 The goal is to support a computional model for mathematical categories like Groups, Modules,..
 
