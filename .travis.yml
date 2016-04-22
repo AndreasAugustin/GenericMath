@@ -13,4 +13,6 @@ after_script:
   - nunit-console Tests/GenericMath.Parser.Tests/bin/Debug/GenericMath.Parser.Tests.dll
 script:
   - xbuild /p:Configuration=Debug GenericMath.sln
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 
