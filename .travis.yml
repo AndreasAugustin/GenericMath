@@ -8,7 +8,8 @@ env:
   global:
    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
    #   via the "travis encrypt" command using the project repo's public key
-   - secure: "n7eVJ6HYjK9T0H7uIQ4RkFyNP+koq2VpjGEpsR+lMzPFcBHr9MZR60Xoavzigx/rUWG8VXB/tH2t0M68pwfyWsq89ZzOlgP5kGPm6uY9GE7Ezm5XDBh+kgLWR5HJb6xrhz9yBWjRf55b6mTfrMP+1QTe+9xRcTEW9EgVlGi/KpvtG6a93RUuSJ5UTAO8ljcRjsXbfPduUH7VIVCLRawRtAhf/+w+gS/kz5JV6rMx9YssoS+77DMIp+FKGo9fAAlQTiAItKYwQNBG7XBDRAHR0R7BjmHdvvets66smY8gaM3lLTn+iIWtlYemnMFVC9w0p3b3rFEPOU5T7Do+7QxkJaqop2sLy0I/oSc5dweglRMqTMr6c6/5lwGwFZx/y0lnhB6BggVzc8SFjv17ZoEdfEpDdVzADrntTIjmRlEnjIdC0YGM3Bxmedv3eUWUmH1UDfVtZwiPg1TjrfU34OKvE5Eyz4ZWsn+niqn5y8q+UFT7IS+6T8pYaH0PcL1m7dmDuasJSa1DHPvA/8iVD61sxuqOS7oSxRCjW4zbKTKhdsqha08tF+14iXHwBJ3k5hueyARCF6dm8Y6ZbugLNQaId/GAwX0J20OAr5D/K31ssXWFcchAuVgqjy5MyRSewqN2yi09QC5+l+Y+ehp13RKS+kzOES2JQyvQpWDr2q82yWw="
+   - secure: "h82fhgn0aSCb7f4mATIUcskEfbsOT4/0rxqoR/Bx112G1VO8CrQQICTYEBM1vj2KX4euduWS/vpY1SZtv/LiXysQML/K9gg5lGkA1JVO937PcJaQGS4Vo0tvQ2aOS2Fd5OmsydG/7G82qQsi9pJR4Vdd7KY6yH9VwWb1EdpqjlEOgcBh25+t4UeCQta2+cqRs3ayicc5FT2QmtHA/zNgtVPWiufp7iFOAAKhosJDjJZkt8ljg6rdctSrl/VuTfQN8pRczZ3tqK/Vj1/jnYgOSyhkRCVhnUKK+c83ZogHGU9CiopnCCt5au6fEJNGHhZ26h8rwgTxWPeqhgXjDfb1db2btJFLrIKc6wIWGR/v5D/eZbtu9S+AWcdW3qI7baQ9kuGK4iAUbhAwIzQbUE+uxS8dzfZCbjaua47rtd+FMcHPLLONswSzDakgZN9vHmu7nErcsLCsglzm2JYKnwk/nxa+7Xo5OLytQbHpnva/ijotpq5u2AvQBhKGY4MSERRIDHNv2vEOHDHYgdLqXMPyuZxgXDVeIOuhMCP/zUu7UgTujQVkYPL5u0d9seZNrSJCJVBmA5p2oo2RBfUpDYRHKCnfi6Gwp4Q0OY1ESDTtYgzTkoliH1CJRQGOxFW1wy/9DyYG9hJZp6allpGDg1d9fdzyk+7GiQG0WT8ii50/Z0M="
+
 
 before_install:
   - sudo apt-get install nunit-console
@@ -32,7 +33,7 @@ after_success:
 addons:
   coverity_scan:
     project:
-      name: "AndreasAugustin/testing-demos-csharp_mono"
+      name: "AndreasAugustin/GenericMath"
       description: "Build submitted via Travis CI"
     notification_email: andy.augustin@t-online.de
     build_command_prepend: "msbuild /t:Clean"
