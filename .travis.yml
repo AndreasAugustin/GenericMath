@@ -37,5 +37,5 @@ addons:
     notification_email: andy.augustin@t-online.de
     build_command_prepend: "msbuild /t:Clean"
     build_command:   "msbuild /t:Rebuild"
-    branch_pattern: coverity_scan
+    branch_pattern: master
 
