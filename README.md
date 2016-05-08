@@ -7,6 +7,8 @@ GenericMath
 
 [![Windows status](https://ci.appveyor.com/api/projects/status/v3ek4ilpe8ooq4h3?svg=true)](https://ci.appveyor.com/project/AndreasAugustin/genericmath)
 
+[![Coverity](https://scan.coverity.com/projects/andreasaugustin-testing-demos-csharp_mono)](https://scan.coverity.com/projects/8800/badge.svg)
+
 [![codecov.io](https://codecov.io/github/AndreasAugustin/GenericMath/coverage.svg?branch=master)](https://codecov.io/github/AndreasAugustin/GenericMath?branch=master)
 
 This repository provides generic math methods.
