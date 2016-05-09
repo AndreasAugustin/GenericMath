@@ -30,13 +30,3 @@ script:
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
-addons:
-  coverity_scan:
-    project:
-      name: "AndreasAugustin/GenericMath"
-      description: "Build submitted via Travis CI"
-    notification_email: andy.augustin@t-online.de
-    build_command_prepend: "msbuild /t:Clean"
-    build_command:   "msbuild /t:Rebuild"
-    branch_pattern: master
-
